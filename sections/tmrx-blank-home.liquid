@@ -1,0 +1,46 @@
+<section class="tmrx-blank">
+  <div class="tmrx-blank__inner">
+    {% if section.settings.eyebrow != blank %}
+      <p class="tmrx-blank__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h1 class="tmrx-blank__title">{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.note != blank %}
+      <p class="tmrx-blank__note">{{ section.settings.note }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TMRX blank home",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Draft rebuild"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "True Matrx"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note",
+      "default": "Blank starting point for the new website direction."
+    }
+  ],
+  "presets": [
+    {
+      "name": "TMRX blank home"
+    }
+  ]
+}
+{% endschema %}

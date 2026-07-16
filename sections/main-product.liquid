@@ -1,0 +1,14 @@
+<section class="tmrx-blank">
+  <div class="tmrx-blank__inner">
+    <p class="tmrx-blank__eyebrow">{{ product.vendor }}</p>
+    <h1 class="tmrx-blank__title">{{ product.title }}</h1>
+    <p class="tmrx-blank__note">{{ product.price | money }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": []
+}
+{% endschema %}

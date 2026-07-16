@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "tmrx_blank_home": {
+      "type": "tmrx-blank-home"
+    }
+  },
+  "order": [
+    "tmrx_blank_home"
+  ]
+}
