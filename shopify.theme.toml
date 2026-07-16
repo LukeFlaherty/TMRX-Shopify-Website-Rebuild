@@ -1,0 +1,10 @@
+[environments.draft]
+store = "true-matrix"
+theme = "189659021621"
+ignore = [
+  ".git/*",
+  "AGENTS.md",
+  "README.md",
+  "package.json",
+  "tmrx-blank-rebuild-draft.zip"
+]

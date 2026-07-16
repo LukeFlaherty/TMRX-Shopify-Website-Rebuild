@@ -1,0 +1,11 @@
+{
+  "name": "tmrx-shopify-website-rebuild",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "theme:info": "npx --yes @shopify/cli@latest theme info --environment draft",
+    "theme:push": "npx --yes @shopify/cli@latest theme push --environment draft",
+    "theme:pull": "npx --yes @shopify/cli@latest theme pull --environment draft",
+    "theme:check": "npx --yes @shopify/cli@latest theme check"
+  }
+}
