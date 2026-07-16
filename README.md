@@ -22,18 +22,29 @@ This repo is the source of truth for the Shopify rebuild. The existing unpublish
 - Theme: `TMRX Blank Rebuild Draft`
 - Theme ID: `189659021621`
 - Environment: `draft`
+- Preview: `https://true-matrix.myshopify.com?preview_theme_id=189659021621`
 
-Use the pinned environment so updates go to the same draft theme:
+The `draft` environment is configured in `shopify.theme.toml` so Shopify CLI updates the same existing unpublished draft theme each time.
+
+Use this command to confirm the target:
+
+```bash
+npm run theme:info
+```
+
+Use this command to deploy local source to the existing draft:
 
 ```bash
 npm run theme:push
 ```
 
-Do not use `--unpublished` for normal updates, because that creates a new Shopify draft theme.
+Do not use `--unpublished` for normal updates, because that creates a new Shopify draft theme. Do not publish to the live theme unless explicitly requested.
 
-Recommended update loop:
+Recommended deployment loop:
 
 1. Edit the theme locally.
-2. Commit the change to Git.
-3. Push to GitHub.
-4. Run `npm run theme:push` to update the existing Shopify draft.
+2. Review the diff and run checks when relevant.
+3. Commit the change to Git.
+4. Push the commit to GitHub.
+5. Run `npm run theme:push` to update Shopify draft theme `189659021621`.
+6. Preview the draft at `https://true-matrix.myshopify.com?preview_theme_id=189659021621`.
