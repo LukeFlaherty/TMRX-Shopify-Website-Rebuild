@@ -40,4 +40,30 @@
     setOpenState(cartDrawer, false, 'is-open');
     setOpenState(mobileMenu, false, 'is-open');
   });
+
+  document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
+    const rail = carousel.querySelector('[data-product-rail]');
+    const count = carousel.querySelector('[data-product-count]');
+    const progressItems = carousel.querySelectorAll('.tmrx-carousel-progress span');
+    const cards = rail ? Array.from(rail.children) : [];
+
+    if (!rail || !count || cards.length === 0) return;
+
+    const updateCarouselState = () => {
+      const cardWidth = cards[0].getBoundingClientRect().width || 1;
+      const gap = parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || 0);
+      const currentIndex = Math.min(cards.length - 1, Math.max(0, Math.round(rail.scrollLeft / (cardWidth + gap))));
+      const current = String(currentIndex + 1).padStart(2, '0');
+      const total = String(cards.length).padStart(2, '0');
+
+      count.textContent = `${current}/${total}`;
+      progressItems.forEach((item, index) => {
+        item.classList.toggle('is-active', index === currentIndex);
+      });
+    };
+
+    rail.addEventListener('scroll', updateCarouselState, { passive: true });
+    window.addEventListener('resize', updateCarouselState);
+    updateCarouselState();
+  });
 })();

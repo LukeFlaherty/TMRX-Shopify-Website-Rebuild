@@ -2,9 +2,13 @@
   "sections": {
     "tmrx_blank_home": {
       "type": "tmrx-blank-home"
+    },
+    "tmrx_featured_products": {
+      "type": "tmrx-featured-products"
     }
   },
   "order": [
-    "tmrx_blank_home"
+    "tmrx_blank_home",
+    "tmrx_featured_products"
   ]
 }

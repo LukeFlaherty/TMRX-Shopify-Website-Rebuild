@@ -1,0 +1,174 @@
+{% liquid
+  assign featured_collection = section.settings.collection
+  assign total_products = 0
+  if featured_collection != blank
+    assign total_products = featured_collection.products_count
+  endif
+  assign shown_products = section.settings.products_to_show
+  if total_products > 0 and total_products < shown_products
+    assign shown_products = total_products
+  endif
+  if shown_products == 0
+    assign shown_products = 4
+  endif
+%}
+
+<section class="tmrx-featured-products">
+  <div class="tmrx-featured-products__inner">
+    <div class="tmrx-section-heading">
+      <div>
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+      <a class="tmrx-text-link" href="{{ section.settings.view_all_link | default: routes.all_products_collection_url }}">
+        {{ section.settings.view_all_label }}
+        <span aria-hidden="true">-></span>
+      </a>
+    </div>
+
+    <div class="tmrx-chip-row" aria-label="Supplement categories">
+      {% for block in section.blocks %}
+        {% if block.type == 'chip' and block.settings.label != blank %}
+          <a
+            class="tmrx-chip{% if forloop.first %} is-active{% endif %}"
+            href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="tmrx-product-carousel" data-product-carousel>
+      <div class="tmrx-product-carousel__rail" data-product-rail>
+        {% if featured_collection != blank and total_products > 0 %}
+          {% for product in featured_collection.products limit: section.settings.products_to_show %}
+            {% render 'tmrx-supplement-card', product: product, badge: section.settings.badge_label, index: forloop.index %}
+          {% endfor %}
+        {% else %}
+          {% for index in (1..4) %}
+            {% render 'tmrx-supplement-card', badge: section.settings.badge_label, index: index %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="tmrx-product-carousel__footer">
+        <div class="tmrx-carousel-progress" aria-hidden="true">
+          {% for index in (1..shown_products) %}
+            <span{% if forloop.first %} class="is-active"{% endif %}></span>
+          {% endfor %}
+        </div>
+        <p data-product-count>01/{{ shown_products | prepend: '0' | slice: -2, 2 }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Your Clean Supplements"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 4,
+      "max": 8,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge label",
+      "default": "Best Seller"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View all link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chip",
+      "name": "Category chip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Bestsellers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "blocks": [
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Bestsellers"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Protein"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Build Muscle & Recover"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Pre-Workout"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Health & Wellness"
+          }
+        },
+        {
+          "type": "chip",
+          "settings": {
+            "label": "Weight Loss"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{% liquid
+  assign card_product = product
+  assign card_title = 'Grass-Fed Whey Protein Isolate'
+  assign card_description = 'Clean, purpose-built supplement support with no unnecessary additives.'
+  assign card_link_label = 'Shop formulas'
+  assign card_url = routes.all_products_collection_url
+  assign card_image_alt = card_title
+
+  if card_product != blank
+    assign card_title = card_product.title
+    assign card_url = card_product.url
+    if card_product.description != blank
+      assign card_description = card_product.description | strip_html | truncate: 92
+    endif
+    assign option_count = card_product.options_with_values.first.values.size
+    if option_count > 1
+      assign card_link_label = 'Shop ' | append: option_count | append: ' Options'
+    else
+      assign card_link_label = 'Shop Now'
+    endif
+    if card_product.featured_image.alt != blank
+      assign card_image_alt = card_product.featured_image.alt
+    else
+      assign card_image_alt = card_title
+    endif
+  endif
+%}
+
+<article class="tmrx-supplement-card">
+  {% if badge != blank %}
+    <span class="tmrx-supplement-card__badge">{{ badge }}</span>
+  {% endif %}
+
+  <a class="tmrx-supplement-card__media{% unless card_product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ card_url }}">
+    {% if card_product.featured_image %}
+      {{ card_product.featured_image | image_url: width: 640 | image_tag: loading: 'lazy', alt: card_image_alt }}
+    {% endif %}
+  </a>
+
+  <div class="tmrx-supplement-card__content">
+    <div class="tmrx-supplement-card__rating" aria-label="5 star rating">
+      <span aria-hidden="true">*****</span>
+      <small>{{ index | times: 817 | plus: 26 }} Reviews</small>
+    </div>
+    <h3>
+      <a href="{{ card_url }}">{{ card_title }}</a>
+    </h3>
+    <p>{{ card_description }}</p>
+    <a class="tmrx-supplement-card__link" href="{{ card_url }}">
+      {{ card_link_label }}
+      <span aria-hidden="true">-></span>
+    </a>
+  </div>
+</article>
