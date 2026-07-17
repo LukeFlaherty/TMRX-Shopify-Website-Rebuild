@@ -1,0 +1,34 @@
+{% liquid
+  assign card_product = product
+  assign card_image_alt = card_product.title
+  if card_product.featured_image.alt != blank
+    assign card_image_alt = card_product.featured_image.alt
+  endif
+%}
+
+<article class="tmrx-product-card">
+  <a class="tmrx-product-card__media{% unless card_product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ card_product.url | default: routes.all_products_collection_url }}">
+    {% if card_product.featured_image %}
+      {{ card_product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: card_image_alt }}
+    {% endif %}
+  </a>
+
+  <div class="tmrx-product-card__body">
+    {% if card_product.vendor != blank %}
+      <p class="tmrx-product-card__vendor">{{ card_product.vendor }}</p>
+    {% endif %}
+    <h3>
+      <a href="{{ card_product.url | default: routes.all_products_collection_url }}">
+        {{ card_product.title | default: 'Product title' }}
+      </a>
+    </h3>
+    <div class="tmrx-product-card__meta">
+      {% if card_product != blank %}
+        <span>{{ card_product.price | money }}</span>
+      {% else %}
+        <span>{{ 0 | money }}</span>
+      {% endif %}
+      <span>Clean formula</span>
+    </div>
+  </div>
+</article>

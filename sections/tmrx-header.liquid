@@ -1,0 +1,119 @@
+<header class="tmrx-header" data-site-header>
+  {% if section.settings.announcement_text != blank %}
+    <div class="tmrx-announcement">
+      <a
+        class="tmrx-announcement__link"
+        href="{{ section.settings.announcement_link | default: routes.all_products_collection_url }}"
+      >
+        {{ section.settings.announcement_text }}
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="tmrx-header__bar">
+    <button class="tmrx-icon-button tmrx-header__menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="TMRXMobileMenu">
+      <span class="visually-hidden">Open menu</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+
+    <a class="tmrx-header__brand" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {{ section.settings.brand_text | default: shop.name }}
+    </a>
+
+    <nav class="tmrx-header__nav" aria-label="Primary navigation">
+      {% if section.settings.menu != blank and linklists[section.settings.menu].links.size > 0 %}
+        {% for link in linklists[section.settings.menu].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="{{ routes.all_products_collection_url }}">Shop All</a>
+        <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+        <a href="{{ routes.collections_url }}/protein">Protein</a>
+        <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
+        <a href="{{ routes.collections_url }}/recovery">Recovery</a>
+        <a href="{{ routes.collections_url }}/wellness">Wellness</a>
+        <a href="{{ routes.collections_url }}/bundles">Bundles</a>
+      {% endif %}
+    </nav>
+
+    <div class="tmrx-header__actions" aria-label="Store actions">
+      <a class="tmrx-icon-button" href="{{ routes.search_url }}" aria-label="Search">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" />
+        </svg>
+      </a>
+      <a class="tmrx-icon-button tmrx-header__account" href="{{ routes.account_login_url }}" aria-label="Account">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+        </svg>
+      </a>
+      <button class="tmrx-icon-button tmrx-cart-button" type="button" data-cart-open aria-label="Open cart">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M6 7h15l-1.8 9.2a2 2 0 0 1-2 1.6H8.7a2 2 0 0 1-2-1.7L5.2 4H2" />
+          <path d="M9 21h.01M18 21h.01" />
+        </svg>
+        <span class="tmrx-cart-button__count" aria-label="{{ cart.item_count }} cart items">{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="tmrx-mobile-menu" id="TMRXMobileMenu" data-mobile-menu hidden>
+    <div class="tmrx-mobile-menu__panel">
+      <div class="tmrx-mobile-menu__top">
+        <span>{{ section.settings.brand_text | default: shop.name }}</span>
+        <button class="tmrx-icon-button" type="button" data-menu-close aria-label="Close menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="tmrx-mobile-menu__nav" aria-label="Mobile navigation">
+        {% if section.settings.menu != blank and linklists[section.settings.menu].links.size > 0 %}
+          {% for link in linklists[section.settings.menu].links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        {% else %}
+          <a href="{{ routes.all_products_collection_url }}">Shop All</a>
+          <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+          <a href="{{ routes.collections_url }}/protein">Protein</a>
+          <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
+          <a href="{{ routes.collections_url }}/recovery">Recovery</a>
+          <a href="{{ routes.collections_url }}/wellness">Wellness</a>
+          <a href="{{ routes.collections_url }}/bundles">Bundles</a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "TMRX header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Free shipping on orders over $50"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Announcement link"
+    },
+    {
+      "type": "text",
+      "id": "brand_text",
+      "label": "Brand text",
+      "default": "TMRX"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

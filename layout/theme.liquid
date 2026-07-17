@@ -18,14 +18,19 @@
     {% endif %}
 
     {{ 'tmrx-base.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'tmrx-theme.js' | asset_url }}" defer></script>
     {{ content_for_header }}
   </head>
 
   <body>
     <a class="skip-link" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
 
+    {% section 'tmrx-header' %}
+
     <main id="MainContent" class="tmrx-site" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
+    {% section 'tmrx-cart-drawer' %}
   </body>
 </html>

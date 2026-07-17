@@ -1,0 +1,88 @@
+{% liquid
+  assign threshold_cents = settings.free_shipping_threshold | default: 50 | times: 100
+  assign remaining_cents = threshold_cents | minus: cart.total_price
+  assign progress = 0
+  if threshold_cents > 0
+    assign progress = cart.total_price | times: 100 | divided_by: threshold_cents
+  endif
+  assign progress = progress | at_most: 100
+%}
+
+<div class="tmrx-cart-drawer" data-cart-drawer hidden>
+  <div class="tmrx-cart-drawer__backdrop" data-cart-close></div>
+  <aside class="tmrx-cart-drawer__panel" aria-label="Cart drawer" aria-modal="true" role="dialog">
+    <div class="tmrx-cart-drawer__header">
+      <div>
+        <p class="tmrx-eyebrow">Your cart</p>
+        <h2>Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</h2>
+      </div>
+      <button class="tmrx-icon-button" type="button" data-cart-close aria-label="Close cart">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="tmrx-cart-drawer__shipping">
+      {% if remaining_cents > 0 %}
+        <p>{{ remaining_cents | money }} away from free shipping.</p>
+      {% else %}
+        <p>Your order qualifies for free shipping.</p>
+      {% endif %}
+      <div class="tmrx-progress" aria-hidden="true">
+        <span style="width: {{ progress }}%"></span>
+      </div>
+    </div>
+
+    <div class="tmrx-cart-drawer__body">
+      {% if cart.item_count > 0 %}
+        <ul class="tmrx-cart-lines" role="list">
+          {% for item in cart.items %}
+            {% liquid
+              assign item_image_alt = item.product.title
+              if item.image.alt != blank
+                assign item_image_alt = item.image.alt
+              endif
+            %}
+            <li class="tmrx-cart-line">
+              <div class="tmrx-cart-line__media{% unless item.image %} tmrx-placeholder-media{% endunless %}">
+                {% if item.image %}
+                  {{ item.image | image_url: width: 160 | image_tag: loading: 'lazy', alt: item_image_alt }}
+                {% endif %}
+              </div>
+              <div class="tmrx-cart-line__content">
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+                {% unless item.product.has_only_default_variant %}
+                  <p>{{ item.variant.title }}</p>
+                {% endunless %}
+                <span>{{ item.quantity }} x {{ item.final_price | money }}</span>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="tmrx-cart-empty">
+          <p>Your cart is ready for the new storefront build.</p>
+          <a class="tmrx-button tmrx-button--primary" href="{{ routes.all_products_collection_url }}">Shop all products</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="tmrx-cart-drawer__footer">
+      <div class="tmrx-cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <strong>{{ cart.total_price | money }}</strong>
+      </div>
+      <a class="tmrx-button tmrx-button--primary tmrx-button--full" href="{{ routes.cart_url }}">View cart</a>
+      <a class="tmrx-button tmrx-button--dark tmrx-button--full" href="/checkout">Checkout</a>
+      <p class="tmrx-cart-drawer__note">Practitioner-grade formulas. Native Shopify checkout.</p>
+    </div>
+  </aside>
+</div>
+
+{% schema %}
+{
+  "name": "TMRX cart drawer",
+  "settings": []
+}
+{% endschema %}

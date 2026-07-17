@@ -15,6 +15,12 @@
         "id": "accent_color",
         "label": "Accent color",
         "default": "#3d6f5f"
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping threshold",
+        "default": 50
       }
     ]
   }

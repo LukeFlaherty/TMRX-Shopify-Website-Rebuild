@@ -1,9 +1,17 @@
-<section class="tmrx-blank">
+<section class="tmrx-blank tmrx-collection">
   <div class="tmrx-blank__inner">
     <p class="tmrx-blank__eyebrow">{{ collection.products_count }} products</p>
     <h1 class="tmrx-blank__title">{{ collection.title }}</h1>
     {% if collection.description != blank %}
       <div class="tmrx-blank__note">{{ collection.description }}</div>
+    {% endif %}
+
+    {% if collection.products_count > 0 %}
+      <div class="tmrx-product-grid">
+        {% for product in collection.products limit: 12 %}
+          {% render 'tmrx-product-card', product: product %}
+        {% endfor %}
+      </div>
     {% endif %}
   </div>
 </section>
