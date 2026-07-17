@@ -1,5 +1,8 @@
 {% liquid
   assign featured_collection = section.settings.collection
+  if featured_collection == blank
+    assign featured_collection = collections.all
+  endif
   assign total_products = 0
   if featured_collection != blank
     assign total_products = featured_collection.products_count
@@ -30,9 +33,18 @@
     <div class="tmrx-chip-row" aria-label="Supplement categories">
       {% for block in section.blocks %}
         {% if block.type == 'chip' and block.settings.label != blank %}
+          {% liquid
+            assign chip_url = block.settings.link
+            if chip_url == blank and block.settings.collection != blank
+              assign chip_url = block.settings.collection.url
+            endif
+            if chip_url == blank
+              assign chip_url = routes.all_products_collection_url
+            endif
+          %}
           <a
             class="tmrx-chip{% if forloop.first %} is-active{% endif %}"
-            href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+            href="{{ chip_url }}"
             {{ block.shopify_attributes }}
           >
             {{ block.settings.label }}
@@ -79,7 +91,8 @@
     {
       "type": "collection",
       "id": "collection",
-      "label": "Collection"
+      "label": "Collection",
+      "info": "Defaults to the store's All products collection when left blank."
     },
     {
       "type": "range",
@@ -120,9 +133,15 @@
           "default": "Bestsellers"
         },
         {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
           "type": "url",
           "id": "link",
-          "label": "Link"
+          "label": "Custom link",
+          "info": "Overrides the selected collection link."
         }
       ]
     }
@@ -134,37 +153,43 @@
         {
           "type": "chip",
           "settings": {
-            "label": "Bestsellers"
+            "label": "Bestsellers",
+            "link": "/collections/bestsellers"
           }
         },
         {
           "type": "chip",
           "settings": {
-            "label": "Protein"
+            "label": "Protein",
+            "link": "/collections/protein"
           }
         },
         {
           "type": "chip",
           "settings": {
-            "label": "Build Muscle & Recover"
+            "label": "Build Muscle & Recover",
+            "link": "/collections/recovery"
           }
         },
         {
           "type": "chip",
           "settings": {
-            "label": "Pre-Workout"
+            "label": "Pre-Workout",
+            "link": "/collections/pre-workout"
           }
         },
         {
           "type": "chip",
           "settings": {
-            "label": "Health & Wellness"
+            "label": "Health & Wellness",
+            "link": "/collections/wellness"
           }
         },
         {
           "type": "chip",
           "settings": {
-            "label": "Weight Loss"
+            "label": "Bundles",
+            "link": "/collections/bundles"
           }
         }
       ]
