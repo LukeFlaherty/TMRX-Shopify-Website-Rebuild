@@ -1,0 +1,149 @@
+{% liquid
+  assign standards_image_alt = section.settings.heading
+  if section.settings.image.alt != blank
+    assign standards_image_alt = section.settings.image.alt
+  endif
+%}
+
+<section class="tmrx-clean-standards">
+  <div class="tmrx-clean-standards__inner">
+    <div class="tmrx-clean-standards__content">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      <div class="tmrx-clean-standards__list">
+        {% for block in section.blocks %}
+          <div class="tmrx-standard-row" {{ block.shopify_attributes }}>
+            <span class="tmrx-standard-row__icon" aria-hidden="true">
+              {% case block.settings.icon %}
+                {% when 'leaf' %}
+                  <svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14Z"/><path d="M5 19 19 5"/><path d="M9 15v-4h4"/></svg>
+                {% when 'label' %}
+                  <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 8v8"/><path d="M12 8v8"/><path d="M16 8v8"/></svg>
+                {% when 'shield' %}
+                  <svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-5"/></svg>
+                {% else %}
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+              {% endcase %}
+            </span>
+            <p>
+              {{ block.settings.text }}
+              {% if block.settings.link_label != blank and block.settings.link != blank %}
+                <a href="{{ block.settings.link }}">{{ block.settings.link_label }}</a>
+              {% endif %}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tmrx-clean-standards__media{% unless section.settings.image %} tmrx-placeholder-media{% endunless %}">
+      {% if section.settings.image %}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: standards_image_alt }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Clean standards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Does \"Clean\" Really Mean?"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "standard",
+      "name": "Standard",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "leaf",
+          "options": [
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "label",
+              "label": "Label"
+            },
+            {
+              "value": "plus",
+              "label": "Plus"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Clean, purpose-built ingredients"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clean standards",
+      "blocks": [
+        {
+          "type": "standard",
+          "settings": {
+            "icon": "leaf",
+            "text": "Clean, purpose-built ingredients"
+          }
+        },
+        {
+          "type": "standard",
+          "settings": {
+            "icon": "shield",
+            "text": "No unnecessary fillers, colors, or artificial additives"
+          }
+        },
+        {
+          "type": "standard",
+          "settings": {
+            "icon": "label",
+            "text": "Transparent formulas designed for daily optimization"
+          }
+        },
+        {
+          "type": "standard",
+          "settings": {
+            "icon": "plus",
+            "text": "Practitioner-grade support for health-focused routines"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

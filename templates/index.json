@@ -62,13 +62,93 @@
       "type": "tmrx-quiz-cta"
     },
     "tmrx_shop_by_goal": {
-      "type": "tmrx-shop-by-goal"
+      "type": "tmrx-shop-by-goal",
+      "blocks": {
+        "daily_protein": {
+          "type": "goal",
+          "settings": {
+            "title": "Daily Protein",
+            "text": "Clean protein support for everyday nutrition.",
+            "link": "/collections/protein"
+          }
+        },
+        "strength_performance": {
+          "type": "goal",
+          "settings": {
+            "title": "Strength & Performance",
+            "text": "Fuel training, output, and focused intensity.",
+            "link": "/collections/pre-workout"
+          }
+        },
+        "calm_recovery": {
+          "type": "goal",
+          "settings": {
+            "title": "Calm & Recovery",
+            "text": "Support rest, recovery, and nervous system balance.",
+            "link": "/collections/recovery"
+          }
+        },
+        "foundational_wellness": {
+          "type": "goal",
+          "settings": {
+            "title": "Foundational Wellness",
+            "text": "Daily support for hormone, liver, and cellular health.",
+            "link": "/collections/wellness"
+          }
+        }
+      },
+      "block_order": [
+        "daily_protein",
+        "strength_performance",
+        "calm_recovery",
+        "foundational_wellness"
+      ]
+    },
+    "tmrx_clean_standards": {
+      "type": "tmrx-clean-standards",
+      "blocks": {
+        "ingredients": {
+          "type": "standard",
+          "settings": {
+            "icon": "leaf",
+            "text": "Clean, purpose-built ingredients"
+          }
+        },
+        "no_fillers": {
+          "type": "standard",
+          "settings": {
+            "icon": "shield",
+            "text": "No unnecessary fillers, colors, or artificial additives"
+          }
+        },
+        "transparent_formulas": {
+          "type": "standard",
+          "settings": {
+            "icon": "label",
+            "text": "Transparent formulas designed for daily optimization"
+          }
+        },
+        "practitioner_grade": {
+          "type": "standard",
+          "settings": {
+            "icon": "plus",
+            "text": "Practitioner-grade support for health-focused routines"
+          }
+        }
+      },
+      "block_order": [
+        "ingredients",
+        "no_fillers",
+        "transparent_formulas",
+        "practitioner_grade"
+      ]
     }
   },
   "order": [
     "tmrx_blank_home",
     "tmrx_featured_products",
     "tmrx_quiz_cta",
-    "tmrx_shop_by_goal"
+    "tmrx_shop_by_goal",
+    "tmrx_clean_standards"
   ]
 }
