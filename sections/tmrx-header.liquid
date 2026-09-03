@@ -28,13 +28,74 @@
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endfor %}
       {% else %}
-        <a href="{{ routes.all_products_collection_url }}">Shop All</a>
-        <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
-        <a href="{{ routes.collections_url }}/protein">Protein</a>
-        <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
-        <a href="{{ routes.collections_url }}/recovery">Recovery</a>
-        <a href="{{ routes.collections_url }}/wellness">Wellness</a>
-        <a href="{{ routes.collections_url }}/bundles">Bundles</a>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.all_products_collection_url }}">Shop All</a>
+          {% render 'tmrx-mega-products',
+            title: 'Shop All',
+            collection_handle: 'all',
+            fallback_url: routes.all_products_collection_url,
+            highlight_title: 'Featured Formula',
+            highlight_text: 'Start with a purpose-built TMRX staple for daily optimization.'
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+          {% render 'tmrx-mega-bestsellers',
+            title: 'Bestsellers',
+            collection_handle: 'bestsellers',
+            fallback_url: routes.all_products_collection_url
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/protein">Protein</a>
+          {% render 'tmrx-mega-products',
+            title: 'Protein',
+            collection_handle: 'protein',
+            fallback_url: '/collections/protein',
+            highlight_title: 'Protein Highlight',
+            highlight_text: 'A clean protein pick for daily nutrition and recovery.'
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/recovery">Build Muscle & Recover</a>
+          {% render 'tmrx-mega-products',
+            title: 'Build Muscle & Recover',
+            collection_handle: 'recovery',
+            fallback_url: '/collections/recovery',
+            highlight_title: 'Recovery Highlight',
+            highlight_text: 'Support training output with formulas built for strength and recovery.'
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
+          {% render 'tmrx-mega-products',
+            title: 'Pre-Workout',
+            collection_handle: 'pre-workout',
+            fallback_url: '/collections/pre-workout',
+            highlight_title: 'Pre-Workout Highlight',
+            highlight_text: 'Focused support before training, lifting, or high-output work.'
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/pre-workout">Improve Performance</a>
+          {% render 'tmrx-mega-products',
+            title: 'Improve Performance',
+            collection_handle: 'pre-workout',
+            fallback_url: '/collections/pre-workout',
+            highlight_title: 'Performance Highlight',
+            highlight_text: 'Shop formulas that support energy, strength, focus, and endurance.'
+          %}
+        </div>
+        <div class="tmrx-nav-item">
+          <a href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
+          {% render 'tmrx-mega-products',
+            title: 'Health & Wellness',
+            collection_handle: 'wellness',
+            fallback_url: '/collections/wellness',
+            highlight_title: 'Wellness Highlight',
+            highlight_text: 'Foundational support for hormone, liver, cellular, and daily health.'
+          %}
+        </div>
       {% endif %}
     </nav>
 

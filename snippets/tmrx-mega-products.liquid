@@ -1,0 +1,60 @@
+{% liquid
+  assign mega_collection = collections[collection_handle]
+  if mega_collection == blank or mega_collection.products_count == 0
+    assign mega_collection = collections.all
+  endif
+  assign mega_url = fallback_url
+  if mega_collection != blank
+    assign mega_url = mega_collection.url
+  endif
+  assign highlight_url = highlight_link | default: mega_url
+%}
+
+<div class="tmrx-mega-menu tmrx-mega-menu--products" role="region" aria-label="{{ title }} menu">
+  <div class="tmrx-mega-menu__inner">
+    <div class="tmrx-mega-menu__top">
+      <h2>{{ title }}</h2>
+      <a class="tmrx-text-link tmrx-mega-menu__view" href="{{ mega_url }}">
+        View All
+        <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+      </a>
+    </div>
+
+    <div class="tmrx-mega-products">
+      <div class="tmrx-mega-products__list">
+        {% if mega_collection != blank and mega_collection.products_count > 0 %}
+          {% for product in mega_collection.products limit: 6 %}
+            {% liquid
+              assign product_image_alt = product.title
+              if product.featured_image.alt != blank
+                assign product_image_alt = product.featured_image.alt
+              endif
+            %}
+            <a class="tmrx-mega-product" href="{{ product.url }}">
+              <span class="tmrx-mega-product__image{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}">
+                {% if product.featured_image %}
+                  {{ product.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: product_image_alt }}
+                {% endif %}
+              </span>
+              <span>
+                <strong>{{ product.title }}</strong>
+                <small>{{ product.description | strip_html | truncate: 74 }}</small>
+              </span>
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <a class="tmrx-mega-highlight" href="{{ highlight_url }}">
+        <span class="tmrx-mega-highlight__copy">
+          <span>
+            <strong>{{ highlight_title }}</strong>
+            <small>{{ highlight_text }}</small>
+          </span>
+          <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+        </span>
+        <span class="tmrx-mega-highlight__media tmrx-placeholder-media"></span>
+      </a>
+    </div>
+  </div>
+</div>

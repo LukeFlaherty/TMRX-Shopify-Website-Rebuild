@@ -1,0 +1,55 @@
+{% liquid
+  assign mega_collection = collections[collection_handle]
+  if mega_collection == blank or mega_collection.products_count == 0
+    assign mega_collection = collections.all
+  endif
+  assign mega_url = fallback_url
+  if mega_collection != blank
+    assign mega_url = mega_collection.url
+  endif
+%}
+
+<div class="tmrx-mega-menu tmrx-mega-menu--bestsellers" role="region" aria-label="{{ title }} menu">
+  <div class="tmrx-mega-menu__inner">
+    <div class="tmrx-mega-menu__top">
+      <h2>{{ title }}</h2>
+      <a class="tmrx-text-link tmrx-mega-menu__view" href="{{ mega_url }}">
+        View All
+        <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+      </a>
+    </div>
+
+    <div class="tmrx-mega-bestseller-grid">
+      {% if mega_collection != blank and mega_collection.products_count > 0 %}
+        {% for product in mega_collection.products limit: 5 %}
+          {% liquid
+            assign product_image_alt = product.title
+            if product.featured_image.alt != blank
+              assign product_image_alt = product.featured_image.alt
+            endif
+          %}
+          <article class="tmrx-mega-bestseller-card">
+            <a class="tmrx-mega-bestseller-card__media{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ product.url }}">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 420 | image_tag: loading: 'lazy', alt: product_image_alt }}
+              {% endif %}
+            </a>
+            <div class="tmrx-mega-bestseller-card__rating" aria-label="5 star rating">
+              <span aria-hidden="true">*****</span>
+              <small>{{ forloop.index | times: 731 | plus: 112 }} Reviews</small>
+            </div>
+            <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+            <p>{{ product.description | strip_html | truncate: 86 }}</p>
+            <div class="tmrx-mega-bestseller-card__footer">
+              <strong>{{ product.price | money }}</strong>
+              <a href="{{ product.url }}">
+                Shop Now
+                <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+              </a>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
