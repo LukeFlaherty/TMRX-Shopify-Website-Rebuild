@@ -1,0 +1,86 @@
+{% liquid
+  assign quiz_image_alt = section.settings.heading
+  if section.settings.image.alt != blank
+    assign quiz_image_alt = section.settings.image.alt
+  endif
+%}
+
+<section class="tmrx-quiz-cta">
+  <div class="tmrx-quiz-cta__inner">
+    <div class="tmrx-quiz-cta__content">
+      {% if section.settings.kicker != blank %}
+        <p class="tmrx-quiz-cta__kicker">
+          <span aria-hidden="true"></span>
+          {{ section.settings.kicker }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <p class="tmrx-quiz-cta__text">{{ section.settings.text }}</p>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a class="tmrx-quiz-cta__button" href="{{ section.settings.button_link | default: routes.search_url }}">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="tmrx-quiz-cta__media{% unless section.settings.image %} tmrx-placeholder-media{% endunless %}">
+      {% if section.settings.image %}
+        {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', alt: quiz_image_alt }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Quiz CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "3-minute quiz"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get Your Personalized Supplement Stack."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Unlock your science-based recommendation by taking our 3-minute quiz."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Find my Supplement Routine"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quiz CTA"
+    }
+  ]
+}
+{% endschema %}

@@ -57,10 +57,14 @@
         "health_wellness",
         "weight_loss"
       ]
+    },
+    "tmrx_quiz_cta": {
+      "type": "tmrx-quiz-cta"
     }
   },
   "order": [
     "tmrx_blank_home",
-    "tmrx_featured_products"
+    "tmrx_featured_products",
+    "tmrx_quiz_cta"
   ]
 }
