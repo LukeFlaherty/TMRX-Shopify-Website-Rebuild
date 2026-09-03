@@ -34,6 +34,15 @@
     });
   });
 
+  document.querySelectorAll('[data-mobile-menu-accordion]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const panel = button.nextElementSibling;
+      const willOpen = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(willOpen));
+      if (panel) panel.hidden = !willOpen;
+    });
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     menuToggle?.setAttribute('aria-expanded', 'false');

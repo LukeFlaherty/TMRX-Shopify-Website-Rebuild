@@ -23,80 +23,44 @@
     </a>
 
     <nav class="tmrx-header__nav" aria-label="Primary navigation">
-      {% if section.settings.menu != blank and linklists[section.settings.menu].links.size > 0 %}
-        {% for link in linklists[section.settings.menu].links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
-      {% else %}
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.all_products_collection_url }}">Shop All</a>
-          {% render 'tmrx-mega-products',
-            title: 'Shop All',
-            collection_handle: 'all',
-            fallback_url: routes.all_products_collection_url,
-            highlight_title: 'Featured Formula',
-            highlight_text: 'Start with a purpose-built TMRX staple for daily optimization.'
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
-          {% render 'tmrx-mega-bestsellers',
-            title: 'Bestsellers',
-            collection_handle: 'bestsellers',
-            fallback_url: routes.all_products_collection_url
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/protein">Protein</a>
-          {% render 'tmrx-mega-products',
-            title: 'Protein',
-            collection_handle: 'protein',
-            fallback_url: '/collections/protein',
-            highlight_title: 'Protein Highlight',
-            highlight_text: 'A clean protein pick for daily nutrition and recovery.'
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/recovery">Build Muscle & Recover</a>
-          {% render 'tmrx-mega-products',
-            title: 'Build Muscle & Recover',
-            collection_handle: 'recovery',
-            fallback_url: '/collections/recovery',
-            highlight_title: 'Recovery Highlight',
-            highlight_text: 'Support training output with formulas built for strength and recovery.'
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
-          {% render 'tmrx-mega-products',
-            title: 'Pre-Workout',
-            collection_handle: 'pre-workout',
-            fallback_url: '/collections/pre-workout',
-            highlight_title: 'Pre-Workout Highlight',
-            highlight_text: 'Focused support before training, lifting, or high-output work.'
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/pre-workout">Improve Performance</a>
-          {% render 'tmrx-mega-products',
-            title: 'Improve Performance',
-            collection_handle: 'pre-workout',
-            fallback_url: '/collections/pre-workout',
-            highlight_title: 'Performance Highlight',
-            highlight_text: 'Shop formulas that support energy, strength, focus, and endurance.'
-          %}
-        </div>
-        <div class="tmrx-nav-item">
-          <a href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
-          {% render 'tmrx-mega-products',
-            title: 'Health & Wellness',
-            collection_handle: 'wellness',
-            fallback_url: '/collections/wellness',
-            highlight_title: 'Wellness Highlight',
-            highlight_text: 'Foundational support for hormone, liver, cellular, and daily health.'
-          %}
-        </div>
-      {% endif %}
+      <div class="tmrx-nav-item">
+        <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+        {% render 'tmrx-mega-bestsellers',
+          title: 'Bestsellers',
+          collection_handle: 'bestsellers',
+          fallback_url: routes.all_products_collection_url
+        %}
+      </div>
+      <div class="tmrx-nav-item">
+        <a href="{{ routes.collections_url }}/recovery">Recovery</a>
+        {% render 'tmrx-mega-products',
+          title: 'Recovery',
+          collection_handle: 'recovery',
+          fallback_url: '/collections/recovery',
+          highlight_title: 'Recovery Highlight',
+          highlight_text: 'Support training output with formulas built for strength and recovery.'
+        %}
+      </div>
+      <div class="tmrx-nav-item">
+        <a href="{{ routes.collections_url }}/pre-workout">Improve Performance</a>
+        {% render 'tmrx-mega-products',
+          title: 'Improve Performance',
+          collection_handle: 'pre-workout',
+          fallback_url: '/collections/pre-workout',
+          highlight_title: 'Performance Highlight',
+          highlight_text: 'Shop formulas that support energy, strength, focus, and endurance.'
+        %}
+      </div>
+      <div class="tmrx-nav-item">
+        <a href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
+        {% render 'tmrx-mega-products',
+          title: 'Health & Wellness',
+          collection_handle: 'wellness',
+          fallback_url: '/collections/wellness',
+          highlight_title: 'Wellness Highlight',
+          highlight_text: 'Foundational support for hormone, liver, cellular, and daily health.'
+        %}
+      </div>
     </nav>
 
     <div class="tmrx-header__actions" aria-label="Store actions">
@@ -124,6 +88,25 @@
     <div class="tmrx-mobile-menu__panel">
       <div class="tmrx-mobile-menu__top">
         <span>{{ section.settings.brand_text | default: shop.name }}</span>
+        <div class="tmrx-mobile-menu__actions" aria-label="Store actions">
+          <a class="tmrx-icon-button" href="{{ routes.search_url }}" aria-label="Search">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" />
+            </svg>
+          </a>
+          <a class="tmrx-icon-button" href="{{ routes.account_login_url }}" aria-label="Account">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+            </svg>
+          </a>
+          <button class="tmrx-icon-button tmrx-cart-button" type="button" data-cart-open aria-label="Open cart">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M6 7h15l-1.8 9.2a2 2 0 0 1-2 1.6H8.7a2 2 0 0 1-2-1.7L5.2 4H2" />
+              <path d="M9 21h.01M18 21h.01" />
+            </svg>
+            <span class="tmrx-cart-button__count" aria-label="{{ cart.item_count }} cart items">{{ cart.item_count }}</span>
+          </button>
+        </div>
         <button class="tmrx-icon-button" type="button" data-menu-close aria-label="Close menu">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="M18 6 6 18M6 6l12 12" />
@@ -131,19 +114,52 @@
         </button>
       </div>
       <nav class="tmrx-mobile-menu__nav" aria-label="Mobile navigation">
-        {% if section.settings.menu != blank and linklists[section.settings.menu].links.size > 0 %}
-          {% for link in linklists[section.settings.menu].links %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endfor %}
-        {% else %}
-          <a href="{{ routes.all_products_collection_url }}">Shop All</a>
-          <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
-          <a href="{{ routes.collections_url }}/protein">Protein</a>
-          <a href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
-          <a href="{{ routes.collections_url }}/recovery">Recovery</a>
-          <a href="{{ routes.collections_url }}/wellness">Wellness</a>
-          <a href="{{ routes.collections_url }}/bundles">Bundles</a>
-        {% endif %}
+        <a class="tmrx-mobile-menu__shop-all" href="{{ routes.all_products_collection_url }}">
+          Shop All
+          <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+        </a>
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Bestsellers',
+          collection_handle: 'bestsellers',
+          fallback_url: routes.all_products_collection_url,
+          open: true
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Protein',
+          collection_handle: 'protein',
+          fallback_url: '/collections/protein',
+          open: false
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Build Muscle & Recover',
+          collection_handle: 'recovery',
+          fallback_url: '/collections/recovery',
+          open: false
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Pre-Workout',
+          collection_handle: 'pre-workout',
+          fallback_url: '/collections/pre-workout',
+          open: false
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Health & Wellness',
+          collection_handle: 'wellness',
+          fallback_url: '/collections/wellness',
+          open: false
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Weight Loss',
+          collection_handle: 'weight-loss',
+          fallback_url: '/collections/weight-loss',
+          open: false
+        %}
+        {% render 'tmrx-mobile-menu-group',
+          title: 'Improve Performance',
+          collection_handle: 'pre-workout',
+          fallback_url: '/collections/pre-workout',
+          open: false
+        %}
       </nav>
     </div>
   </div>

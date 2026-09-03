@@ -1,0 +1,46 @@
+{% liquid
+  assign menu_collection = collections[collection_handle]
+  if menu_collection == blank or menu_collection.products_count == 0
+    assign menu_collection = collections.all
+  endif
+  assign menu_url = fallback_url
+  if menu_collection != blank
+    assign menu_url = menu_collection.url
+  endif
+%}
+
+<div class="tmrx-mobile-menu-group" data-mobile-menu-group>
+  <button class="tmrx-mobile-menu-group__toggle" type="button" data-mobile-menu-accordion aria-expanded="{{ open }}">
+    <span>{{ title }}</span>
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+  <div class="tmrx-mobile-menu-group__panel"{% unless open %} hidden{% endunless %}>
+    {% if menu_collection != blank and menu_collection.products_count > 0 %}
+      {% for product in menu_collection.products limit: 3 %}
+        {% liquid
+          assign product_image_alt = product.title
+          if product.featured_image.alt != blank
+            assign product_image_alt = product.featured_image.alt
+          endif
+        %}
+        <a class="tmrx-mobile-menu-product" href="{{ product.url }}">
+          <span class="tmrx-mobile-menu-product__image{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}">
+            {% if product.featured_image %}
+              {{ product.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: product_image_alt }}
+            {% endif %}
+          </span>
+          <span>
+            <strong>{{ product.title }}</strong>
+            <small>{{ product.description | strip_html | truncate: 92 }}</small>
+          </span>
+        </a>
+      {% endfor %}
+    {% endif %}
+    <a class="tmrx-mobile-menu-group__view" href="{{ menu_url }}">
+      View All
+      <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+    </a>
+  </div>
+</div>
