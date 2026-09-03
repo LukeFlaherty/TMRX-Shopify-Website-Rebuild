@@ -10,7 +10,7 @@
     assign card_title = card_product.title
     assign card_url = card_product.url
     if card_product.description != blank
-      assign card_description = card_product.description | strip_html | truncate: 92
+      assign card_description = card_product.description | strip_html | truncate: 106
     endif
     assign option_count = card_product.options_with_values.first.values.size
     if option_count > 1
@@ -46,9 +46,14 @@
       <a href="{{ card_url }}">{{ card_title }}</a>
     </h3>
     <p>{{ card_description }}</p>
-    <a class="tmrx-supplement-card__link" href="{{ card_url }}">
-      {{ card_link_label }}
-      <span aria-hidden="true">-></span>
-    </a>
+    <div class="tmrx-supplement-card__footer">
+      {% if card_product != blank %}
+        <strong>{{ card_product.price | money }}</strong>
+      {% endif %}
+      <a class="tmrx-supplement-card__link" href="{{ card_url }}">
+        {{ card_link_label }}
+        <span aria-hidden="true">-></span>
+      </a>
+    </div>
   </div>
 </article>

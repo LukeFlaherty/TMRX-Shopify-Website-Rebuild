@@ -4,7 +4,59 @@
       "type": "tmrx-blank-home"
     },
     "tmrx_featured_products": {
-      "type": "tmrx-featured-products"
+      "type": "tmrx-featured-products",
+      "blocks": {
+        "bestsellers": {
+          "type": "chip",
+          "settings": {
+            "label": "Bestsellers",
+            "link": "/collections/bestsellers"
+          }
+        },
+        "protein": {
+          "type": "chip",
+          "settings": {
+            "label": "Protein",
+            "link": "/collections/protein"
+          }
+        },
+        "build_muscle_recover": {
+          "type": "chip",
+          "settings": {
+            "label": "Build Muscle & Recover",
+            "link": "/collections/recovery"
+          }
+        },
+        "pre_workout": {
+          "type": "chip",
+          "settings": {
+            "label": "Pre-Workout",
+            "link": "/collections/pre-workout"
+          }
+        },
+        "health_wellness": {
+          "type": "chip",
+          "settings": {
+            "label": "Health & Wellness",
+            "link": "/collections/wellness"
+          }
+        },
+        "weight_loss": {
+          "type": "chip",
+          "settings": {
+            "label": "Weight Loss",
+            "link": "/collections/weight-loss"
+          }
+        }
+      },
+      "block_order": [
+        "bestsellers",
+        "protein",
+        "build_muscle_recover",
+        "pre_workout",
+        "health_wellness",
+        "weight_loss"
+      ]
     }
   },
   "order": [
