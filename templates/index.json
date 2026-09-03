@@ -60,11 +60,15 @@
     },
     "tmrx_quiz_cta": {
       "type": "tmrx-quiz-cta"
+    },
+    "tmrx_shop_by_goal": {
+      "type": "tmrx-shop-by-goal"
     }
   },
   "order": [
     "tmrx_blank_home",
     "tmrx_featured_products",
-    "tmrx_quiz_cta"
+    "tmrx_quiz_cta",
+    "tmrx_shop_by_goal"
   ]
 }

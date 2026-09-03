@@ -1,0 +1,134 @@
+<section class="tmrx-shop-goals">
+  <div class="tmrx-shop-goals__inner">
+    <div class="tmrx-shop-goals__heading">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p>{{ section.settings.text }}</p>
+      {% endif %}
+    </div>
+
+    <div class="tmrx-shop-goals__grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign card_link = block.settings.link
+          if card_link == blank
+            assign card_link = routes.all_products_collection_url
+          endif
+          assign card_image_alt = block.settings.title
+          if block.settings.image.alt != blank
+            assign card_image_alt = block.settings.image.alt
+          endif
+        %}
+        <a class="tmrx-goal-card" href="{{ card_link }}" {{ block.shopify_attributes }}>
+          <span class="tmrx-goal-card__top">
+            <span>
+              {% if block.settings.title != blank %}
+                <strong>{{ block.settings.title }}</strong>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <small>{{ block.settings.text }}</small>
+              {% endif %}
+            </span>
+            <span class="tmrx-goal-card__arrow" aria-hidden="true">-></span>
+          </span>
+          <span class="tmrx-goal-card__media{% unless block.settings.image %} tmrx-placeholder-media{% endunless %}">
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: card_image_alt }}
+            {% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop by goal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop By Goal"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Find the right supplements to reach your health and fitness goals with ease."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "goal",
+      "name": "Goal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Build Lean Muscle"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Support strength, recovery, and lean muscle growth."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Category link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by goal",
+      "blocks": [
+        {
+          "type": "goal",
+          "settings": {
+            "title": "Daily Protein",
+            "text": "Clean protein support for everyday nutrition.",
+            "link": "/collections/protein"
+          }
+        },
+        {
+          "type": "goal",
+          "settings": {
+            "title": "Strength & Performance",
+            "text": "Fuel training, output, and focused intensity.",
+            "link": "/collections/pre-workout"
+          }
+        },
+        {
+          "type": "goal",
+          "settings": {
+            "title": "Calm & Recovery",
+            "text": "Support rest, recovery, and nervous system balance.",
+            "link": "/collections/recovery"
+          }
+        },
+        {
+          "type": "goal",
+          "settings": {
+            "title": "Foundational Wellness",
+            "text": "Daily support for hormone, liver, and cellular health.",
+            "link": "/collections/wellness"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
