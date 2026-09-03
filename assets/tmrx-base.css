@@ -552,7 +552,7 @@ button {
   max-width: 760px;
   margin: 0;
   color: var(--tmrx-ink);
-  font-size: clamp(2.45rem, 3.35vw, 3.35rem);
+  font-size: clamp(1.96rem, 2.68vw, 2.68rem);
   font-weight: 900;
   line-height: 0.98;
 }
@@ -568,6 +568,15 @@ button {
   font-weight: 800;
   line-height: 1.15;
   white-space: nowrap;
+}
+
+.tmrx-text-link img,
+.tmrx-supplement-card__link img,
+.tmrx-goal-card__arrow img {
+  display: block;
+  width: 1.05em;
+  height: 1.05em;
+  object-fit: contain;
 }
 
 .tmrx-chip-row {
@@ -813,7 +822,7 @@ button {
   max-width: 500px;
   margin: 0;
   color: var(--tmrx-surface);
-  font-size: clamp(2.65rem, 3.2vw, 3.3rem);
+  font-size: clamp(2.12rem, 2.56vw, 2.64rem);
   font-weight: 900;
   line-height: 1.14;
 }
@@ -878,7 +887,7 @@ button {
   max-width: 430px;
   margin: 0;
   color: var(--tmrx-ink);
-  font-size: clamp(2.35rem, 3.6vw, 3.45rem);
+  font-size: clamp(1.88rem, 2.88vw, 2.76rem);
   font-weight: 900;
   line-height: 1.05;
 }
@@ -937,6 +946,8 @@ button {
 }
 
 .tmrx-goal-card__arrow {
+  display: inline-grid;
+  place-items: center;
   color: var(--tmrx-ink);
   font-size: 1.35rem;
   font-weight: 700;
@@ -971,7 +982,7 @@ button {
   max-width: 430px;
   margin: 0 0 clamp(2.5rem, 5vw, 4.2rem);
   color: var(--tmrx-ink);
-  font-size: clamp(2.25rem, 3.3vw, 3.15rem);
+  font-size: clamp(1.8rem, 2.64vw, 2.52rem);
   font-weight: 900;
   line-height: 1.08;
 }
@@ -1270,20 +1281,21 @@ button {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: rgba(17, 17, 17, 0.48);
     pointer-events: none;
   }
 
   .tmrx-clean-standards__inner {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 4.2rem clamp(1.1rem, 3.8vw, 2.25rem);
   }
 
   .tmrx-clean-standards h2 {
     max-width: 820px;
     margin-bottom: 8rem;
-    color: var(--tmrx-surface);
+    color: #ffffff;
     font-size: clamp(2.4rem, 5.6vw, 3.7rem);
   }
 
@@ -1305,11 +1317,11 @@ button {
     width: 32px;
     height: 32px;
     border-color: rgba(255, 255, 255, 0.92);
-    color: var(--tmrx-surface);
+    color: #ffffff;
   }
 
   .tmrx-standard-row p {
-    color: var(--tmrx-surface);
+    color: #ffffff;
     font-size: clamp(1.35rem, 4vw, 2.1rem);
     line-height: 1.25;
   }
@@ -1317,6 +1329,7 @@ button {
   .tmrx-clean-standards__media {
     position: absolute;
     inset: 0;
+    z-index: 0;
     min-height: 100%;
     border-radius: 0;
     opacity: 0.32;
