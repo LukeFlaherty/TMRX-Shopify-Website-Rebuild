@@ -10,7 +10,7 @@
 %}
 
 <div class="tmrx-mobile-menu-group" data-mobile-menu-group>
-  <button class="tmrx-mobile-menu-group__toggle" type="button" data-mobile-menu-accordion aria-expanded="{{ open }}">
+  <button class="tmrx-mobile-menu-group__toggle" type="button" data-mobile-menu-accordion aria-expanded="{% if open %}true{% else %}false{% endif %}">
     <span>{{ title }}</span>
     <svg aria-hidden="true" viewBox="0 0 24 24">
       <path d="m6 9 6 6 6-6"/>

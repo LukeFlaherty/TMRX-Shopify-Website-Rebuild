@@ -6,15 +6,19 @@
     assign progress = cart.total_price | times: 100 | divided_by: threshold_cents
   endif
   assign progress = progress | at_most: 100
+  assign item_label = 'Items'
+  if cart.item_count == 1
+    assign item_label = 'Item'
+  endif
 %}
 
 <div class="tmrx-cart-drawer" data-cart-drawer hidden>
   <div class="tmrx-cart-drawer__backdrop" data-cart-close></div>
   <aside class="tmrx-cart-drawer__panel" aria-label="Cart drawer" aria-modal="true" role="dialog">
     <div class="tmrx-cart-drawer__header">
-      <div>
-        <p class="tmrx-eyebrow">Your cart</p>
-        <h2>Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</h2>
+      <div class="tmrx-cart-drawer__title">
+        <h2>Your Cart</h2>
+        <span>{{ cart.item_count }} {{ item_label }}</span>
       </div>
       <button class="tmrx-icon-button" type="button" data-cart-close aria-label="Close cart">
         <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -23,11 +27,18 @@
       </button>
     </div>
 
+    {% if cart.item_count > 0 %}
+      <div class="tmrx-cart-drawer__reserve">
+        <span aria-hidden="true">◷</span>
+        <p>Low Stock - item(s) reserved for <strong>9:31</strong></p>
+      </div>
+    {% endif %}
+
     <div class="tmrx-cart-drawer__shipping">
       {% if remaining_cents > 0 %}
-        <p>{{ remaining_cents | money }} away from free shipping.</p>
+        <p>You're {{ remaining_cents | money }} away from <strong>Free Shipping</strong></p>
       {% else %}
-        <p>Your order qualifies for free shipping.</p>
+        <p class="is-qualified"><span aria-hidden="true">✓</span> <strong>Free Shipping</strong></p>
       {% endif %}
       <div class="tmrx-progress" aria-hidden="true">
         <span style="width: {{ progress }}%"></span>
@@ -43,39 +54,109 @@
               if item.image.alt != blank
                 assign item_image_alt = item.image.alt
               endif
+              assign next_quantity = item.quantity | plus: 1
+              assign previous_quantity = item.quantity | minus: 1
             %}
             <li class="tmrx-cart-line">
-              <div class="tmrx-cart-line__media{% unless item.image %} tmrx-placeholder-media{% endunless %}">
+              <a class="tmrx-cart-line__media{% unless item.image %} tmrx-placeholder-media{% endunless %}" href="{{ item.url }}">
                 {% if item.image %}
-                  {{ item.image | image_url: width: 160 | image_tag: loading: 'lazy', alt: item_image_alt }}
+                  {{ item.image | image_url: width: 180 | image_tag: loading: 'lazy', alt: item_image_alt }}
                 {% endif %}
-              </div>
+              </a>
               <div class="tmrx-cart-line__content">
-                <a href="{{ item.url }}">{{ item.product.title }}</a>
+                <div class="tmrx-cart-line__top">
+                  <a href="{{ item.url }}">{{ item.product.title }}</a>
+                  <strong>{{ item.final_line_price | money }}</strong>
+                </div>
                 {% unless item.product.has_only_default_variant %}
                   <p>{{ item.variant.title }}</p>
                 {% endunless %}
-                <span>{{ item.quantity }} x {{ item.final_price | money }}</span>
+                <label class="tmrx-cart-line__subscription">
+                  <input type="checkbox" checked>
+                  <span>Upgrade to Subscription:<br>Free shipping & Save 10%</span>
+                </label>
+                <div class="tmrx-cart-line__controls">
+                  <div class="tmrx-cart-line__frequency">Every 30 days <span aria-hidden="true">⌄</span></div>
+                  <div class="tmrx-cart-qty" aria-label="Quantity controls">
+                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ previous_quantity }}" aria-label="Decrease quantity">−</a>
+                    <span>{{ item.quantity }}</span>
+                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ next_quantity }}" aria-label="Increase quantity">+</a>
+                  </div>
+                </div>
               </div>
             </li>
           {% endfor %}
         </ul>
+
+        <div class="tmrx-cart-recommendations">
+          <h3>Complete Your Stack</h3>
+          <div class="tmrx-cart-recommendations__rail">
+            {% for product in collections.all.products limit: 4 %}
+              {% liquid
+                assign recommendation_alt = product.title
+                if product.featured_image.alt != blank
+                  assign recommendation_alt = product.featured_image.alt
+                endif
+              %}
+              <article class="tmrx-cart-rec-card">
+                <a class="tmrx-cart-rec-card__image{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ product.url }}">
+                  {% if product.featured_image %}
+                    {{ product.featured_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: recommendation_alt }}
+                  {% endif %}
+                </a>
+                <h4>{{ product.title }}</h4>
+                <form method="post" action="{{ routes.cart_add_url }}">
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <button type="submit">Add to Cart | {{ product.price | money }}</button>
+                </form>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
       {% else %}
         <div class="tmrx-cart-empty">
-          <p>Your cart is ready for the new storefront build.</p>
-          <a class="tmrx-button tmrx-button--primary" href="{{ routes.all_products_collection_url }}">Shop all products</a>
+          <p>Your cart is empty</p>
+          <h3>Start with clean supplements that get you to your goal</h3>
+          <div class="tmrx-cart-empty__grid">
+            <a href="{{ routes.all_products_collection_url }}">
+              <span class="tmrx-cart-empty__image tmrx-placeholder-media"></span>
+              <strong>Best Sellers</strong>
+              <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+            </a>
+            <a href="{{ routes.collections_url }}/protein">
+              <span class="tmrx-cart-empty__image tmrx-placeholder-media"></span>
+              <strong>Protein</strong>
+              <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+            </a>
+            <a href="{{ routes.collections_url }}/recovery">
+              <span class="tmrx-cart-empty__image tmrx-placeholder-media"></span>
+              <strong>Build Muscle</strong>
+              <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+            </a>
+            <a href="{{ routes.collections_url }}/wellness">
+              <span class="tmrx-cart-empty__image tmrx-placeholder-media"></span>
+              <strong>Health</strong>
+              <img src="{{ 'icon-arrow-right.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true" loading="lazy">
+            </a>
+          </div>
         </div>
       {% endif %}
     </div>
 
     <div class="tmrx-cart-drawer__footer">
-      <div class="tmrx-cart-drawer__subtotal">
-        <span>Subtotal</span>
-        <strong>{{ cart.total_price | money }}</strong>
-      </div>
-      <a class="tmrx-button tmrx-button--primary tmrx-button--full" href="{{ routes.cart_url }}">View cart</a>
-      <a class="tmrx-button tmrx-button--dark tmrx-button--full" href="/checkout">Checkout</a>
-      <p class="tmrx-cart-drawer__note">Practitioner-grade formulas. Native Shopify checkout.</p>
+      {% if cart.item_count > 0 %}
+        <div class="tmrx-cart-drawer__subtotal">
+          <span>Subtotal:</span>
+          <strong>{{ cart.total_price | money }}</strong>
+        </div>
+        <a class="tmrx-cart-checkout" href="/checkout">Proceed to Checkout</a>
+        <div class="tmrx-cart-drawer__trust">
+          <p>45 Day Satisfaction Guarantee</p>
+          <p>Discount Available for Military, Veterans, and First Responders</p>
+        </div>
+      {% else %}
+        <a class="tmrx-cart-checkout" href="{{ routes.all_products_collection_url }}">Shop All Products</a>
+      {% endif %}
     </div>
   </aside>
 </div>
