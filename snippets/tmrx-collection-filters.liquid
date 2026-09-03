@@ -1,0 +1,87 @@
+{% liquid
+  assign has_filters = false
+  if collection.filters.size > 0
+    assign has_filters = true
+  endif
+%}
+
+<form class="tmrx-filter-form tmrx-filter-form--{{ context }}" method="get" action="{{ collection.url }}">
+  {% if has_filters %}
+    {% for filter in collection.filters %}
+      {% unless filter.type == 'price_range' %}
+        <details class="tmrx-filter-group" open>
+          <summary>{{ filter.label }}</summary>
+          <div class="tmrx-filter-group__values">
+            {% for value in filter.values limit: 8 %}
+              <label class="tmrx-filter-option">
+                <input
+                  type="checkbox"
+                  name="{{ value.param_name }}"
+                  value="{{ value.value }}"
+                  {% if value.active %}checked{% endif %}
+                  {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                >
+                <span>{{ value.label }}</span>
+                <small>{{ value.count }}</small>
+              </label>
+            {% endfor %}
+          </div>
+        </details>
+      {% endunless %}
+    {% endfor %}
+  {% else %}
+    <details class="tmrx-filter-group" open>
+      <summary>Category</summary>
+      <div class="tmrx-filter-group__values">
+        <a class="tmrx-filter-option" href="{{ routes.collections_url }}/protein">
+          <span>Protein</span>
+          <small>Shop</small>
+        </a>
+        <a class="tmrx-filter-option" href="{{ routes.collections_url }}/pre-workout">
+          <span>Performance</span>
+          <small>Shop</small>
+        </a>
+        <a class="tmrx-filter-option" href="{{ routes.collections_url }}/recovery">
+          <span>Recovery</span>
+          <small>Shop</small>
+        </a>
+        <a class="tmrx-filter-option" href="{{ routes.collections_url }}/wellness">
+          <span>Wellness</span>
+          <small>Shop</small>
+        </a>
+      </div>
+    </details>
+    <details class="tmrx-filter-group" open>
+      <summary>Goal</summary>
+      <div class="tmrx-filter-group__values">
+        <label class="tmrx-filter-option">
+          <input type="checkbox" disabled>
+          <span>Daily nutrition</span>
+          <small>0</small>
+        </label>
+        <label class="tmrx-filter-option">
+          <input type="checkbox" disabled>
+          <span>Muscle support</span>
+          <small>0</small>
+        </label>
+        <label class="tmrx-filter-option">
+          <input type="checkbox" disabled>
+          <span>Calm & recovery</span>
+          <small>0</small>
+        </label>
+        <label class="tmrx-filter-option">
+          <input type="checkbox" disabled>
+          <span>Hormone & cellular health</span>
+          <small>0</small>
+        </label>
+      </div>
+    </details>
+  {% endif %}
+
+  <button class="tmrx-filter-form__apply" type="{% if has_filters %}submit{% else %}button{% endif %}" {% unless has_filters %}data-filter-close{% endunless %}>
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M4 7h10M18 7h2M4 17h2M10 17h10M8 5v4M16 15v4"/>
+    </svg>
+    Apply Filters
+  </button>
+</form>

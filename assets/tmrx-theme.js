@@ -3,6 +3,7 @@
   const cartDrawer = document.querySelector('[data-cart-drawer]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
+  const filterDrawer = document.querySelector('[data-filter-drawer]');
 
   const setOpenState = (element, isOpen, className) => {
     if (!element) return;
@@ -17,6 +18,14 @@
 
   document.querySelectorAll('[data-cart-close]').forEach((button) => {
     button.addEventListener('click', () => setOpenState(cartDrawer, false, 'is-open'));
+  });
+
+  document.querySelectorAll('[data-filter-open]').forEach((button) => {
+    button.addEventListener('click', () => setOpenState(filterDrawer, true, 'is-open'));
+  });
+
+  document.querySelectorAll('[data-filter-close]').forEach((button) => {
+    button.addEventListener('click', () => setOpenState(filterDrawer, false, 'is-open'));
   });
 
   if (menuToggle) {
@@ -48,6 +57,7 @@
     menuToggle?.setAttribute('aria-expanded', 'false');
     setOpenState(cartDrawer, false, 'is-open');
     setOpenState(mobileMenu, false, 'is-open');
+    setOpenState(filterDrawer, false, 'is-open');
   });
 
   document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
