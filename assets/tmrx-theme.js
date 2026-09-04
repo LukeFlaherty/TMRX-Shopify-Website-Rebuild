@@ -152,6 +152,8 @@
     const stickyFrequency = section?.querySelector('[data-sticky-frequency]');
     const stickyEdit = section?.querySelector('[data-sticky-edit]');
     const stickyPurchasePanel = section?.querySelector('[data-sticky-purchase-panel]');
+    const stickySummaryMethod = section?.querySelector('[data-sticky-summary-method]');
+    const stickySummaryPerk = section?.querySelector('[data-sticky-summary-perk]');
     let productData = null;
 
     try {
@@ -231,6 +233,14 @@
       });
 
       stickyBar?.classList.toggle('is-one-time', selected === 'one-time');
+
+      if (stickySummaryMethod) {
+        stickySummaryMethod.innerHTML = selected === 'subscription' ? 'Subscribe and <em>Save 10%</em>' : 'One-Time Purchase';
+      }
+
+      if (stickySummaryPerk) {
+        stickySummaryPerk.hidden = selected !== 'subscription';
+      }
 
       if (stickyFrequency) {
         stickyFrequency.disabled = selected !== 'subscription';

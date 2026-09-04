@@ -171,7 +171,10 @@
           <div class="tmrx-pdp-options tmrx-pdp-options--static">
             <div class="tmrx-pdp-option">
               <p>Size:</p>
-              <span>Standard Supply</span>
+              <div class="tmrx-pdp-single-size">
+                <strong>One size available</strong>
+                <span>This product is only available in one size. Select one-time purchase and adjust quantity at checkout for multiples.</span>
+              </div>
             </div>
           </div>
         {% endunless %}
@@ -255,6 +258,11 @@
         </div>
       </div>
 
+      <div class="tmrx-pdp-sticky__summary" data-sticky-summary>
+        <span data-sticky-summary-method>Subscribe and <em>Save 10%</em></span>
+        <span data-sticky-summary-perk>+ Free Shipping</span>
+      </div>
+
       <div class="tmrx-pdp-sticky__purchase" data-sticky-purchase-panel>
         <label>
           <input type="radio" name="sticky_purchase_option_{{ section.id }}" value="one-time" data-sticky-purchase-option>
@@ -320,9 +328,9 @@
         <summary>Description</summary>
         <div class="tmrx-pdp-accordion__body">
           {% if product.metafields.custom.pdp_description.value != blank %}
-            <p>{{ product.metafields.custom.pdp_description.value | strip_html | truncatewords: 70 }}</p>
+            <div class="rte">{{ product.metafields.custom.pdp_description | metafield_tag }}</div>
           {% elsif product.description != blank %}
-            <p>{{ product.description | strip_html | truncatewords: 70 }}</p>
+            <div class="rte">{{ product.description }}</div>
           {% else %}
             <p>{{ product.title }} is formulated for clean daily support without unnecessary fillers, artificial colors, or artificial preservatives.</p>
           {% endif %}
