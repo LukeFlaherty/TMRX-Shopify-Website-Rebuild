@@ -420,6 +420,69 @@
       {% endif %}
     </div>
   </div>
+
+  <div class="tmrx-pdp-stack">
+    <div class="tmrx-pdp-stack__heading">
+      <h2>Complete Your Stack</h2>
+      <p>Pair {{ product.title }} with these products for a complete foundational stack.</p>
+    </div>
+    <div class="tmrx-pdp-stack__grid">
+      {% liquid
+        assign stack_recovery = all_products['true-creatine']
+        if stack_recovery.handle == product.handle or stack_recovery == blank
+          assign stack_recovery = all_products['creatine-hcl']
+        endif
+        if stack_recovery.handle == product.handle or stack_recovery == blank
+          assign stack_recovery = all_products['essential-aminos']
+        endif
+      %}
+      {% if stack_recovery != blank and stack_recovery.handle != product.handle %}
+        {% render 'tmrx-stack-card', product: stack_recovery, category: 'Build Muscle & Recover' %}
+      {% endif %}
+
+      {% liquid
+        assign stack_protein = all_products['bone-broth-protein']
+        if stack_protein.handle == product.handle or stack_protein == blank
+          assign stack_protein = all_products['essential-aminos']
+        endif
+        if stack_protein.handle == product.handle or stack_protein == blank
+          assign stack_protein = all_products['true-greens']
+        endif
+      %}
+      {% if stack_protein != blank and stack_protein.handle != product.handle %}
+        {% render 'tmrx-stack-card', product: stack_protein, category: 'Protein' %}
+      {% endif %}
+
+      {% liquid
+        assign stack_performance = all_products['n1o1-nitric-oxide-lozenges']
+        if stack_performance.handle == product.handle or stack_performance == blank
+          assign stack_performance = all_products['mito-revive']
+        endif
+        if stack_performance.handle == product.handle or stack_performance == blank
+          assign stack_performance = all_products['true-creatine']
+        endif
+      %}
+      {% if stack_performance != blank and stack_performance.handle != product.handle %}
+        {% render 'tmrx-stack-card', product: stack_performance, category: 'Improve Performance' %}
+      {% endif %}
+
+      {% liquid
+        assign stack_wellness = all_products['true-omega']
+        if stack_wellness.handle == product.handle or stack_wellness == blank
+          assign stack_wellness = all_products['true-greens']
+        endif
+        if stack_wellness.handle == product.handle or stack_wellness == blank
+          assign stack_wellness = all_products['calm']
+        endif
+        if stack_wellness.handle == product.handle or stack_wellness == blank
+          assign stack_wellness = all_products['vitamin-d-k2']
+        endif
+      %}
+      {% if stack_wellness != blank and stack_wellness.handle != product.handle %}
+        {% render 'tmrx-stack-card', product: stack_wellness, category: 'Health & Wellness' %}
+      {% endif %}
+    </div>
+  </div>
 </section>
 
 {% schema %}

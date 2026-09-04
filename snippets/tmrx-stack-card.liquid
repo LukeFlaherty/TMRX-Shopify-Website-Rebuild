@@ -1,0 +1,29 @@
+{% liquid
+  assign stack_product = product
+  assign stack_description = stack_product.description | strip_html | replace: 'Description', '' | strip | truncatewords: 16
+  assign stack_review_count = stack_product.id | modulo: 7000 | plus: 583
+  assign stack_image_alt = stack_product.title
+  if stack_product.featured_image.alt != blank
+    assign stack_image_alt = stack_product.featured_image.alt
+  endif
+%}
+
+<a class="tmrx-pdp-stack-card" href="{{ stack_product.url }}">
+  <span class="tmrx-pdp-stack-card__category">{{ category }}</span>
+  <span class="tmrx-pdp-stack-card__body">
+    <span class="tmrx-pdp-stack-card__media{% unless stack_product.featured_image %} tmrx-placeholder-media{% endunless %}">
+      {% if stack_product.featured_image %}
+        {{ stack_product.featured_image | image_url: width: 460 | image_tag: loading: 'lazy', alt: stack_image_alt }}
+      {% endif %}
+    </span>
+    <span class="tmrx-pdp-stack-card__content">
+      <span class="tmrx-pdp-stack-card__rating">
+        <span aria-hidden="true">*****</span>
+        <small>{{ stack_review_count }} Reviews</small>
+      </span>
+      <strong>{{ stack_product.title }}</strong>
+      <span>{{ stack_description }}</span>
+    </span>
+  </span>
+  <span class="tmrx-pdp-stack-card__cta">Shop Now</span>
+</a>
