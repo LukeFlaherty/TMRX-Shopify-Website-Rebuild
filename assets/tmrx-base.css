@@ -1817,17 +1817,6 @@ button {
   padding: clamp(1.3rem, 2.3vw, 1.9rem);
 }
 
-.tmrx-pdp-ingredient-card button {
-  position: absolute;
-  top: 1.35rem;
-  right: 1.35rem;
-  border: 0;
-  background: transparent;
-  color: var(--tmrx-ink);
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
 .tmrx-pdp-ingredient-card__amount {
   color: #1b83c6 !important;
   font-weight: 700;

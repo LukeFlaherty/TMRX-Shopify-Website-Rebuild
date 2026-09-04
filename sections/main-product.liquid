@@ -386,32 +386,37 @@
       <p>{{ ingredients_intro }}</p>
     </div>
     <div class="tmrx-pdp-ingredients__grid">
-      {% if product.handle == 'true-creatine' or product_lower contains 'creatine hmb' %}
+      {% if product_lower contains 'creatine hmb' %}
         {% render 'tmrx-ingredient-card', title: 'Creatine Monohydrate', amount: '5,000 mg', body: 'Supports cellular energy production by helping replenish ATP during high-intensity exercise.' %}
         {% render 'tmrx-ingredient-card', title: 'myHMB', amount: '1,500 mg', body: 'A leucine metabolite commonly used to support muscle recovery and help reduce muscle protein breakdown.' %}
         {% render 'tmrx-ingredient-card', title: 'Vitamin D3', amount: '12.5 mcg (500 IU)', body: 'A fat-soluble nutrient that supports muscle function, immune health, and bone health.' %}
         {% render 'tmrx-ingredient-card', title: 'BioPerine Black Pepper Extract', amount: '5 mg', body: 'A standardized black pepper extract included to support ingredient absorption.' %}
+      {% elsif product.handle == 'true-creatine' %}
+        {% render 'tmrx-ingredient-card', title: 'Micronized Creatine Monohydrate', amount: '5,000 mg', body: 'Supports ATP regeneration for strength, power output, and repeated high-intensity effort.' %}
       {% elsif product.handle == 'creatine-hcl' or product_lower contains 'creatine hcl' %}
-        {% render 'tmrx-ingredient-card', title: 'Creatine HCl', amount: 'Creatine support', body: 'A highly soluble creatine form used to support strength, power output, and training performance.' %}
-        {% render 'tmrx-ingredient-card', title: 'No Bloating Formula', amount: 'Clean routine support', body: 'Designed for customers who want creatine support in a simple, easy-to-use daily format.' %}
+        {% render 'tmrx-ingredient-card', title: 'Creatine HCl', amount: '1,500 mg', body: 'A highly soluble creatine form used to support strength, power output, and training performance.' %}
       {% elsif product.handle == 'bone-broth-protein' %}
-        {% render 'tmrx-ingredient-card', title: 'Beef Bone Broth Protein', amount: 'Protein support', body: 'Grass-fed beef bone broth protein to support daily protein intake and recovery routines.' %}
-        {% render 'tmrx-ingredient-card', title: 'Collagen-Rich Aminos', amount: 'Naturally occurring', body: 'Bone broth protein supplies amino acids commonly associated with connective tissue and joint-support routines.' %}
+        {% render 'tmrx-ingredient-card', title: 'Beef Bone Broth Protein', amount: '22g protein', body: 'Grass-fed beef bone broth protein to support daily protein intake and recovery routines.' %}
       {% elsif product.handle == 'true-omega' %}
-        {% render 'tmrx-ingredient-card', title: 'EPA', amount: 'Omega-3 fatty acid', body: 'Supports cardiovascular, inflammatory-response, and general wellness routines.' %}
-        {% render 'tmrx-ingredient-card', title: 'DHA', amount: 'Omega-3 fatty acid', body: 'Supports brain, eye, and cellular health as part of a consistent nutrition plan.' %}
+        {% render 'tmrx-ingredient-card', title: 'Omega-3 Fatty Acids', amount: '4 soft gels', body: 'Supports cardiovascular, brain, joint, and general wellness routines.' %}
+        {% render 'tmrx-ingredient-card', title: 'CoQ10 + Astaxanthin', amount: '', body: 'Pairs cellular energy support with antioxidant protection for daily vitality.' %}
       {% elsif product.handle == 'true-greens' %}
-        {% render 'tmrx-ingredient-card', title: 'Greens Blend', amount: 'Plant-based support', body: 'A greens-focused formula designed to help round out daily nutrition habits.' %}
-        {% render 'tmrx-ingredient-card', title: 'Digestive Support', amount: 'Daily wellness', body: 'Built to fit into morning routines, smoothies, and everyday wellness plans.' %}
+        {% render 'tmrx-ingredient-card', title: 'Supergreens Blend', amount: '1 serving', body: 'A greens-focused formula designed to help round out daily nutrition habits.' %}
+        {% render 'tmrx-ingredient-card', title: 'Spirulina, Barley Grass, Beet + Matcha', amount: '', body: 'Plant-based nutrients selected for antioxidant, energy, and daily wellness support.' %}
       {% elsif product.handle == 'calm' %}
-        {% render 'tmrx-ingredient-card', title: 'Magnesium Support', amount: 'Relaxation support', body: 'Designed to support calm, rest, and a more settled daily routine.' %}
-        {% render 'tmrx-ingredient-card', title: 'Body & Mind Formula', amount: 'Evening-friendly', body: 'Made for customers looking for clean daily support without a stimulant feel.' %}
+        {% render 'tmrx-ingredient-card', title: 'Magnesium Bisglycinate Chelate', amount: '1 capsule', body: 'A gentle, bioavailable magnesium form designed to support calm, rest, muscle, and nerve function.' %}
       {% elsif product.handle == 'vitamin-d-k2' %}
-        {% render 'tmrx-ingredient-card', title: 'Vitamin D3', amount: 'Immune and bone support', body: 'Supports immune health, calcium utilization, and healthy bone maintenance.' %}
-        {% render 'tmrx-ingredient-card', title: 'Vitamin K2', amount: 'Calcium direction support', body: 'Pairs with vitamin D to support healthy calcium metabolism.' %}
+        {% render 'tmrx-ingredient-card', title: 'Vitamin D3', amount: '5,000 IU', body: 'Supports immune health, calcium utilization, mood, energy, and healthy bone maintenance.' %}
+        {% render 'tmrx-ingredient-card', title: 'Vitamin K2', amount: '250 mcg', body: 'Pairs with vitamin D to support healthy calcium metabolism.' %}
+      {% elsif product.handle == 'essential-aminos' %}
+        {% render 'tmrx-ingredient-card', title: 'Essential Amino Acids', amount: '5g', body: 'Includes all nine EAAs to support muscle protein synthesis, recovery, and cellular repair.' %}
+        {% render 'tmrx-ingredient-card', title: 'Magnesium Bisglycinate + L-Carnitine', amount: '', body: 'Supports neuromuscular function, hydration routines, and mitochondrial energy production.' %}
+      {% elsif product.handle == 'secretropin' %}
+        {% render 'tmrx-ingredient-card', title: 'Amino Acid Proprietary Blend', amount: '300 mg per 2 sprays', body: 'Includes pyroglutamine, glutamine, arginine, lysine, valine, tyrosine, ornithine, GABA, and related support nutrients.' %}
+      {% elsif product.handle == 'n1o1-nitric-oxide-lozenges' %}
+        {% render 'tmrx-ingredient-card', title: 'Nitric Oxide Lozenges', amount: '0.6 oz / 60 count', body: 'Designed as an easy daily lozenge format to support nitric-oxide and blood-flow routines.' %}
       {% else %}
-        {% render 'tmrx-ingredient-card', title: 'Purposeful Active Ingredients', amount: 'Clean formula support', body: 'Selected to match the product goal and support consistent daily use.' %}
-        {% render 'tmrx-ingredient-card', title: 'Practitioner-Grade Standards', amount: 'No unnecessary extras', body: 'Built around clean inputs, simple routines, and no artificial colors or unnecessary fillers.' %}
+        {% render 'tmrx-ingredient-card', title: 'Purposeful Active Ingredients', amount: '', body: 'Selected to match the product goal and support consistent daily use. Review the product label for the exact per-serving amount.' %}
       {% endif %}
     </div>
   </div>
