@@ -111,6 +111,127 @@
     if (collectionEmpty) collectionEmpty.hidden = visibleCount > 0;
   }
 
+  document.querySelectorAll('[data-pdp-gallery]').forEach((gallery) => {
+    const frames = gallery.querySelectorAll('[data-pdp-image]');
+    const thumbs = gallery.querySelectorAll('[data-pdp-thumb]');
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        const target = thumb.dataset.pdpThumb;
+        const targetFrame = gallery.querySelector(`[data-pdp-image="${target}"]`);
+
+        frames.forEach((frame) => frame.classList.toggle('is-active', frame.dataset.pdpImage === target));
+        thumbs.forEach((item) => item.classList.toggle('is-active', item === thumb));
+        targetFrame?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-product-form]').forEach((form) => {
+    const productJson = form.querySelector('[data-product-json]');
+    const variantInput = form.querySelector('[data-variant-id]');
+    const addButton = form.querySelector('[data-add-to-cart]');
+    const purchaseProperty = form.querySelector('[data-purchase-property]');
+    const frequencyProperty = form.querySelector('[data-frequency-property]');
+    const sellingPlanSelect = form.querySelector('[data-selling-plan-select]');
+    const purchaseOptions = form.querySelectorAll('[data-purchase-option]');
+    const purchaseCards = form.querySelectorAll('[data-purchase-card]');
+    const regularPrice = form.querySelector('[data-regular-price]');
+    const oneTimePrice = form.querySelector('[data-one-time-price]');
+    const subscriptionPrice = form.querySelector('[data-subscription-price]');
+    let productData = null;
+
+    try {
+      productData = productJson ? JSON.parse(productJson.textContent) : null;
+    } catch (_error) {
+      productData = null;
+    }
+
+    const formatMoney = (cents) => {
+      const currency = window.Shopify?.currency?.active || 'USD';
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(Number(cents || 0) / 100);
+    };
+
+    const selectedOptions = () => {
+      return Array.from(form.querySelectorAll('[data-product-option]')).map((optionGroup) => {
+        return optionGroup.querySelector('[data-option-value].is-selected')?.dataset.optionValue || '';
+      });
+    };
+
+    const getVariantOptions = (variant) => {
+      if (Array.isArray(variant.options)) return variant.options;
+      return [variant.option1, variant.option2, variant.option3].filter(Boolean);
+    };
+
+    const updateVariant = () => {
+      if (!productData?.variants?.length || !variantInput) return;
+
+      const options = selectedOptions();
+      const variant = options.length
+        ? productData.variants.find((item) => {
+            const variantOptions = getVariantOptions(item);
+            return options.every((value, index) => variantOptions[index] === value);
+          })
+        : productData.variants[0];
+
+      if (!variant) return;
+
+      variantInput.value = variant.id;
+      const price = Number(variant.price || 0);
+      const subscribePrice = Math.round(price * 0.9);
+
+      if (regularPrice) regularPrice.textContent = formatMoney(price);
+      if (oneTimePrice) oneTimePrice.textContent = formatMoney(price);
+      if (subscriptionPrice) subscriptionPrice.textContent = formatMoney(subscribePrice);
+
+      if (addButton) {
+        addButton.disabled = !variant.available;
+        addButton.textContent = variant.available ? 'Add To Cart' : 'Sold Out';
+      }
+    };
+
+    const updatePurchaseOption = () => {
+      const selected = form.querySelector('[data-purchase-option]:checked')?.value || 'subscription';
+
+      purchaseCards.forEach((card) => {
+        const input = card.querySelector('[data-purchase-option]');
+        card.classList.toggle('is-selected', input?.value === selected);
+      });
+
+      if (purchaseProperty) {
+        purchaseProperty.value = selected === 'subscription' ? 'Subscribe and Save' : 'One-Time Purchase';
+      }
+
+      if (sellingPlanSelect) {
+        sellingPlanSelect.disabled = selected !== 'subscription';
+      }
+
+      if (frequencyProperty) {
+        frequencyProperty.disabled = selected !== 'subscription';
+        frequencyProperty.value = sellingPlanSelect?.selectedOptions?.[0]?.textContent?.trim() || '30 days';
+      }
+    };
+
+    form.querySelectorAll('[data-option-value]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const group = button.closest('[data-product-option]');
+        group?.querySelectorAll('[data-option-value]').forEach((item) => item.classList.toggle('is-selected', item === button));
+        const triggerLabel = group?.querySelector('[data-option-trigger] span');
+        if (triggerLabel) triggerLabel.textContent = button.dataset.optionValue;
+        updateVariant();
+      });
+    });
+
+    purchaseOptions.forEach((input) => {
+      input.addEventListener('change', updatePurchaseOption);
+    });
+
+    sellingPlanSelect?.addEventListener('change', updatePurchaseOption);
+
+    updateVariant();
+    updatePurchaseOption();
+  });
+
   document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
     const rail = carousel.querySelector('[data-product-rail]');
     const count = carousel.querySelector('[data-product-count]');
