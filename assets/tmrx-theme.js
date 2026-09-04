@@ -127,6 +127,10 @@
     });
   });
 
+  document.querySelectorAll('.tmrx-pdp-accordion[open]').forEach((accordion) => {
+    accordion.open = false;
+  });
+
   document.querySelectorAll('[data-product-form]').forEach((form) => {
     const productJson = form.querySelector('[data-product-json]');
     const variantInput = form.querySelector('[data-variant-id]');

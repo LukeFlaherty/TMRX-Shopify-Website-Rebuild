@@ -6,10 +6,10 @@
   assign hero_summary = hero_summary | replace: '[product]', product.title
 
   if hero_summary == blank
-    assign hero_summary = product.description | strip_html | truncate: 220
+    assign hero_summary = product.description | strip_html | truncatewords: 28
   endif
   if hero_summary == blank
-    assign hero_summary = product.title | append: ' is a clean, practitioner-grade supplement designed to support focused daily routines and long-term performance.'
+    assign hero_summary = product.title | append: ' is a clean, practitioner-grade supplement designed for focused daily support.'
   endif
 
   assign doctor_heading = product.metafields.custom.pdp_doctor_heading.value | default: section.settings.doctor_heading
@@ -205,9 +205,12 @@
             </span>
           </label>
 
-          <label class="tmrx-pdp-one-time" data-purchase-card>
+          <label class="tmrx-pdp-one-time tmrx-pdp-purchase-card--simple" data-purchase-card>
             <input type="radio" name="purchase_option" value="one-time" data-purchase-option>
-            <span>One-Time Purchase <span data-one-time-price>{{ current_variant.price | money }}</span></span>
+            <span class="tmrx-pdp-one-time__body">
+              <span><strong>One-Time Purchase</strong></span>
+              <strong data-one-time-price>{{ current_variant.price | money }}</strong>
+            </span>
           </label>
         </div>
 
@@ -246,16 +249,15 @@
     </div>
 
     <div class="tmrx-pdp-accordions">
-      <details class="tmrx-pdp-accordion" open>
+      <details class="tmrx-pdp-accordion">
         <summary>Description</summary>
         <div class="tmrx-pdp-accordion__body">
           {% if product.metafields.custom.pdp_description.value != blank %}
-            <p>{{ product.metafields.custom.pdp_description.value | newline_to_br }}</p>
+            <p>{{ product.metafields.custom.pdp_description.value | strip_html | truncatewords: 70 }}</p>
           {% elsif product.description != blank %}
-            {{ product.description }}
+            <p>{{ product.description | strip_html | truncatewords: 70 }}</p>
           {% else %}
-            <p>{{ product.title }} is formulated for customers who want clean supplement support without unnecessary fillers, artificial colors, or artificial preservatives.</p>
-            <p>Use it as part of a consistent routine alongside nutrition, hydration, training, and practitioner guidance.</p>
+            <p>{{ product.title }} is formulated for clean daily support without unnecessary fillers, artificial colors, or artificial preservatives.</p>
           {% endif %}
         </div>
       </details>
