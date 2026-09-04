@@ -132,6 +132,7 @@
   });
 
   document.querySelectorAll('[data-product-form]').forEach((form) => {
+    const section = form.closest('[data-product-section]');
     const productJson = form.querySelector('[data-product-json]');
     const variantInput = form.querySelector('[data-variant-id]');
     const addButton = form.querySelector('[data-add-to-cart]');
@@ -143,6 +144,14 @@
     const regularPrice = form.querySelector('[data-regular-price]');
     const oneTimePrice = form.querySelector('[data-one-time-price]');
     const subscriptionPrice = form.querySelector('[data-subscription-price]');
+    const stickyBar = section?.querySelector('[data-pdp-sticky]');
+    const stickyRegularPrice = section?.querySelector('[data-sticky-regular-price]');
+    const stickySubscriptionPrice = section?.querySelector('[data-sticky-subscription-price]');
+    const stickyAddButton = section?.querySelector('[data-sticky-add-to-cart]');
+    const stickyPurchaseOptions = section?.querySelectorAll('[data-sticky-purchase-option]') || [];
+    const stickyFrequency = section?.querySelector('[data-sticky-frequency]');
+    const stickyEdit = section?.querySelector('[data-sticky-edit]');
+    const stickyPurchasePanel = section?.querySelector('[data-sticky-purchase-panel]');
     let productData = null;
 
     try {
@@ -187,10 +196,17 @@
       if (regularPrice) regularPrice.textContent = formatMoney(price);
       if (oneTimePrice) oneTimePrice.textContent = formatMoney(price);
       if (subscriptionPrice) subscriptionPrice.textContent = formatMoney(subscribePrice);
+      if (stickyRegularPrice) stickyRegularPrice.textContent = formatMoney(price);
+      if (stickySubscriptionPrice) stickySubscriptionPrice.textContent = formatMoney(subscribePrice);
 
       if (addButton) {
         addButton.disabled = !variant.available;
         addButton.textContent = variant.available ? 'Add To Cart' : 'Sold Out';
+      }
+
+      if (stickyAddButton) {
+        stickyAddButton.disabled = !variant.available;
+        stickyAddButton.textContent = variant.available ? 'Add To Cart' : 'Sold Out';
       }
     };
 
@@ -208,6 +224,17 @@
 
       if (sellingPlanSelect) {
         sellingPlanSelect.disabled = selected !== 'subscription';
+      }
+
+      stickyPurchaseOptions.forEach((input) => {
+        input.checked = input.value === selected;
+      });
+
+      stickyBar?.classList.toggle('is-one-time', selected === 'one-time');
+
+      if (stickyFrequency) {
+        stickyFrequency.disabled = selected !== 'subscription';
+        stickyFrequency.value = sellingPlanSelect?.value || stickyFrequency.value;
       }
 
       if (frequencyProperty) {
@@ -230,7 +257,40 @@
       input.addEventListener('change', updatePurchaseOption);
     });
 
-    sellingPlanSelect?.addEventListener('change', updatePurchaseOption);
+    stickyPurchaseOptions.forEach((input) => {
+      input.addEventListener('change', () => {
+        const mainInput = form.querySelector(`[data-purchase-option][value="${input.value}"]`);
+        if (!mainInput) return;
+        mainInput.checked = true;
+        mainInput.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    });
+
+    const syncFrequency = (source, target) => {
+      if (!source || !target) return;
+      target.value = source.value;
+      updatePurchaseOption();
+    };
+
+    sellingPlanSelect?.addEventListener('change', () => syncFrequency(sellingPlanSelect, stickyFrequency));
+    stickyFrequency?.addEventListener('change', () => syncFrequency(stickyFrequency, sellingPlanSelect));
+
+    stickyEdit?.addEventListener('click', () => {
+      const willOpen = stickyEdit.getAttribute('aria-expanded') !== 'true';
+      stickyEdit.setAttribute('aria-expanded', String(willOpen));
+      stickyPurchasePanel?.classList.toggle('is-mobile-open', willOpen);
+    });
+
+    if (stickyBar && section) {
+      const updateStickyVisibility = () => {
+        const heroBottom = section.querySelector('.tmrx-pdp__inner')?.getBoundingClientRect().bottom || 0;
+        stickyBar.hidden = heroBottom > 80;
+      };
+
+      updateStickyVisibility();
+      window.addEventListener('scroll', updateStickyVisibility, { passive: true });
+      window.addEventListener('resize', updateStickyVisibility);
+    }
 
     updateVariant();
     updatePurchaseOption();

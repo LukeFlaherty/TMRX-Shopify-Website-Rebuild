@@ -21,6 +21,11 @@
   assign facts_copy = product.metafields.custom.pdp_facts.value | default: section.settings.facts_copy
   assign shipping_copy = product.metafields.custom.pdp_shipping_returns.value | default: section.settings.shipping_copy
   assign subscription_price = current_variant.price | times: 90 | divided_by: 100
+  assign why_heading = product.metafields.custom.pdp_why_heading.value | default: section.settings.why_heading | replace: '[product]', product.title
+  assign why_intro = product.metafields.custom.pdp_why_intro.value | default: section.settings.why_intro | replace: '[product]', product.title
+  assign ingredients_heading = product.metafields.custom.pdp_ingredients_heading.value | default: section.settings.ingredients_heading
+  assign ingredients_intro = product.metafields.custom.pdp_ingredients_intro.value | default: section.settings.ingredients_intro
+  assign product_lower = product.title | downcase
 
   assign first_selling_plan = blank
   for selling_plan_group in product.selling_plan_groups
@@ -229,6 +234,68 @@
     </div>
   </div>
 
+  <div class="tmrx-pdp-sticky" data-pdp-sticky hidden>
+    <div class="tmrx-pdp-sticky__inner">
+      <div class="tmrx-pdp-sticky__product">
+        <div class="tmrx-pdp-sticky__image{% if product.featured_image == blank %} tmrx-placeholder-media{% endif %}">
+          {% if product.featured_image %}
+            {{ product.featured_image | image_url: width: 170 | image_tag: loading: 'lazy', alt: product.title }}
+          {% endif %}
+        </div>
+        <div>
+          <h2>{{ product.title }}</h2>
+          <a class="tmrx-pdp-rating tmrx-pdp-sticky__rating" href="#tmrx-pdp-details" aria-label="5 star rating based on {{ review_count }} reviews">
+            <span aria-hidden="true">*****</span>
+            <small>{{ review_count }} Reviews</small>
+          </a>
+          <p>
+            <strong data-sticky-subscription-price>{{ subscription_price | money }}</strong>
+            <del data-sticky-regular-price>{{ current_variant.price | money }}</del>
+          </p>
+        </div>
+      </div>
+
+      <div class="tmrx-pdp-sticky__purchase" data-sticky-purchase-panel>
+        <label>
+          <input type="radio" name="sticky_purchase_option_{{ section.id }}" value="one-time" data-sticky-purchase-option>
+          <span>One-Time Purchase</span>
+        </label>
+        <label>
+          <input type="radio" name="sticky_purchase_option_{{ section.id }}" value="subscription" checked data-sticky-purchase-option>
+          <span>Subscribe and <em>Save 10%</em></span>
+        </label>
+        <div class="tmrx-pdp-sticky__perks">
+          <span><img src="{{ 'green-checkmark.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true">Save 10% on every order</span>
+          <span><img src="{{ 'green-checkmark.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true">Free Shipping</span>
+          <span><img src="{{ 'green-checkmark.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true">Cancel or pause anytime</span>
+        </div>
+      </div>
+
+      <div class="tmrx-pdp-sticky__actions">
+        <button class="tmrx-pdp-sticky__edit" type="button" aria-expanded="false" data-sticky-edit>
+          Edit
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <select class="tmrx-pdp-sticky__frequency" data-sticky-frequency aria-label="Delivery frequency">
+          {% if first_selling_plan != blank %}
+            {% for selling_plan_group in product.selling_plan_groups %}
+              {% for selling_plan in selling_plan_group.selling_plans %}
+                <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+              {% endfor %}
+            {% endfor %}
+          {% else %}
+            <option value="30 days">30 days</option>
+            <option value="60 days">60 days</option>
+            <option value="90 days">90 days</option>
+          {% endif %}
+        </select>
+        <button class="tmrx-pdp-sticky__add" type="submit" form="{{ product_form_id }}" {% unless current_variant.available %}disabled{% endunless %} data-sticky-add-to-cart>
+          {% if current_variant.available %}Add To Cart{% else %}Sold Out{% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="tmrx-pdp-details" id="tmrx-pdp-details">
     <div class="tmrx-pdp-doctor-card" id="tmrx-doctor-recommended">
       <div>
@@ -273,6 +340,79 @@
           <p>{{ shipping_copy | newline_to_br }}</p>
         </div>
       </details>
+    </div>
+  </div>
+
+  <div class="tmrx-pdp-use">
+    <div class="tmrx-pdp-section-intro">
+      <h2>{{ why_heading }}</h2>
+      <p>{{ why_intro }}</p>
+    </div>
+    <div class="tmrx-pdp-use__grid">
+      <article class="tmrx-pdp-use-card">
+        <div>
+          <h3>Support Daily Performance</h3>
+          <p>Purposeful nutrition support for training days, busy schedules, and consistent routines.</p>
+        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+      </article>
+      <article class="tmrx-pdp-use-card">
+        <div>
+          <h3>Promote Recovery</h3>
+          <p>Designed to help you stay steady between workouts and come back ready for the next session.</p>
+        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+      </article>
+      <article class="tmrx-pdp-use-card">
+        <div>
+          <h3>Fit a Clean Routine</h3>
+          <p>Made for customers who want simple formulas without unnecessary fillers or artificial additives.</p>
+        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+      </article>
+      <article class="tmrx-pdp-use-card">
+        <div>
+          <h3>Support Long-Term Wellness</h3>
+          <p>Built to pair with nutrition, hydration, movement, and practitioner-guided health goals.</p>
+        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="tmrx-pdp-ingredients">
+    <div class="tmrx-pdp-section-intro">
+      <h2>{{ ingredients_heading }}</h2>
+      <p>{{ ingredients_intro }}</p>
+    </div>
+    <div class="tmrx-pdp-ingredients__grid">
+      {% if product.handle == 'true-creatine' or product_lower contains 'creatine hmb' %}
+        {% render 'tmrx-ingredient-card', title: 'Creatine Monohydrate', amount: '5,000 mg', body: 'Supports cellular energy production by helping replenish ATP during high-intensity exercise.' %}
+        {% render 'tmrx-ingredient-card', title: 'myHMB', amount: '1,500 mg', body: 'A leucine metabolite commonly used to support muscle recovery and help reduce muscle protein breakdown.' %}
+        {% render 'tmrx-ingredient-card', title: 'Vitamin D3', amount: '12.5 mcg (500 IU)', body: 'A fat-soluble nutrient that supports muscle function, immune health, and bone health.' %}
+        {% render 'tmrx-ingredient-card', title: 'BioPerine Black Pepper Extract', amount: '5 mg', body: 'A standardized black pepper extract included to support ingredient absorption.' %}
+      {% elsif product.handle == 'creatine-hcl' or product_lower contains 'creatine hcl' %}
+        {% render 'tmrx-ingredient-card', title: 'Creatine HCl', amount: 'Creatine support', body: 'A highly soluble creatine form used to support strength, power output, and training performance.' %}
+        {% render 'tmrx-ingredient-card', title: 'No Bloating Formula', amount: 'Clean routine support', body: 'Designed for customers who want creatine support in a simple, easy-to-use daily format.' %}
+      {% elsif product.handle == 'bone-broth-protein' %}
+        {% render 'tmrx-ingredient-card', title: 'Beef Bone Broth Protein', amount: 'Protein support', body: 'Grass-fed beef bone broth protein to support daily protein intake and recovery routines.' %}
+        {% render 'tmrx-ingredient-card', title: 'Collagen-Rich Aminos', amount: 'Naturally occurring', body: 'Bone broth protein supplies amino acids commonly associated with connective tissue and joint-support routines.' %}
+      {% elsif product.handle == 'true-omega' %}
+        {% render 'tmrx-ingredient-card', title: 'EPA', amount: 'Omega-3 fatty acid', body: 'Supports cardiovascular, inflammatory-response, and general wellness routines.' %}
+        {% render 'tmrx-ingredient-card', title: 'DHA', amount: 'Omega-3 fatty acid', body: 'Supports brain, eye, and cellular health as part of a consistent nutrition plan.' %}
+      {% elsif product.handle == 'true-greens' %}
+        {% render 'tmrx-ingredient-card', title: 'Greens Blend', amount: 'Plant-based support', body: 'A greens-focused formula designed to help round out daily nutrition habits.' %}
+        {% render 'tmrx-ingredient-card', title: 'Digestive Support', amount: 'Daily wellness', body: 'Built to fit into morning routines, smoothies, and everyday wellness plans.' %}
+      {% elsif product.handle == 'calm' %}
+        {% render 'tmrx-ingredient-card', title: 'Magnesium Support', amount: 'Relaxation support', body: 'Designed to support calm, rest, and a more settled daily routine.' %}
+        {% render 'tmrx-ingredient-card', title: 'Body & Mind Formula', amount: 'Evening-friendly', body: 'Made for customers looking for clean daily support without a stimulant feel.' %}
+      {% elsif product.handle == 'vitamin-d-k2' %}
+        {% render 'tmrx-ingredient-card', title: 'Vitamin D3', amount: 'Immune and bone support', body: 'Supports immune health, calcium utilization, and healthy bone maintenance.' %}
+        {% render 'tmrx-ingredient-card', title: 'Vitamin K2', amount: 'Calcium direction support', body: 'Pairs with vitamin D to support healthy calcium metabolism.' %}
+      {% else %}
+        {% render 'tmrx-ingredient-card', title: 'Purposeful Active Ingredients', amount: 'Clean formula support', body: 'Selected to match the product goal and support consistent daily use.' %}
+        {% render 'tmrx-ingredient-card', title: 'Practitioner-Grade Standards', amount: 'No unnecessary extras', body: 'Built around clean inputs, simple routines, and no artificial colors or unnecessary fillers.' %}
+      {% endif %}
     </div>
   </div>
 </section>
@@ -334,6 +474,30 @@
       "id": "shipping_copy",
       "label": "Fallback shipping and returns copy",
       "default": "Orders ship from TRUE MATRx as quickly as possible. If something is not right, contact support and we will help make it right."
+    },
+    {
+      "type": "text",
+      "id": "why_heading",
+      "label": "Why section heading",
+      "default": "Why Use [product]"
+    },
+    {
+      "type": "textarea",
+      "id": "why_intro",
+      "label": "Why section intro",
+      "default": "Whether you want to train harder, recover better, or support a cleaner daily routine, [product] can help."
+    },
+    {
+      "type": "text",
+      "id": "ingredients_heading",
+      "label": "Ingredients section heading",
+      "default": "Key Ingredients"
+    },
+    {
+      "type": "textarea",
+      "id": "ingredients_intro",
+      "label": "Ingredients section intro",
+      "default": "Our formulas are made with clean, purposeful ingredients selected to support health and performance."
     }
   ]
 }
