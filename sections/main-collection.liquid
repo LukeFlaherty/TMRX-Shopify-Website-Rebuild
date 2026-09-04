@@ -7,41 +7,11 @@
     if collection_description == blank
       assign collection_description = 'Explore TRUE MATRx full range of clean, practitioner-grade supplements.'
     endif
-  elsif collection.handle == 'protein'
-    assign collection_title = 'Protein Powder Supplements'
-    if collection_description == blank
-      assign collection_description = 'Fuel your body with TRUE MATRx clean protein formulas made with purposeful ingredients and no artificial additives.'
-    endif
-  elsif collection.handle == 'recovery'
-    assign collection_title = 'Build Muscle & Recover'
-    if collection_description == blank
-      assign collection_description = 'Support strength, recovery, and lean muscle with clean formulas built for consistent training.'
-    endif
-  elsif collection.handle == 'pre-workout'
-    assign collection_title = 'Pre-Workout Supplements'
-    if collection_description == blank
-      assign collection_description = 'Shop clean pre-workout and performance support designed for energy, focus, and endurance.'
-    endif
-  elsif collection.handle == 'wellness'
-    assign collection_title = 'Health & Wellness Supplements'
-    if collection_description == blank
-      assign collection_description = 'Build a daily foundation with clean wellness formulas for whole-body support.'
-    endif
-  elsif collection.handle == 'weight-loss'
-    assign collection_title = 'Weight Loss Supplements'
-    if collection_description == blank
-      assign collection_description = 'Support body recomposition with clean nutrition and metabolism-focused formulas.'
-    endif
-  elsif collection.handle == 'bestsellers'
-    assign collection_title = 'Bestsellers'
-    if collection_description == blank
-      assign collection_description = 'Shop the clean supplements customers reach for first.'
-    endif
   elsif collection_description == blank
     assign collection_description = 'Shop clean, practitioner-grade supplements built for focused health and performance goals.'
   endif
 
-  assign active_handle = collection.handle
+  assign collection_base_url = routes.all_products_collection_url
 %}
 
 <section class="tmrx-collection-page">
@@ -53,45 +23,62 @@
     </nav>
 
     <header class="tmrx-collection-hero">
-      <h1>{{ collection_title }}</h1>
-      <p>{{ collection_description }}</p>
+      <h1 data-collection-title>{{ collection_title }}</h1>
+      <p data-collection-description>{{ collection_description }}</p>
 
       <div class="tmrx-collection-pills" aria-label="Shop categories">
-        <a class="{% if active_handle == 'all' %}is-active{% endif %}" href="{{ routes.all_products_collection_url }}">All Products</a>
-        <a class="{% if active_handle == 'bestsellers' %}is-active{% endif %}" href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
-        <a class="{% if active_handle == 'protein' %}is-active{% endif %}" href="{{ routes.collections_url }}/protein">Protein</a>
-        <a class="{% if active_handle == 'recovery' %}is-active{% endif %}" href="{{ routes.collections_url }}/recovery">Build Muscle & Recover</a>
-        <a class="{% if active_handle == 'pre-workout' %}is-active{% endif %}" href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
-        <a class="{% if active_handle == 'wellness' %}is-active{% endif %}" href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
-        <a class="{% if active_handle == 'weight-loss' %}is-active{% endif %}" href="{{ routes.collections_url }}/weight-loss">Weight Loss</a>
+        <a class="is-active" href="{{ collection_base_url }}" data-collection-pill="all">All Products</a>
+        <a href="{{ collection_base_url }}?tmrx_category=bestsellers" data-collection-pill="bestsellers">Bestsellers</a>
+        <a href="{{ collection_base_url }}?tmrx_category=protein" data-collection-pill="protein">Protein</a>
+        <a href="{{ collection_base_url }}?tmrx_category=recovery" data-collection-pill="recovery">Build Muscle & Recover</a>
+        <a href="{{ collection_base_url }}?tmrx_category=pre-workout" data-collection-pill="pre-workout">Pre-Workout</a>
+        <a href="{{ collection_base_url }}?tmrx_category=wellness" data-collection-pill="wellness">Health & Wellness</a>
+        <a href="{{ collection_base_url }}?tmrx_category=weight-loss" data-collection-pill="weight-loss">Weight Loss</a>
       </div>
     </header>
 
-    <button class="tmrx-filter-toggle" type="button" data-filter-open>
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M4 7h10M18 7h2M4 17h2M10 17h10M8 5v4M16 15v4"/>
-      </svg>
-      Filter Products
-    </button>
-
     <div class="tmrx-collection-layout">
-      <aside class="tmrx-collection-filters" aria-label="Product filters">
-        <h2>Filter products</h2>
-        {% render 'tmrx-collection-filters', context: 'desktop' %}
-      </aside>
-
       <div class="tmrx-collection-results">
         {% paginate collection.products by section.settings.products_per_page %}
           {% if collection.products_count > 0 %}
             <div class="tmrx-collection-grid">
               {% for product in collection.products %}
-                {% render 'tmrx-supplement-card', product: product, badge: section.settings.badge_label, index: forloop.index %}
+                {% liquid
+                  assign product_categories = 'all'
+                  assign product_text = product.title | append: ' ' | append: product.type | append: ' ' | append: product.tags | downcase
+
+                  if forloop.index <= 4 or product_text contains 'best seller' or product_text contains 'bestseller'
+                    assign product_categories = product_categories | append: ' bestsellers'
+                  endif
+                  if product_text contains 'protein' or product_text contains 'whey' or product_text contains 'collagen' or product_text contains 'bone broth' or product_text contains 'mass gainer' or product_text contains 'vegan'
+                    assign product_categories = product_categories | append: ' protein'
+                  endif
+                  if product_text contains 'creatine' or product_text contains 'recovery' or product_text contains 'calm' or product_text contains 'magnesium' or product_text contains 'growth' or product_text contains 'bcaa' or product_text contains 'glutamine' or product_text contains 'hmb'
+                    assign product_categories = product_categories | append: ' recovery'
+                  endif
+                  if product_text contains 'pre' or product_text contains 'workout' or product_text contains 'energy' or product_text contains 'performance' or product_text contains 'pump'
+                    assign product_categories = product_categories | append: ' pre-workout'
+                  endif
+                  if product_text contains 'health' or product_text contains 'wellness' or product_text contains 'calm' or product_text contains 'magnesium' or product_text contains 'collagen' or product_text contains 'vitamin' or product_text contains 'greens'
+                    assign product_categories = product_categories | append: ' wellness'
+                  endif
+                  if product_text contains 'weight' or product_text contains 'fat' or product_text contains 'lean' or product_text contains 'metabolism'
+                    assign product_categories = product_categories | append: ' weight-loss'
+                  endif
+                %}
+                <div class="tmrx-collection-product" data-collection-product="{{ product_categories | strip }}">
+                  {% render 'tmrx-supplement-card', product: product, badge: section.settings.badge_label, index: forloop.index %}
+                </div>
               {% endfor %}
+            </div>
+            <div class="tmrx-collection-empty tmrx-collection-empty--filtered" data-collection-empty hidden>
+              <h2>No products found</h2>
+              <p>Try another category or view all products.</p>
             </div>
           {% else %}
             <div class="tmrx-collection-empty">
               <h2>No products found</h2>
-              <p>Try a different category or clear the current filters.</p>
+              <p>Try another category or view all products.</p>
             </div>
           {% endif %}
 
@@ -103,30 +90,6 @@
         {% endpaginate %}
       </div>
     </div>
-  </div>
-
-  <div class="tmrx-filter-drawer" data-filter-drawer hidden>
-    <div class="tmrx-filter-drawer__backdrop" data-filter-close></div>
-    <aside class="tmrx-filter-drawer__panel" aria-label="Filter and sort" aria-modal="true" role="dialog">
-      <div class="tmrx-filter-drawer__header">
-        <h2>Filter and sort</h2>
-        <button class="tmrx-icon-button" type="button" data-filter-close aria-label="Close filters">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="tmrx-collection-pills tmrx-collection-pills--drawer" aria-label="Shop categories">
-        <a class="{% if active_handle == 'all' %}is-active{% endif %}" href="{{ routes.all_products_collection_url }}">All Products</a>
-        <a class="{% if active_handle == 'bestsellers' %}is-active{% endif %}" href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
-        <a class="{% if active_handle == 'protein' %}is-active{% endif %}" href="{{ routes.collections_url }}/protein">Protein</a>
-        <a class="{% if active_handle == 'recovery' %}is-active{% endif %}" href="{{ routes.collections_url }}/recovery">Build Muscle & Recover</a>
-        <a class="{% if active_handle == 'pre-workout' %}is-active{% endif %}" href="{{ routes.collections_url }}/pre-workout">Pre-Workout</a>
-        <a class="{% if active_handle == 'wellness' %}is-active{% endif %}" href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
-        <a class="{% if active_handle == 'weight-loss' %}is-active{% endif %}" href="{{ routes.collections_url }}/weight-loss">Weight Loss</a>
-      </div>
-      {% render 'tmrx-collection-filters', context: 'drawer' %}
-    </aside>
   </div>
 </section>
 

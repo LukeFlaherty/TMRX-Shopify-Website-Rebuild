@@ -24,39 +24,39 @@
 
     <nav class="tmrx-header__nav" aria-label="Primary navigation">
       <div class="tmrx-nav-item">
-        <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+        <a href="{{ routes.all_products_collection_url }}?tmrx_category=bestsellers">Bestsellers</a>
         {% render 'tmrx-mega-bestsellers',
           title: 'Bestsellers',
           collection_handle: 'bestsellers',
-          fallback_url: routes.all_products_collection_url
+          fallback_url: '/collections/all?tmrx_category=bestsellers'
         %}
       </div>
       <div class="tmrx-nav-item">
-        <a href="{{ routes.collections_url }}/recovery">Recovery</a>
+        <a href="{{ routes.all_products_collection_url }}?tmrx_category=recovery">Recovery</a>
         {% render 'tmrx-mega-products',
           title: 'Recovery',
           collection_handle: 'recovery',
-          fallback_url: '/collections/recovery',
+          fallback_url: '/collections/all?tmrx_category=recovery',
           highlight_title: 'Recovery Highlight',
           highlight_text: 'Support training output with formulas built for strength and recovery.'
         %}
       </div>
       <div class="tmrx-nav-item">
-        <a href="{{ routes.collections_url }}/pre-workout">Improve Performance</a>
+        <a href="{{ routes.all_products_collection_url }}?tmrx_category=pre-workout">Improve Performance</a>
         {% render 'tmrx-mega-products',
           title: 'Improve Performance',
           collection_handle: 'pre-workout',
-          fallback_url: '/collections/pre-workout',
+          fallback_url: '/collections/all?tmrx_category=pre-workout',
           highlight_title: 'Performance Highlight',
           highlight_text: 'Shop formulas that support energy, strength, focus, and endurance.'
         %}
       </div>
       <div class="tmrx-nav-item">
-        <a href="{{ routes.collections_url }}/wellness">Health & Wellness</a>
+        <a href="{{ routes.all_products_collection_url }}?tmrx_category=wellness">Health & Wellness</a>
         {% render 'tmrx-mega-products',
           title: 'Health & Wellness',
           collection_handle: 'wellness',
-          fallback_url: '/collections/wellness',
+          fallback_url: '/collections/all?tmrx_category=wellness',
           highlight_title: 'Wellness Highlight',
           highlight_text: 'Foundational support for hormone, liver, cellular, and daily health.'
         %}
@@ -121,43 +121,43 @@
         {% render 'tmrx-mobile-menu-group',
           title: 'Bestsellers',
           collection_handle: 'bestsellers',
-          fallback_url: routes.all_products_collection_url,
+          fallback_url: '/collections/all?tmrx_category=bestsellers',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Protein',
           collection_handle: 'protein',
-          fallback_url: '/collections/protein',
+          fallback_url: '/collections/all?tmrx_category=protein',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Build Muscle & Recover',
           collection_handle: 'recovery',
-          fallback_url: '/collections/recovery',
+          fallback_url: '/collections/all?tmrx_category=recovery',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Pre-Workout',
           collection_handle: 'pre-workout',
-          fallback_url: '/collections/pre-workout',
+          fallback_url: '/collections/all?tmrx_category=pre-workout',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Health & Wellness',
           collection_handle: 'wellness',
-          fallback_url: '/collections/wellness',
+          fallback_url: '/collections/all?tmrx_category=wellness',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Weight Loss',
           collection_handle: 'weight-loss',
-          fallback_url: '/collections/weight-loss',
+          fallback_url: '/collections/all?tmrx_category=weight-loss',
           open: false
         %}
         {% render 'tmrx-mobile-menu-group',
           title: 'Improve Performance',
           collection_handle: 'pre-workout',
-          fallback_url: '/collections/pre-workout',
+          fallback_url: '/collections/all?tmrx_category=pre-workout',
           open: false
         %}
       </nav>

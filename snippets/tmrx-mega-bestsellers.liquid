@@ -1,10 +1,10 @@
 {% liquid
   assign mega_collection = collections[collection_handle]
+  assign mega_url = fallback_url
   if mega_collection == blank or mega_collection.products_count == 0
     assign mega_collection = collections.all
   endif
-  assign mega_url = fallback_url
-  if mega_collection != blank
+  if collections[collection_handle] != blank and collections[collection_handle].products_count > 0
     assign mega_url = mega_collection.url
   endif
 %}

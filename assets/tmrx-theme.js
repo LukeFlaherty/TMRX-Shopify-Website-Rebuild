@@ -3,7 +3,6 @@
   const cartDrawer = document.querySelector('[data-cart-drawer]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
-  const filterDrawer = document.querySelector('[data-filter-drawer]');
 
   const setOpenState = (element, isOpen, className) => {
     if (!element) return;
@@ -18,14 +17,6 @@
 
   document.querySelectorAll('[data-cart-close]').forEach((button) => {
     button.addEventListener('click', () => setOpenState(cartDrawer, false, 'is-open'));
-  });
-
-  document.querySelectorAll('[data-filter-open]').forEach((button) => {
-    button.addEventListener('click', () => setOpenState(filterDrawer, true, 'is-open'));
-  });
-
-  document.querySelectorAll('[data-filter-close]').forEach((button) => {
-    button.addEventListener('click', () => setOpenState(filterDrawer, false, 'is-open'));
   });
 
   if (menuToggle) {
@@ -57,8 +48,68 @@
     menuToggle?.setAttribute('aria-expanded', 'false');
     setOpenState(cartDrawer, false, 'is-open');
     setOpenState(mobileMenu, false, 'is-open');
-    setOpenState(filterDrawer, false, 'is-open');
   });
+
+  const collectionCopy = {
+    all: {
+      title: 'Shop All Supplements',
+      description: 'Explore TRUE MATRx full range of clean, practitioner-grade supplements.'
+    },
+    bestsellers: {
+      title: 'Bestsellers',
+      description: 'Shop the clean supplements customers reach for first.'
+    },
+    protein: {
+      title: 'Protein Powder Supplements',
+      description: 'Fuel your body with TRUE MATRx clean protein formulas made with purposeful ingredients and no artificial additives.'
+    },
+    recovery: {
+      title: 'Build Muscle & Recover',
+      description: 'Support strength, recovery, and lean muscle with clean formulas built for consistent training.'
+    },
+    'pre-workout': {
+      title: 'Pre-Workout Supplements',
+      description: 'Shop clean pre-workout and performance support designed for energy, focus, and endurance.'
+    },
+    wellness: {
+      title: 'Health & Wellness Supplements',
+      description: 'Build a daily foundation with clean wellness formulas for whole-body support.'
+    },
+    'weight-loss': {
+      title: 'Weight Loss Supplements',
+      description: 'Support body recomposition with clean nutrition and metabolism-focused formulas.'
+    }
+  };
+
+  const collectionTitle = document.querySelector('[data-collection-title]');
+  const collectionDescription = document.querySelector('[data-collection-description]');
+  const collectionPills = document.querySelectorAll('[data-collection-pill]');
+  const collectionProducts = document.querySelectorAll('[data-collection-product]');
+  const collectionEmpty = document.querySelector('[data-collection-empty]');
+
+  if (collectionPills.length && collectionProducts.length) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedCategory = params.get('tmrx_category') || 'all';
+    const activeCategory = collectionCopy[requestedCategory] ? requestedCategory : 'all';
+    const activeCopy = collectionCopy[activeCategory];
+    let visibleCount = 0;
+
+    collectionPills.forEach((pill) => {
+      pill.classList.toggle('is-active', pill.dataset.collectionPill === activeCategory);
+    });
+
+    if (collectionTitle) collectionTitle.textContent = activeCopy.title;
+    if (collectionDescription) collectionDescription.textContent = activeCopy.description;
+
+    collectionProducts.forEach((product) => {
+      const categories = product.dataset.collectionProduct.split(/\s+/);
+      const isVisible = activeCategory === 'all' || categories.includes(activeCategory);
+      product.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (collectionEmpty) collectionEmpty.hidden = visibleCount > 0;
+  }
 
   document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
     const rail = carousel.querySelector('[data-product-rail]');
