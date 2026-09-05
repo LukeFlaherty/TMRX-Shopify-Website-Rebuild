@@ -150,5 +150,12 @@
     {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
   >
 {% else %}
-  {{ image | image_url: width: render_width | image_tag: loading: render_loading, alt: render_alt }}
+  <img
+    src="{{ image | img_url: '1200x' }}"
+    alt="{{ render_alt | escape }}"
+    width="{{ render_width }}"
+    height="{{ render_height }}"
+    loading="{{ render_loading }}"
+    {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
+  >
 {% endif %}
