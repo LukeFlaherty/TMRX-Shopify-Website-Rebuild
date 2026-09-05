@@ -39,13 +39,14 @@
 
     <div class="tmrx-collection-layout">
       <div class="tmrx-collection-results">
-        {% paginate collection.products by section.settings.products_per_page %}
+        {% paginate collection.products by 250 %}
           {% if collection.products_count > 0 %}
             <div class="tmrx-collection-grid">
               {% for product in collection.products %}
                 {% liquid
+                  assign product_tags = product.tags | join: ' '
                   assign product_categories = 'all'
-                  assign product_text = product.title | append: ' ' | append: product.type | append: ' ' | append: product.tags | downcase
+                  assign product_text = product.title | append: ' ' | append: product.type | append: ' ' | append: product_tags | downcase
 
                   if forloop.index <= 4 or product_text contains 'best seller' or product_text contains 'bestseller'
                     assign product_categories = product_categories | append: ' bestsellers'
@@ -74,18 +75,14 @@
             <div class="tmrx-collection-empty tmrx-collection-empty--filtered" data-collection-empty hidden>
               <h2>No products found</h2>
               <p>Try another category or view all products.</p>
+              <a class="tmrx-button tmrx-button--primary" href="{{ collection_base_url }}">View All Products</a>
             </div>
           {% else %}
             <div class="tmrx-collection-empty">
               <h2>No products found</h2>
               <p>Try another category or view all products.</p>
+              <a class="tmrx-button tmrx-button--primary" href="{{ collection_base_url }}">View All Products</a>
             </div>
-          {% endif %}
-
-          {% if paginate.pages > 1 %}
-            <nav class="tmrx-pagination" aria-label="Pagination">
-              {{ paginate | default_pagination }}
-            </nav>
           {% endif %}
         {% endpaginate %}
       </div>
@@ -97,15 +94,6 @@
 {
   "name": "Collection",
   "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "label": "Products per page",
-      "min": 6,
-      "max": 24,
-      "step": 3,
-      "default": 12
-    },
     {
       "type": "text",
       "id": "badge_label",
