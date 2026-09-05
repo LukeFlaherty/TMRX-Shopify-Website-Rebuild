@@ -201,20 +201,20 @@
                 <span>Save 10% on every order</span>
                 <span>Free Shipping</span>
                 <span>Cancel or pause anytime</span>
-              </span>
-              <select class="tmrx-pdp-frequency" {% if first_selling_plan != blank %}name="selling_plan"{% endif %} data-selling-plan-select>
-                {% if first_selling_plan != blank %}
-                  {% for selling_plan_group in product.selling_plan_groups %}
-                    {% for selling_plan in selling_plan_group.selling_plans %}
-                      <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+                <select class="tmrx-pdp-frequency" {% if first_selling_plan != blank %}name="selling_plan"{% endif %} data-selling-plan-select>
+                  {% if first_selling_plan != blank %}
+                    {% for selling_plan_group in product.selling_plan_groups %}
+                      {% for selling_plan in selling_plan_group.selling_plans %}
+                        <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+                      {% endfor %}
                     {% endfor %}
-                  {% endfor %}
-                {% else %}
-                  <option value="30 days">30 days</option>
-                  <option value="60 days">60 days</option>
-                  <option value="90 days">90 days</option>
-                {% endif %}
-              </select>
+                  {% else %}
+                    <option value="30 days">30 days</option>
+                    <option value="60 days">60 days</option>
+                    <option value="90 days">90 days</option>
+                  {% endif %}
+                </select>
+              </span>
             </span>
           </label>
 

@@ -1408,7 +1408,7 @@ button {
 
 .tmrx-pdp-frequency {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1 / span 3;
   align-self: center;
   justify-self: stretch;
   min-height: 44px;
