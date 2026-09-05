@@ -605,28 +605,48 @@
           <h3>Support Daily Performance</h3>
           <p>Purposeful nutrition support for training days, busy schedules, and consistent routines.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
+          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-performance.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
+          {% if product.featured_image %}
+            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
+          {% endif %}
+        </div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Promote Recovery</h3>
           <p>Designed to help you stay steady between workouts and come back ready for the next session.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
+          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-recovery.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
+          {% if product.featured_image %}
+            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
+          {% endif %}
+        </div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Fit a Clean Routine</h3>
           <p>Made for customers who want simple formulas without unnecessary fillers or artificial additives.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
+          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-clean-routine.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
+          {% if product.featured_image %}
+            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
+          {% endif %}
+        </div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Support Long-Term Wellness</h3>
           <p>Built to pair with nutrition, hydration, movement, and practitioner-guided health goals.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
+        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
+          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-wellness.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
+          {% if product.featured_image %}
+            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
+          {% endif %}
+        </div>
       </article>
     </div>
   </div>

@@ -129,6 +129,7 @@
   assign render_width = width | default: image.width | default: 700
   assign render_alt = alt | default: image.alt | default: ''
   assign render_loading = loading | default: 'lazy'
+  assign render_class = class | default: ''
   assign render_height = image.height
 
   if image.width != blank and image.height != blank and width != blank
@@ -147,15 +148,17 @@
     width="{{ render_width }}"
     height="{{ render_height }}"
     loading="{{ render_loading }}"
+    {% if render_class != blank %}class="{{ render_class }}"{% endif %}
     {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
   >
 {% else %}
   <img
-    src="{{ image | img_url: '1200x' }}"
+    src="{{ image | image_url: width: 1200 }}"
     alt="{{ render_alt | escape }}"
     width="{{ render_width }}"
     height="{{ render_height }}"
     loading="{{ render_loading }}"
+    {% if render_class != blank %}class="{{ render_class }}"{% endif %}
     {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
   >
 {% endif %}
