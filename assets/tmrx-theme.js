@@ -100,12 +100,19 @@
   const collectionProducts = document.querySelectorAll('[data-collection-product]');
   const collectionEmpty = document.querySelector('[data-collection-empty]');
 
-  if (collectionPills.length && collectionProducts.length) {
+  if (collectionPills.length) {
     const params = new URLSearchParams(window.location.search);
     const requestedCategory = params.get('tmrx_category') || 'all';
     const activeCategory = collectionCopy[requestedCategory] ? requestedCategory : 'all';
     const activeCopy = collectionCopy[activeCategory];
     let visibleCount = 0;
+
+    if (activeCategory !== 'all' && params.has('page')) {
+      params.delete('page');
+      const nextQuery = params.toString();
+      window.location.replace(`${window.location.pathname}${nextQuery ? `?${nextQuery}` : ''}`);
+      return;
+    }
 
     collectionPills.forEach((pill) => {
       pill.classList.toggle('is-active', pill.dataset.collectionPill === activeCategory);
@@ -114,14 +121,16 @@
     if (collectionTitle) collectionTitle.textContent = activeCopy.title;
     if (collectionDescription) collectionDescription.textContent = activeCopy.description;
 
-    collectionProducts.forEach((product) => {
-      const categories = product.dataset.collectionProduct.split(/\s+/);
-      const isVisible = activeCategory === 'all' || categories.includes(activeCategory);
-      product.hidden = !isVisible;
-      if (isVisible) visibleCount += 1;
-    });
+    if (collectionProducts.length) {
+      collectionProducts.forEach((product) => {
+        const categories = product.dataset.collectionProduct.split(/\s+/);
+        const isVisible = activeCategory === 'all' || categories.includes(activeCategory);
+        product.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
 
-    if (collectionEmpty) collectionEmpty.hidden = visibleCount > 0;
+      if (collectionEmpty) collectionEmpty.hidden = visibleCount > 0;
+    }
   }
 
   document.querySelectorAll('[data-search-products]').forEach((searchPage) => {
