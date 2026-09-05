@@ -151,7 +151,7 @@
     {% if render_class != blank %}class="{{ render_class }}"{% endif %}
     {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
   >
-{% else %}
+{% elsif image != blank %}
   <img
     src="{{ image | image_url: width: 1200 }}"
     alt="{{ render_alt | escape }}"

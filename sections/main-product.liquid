@@ -275,11 +275,11 @@
                 assign image_alt = gallery_generated_alt
               endif
             %}
-            <div class="tmrx-pdp-gallery__frame{% if slot == 1 %} is-active{% endif %}{% unless gallery_image or gallery_generated_image != blank %} tmrx-placeholder-media{% endunless %}" data-pdp-image="{{ slot }}">
+            <div class="tmrx-pdp-gallery__frame{% if slot == 1 %} is-active{% endif %}{% unless gallery_image != blank or gallery_generated_image != blank %} tmrx-placeholder-media{% endunless %}" data-pdp-image="{{ slot }}">
               {% if section.settings.badge_label != blank and slot == 1 %}
                 <span class="tmrx-pdp__badge">{{ section.settings.badge_label }}</span>
               {% endif %}
-              {% if gallery_image %}
+              {% if gallery_image != blank %}
                 {% render 'tmrx-transparent-product-image', image: gallery_image, width: 1200, loading: 'eager', fetchpriority: 'high', alt: image_alt %}
               {% elsif gallery_generated_image != blank %}
                 <img src="{{ gallery_generated_image | asset_url }}" alt="{{ image_alt | escape }}" width="1200" height="1200" loading="lazy">
@@ -321,8 +321,8 @@
                 assign thumb_alt = thumb_generated_alt
               endif
             %}
-            <button class="tmrx-pdp-gallery__thumb{% if slot == 1 %} is-active{% endif %}{% unless thumb_image or thumb_generated_image != blank %} tmrx-placeholder-media{% endunless %}" type="button" data-pdp-thumb="{{ slot }}" aria-label="View product image {{ slot }}">
-              {% if thumb_image %}
+            <button class="tmrx-pdp-gallery__thumb{% if slot == 1 %} is-active{% endif %}{% unless thumb_image != blank or thumb_generated_image != blank %} tmrx-placeholder-media{% endunless %}" type="button" data-pdp-thumb="{{ slot }}" aria-label="View product image {{ slot }}">
+              {% if thumb_image != blank %}
                 {% render 'tmrx-transparent-product-image', image: thumb_image, width: 260, loading: 'lazy', alt: thumb_alt %}
               {% elsif thumb_generated_image != blank %}
                 <img src="{{ thumb_generated_image | asset_url }}" alt="{{ thumb_alt | escape }}" width="260" height="260" loading="lazy">
