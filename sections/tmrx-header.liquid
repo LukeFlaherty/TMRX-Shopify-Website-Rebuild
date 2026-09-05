@@ -19,7 +19,7 @@
     </button>
 
     <a class="tmrx-header__brand" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
-      {{ section.settings.brand_text | default: shop.name }}
+      <img src="{{ 'tmrx-logo.png' | asset_url }}" alt="{{ shop.name }}" width="500" height="115" loading="eager">
     </a>
 
     <nav class="tmrx-header__nav" aria-label="Primary navigation">

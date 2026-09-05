@@ -5,6 +5,7 @@ ignore = [
   ".git/*",
   "AGENTS.md",
   "README.md",
+  "docs/*",
   "package.json",
   "tmrx-blank-rebuild-draft.zip"
 ]
