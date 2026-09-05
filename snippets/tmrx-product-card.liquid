@@ -9,7 +9,7 @@
 <article class="tmrx-product-card">
   <a class="tmrx-product-card__media{% unless card_product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ card_product.url | default: routes.all_products_collection_url }}">
     {% if card_product.featured_image %}
-      {{ card_product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: card_image_alt }}
+      {% render 'tmrx-transparent-product-image', image: card_product.featured_image, width: 700, loading: 'lazy', alt: card_image_alt %}
     {% endif %}
   </a>
 

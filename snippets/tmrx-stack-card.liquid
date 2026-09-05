@@ -13,7 +13,7 @@
   <span class="tmrx-pdp-stack-card__body">
     <span class="tmrx-pdp-stack-card__media{% unless stack_product.featured_image %} tmrx-placeholder-media{% endunless %}">
       {% if stack_product.featured_image %}
-        {{ stack_product.featured_image | image_url: width: 460 | image_tag: loading: 'lazy', alt: stack_image_alt }}
+        {% render 'tmrx-transparent-product-image', image: stack_product.featured_image, width: 460, loading: 'lazy', alt: stack_image_alt %}
       {% endif %}
     </span>
     <span class="tmrx-pdp-stack-card__content">

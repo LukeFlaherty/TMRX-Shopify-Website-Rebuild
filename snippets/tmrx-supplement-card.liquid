@@ -33,7 +33,7 @@
 
   <a class="tmrx-supplement-card__media{% unless card_product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ card_url }}">
     {% if card_product.featured_image %}
-      {{ card_product.featured_image | image_url: width: 640 | image_tag: loading: 'lazy', alt: card_image_alt }}
+      {% render 'tmrx-transparent-product-image', image: card_product.featured_image, width: 640, loading: 'lazy', alt: card_image_alt %}
     {% endif %}
   </a>
 

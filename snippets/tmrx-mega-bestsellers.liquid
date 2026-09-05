@@ -31,7 +31,7 @@
           <article class="tmrx-mega-bestseller-card">
             <a class="tmrx-mega-bestseller-card__media{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ product.url }}">
               {% if product.featured_image %}
-                {{ product.featured_image | image_url: width: 420 | image_tag: loading: 'lazy', alt: product_image_alt }}
+                {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 420, loading: 'lazy', alt: product_image_alt %}
               {% endif %}
             </a>
             <div class="tmrx-mega-bestseller-card__rating" aria-label="5 star rating">

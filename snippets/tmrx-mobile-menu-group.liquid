@@ -28,7 +28,7 @@
         <a class="tmrx-mobile-menu-product" href="{{ product.url }}">
           <span class="tmrx-mobile-menu-product__image{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}">
             {% if product.featured_image %}
-              {{ product.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: product_image_alt }}
+              {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 160, loading: 'lazy', alt: product_image_alt %}
             {% endif %}
           </span>
           <span>

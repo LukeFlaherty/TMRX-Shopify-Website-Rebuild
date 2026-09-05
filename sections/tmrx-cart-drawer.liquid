@@ -60,7 +60,7 @@
             <li class="tmrx-cart-line">
               <a class="tmrx-cart-line__media{% unless item.image %} tmrx-placeholder-media{% endunless %}" href="{{ item.url }}">
                 {% if item.image %}
-                  {{ item.image | image_url: width: 180 | image_tag: loading: 'lazy', alt: item_image_alt }}
+                  {% render 'tmrx-transparent-product-image', image: item.image, width: 180, loading: 'lazy', alt: item_image_alt %}
                 {% endif %}
               </a>
               <div class="tmrx-cart-line__content">
@@ -101,7 +101,7 @@
               <article class="tmrx-cart-rec-card">
                 <a class="tmrx-cart-rec-card__image{% unless product.featured_image %} tmrx-placeholder-media{% endunless %}" href="{{ product.url }}">
                   {% if product.featured_image %}
-                    {{ product.featured_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: recommendation_alt }}
+                    {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 260, loading: 'lazy', alt: recommendation_alt %}
                   {% endif %}
                 </a>
                 <h4>{{ product.title }}</h4>
