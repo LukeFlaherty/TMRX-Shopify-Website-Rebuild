@@ -43,6 +43,19 @@
     });
   });
 
+  const footerGroups = document.querySelectorAll('.tmrx-footer__group');
+  if (footerGroups.length) {
+    const setFooterGroupState = () => {
+      const isDesktop = window.matchMedia('(min-width: 990px)').matches;
+      footerGroups.forEach((group) => {
+        group.open = isDesktop;
+      });
+    };
+
+    setFooterGroupState();
+    window.addEventListener('resize', setFooterGroupState);
+  }
+
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     menuToggle?.setAttribute('aria-expanded', 'false');
