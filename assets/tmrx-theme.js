@@ -144,6 +144,69 @@
     accordion.open = false;
   });
 
+  document.querySelectorAll('[data-product-section]').forEach((section) => {
+    const reviewModal = section.querySelector('[data-review-modal]');
+    if (!reviewModal) return;
+
+    const ratingStep = reviewModal.querySelector('[data-review-step="rating"]');
+    const detailsStep = reviewModal.querySelector('[data-review-step="details"]');
+    const ratingField = reviewModal.querySelector('[data-review-rating-field]');
+    const ratingButtons = reviewModal.querySelectorAll('[data-review-rating]');
+    const selectedStars = reviewModal.querySelector('[data-review-selected-stars] span');
+    let currentRating = Number(ratingField?.value || 5);
+
+    const paintRating = () => {
+      ratingButtons.forEach((button) => {
+        const rating = Number(button.dataset.reviewRating || 0);
+        const isSelected = rating <= currentRating;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+
+      if (ratingField) ratingField.value = String(currentRating);
+      if (selectedStars) selectedStars.textContent = '★★★★★'.slice(0, currentRating);
+    };
+
+    const showReviewStep = (step) => {
+      ratingStep?.classList.toggle('is-active', step === 'rating');
+      detailsStep?.classList.toggle('is-active', step === 'details');
+    };
+
+    const openReviewModal = () => {
+      reviewModal.hidden = false;
+      body.classList.add('tmrx-lock-scroll');
+      showReviewStep('rating');
+      paintRating();
+    };
+
+    const closeReviewModal = () => {
+      reviewModal.hidden = true;
+      body.classList.remove('tmrx-lock-scroll');
+    };
+
+    section.querySelectorAll('[data-review-open]').forEach((button) => {
+      button.addEventListener('click', openReviewModal);
+    });
+
+    reviewModal.querySelectorAll('[data-review-close]').forEach((button) => {
+      button.addEventListener('click', closeReviewModal);
+    });
+
+    ratingButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        currentRating = Number(button.dataset.reviewRating || 5);
+        paintRating();
+      });
+    });
+
+    reviewModal.querySelector('[data-review-next]')?.addEventListener('click', () => showReviewStep('details'));
+    reviewModal.querySelector('[data-review-back]')?.addEventListener('click', () => showReviewStep('rating'));
+
+    reviewModal.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeReviewModal();
+    });
+  });
+
   document.querySelectorAll('[data-product-form]').forEach((form) => {
     const section = form.closest('[data-product-section]');
     const productJson = form.querySelector('[data-product-json]');

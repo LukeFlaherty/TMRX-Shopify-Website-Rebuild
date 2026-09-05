@@ -1,7 +1,10 @@
 {% liquid
   assign current_variant = product.selected_or_first_available_variant
   assign product_form_id = 'tmrx-product-form-' | append: section.id
-  assign review_count = product.id | modulo: 2500 | plus: 843
+  assign review_average = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.pdp_review_average.value | default: 0
+  assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.pdp_review_count.value | default: 0
+  assign review_count_number = review_count | plus: 0
+  assign review_form_id = 'tmrx-review-form-' | append: section.id
   assign hero_summary = product.metafields.custom.pdp_summary.value | default: section.settings.default_summary
   assign hero_summary = hero_summary | replace: '[product]', product.title
 
@@ -177,6 +180,35 @@
   assign faq_6_question = product.metafields.custom.pdp_faq_6_question.value | default: faq_6_question
   assign faq_6_answer = product.metafields.custom.pdp_faq_6_answer.value | default: faq_6_answer
 
+  assign review_1_rating = product.metafields.custom.pdp_review_1_rating.value | default: 0 | plus: 0
+  assign review_1_name = product.metafields.custom.pdp_review_1_name.value
+  assign review_1_date = product.metafields.custom.pdp_review_1_date.value
+  assign review_1_title = product.metafields.custom.pdp_review_1_title.value
+  assign review_1_body = product.metafields.custom.pdp_review_1_body.value
+  assign review_1_image = product.metafields.custom.pdp_review_1_image.value
+  assign review_2_rating = product.metafields.custom.pdp_review_2_rating.value | default: 0 | plus: 0
+  assign review_2_name = product.metafields.custom.pdp_review_2_name.value
+  assign review_2_date = product.metafields.custom.pdp_review_2_date.value
+  assign review_2_title = product.metafields.custom.pdp_review_2_title.value
+  assign review_2_body = product.metafields.custom.pdp_review_2_body.value
+  assign review_2_image = product.metafields.custom.pdp_review_2_image.value
+  assign review_3_rating = product.metafields.custom.pdp_review_3_rating.value | default: 0 | plus: 0
+  assign review_3_name = product.metafields.custom.pdp_review_3_name.value
+  assign review_3_date = product.metafields.custom.pdp_review_3_date.value
+  assign review_3_title = product.metafields.custom.pdp_review_3_title.value
+  assign review_3_body = product.metafields.custom.pdp_review_3_body.value
+  assign review_3_image = product.metafields.custom.pdp_review_3_image.value
+  assign displayed_reviews = 0
+  if review_1_body != blank
+    assign displayed_reviews = displayed_reviews | plus: 1
+  endif
+  if review_2_body != blank
+    assign displayed_reviews = displayed_reviews | plus: 1
+  endif
+  if review_3_body != blank
+    assign displayed_reviews = displayed_reviews | plus: 1
+  endif
+
   assign first_selling_plan = blank
   for selling_plan_group in product.selling_plan_groups
     for selling_plan in selling_plan_group.selling_plans
@@ -249,9 +281,9 @@
 
       <h1>{{ product.title }}</h1>
 
-      <a class="tmrx-pdp-rating" href="#tmrx-pdp-details" aria-label="5 star rating based on {{ review_count }} reviews">
-        <span aria-hidden="true">*****</span>
-        <small>{{ review_count }} Reviews</small>
+      <a class="tmrx-pdp-rating" href="#tmrx-pdp-reviews" aria-label="{% if review_count_number > 0 %}{{ review_average }} star rating based on {{ review_count }} reviews{% else %}Write the first review{% endif %}">
+        <span aria-hidden="true">{% if review_count_number > 0 %}★★★★★{% else %}☆ ☆ ☆ ☆ ☆{% endif %}</span>
+        <small>{% if review_count_number > 0 %}{{ review_count }} Reviews{% else %}Write a review{% endif %}</small>
       </a>
 
       <p class="tmrx-pdp-summary">{{ hero_summary }}</p>
@@ -397,9 +429,9 @@
         </div>
         <div>
           <h2>{{ product.title }}</h2>
-          <a class="tmrx-pdp-rating tmrx-pdp-sticky__rating" href="#tmrx-pdp-details" aria-label="5 star rating based on {{ review_count }} reviews">
-            <span aria-hidden="true">*****</span>
-            <small>{{ review_count }} Reviews</small>
+          <a class="tmrx-pdp-rating tmrx-pdp-sticky__rating" href="#tmrx-pdp-reviews" aria-label="{% if review_count_number > 0 %}{{ review_average }} star rating based on {{ review_count }} reviews{% else %}Write the first review{% endif %}">
+            <span aria-hidden="true">{% if review_count_number > 0 %}★★★★★{% else %}☆ ☆ ☆ ☆ ☆{% endif %}</span>
+            <small>{% if review_count_number > 0 %}{{ review_count }} Reviews{% else %}Write a review{% endif %}</small>
           </a>
           <p>
             <strong data-sticky-subscription-price>{{ subscription_price | money }}</strong>
@@ -687,6 +719,155 @@
       {% if stack_wellness != blank and stack_wellness.handle != product.handle %}
         {% render 'tmrx-stack-card', product: stack_wellness, category: 'Health & Wellness' %}
       {% endif %}
+    </div>
+  </div>
+
+  <div class="tmrx-pdp-reviews" id="tmrx-pdp-reviews">
+    <div class="tmrx-pdp-reviews__inner">
+      <div class="tmrx-pdp-reviews__header">
+        <div>
+          <h2>Reviews</h2>
+          <div class="tmrx-pdp-reviews__summary">
+            <span aria-hidden="true">★</span>
+            <strong>{% if review_count_number > 0 %}{{ review_average }}{% else %}0.0{% endif %}</strong>
+            <small>{% if review_count_number > 0 %}{{ review_count }} reviews{% else %}No reviews yet{% endif %}</small>
+          </div>
+        </div>
+        <button type="button" data-review-open>Write a review</button>
+      </div>
+
+      {% if displayed_reviews > 0 %}
+        <div class="tmrx-pdp-reviews__photos" aria-label="Customer review photos">
+          {% if review_1_image != blank %}
+            {{ review_1_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_1_title }}
+          {% endif %}
+          {% if review_2_image != blank %}
+            {{ review_2_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_2_title }}
+          {% endif %}
+          {% if review_3_image != blank %}
+            {{ review_3_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_3_title }}
+          {% endif %}
+        </div>
+
+        <div class="tmrx-pdp-reviews__list">
+          <h3>Product reviews ({{ review_count }})</h3>
+          {% if review_1_body != blank %}
+            <article class="tmrx-pdp-review">
+              <div class="tmrx-pdp-review__stars" aria-label="{{ review_1_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_1_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+              <p class="tmrx-pdp-review__meta"><strong>{{ review_1_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
+              {% if review_1_date != blank %}<p class="tmrx-pdp-review__date">{{ review_1_date }}</p>{% endif %}
+              {% if review_1_title != blank %}<h4>{{ review_1_title }}</h4>{% endif %}
+              <p>{{ review_1_body }}</p>
+            </article>
+          {% endif %}
+          {% if review_2_body != blank %}
+            <article class="tmrx-pdp-review">
+              <div class="tmrx-pdp-review__stars" aria-label="{{ review_2_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_2_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+              <p class="tmrx-pdp-review__meta"><strong>{{ review_2_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
+              {% if review_2_date != blank %}<p class="tmrx-pdp-review__date">{{ review_2_date }}</p>{% endif %}
+              {% if review_2_title != blank %}<h4>{{ review_2_title }}</h4>{% endif %}
+              <p>{{ review_2_body }}</p>
+            </article>
+          {% endif %}
+          {% if review_3_body != blank %}
+            <article class="tmrx-pdp-review">
+              <div class="tmrx-pdp-review__stars" aria-label="{{ review_3_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_3_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+              <p class="tmrx-pdp-review__meta"><strong>{{ review_3_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
+              {% if review_3_date != blank %}<p class="tmrx-pdp-review__date">{{ review_3_date }}</p>{% endif %}
+              {% if review_3_title != blank %}<h4>{{ review_3_title }}</h4>{% endif %}
+              <p>{{ review_3_body }}</p>
+            </article>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="tmrx-pdp-reviews__empty">
+          <h3>No reviews yet</h3>
+          <p>Share your experience with {{ product.title }} and help other customers choose their routine.</p>
+          <button type="button" data-review-open>Write the first review</button>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="tmrx-review-modal" data-review-modal hidden>
+    <div class="tmrx-review-modal__overlay" data-review-close></div>
+    <div class="tmrx-review-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tmrx-review-title-{{ section.id }}">
+      <button class="tmrx-review-modal__close" type="button" aria-label="Close review form" data-review-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      {% form 'contact', id: review_form_id, class: 'tmrx-review-form', data-review-form: '' %}
+        <input type="hidden" name="return_to" value="{{ product.url }}#tmrx-pdp-reviews">
+        <input type="hidden" name="contact[Product]" value="{{ product.title }}">
+        <input type="hidden" name="contact[Product Handle]" value="{{ product.handle }}">
+        <input type="hidden" name="contact[Product URL]" value="{{ shop.url }}{{ product.url }}">
+        <input type="hidden" name="contact[Review Rating]" value="5" data-review-rating-field>
+
+        {% if form.posted_successfully? %}
+          <div class="tmrx-review-form__success" role="status">
+            <h2>Thanks for your review.</h2>
+            <p>We received it and will review it before publishing.</p>
+          </div>
+        {% else %}
+          {% if form.errors %}
+            <div class="tmrx-review-form__errors" role="alert">{{ form.errors | default_errors }}</div>
+          {% endif %}
+
+          <div class="tmrx-review-form__step is-active" data-review-step="rating">
+            <h2 id="tmrx-review-title-{{ section.id }}">How would you rate this product?</h2>
+            <p>We would love it if you would share a bit about your experience.</p>
+            <div class="tmrx-review-form__product">
+              <div class="tmrx-review-form__image{% if product.featured_image == blank %} tmrx-placeholder-media{% endif %}">
+                {% if product.featured_image %}
+                  {{ product.featured_image | image_url: width: 360 | image_tag: loading: 'lazy', alt: product.title }}
+                {% endif %}
+              </div>
+              <strong>{{ product.title }}</strong>
+            </div>
+            <div class="tmrx-review-form__stars" role="radiogroup" aria-label="Rating">
+              {% for rating in (1..5) %}
+                <button class="is-selected" type="button" aria-label="{{ rating }} out of 5 stars" aria-pressed="true" data-review-rating="{{ rating }}">★</button>
+              {% endfor %}
+            </div>
+            <div class="tmrx-review-form__scale" aria-hidden="true">
+              <span>Poor</span>
+              <span>Great</span>
+            </div>
+            <button class="tmrx-review-form__next" type="button" data-review-next>Next</button>
+          </div>
+
+          <div class="tmrx-review-form__step" data-review-step="details">
+            <h2>{{ product.title }}</h2>
+            <div class="tmrx-review-form__stars tmrx-review-form__stars--small" aria-hidden="true" data-review-selected-stars>
+              <span>★★★★★</span>
+            </div>
+            <label for="ReviewBody-{{ section.id }}">Review* (Required)</label>
+            <textarea id="ReviewBody-{{ section.id }}" name="contact[body]" placeholder="Start writing here..." required></textarea>
+            <label for="ReviewTitle-{{ section.id }}">Review Title</label>
+            <input id="ReviewTitle-{{ section.id }}" type="text" name="contact[Review Title]" placeholder="Give your review a title">
+            <div class="tmrx-review-form__customer">
+              <div>
+                <label for="ReviewName-{{ section.id }}">Name</label>
+                <input id="ReviewName-{{ section.id }}" type="text" name="contact[name]" autocomplete="name" placeholder="Your name">
+              </div>
+              <div>
+                <label for="ReviewEmail-{{ section.id }}">Email* (Required)</label>
+                <input id="ReviewEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <p class="tmrx-review-form__legal">
+              We'll only contact you about your review if necessary. By submitting your review, you agree to our
+              <a href="{% if shop.terms_of_service.url != blank %}{{ shop.terms_of_service.url }}{% else %}/policies/terms-of-service{% endif %}">terms and conditions</a>
+              and
+              <a href="{% if shop.privacy_policy.url != blank %}{{ shop.privacy_policy.url }}{% else %}/policies/privacy-policy{% endif %}">privacy policy</a>.
+            </p>
+            <div class="tmrx-review-form__actions">
+              <button type="button" data-review-back>Back</button>
+              <button type="submit">Submit Review</button>
+            </div>
+          </div>
+        {% endif %}
+      {% endform %}
     </div>
   </div>
 
