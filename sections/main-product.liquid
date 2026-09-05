@@ -25,6 +25,11 @@
   assign why_intro = product.metafields.custom.pdp_why_intro.value | default: section.settings.why_intro | replace: '[product]', product.title
   assign ingredients_heading = product.metafields.custom.pdp_ingredients_heading.value | default: section.settings.ingredients_heading
   assign ingredients_intro = product.metafields.custom.pdp_ingredients_intro.value | default: section.settings.ingredients_intro
+  assign how_heading = product.metafields.custom.pdp_how_heading.value | default: section.settings.how_heading
+  assign how_step_1_body = product.metafields.custom.pdp_how_step_1_body.value | default: section.settings.how_step_1_body | replace: '[product]', product.title
+  assign how_step_2_body = product.metafields.custom.pdp_how_step_2_body.value | default: section.settings.how_step_2_body | replace: '[product]', product.title
+  assign how_step_3_body = product.metafields.custom.pdp_how_step_3_body.value | default: section.settings.how_step_3_body | replace: '[product]', product.title
+  assign how_step_4_body = product.metafields.custom.pdp_how_step_4_body.value | default: section.settings.how_step_4_body | replace: '[product]', product.title
   assign product_lower = product.title | downcase
 
   assign first_selling_plan = blank
@@ -429,6 +434,54 @@
     </div>
   </div>
 
+  <div class="tmrx-pdp-how">
+    <div class="tmrx-pdp-how__inner">
+      <h2>{{ how_heading }}</h2>
+      <ol class="tmrx-pdp-how__steps">
+        <li class="tmrx-pdp-how__step">
+          <span class="tmrx-pdp-how__number">1</span>
+          <span class="tmrx-pdp-how__icon">
+            <img src="{{ 'how-to-add-powder.svg' | asset_url }}" alt="" width="116" height="116" loading="lazy" aria-hidden="true">
+          </span>
+          <span class="tmrx-pdp-how__copy">
+            <strong>Step 1 - Add Powder</strong>
+            <span>{{ how_step_1_body }}</span>
+          </span>
+        </li>
+        <li class="tmrx-pdp-how__step">
+          <span class="tmrx-pdp-how__number">2</span>
+          <span class="tmrx-pdp-how__icon">
+            <img src="{{ 'how-to-shake.svg' | asset_url }}" alt="" width="116" height="116" loading="lazy" aria-hidden="true">
+          </span>
+          <span class="tmrx-pdp-how__copy">
+            <strong>Step 2 - Mix Thoroughly</strong>
+            <span>{{ how_step_2_body }}</span>
+          </span>
+        </li>
+        <li class="tmrx-pdp-how__step">
+          <span class="tmrx-pdp-how__number">3</span>
+          <span class="tmrx-pdp-how__icon">
+            <img src="{{ 'how-to-consume.svg' | asset_url }}" alt="" width="116" height="116" loading="lazy" aria-hidden="true">
+          </span>
+          <span class="tmrx-pdp-how__copy">
+            <strong>Step 3 - Consume</strong>
+            <span>{{ how_step_3_body }}</span>
+          </span>
+        </li>
+        <li class="tmrx-pdp-how__step">
+          <span class="tmrx-pdp-how__number">4</span>
+          <span class="tmrx-pdp-how__icon">
+            <img src="{{ 'how-to-use-daily.svg' | asset_url }}" alt="" width="116" height="116" loading="lazy" aria-hidden="true">
+          </span>
+          <span class="tmrx-pdp-how__copy">
+            <strong>Step 4 - Use Daily</strong>
+            <span>{{ how_step_4_body }}</span>
+          </span>
+        </li>
+      </ol>
+    </div>
+  </div>
+
   <div class="tmrx-pdp-stack">
     <div class="tmrx-pdp-stack__heading">
       <h2>Complete Your Stack</h2>
@@ -574,6 +627,36 @@
       "id": "ingredients_intro",
       "label": "Ingredients section intro",
       "default": "Our formulas are made with clean, purposeful ingredients selected to support health and performance."
+    },
+    {
+      "type": "text",
+      "id": "how_heading",
+      "label": "How to use heading",
+      "default": "How To Use"
+    },
+    {
+      "type": "textarea",
+      "id": "how_step_1_body",
+      "label": "How to use step 1 copy",
+      "default": "Add one level scoop of [product] into a shaker cup with 10-12 ounces of cold water or your preferred beverage. Adjust liquid to taste."
+    },
+    {
+      "type": "textarea",
+      "id": "how_step_2_body",
+      "label": "How to use step 2 copy",
+      "default": "Place the lid securely on your shaker cup and shake vigorously until the powder fully dissolves and the mix is smooth."
+    },
+    {
+      "type": "textarea",
+      "id": "how_step_3_body",
+      "label": "How to use step 3 copy",
+      "default": "For best results, consume [product] as directed on the label, ideally around your workout or as part of your daily routine."
+    },
+    {
+      "type": "textarea",
+      "id": "how_step_4_body",
+      "label": "How to use step 4 copy",
+      "default": "Use daily for consistent support. On rest days, take one serving in the morning, with or without food, unless your label says otherwise."
     }
   ]
 }
