@@ -8,23 +8,23 @@ Working catalog for the red placeholder boxes that still need finished creative 
 
 Location: `sections/main-product.liquid`
 
-These appear in the PDP section after the buy box and before Key Ingredients. Initial generated lifestyle backgrounds are installed with the current product image overlaid from Shopify so the cards always show real TMRX-branded product cutouts.
+These appear in the PDP section after the buy box and before Key Ingredients. They are currently intentionally red placeholders.
 
 1. Support Daily Performance
    - Current copy: "Purposeful nutrition support for training days, busy schedules, and consistent routines."
-   - Installed asset: `assets/tmrx-pdp-use-performance.png`
+   - Needed asset: lifestyle image showing daily supplement use or an active daily routine.
 
 2. Promote Recovery
    - Current copy: "Designed to help you stay steady between workouts and come back ready for the next session."
-   - Installed asset: `assets/tmrx-pdp-use-recovery.png`
+   - Needed asset: recovery-focused lifestyle image, stretching, post-workout cooldown, or wellness routine.
 
 3. Fit a Clean Routine
    - Current copy: "Made for customers who want simple formulas without unnecessary fillers or artificial additives."
-   - Installed asset: `assets/tmrx-pdp-use-clean-routine.png`
+   - Needed asset: clean kitchen/counter supplement routine or ingredient-forward scene.
 
 4. Support Long-Term Wellness
    - Current copy: "Built to pair with nutrition, hydration, movement, and practitioner-guided health goals."
-   - Installed asset: `assets/tmrx-pdp-use-wellness.png`
+   - Needed asset: wellness/longevity scene with hydration, movement, or practitioner-grade health cues.
 
 ## Homepage / Global Sections
 

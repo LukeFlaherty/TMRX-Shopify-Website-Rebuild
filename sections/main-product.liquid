@@ -232,10 +232,7 @@
     endif
   endfor
 
-  assign pdp_generated_prefix = 'tmrx-pdp-' | append: product.handle
-  assign pdp_generated_count = 4
-  assign pdp_product_image_count = product.images.size
-  assign pdp_gallery_count = pdp_product_image_count | plus: pdp_generated_count
+  assign pdp_gallery_count = 5
 %}
 
 <section class="tmrx-pdp" data-product-section>
@@ -246,43 +243,24 @@
           {% for slot in (1..pdp_gallery_count) %}
             {% liquid
               assign gallery_image = blank
-              assign gallery_generated_image = ''
-              assign gallery_generated_alt = ''
-              if slot <= pdp_product_image_count
+              if product.images.size > 0
                 assign image_index = slot | minus: 1
+                if image_index >= product.images.size
+                  assign image_index = image_index | modulo: product.images.size
+                endif
                 assign gallery_image = product.images[image_index]
-              else
-                assign generated_slot = slot | minus: pdp_product_image_count
-                case generated_slot
-                  when 1
-                    assign gallery_generated_image = pdp_generated_prefix | append: '-01-family.png'
-                    assign gallery_generated_alt = product.title | append: ' product family'
-                  when 2
-                    assign gallery_generated_image = pdp_generated_prefix | append: '-02-science.png'
-                    assign gallery_generated_alt = product.title | append: ' practitioner recommended overview'
-                  when 3
-                    assign gallery_generated_image = pdp_generated_prefix | append: '-03-expect.png'
-                    assign gallery_generated_alt = product.title | append: ' what to expect'
-                  when 4
-                    assign gallery_generated_image = pdp_generated_prefix | append: '-04-use.png'
-                    assign gallery_generated_alt = product.title | append: ' how to use'
-                endcase
               endif
               assign image_alt = product.title
               if gallery_image.alt != blank
                 assign image_alt = gallery_image.alt
-              elsif gallery_generated_alt != blank
-                assign image_alt = gallery_generated_alt
               endif
             %}
-            <div class="tmrx-pdp-gallery__frame{% if slot == 1 %} is-active{% endif %}{% unless gallery_image != blank or gallery_generated_image != blank %} tmrx-placeholder-media{% endunless %}" data-pdp-image="{{ slot }}">
+            <div class="tmrx-pdp-gallery__frame{% if slot == 1 %} is-active{% endif %}{% unless gallery_image %} tmrx-placeholder-media{% endunless %}" data-pdp-image="{{ slot }}">
               {% if section.settings.badge_label != blank and slot == 1 %}
                 <span class="tmrx-pdp__badge">{{ section.settings.badge_label }}</span>
               {% endif %}
-              {% if gallery_image != blank %}
+              {% if gallery_image %}
                 {% render 'tmrx-transparent-product-image', image: gallery_image, width: 1200, loading: 'eager', fetchpriority: 'high', alt: image_alt %}
-              {% elsif gallery_generated_image != blank %}
-                <img src="{{ gallery_generated_image | asset_url }}" alt="{{ image_alt | escape }}" width="1200" height="1200" loading="lazy">
               {% endif %}
             </div>
           {% endfor %}
@@ -292,40 +270,21 @@
           {% for slot in (1..pdp_gallery_count) %}
             {% liquid
               assign thumb_image = blank
-              assign thumb_generated_image = ''
-              assign thumb_generated_alt = ''
-              if slot <= pdp_product_image_count
+              if product.images.size > 0
                 assign thumb_index = slot | minus: 1
+                if thumb_index >= product.images.size
+                  assign thumb_index = thumb_index | modulo: product.images.size
+                endif
                 assign thumb_image = product.images[thumb_index]
-              else
-                assign generated_slot = slot | minus: pdp_product_image_count
-                case generated_slot
-                  when 1
-                    assign thumb_generated_image = pdp_generated_prefix | append: '-01-family.png'
-                    assign thumb_generated_alt = product.title | append: ' product family'
-                  when 2
-                    assign thumb_generated_image = pdp_generated_prefix | append: '-02-science.png'
-                    assign thumb_generated_alt = product.title | append: ' practitioner recommended overview'
-                  when 3
-                    assign thumb_generated_image = pdp_generated_prefix | append: '-03-expect.png'
-                    assign thumb_generated_alt = product.title | append: ' what to expect'
-                  when 4
-                    assign thumb_generated_image = pdp_generated_prefix | append: '-04-use.png'
-                    assign thumb_generated_alt = product.title | append: ' how to use'
-                endcase
               endif
               assign thumb_alt = product.title
               if thumb_image.alt != blank
                 assign thumb_alt = thumb_image.alt
-              elsif thumb_generated_alt != blank
-                assign thumb_alt = thumb_generated_alt
               endif
             %}
-            <button class="tmrx-pdp-gallery__thumb{% if slot == 1 %} is-active{% endif %}{% unless thumb_image != blank or thumb_generated_image != blank %} tmrx-placeholder-media{% endunless %}" type="button" data-pdp-thumb="{{ slot }}" aria-label="View product image {{ slot }}">
-              {% if thumb_image != blank %}
+            <button class="tmrx-pdp-gallery__thumb{% if slot == 1 %} is-active{% endif %}{% unless thumb_image %} tmrx-placeholder-media{% endunless %}" type="button" data-pdp-thumb="{{ slot }}" aria-label="View product image {{ slot }}">
+              {% if thumb_image %}
                 {% render 'tmrx-transparent-product-image', image: thumb_image, width: 260, loading: 'lazy', alt: thumb_alt %}
-              {% elsif thumb_generated_image != blank %}
-                <img src="{{ thumb_generated_image | asset_url }}" alt="{{ thumb_alt | escape }}" width="260" height="260" loading="lazy">
               {% endif %}
             </button>
           {% endfor %}
@@ -605,48 +564,28 @@
           <h3>Support Daily Performance</h3>
           <p>Purposeful nutrition support for training days, busy schedules, and consistent routines.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
-          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-performance.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
-          {% if product.featured_image %}
-            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
-          {% endif %}
-        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Promote Recovery</h3>
           <p>Designed to help you stay steady between workouts and come back ready for the next session.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
-          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-recovery.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
-          {% if product.featured_image %}
-            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
-          {% endif %}
-        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Fit a Clean Routine</h3>
           <p>Made for customers who want simple formulas without unnecessary fillers or artificial additives.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
-          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-clean-routine.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
-          {% if product.featured_image %}
-            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
-          {% endif %}
-        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
       </article>
       <article class="tmrx-pdp-use-card">
         <div>
           <h3>Support Long-Term Wellness</h3>
           <p>Built to pair with nutrition, hydration, movement, and practitioner-guided health goals.</p>
         </div>
-        <div class="tmrx-pdp-use-card__media" aria-hidden="true">
-          <img class="tmrx-pdp-use-card__background" src="{{ 'tmrx-pdp-use-wellness.png' | asset_url }}" alt="" width="1536" height="1024" loading="lazy">
-          {% if product.featured_image %}
-            {% render 'tmrx-transparent-product-image', image: product.featured_image, width: 520, loading: 'lazy', alt: product.title, class: 'tmrx-pdp-use-card__product' %}
-          {% endif %}
-        </div>
+        <div class="tmrx-pdp-use-card__media tmrx-placeholder-media" aria-hidden="true"></div>
       </article>
     </div>
   </div>
