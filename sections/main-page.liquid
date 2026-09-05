@@ -1,11 +1,228 @@
-<section class="tmrx-blank">
-  <div class="tmrx-blank__inner">
-    <p class="tmrx-blank__eyebrow">{{ page.title }}</p>
-    <div class="rte">
-      {{ page.content }}
-    </div>
-  </div>
-</section>
+{% liquid
+  assign tmrx_page_key = page.handle
+  if template.suffix == 'contact-us' or template.suffix == 'subscribe-and-save' or template.suffix == 'wholesale'
+    assign tmrx_page_key = template.suffix
+  endif
+%}
+
+{% case tmrx_page_key %}
+  {% when 'contact-us' or 'contact' %}
+    <section class="tmrx-info-page tmrx-info-page--contact">
+      <div class="tmrx-info-page__inner">
+        <nav class="tmrx-breadcrumbs" aria-label="Breadcrumb">
+          <a href="{{ routes.root_url }}">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Contact Us</span>
+        </nav>
+
+        <div class="tmrx-info-page__layout">
+          <header class="tmrx-info-page__hero">
+            <p class="tmrx-eyebrow">Customer Support</p>
+            <h1>Contact Us</h1>
+            <p>Have a question about an order, product, subscription, or clean supplement routine? Send us a note and the TRUE MATRx team will help.</p>
+          </header>
+
+          <div class="tmrx-info-page__panel">
+            {% form 'contact', class: 'tmrx-info-form' %}
+              <input type="hidden" name="contact[Subject]" value="Contact Us">
+
+              {% if form.posted_successfully? %}
+                <p class="tmrx-info-form__message" role="status">Thanks for reaching out. We will get back to you soon.</p>
+              {% elsif form.errors %}
+                <div class="tmrx-info-form__message" role="alert">{{ form.errors | default_errors }}</div>
+              {% endif %}
+
+              <div class="tmrx-info-form__row">
+                <label for="ContactName-{{ section.id }}">Name</label>
+                <input id="ContactName-{{ section.id }}" type="text" name="contact[name]" autocomplete="name" required>
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="ContactEmail-{{ section.id }}">Email</label>
+                <input id="ContactEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" autocorrect="off" autocapitalize="off" required>
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="ContactPhone-{{ section.id }}">Phone</label>
+                <input id="ContactPhone-{{ section.id }}" type="tel" name="contact[phone]" autocomplete="tel">
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="ContactBody-{{ section.id }}">Message</label>
+                <textarea id="ContactBody-{{ section.id }}" name="contact[body]" rows="6" required></textarea>
+              </div>
+
+              <button class="tmrx-button tmrx-button--primary tmrx-button--full" type="submit">Send Message</button>
+            {% endform %}
+          </div>
+        </div>
+
+        <div class="tmrx-info-page__cards">
+          <article>
+            <span>01</span>
+            <h2>Order Help</h2>
+            <p>Questions about shipping, returns, tracking, or an existing order.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>Product Support</h2>
+            <p>Help choosing a formula or understanding how a product fits your routine.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>Subscriptions</h2>
+            <p>Support for subscribe-and-save timing, product swaps, or account questions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  {% when 'wholesale' %}
+    <section class="tmrx-info-page tmrx-info-page--wholesale">
+      <div class="tmrx-info-page__inner">
+        <nav class="tmrx-breadcrumbs" aria-label="Breadcrumb">
+          <a href="{{ routes.root_url }}">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Wholesale</span>
+        </nav>
+
+        <div class="tmrx-info-page__layout">
+          <header class="tmrx-info-page__hero">
+            <p class="tmrx-eyebrow">Partner With TRUE MATRx</p>
+            <h1>Wholesale</h1>
+            <p>Bring clean, practitioner-grade supplements to your gym, clinic, studio, retail shelf, or wellness community.</p>
+          </header>
+
+          <div class="tmrx-info-page__panel">
+            {% form 'contact', class: 'tmrx-info-form' %}
+              <input type="hidden" name="contact[Subject]" value="Wholesale Inquiry">
+
+              {% if form.posted_successfully? %}
+                <p class="tmrx-info-form__message" role="status">Thanks for your wholesale inquiry. We will follow up soon.</p>
+              {% elsif form.errors %}
+                <div class="tmrx-info-form__message" role="alert">{{ form.errors | default_errors }}</div>
+              {% endif %}
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleName-{{ section.id }}">Name</label>
+                <input id="WholesaleName-{{ section.id }}" type="text" name="contact[name]" autocomplete="name" required>
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleEmail-{{ section.id }}">Email</label>
+                <input id="WholesaleEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" autocorrect="off" autocapitalize="off" required>
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleBusiness-{{ section.id }}">Business</label>
+                <input id="WholesaleBusiness-{{ section.id }}" type="text" name="contact[Business]" autocomplete="organization" required>
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleWebsite-{{ section.id }}">Website or social profile</label>
+                <input id="WholesaleWebsite-{{ section.id }}" type="text" name="contact[Website]">
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleVolume-{{ section.id }}">Expected monthly volume</label>
+                <input id="WholesaleVolume-{{ section.id }}" type="text" name="contact[Expected Monthly Volume]">
+              </div>
+
+              <div class="tmrx-info-form__row">
+                <label for="WholesaleBody-{{ section.id }}">Tell us what you need</label>
+                <textarea id="WholesaleBody-{{ section.id }}" name="contact[body]" rows="6" required></textarea>
+              </div>
+
+              <button class="tmrx-button tmrx-button--primary tmrx-button--full" type="submit">Request Wholesale Info</button>
+            {% endform %}
+          </div>
+        </div>
+
+        <div class="tmrx-info-page__cards">
+          <article>
+            <span>01</span>
+            <h2>Clean Formulas</h2>
+            <p>Purpose-built products with transparent positioning for health-conscious customers.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>Retail Ready</h2>
+            <p>Supplement support for studios, gyms, clinics, practitioners, and specialty retailers.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>Responsive Support</h2>
+            <p>Tell us about your business and we will help with the right next step.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  {% when 'subscribe-and-save' %}
+    <section class="tmrx-info-page tmrx-info-page--subscribe">
+      <div class="tmrx-info-page__inner">
+        <nav class="tmrx-breadcrumbs" aria-label="Breadcrumb">
+          <a href="{{ routes.root_url }}">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Subscribe & Save</span>
+        </nav>
+
+        <header class="tmrx-info-page__hero tmrx-info-page__hero--center">
+          <p class="tmrx-eyebrow">Routine Support</p>
+          <h1>Subscribe & Save</h1>
+          <p>Keep your daily formulas on hand with subscription options available on TRUE MATRx product pages.</p>
+          <div class="tmrx-info-page__actions">
+            <a class="tmrx-button tmrx-button--primary" href="{{ routes.all_products_collection_url }}">Shop Products</a>
+            <a class="tmrx-button" href="{{ routes.search_url }}">Search Products</a>
+          </div>
+        </header>
+
+        <div class="tmrx-info-page__cards">
+          <article>
+            <span>01</span>
+            <h2>Save 10%</h2>
+            <p>Select subscribe and save on eligible product pages to receive recurring savings.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>Choose Timing</h2>
+            <p>Pick the frequency that fits your routine and adjust when your needs change.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>Stay Stocked</h2>
+            <p>Support consistency by keeping the formulas you use most in regular rotation.</p>
+          </article>
+        </div>
+
+        {% if collections.all.products_count > 0 %}
+          <div class="tmrx-info-page__products">
+            <div class="tmrx-info-page__section-heading">
+              <h2>Start With Your Go-To Formula</h2>
+              <a href="{{ routes.all_products_collection_url }}">View all products</a>
+            </div>
+            <div class="tmrx-collection-grid">
+              {% for product in collections.all.products limit: 6 %}
+                <div class="tmrx-collection-product">
+                  {% render 'tmrx-supplement-card', product: product, badge: 'Subscribe & Save', index: forloop.index %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+  {% else %}
+    <section class="tmrx-blank">
+      <div class="tmrx-blank__inner">
+        <p class="tmrx-blank__eyebrow">{{ page.title }}</p>
+        <div class="rte">
+          {{ page.content }}
+        </div>
+      </div>
+    </section>
+{% endcase %}
 
 {% schema %}
 {
