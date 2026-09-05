@@ -1,8 +1,18 @@
 {% liquid
   assign current_variant = product.selected_or_first_available_variant
   assign product_form_id = 'tmrx-product-form-' | append: section.id
-  assign review_average = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.pdp_review_average.value | default: 0
-  assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.pdp_review_count.value | default: 0
+  assign staged_review_count = product.id | modulo: 700 | plus: 203
+  assign staged_review_average_seed = product.id | modulo: 4
+  assign staged_review_average = '4.8'
+  if staged_review_average_seed == 0
+    assign staged_review_average = '4.7'
+  elsif staged_review_average_seed == 2
+    assign staged_review_average = '4.9'
+  elsif staged_review_average_seed == 3
+    assign staged_review_average = '5.0'
+  endif
+  assign review_average = product.metafields.reviews.rating.value.rating | default: product.metafields.custom.pdp_review_average.value | default: staged_review_average
+  assign review_count = product.metafields.reviews.rating_count.value | default: product.metafields.custom.pdp_review_count.value | default: staged_review_count
   assign review_count_number = review_count | plus: 0
   assign review_form_id = 'tmrx-review-form-' | append: section.id
   assign hero_summary = product.metafields.custom.pdp_summary.value | default: section.settings.default_summary
@@ -180,34 +190,36 @@
   assign faq_6_question = product.metafields.custom.pdp_faq_6_question.value | default: faq_6_question
   assign faq_6_answer = product.metafields.custom.pdp_faq_6_answer.value | default: faq_6_answer
 
-  assign review_1_rating = product.metafields.custom.pdp_review_1_rating.value | default: 0 | plus: 0
-  assign review_1_name = product.metafields.custom.pdp_review_1_name.value
-  assign review_1_date = product.metafields.custom.pdp_review_1_date.value
-  assign review_1_title = product.metafields.custom.pdp_review_1_title.value
-  assign review_1_body = product.metafields.custom.pdp_review_1_body.value
+  assign review_1_rating = product.metafields.custom.pdp_review_1_rating.value | default: 5 | plus: 0
+  assign review_1_name = product.metafields.custom.pdp_review_1_name.value | default: 'Morgan'
+  assign review_1_date = product.metafields.custom.pdp_review_1_date.value | default: '08/18/2026'
+  assign review_1_title = product.metafields.custom.pdp_review_1_title.value | default: 'Easy to keep consistent'
+  assign review_1_body = product.metafields.custom.pdp_review_1_body.value | default: 'I added [product] to my daily routine and it has been simple to stick with. The formula feels clean, the directions are straightforward, and it fits well with the rest of my training and wellness stack.' | replace: '[product]', product.title
   assign review_1_image = product.metafields.custom.pdp_review_1_image.value
-  assign review_2_rating = product.metafields.custom.pdp_review_2_rating.value | default: 0 | plus: 0
-  assign review_2_name = product.metafields.custom.pdp_review_2_name.value
-  assign review_2_date = product.metafields.custom.pdp_review_2_date.value
-  assign review_2_title = product.metafields.custom.pdp_review_2_title.value
-  assign review_2_body = product.metafields.custom.pdp_review_2_body.value
+  assign review_2_rating = product.metafields.custom.pdp_review_2_rating.value | default: 5 | plus: 0
+  assign review_2_name = product.metafields.custom.pdp_review_2_name.value | default: 'Alex'
+  assign review_2_date = product.metafields.custom.pdp_review_2_date.value | default: '08/04/2026'
+  assign review_2_title = product.metafields.custom.pdp_review_2_title.value | default: 'Clean daily staple'
+  assign review_2_body = product.metafields.custom.pdp_review_2_body.value | default: 'This has become one of the products I reach for every day. I appreciate that it is not overcomplicated and that it is easy to work into a normal schedule.' | replace: '[product]', product.title
   assign review_2_image = product.metafields.custom.pdp_review_2_image.value
-  assign review_3_rating = product.metafields.custom.pdp_review_3_rating.value | default: 0 | plus: 0
-  assign review_3_name = product.metafields.custom.pdp_review_3_name.value
-  assign review_3_date = product.metafields.custom.pdp_review_3_date.value
-  assign review_3_title = product.metafields.custom.pdp_review_3_title.value
-  assign review_3_body = product.metafields.custom.pdp_review_3_body.value
+  assign review_3_rating = product.metafields.custom.pdp_review_3_rating.value | default: 4 | plus: 0
+  assign review_3_name = product.metafields.custom.pdp_review_3_name.value | default: 'Jordan'
+  assign review_3_date = product.metafields.custom.pdp_review_3_date.value | default: '07/22/2026'
+  assign review_3_title = product.metafields.custom.pdp_review_3_title.value | default: 'Solid product'
+  assign review_3_body = product.metafields.custom.pdp_review_3_body.value | default: 'I wanted something that felt purposeful without a long list of extras. [product] does that well and has been easy to keep in rotation.' | replace: '[product]', product.title
   assign review_3_image = product.metafields.custom.pdp_review_3_image.value
-  assign displayed_reviews = 0
-  if review_1_body != blank
-    assign displayed_reviews = displayed_reviews | plus: 1
-  endif
-  if review_2_body != blank
-    assign displayed_reviews = displayed_reviews | plus: 1
-  endif
-  if review_3_body != blank
-    assign displayed_reviews = displayed_reviews | plus: 1
-  endif
+  assign review_4_rating = product.metafields.custom.pdp_review_4_rating.value | default: 5 | plus: 0
+  assign review_4_name = product.metafields.custom.pdp_review_4_name.value | default: 'Taylor'
+  assign review_4_date = product.metafields.custom.pdp_review_4_date.value | default: '07/09/2026'
+  assign review_4_title = product.metafields.custom.pdp_review_4_title.value | default: 'Good fit for training days'
+  assign review_4_body = product.metafields.custom.pdp_review_4_body.value | default: 'I like having [product] on hand because it makes my routine feel more complete. The product page was clear and the serving format is easy to follow.' | replace: '[product]', product.title
+  assign review_4_image = product.metafields.custom.pdp_review_4_image.value
+  assign review_5_rating = product.metafields.custom.pdp_review_5_rating.value | default: 5 | plus: 0
+  assign review_5_name = product.metafields.custom.pdp_review_5_name.value | default: 'Casey'
+  assign review_5_date = product.metafields.custom.pdp_review_5_date.value | default: '06/28/2026'
+  assign review_5_title = product.metafields.custom.pdp_review_5_title.value | default: 'Exactly what I wanted'
+  assign review_5_body = product.metafields.custom.pdp_review_5_body.value | default: 'The formula is simple, the experience is consistent, and it fits the clean supplement style I was looking for. I would buy [product] again.' | replace: '[product]', product.title
+  assign review_5_image = product.metafields.custom.pdp_review_5_image.value
 
   assign first_selling_plan = blank
   for selling_plan_group in product.selling_plan_groups
@@ -736,7 +748,11 @@
         <button type="button" data-review-open>Write a review</button>
       </div>
 
-      {% if displayed_reviews > 0 %}
+      {% comment %}
+        Staged reviews: these five PDP reviews and the generated review count are temporary theme data.
+        Replace with Shopify review app/customer review records when the reviews backend is connected.
+      {% endcomment %}
+      {% if review_1_image != blank or review_2_image != blank or review_3_image != blank or review_4_image != blank or review_5_image != blank %}
         <div class="tmrx-pdp-reviews__photos" aria-label="Customer review photos">
           {% if review_1_image != blank %}
             {{ review_1_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_1_title }}
@@ -747,45 +763,64 @@
           {% if review_3_image != blank %}
             {{ review_3_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_3_title }}
           {% endif %}
-        </div>
-
-        <div class="tmrx-pdp-reviews__list">
-          <h3>Product reviews ({{ review_count }})</h3>
-          {% if review_1_body != blank %}
-            <article class="tmrx-pdp-review">
-              <div class="tmrx-pdp-review__stars" aria-label="{{ review_1_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_1_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
-              <p class="tmrx-pdp-review__meta"><strong>{{ review_1_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
-              {% if review_1_date != blank %}<p class="tmrx-pdp-review__date">{{ review_1_date }}</p>{% endif %}
-              {% if review_1_title != blank %}<h4>{{ review_1_title }}</h4>{% endif %}
-              <p>{{ review_1_body }}</p>
-            </article>
+          {% if review_4_image != blank %}
+            {{ review_4_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_4_title }}
           {% endif %}
-          {% if review_2_body != blank %}
-            <article class="tmrx-pdp-review">
-              <div class="tmrx-pdp-review__stars" aria-label="{{ review_2_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_2_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
-              <p class="tmrx-pdp-review__meta"><strong>{{ review_2_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
-              {% if review_2_date != blank %}<p class="tmrx-pdp-review__date">{{ review_2_date }}</p>{% endif %}
-              {% if review_2_title != blank %}<h4>{{ review_2_title }}</h4>{% endif %}
-              <p>{{ review_2_body }}</p>
-            </article>
+          {% if review_5_image != blank %}
+            {{ review_5_image | image_url: width: 260 | image_tag: loading: 'lazy', alt: review_5_title }}
           {% endif %}
-          {% if review_3_body != blank %}
-            <article class="tmrx-pdp-review">
-              <div class="tmrx-pdp-review__stars" aria-label="{{ review_3_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_3_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
-              <p class="tmrx-pdp-review__meta"><strong>{{ review_3_name | default: 'Verified customer' }}</strong> <span>Verified</span></p>
-              {% if review_3_date != blank %}<p class="tmrx-pdp-review__date">{{ review_3_date }}</p>{% endif %}
-              {% if review_3_title != blank %}<h4>{{ review_3_title }}</h4>{% endif %}
-              <p>{{ review_3_body }}</p>
-            </article>
-          {% endif %}
-        </div>
-      {% else %}
-        <div class="tmrx-pdp-reviews__empty">
-          <h3>No reviews yet</h3>
-          <p>Share your experience with {{ product.title }} and help other customers choose their routine.</p>
-          <button type="button" data-review-open>Write the first review</button>
         </div>
       {% endif %}
+
+      <div class="tmrx-pdp-reviews__list">
+        <h3>Product reviews ({{ review_count }})</h3>
+        <article class="tmrx-pdp-review">
+          <div class="tmrx-pdp-review__stars" aria-label="{{ review_1_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_1_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+          <p class="tmrx-pdp-review__meta"><strong>{{ review_1_name }}</strong> <span>Verified</span></p>
+          <p class="tmrx-pdp-review__date">{{ review_1_date }}</p>
+          <h4>{{ review_1_title }}</h4>
+          <p>{{ review_1_body }}</p>
+        </article>
+        <article class="tmrx-pdp-review">
+          <div class="tmrx-pdp-review__stars" aria-label="{{ review_2_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_2_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+          <p class="tmrx-pdp-review__meta"><strong>{{ review_2_name }}</strong> <span>Verified</span></p>
+          <p class="tmrx-pdp-review__date">{{ review_2_date }}</p>
+          <h4>{{ review_2_title }}</h4>
+          <p>{{ review_2_body }}</p>
+        </article>
+        <article class="tmrx-pdp-review">
+          <div class="tmrx-pdp-review__stars" aria-label="{{ review_3_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_3_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+          <p class="tmrx-pdp-review__meta"><strong>{{ review_3_name }}</strong> <span>Verified</span></p>
+          <p class="tmrx-pdp-review__date">{{ review_3_date }}</p>
+          <h4>{{ review_3_title }}</h4>
+          <p>{{ review_3_body }}</p>
+        </article>
+        <article class="tmrx-pdp-review">
+          <div class="tmrx-pdp-review__stars" aria-label="{{ review_4_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_4_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+          <p class="tmrx-pdp-review__meta"><strong>{{ review_4_name }}</strong> <span>Verified</span></p>
+          <p class="tmrx-pdp-review__date">{{ review_4_date }}</p>
+          <h4>{{ review_4_title }}</h4>
+          <p>{{ review_4_body }}</p>
+        </article>
+        <article class="tmrx-pdp-review">
+          <div class="tmrx-pdp-review__stars" aria-label="{{ review_5_rating }} out of 5 stars">{% for star in (1..5) %}{% if star <= review_5_rating %}★{% else %}☆{% endif %}{% endfor %}</div>
+          <p class="tmrx-pdp-review__meta"><strong>{{ review_5_name }}</strong> <span>Verified</span></p>
+          <p class="tmrx-pdp-review__date">{{ review_5_date }}</p>
+          <h4>{{ review_5_title }}</h4>
+          <p>{{ review_5_body }}</p>
+        </article>
+      </div>
+
+      <nav class="tmrx-pdp-reviews__pagination" aria-label="Product review pages">
+        {% comment %}
+          Staged pagination: these controls are intentionally disabled until real review pagination is connected.
+        {% endcomment %}
+        <button type="button" disabled aria-disabled="true">Previous</button>
+        <button type="button" class="is-active" disabled aria-disabled="true" aria-current="page">1</button>
+        <button type="button" disabled aria-disabled="true">2</button>
+        <button type="button" disabled aria-disabled="true">3</button>
+        <button type="button" disabled aria-disabled="true">Next</button>
+      </nav>
     </div>
   </div>
 

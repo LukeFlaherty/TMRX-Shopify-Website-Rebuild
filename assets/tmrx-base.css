@@ -2240,6 +2240,37 @@ body:has(.tmrx-pdp-sticky) .tmrx-footer {
   line-height: 1.45;
 }
 
+.tmrx-pdp-reviews__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+
+.tmrx-pdp-reviews__pagination button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #c4c7ca;
+  border-radius: 4px;
+  background: var(--tmrx-surface);
+  color: var(--tmrx-ink);
+  padding: 0 0.95rem;
+  font-weight: 800;
+}
+
+.tmrx-pdp-reviews__pagination button.is-active {
+  border-color: #1b83c6;
+  background: #1b83c6;
+  color: var(--tmrx-surface);
+}
+
+.tmrx-pdp-reviews__pagination button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
 .tmrx-pdp-reviews__empty {
   display: grid;
   justify-items: start;
