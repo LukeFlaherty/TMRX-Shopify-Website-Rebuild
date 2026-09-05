@@ -124,6 +124,51 @@
     if (collectionEmpty) collectionEmpty.hidden = visibleCount > 0;
   }
 
+  document.querySelectorAll('[data-search-products]').forEach((searchPage) => {
+    const form = searchPage.querySelector('[data-search-products-form]');
+    const input = searchPage.querySelector('[data-search-products-input]');
+    const clearButton = searchPage.querySelector('[data-search-products-clear]');
+    const products = Array.from(searchPage.querySelectorAll('[data-search-product]'));
+    const count = searchPage.querySelector('[data-search-products-count]');
+    const suffix = searchPage.querySelector('[data-search-products-suffix]');
+    const empty = searchPage.querySelector('[data-search-products-empty]');
+
+    if (!input || products.length === 0) return;
+
+    const normalize = (value) => value.toLowerCase().trim().replace(/\s+/g, ' ');
+
+    const filterProducts = () => {
+      const query = normalize(input.value);
+      const terms = query ? query.split(' ') : [];
+      let visibleCount = 0;
+
+      products.forEach((product) => {
+        const haystack = product.dataset.searchProductText || '';
+        const isVisible = terms.every((term) => haystack.includes(term));
+        product.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (count) count.textContent = String(visibleCount);
+      if (suffix) {
+        const productLabel = visibleCount === 1 ? 'product' : 'products';
+        suffix.textContent = query ? `${productLabel} for "${input.value.trim()}"` : productLabel;
+      }
+      if (empty) empty.hidden = visibleCount > 0;
+      if (clearButton) clearButton.hidden = query.length === 0;
+    };
+
+    form?.addEventListener('submit', (event) => event.preventDefault());
+    input.addEventListener('input', filterProducts);
+    clearButton?.addEventListener('click', () => {
+      input.value = '';
+      input.focus();
+      filterProducts();
+    });
+
+    filterProducts();
+  });
+
   document.querySelectorAll('[data-pdp-gallery]').forEach((gallery) => {
     const frames = gallery.querySelectorAll('[data-pdp-image]');
     const thumbs = gallery.querySelectorAll('[data-pdp-thumb]');
