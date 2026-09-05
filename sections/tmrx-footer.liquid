@@ -4,9 +4,15 @@
       <details class="tmrx-footer__group" open>
         <summary>Company</summary>
         <ul>
-          <li><a href="{% if shop.shipping_policy.url != blank %}{{ shop.shipping_policy.url }}{% else %}/policies/shipping-policy{% endif %}">Shipping Info</a></li>
-          <li><a href="{% if shop.privacy_policy.url != blank %}{{ shop.privacy_policy.url }}{% else %}/policies/privacy-policy{% endif %}">Privacy Policy</a></li>
-          <li><a href="{% if shop.terms_of_service.url != blank %}{{ shop.terms_of_service.url }}{% else %}/policies/terms-of-service{% endif %}">Terms and Conditions</a></li>
+          {% if shop.shipping_policy.url != blank %}
+            <li><a href="{{ shop.shipping_policy.url }}">Shipping Info</a></li>
+          {% endif %}
+          {% if shop.privacy_policy.url != blank %}
+            <li><a href="{{ shop.privacy_policy.url }}">Privacy Policy</a></li>
+          {% endif %}
+          {% if shop.terms_of_service.url != blank %}
+            <li><a href="{{ shop.terms_of_service.url }}">Terms and Conditions</a></li>
+          {% endif %}
           <li><a href="{{ routes.all_products_collection_url }}">Subscribe & Save</a></li>
           <li><a href="mailto:{{ section.settings.support_email }}?subject=Wholesale%20Inquiry">Wholesale</a></li>
           <li><a href="mailto:{{ section.settings.support_email }}">Contact Us</a></li>
@@ -20,8 +26,12 @@
           <li><a href="{{ routes.all_products_collection_url }}?tmrx_category=recovery">Build Muscle & Recover</a></li>
           <li><a href="{{ routes.all_products_collection_url }}?tmrx_category=protein">Protein</a></li>
           <li><a href="{{ routes.all_products_collection_url }}?tmrx_category=wellness">Health & Wellness</a></li>
-          <li><a href="{% if shop.refund_policy.url != blank %}{{ shop.refund_policy.url }}{% else %}/policies/refund-policy{% endif %}">Refund Policy</a></li>
-          <li><a href="/blogs/news">Blog</a></li>
+          {% if shop.refund_policy.url != blank %}
+            <li><a href="{{ shop.refund_policy.url }}">Refund Policy</a></li>
+          {% endif %}
+          {% if blogs.news.url != blank %}
+            <li><a href="{{ blogs.news.url }}">Blog</a></li>
+          {% endif %}
         </ul>
       </details>
 
