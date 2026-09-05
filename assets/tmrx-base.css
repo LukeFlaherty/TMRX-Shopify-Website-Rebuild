@@ -2091,6 +2091,50 @@ button {
   font-weight: 900;
 }
 
+.tmrx-pdp-faq {
+  background: var(--tmrx-surface);
+}
+
+.tmrx-pdp-faq__inner {
+  width: min(100%, var(--tmrx-max));
+  margin: 0 auto;
+  padding: clamp(3.75rem, 6vw, 5.75rem) clamp(1rem, 3vw, 2.5rem) clamp(5rem, 8vw, 7rem);
+}
+
+.tmrx-pdp-faq h2 {
+  max-width: 520px;
+  margin: 0 0 clamp(2.8rem, 5vw, 5rem);
+  color: var(--tmrx-ink);
+  font-size: clamp(2.45rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.tmrx-pdp-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(3.4rem, 5vw, 5.75rem) clamp(3rem, 6vw, 6.5rem);
+}
+
+.tmrx-pdp-faq__card h3 {
+  margin: 0;
+  color: var(--tmrx-ink);
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.tmrx-pdp-faq__card p {
+  margin: 1.4rem 0 0;
+  color: #6a6d70;
+  font-size: clamp(1rem, 1.2vw, 1.14rem);
+  line-height: 1.42;
+}
+
+.tmrx-pdp-faq__accordion {
+  display: none;
+}
+
 .tmrx-collection-page {
   background: var(--tmrx-surface);
 }
@@ -3392,6 +3436,64 @@ button {
     padding-top: 0.45rem;
   }
 
+  .tmrx-pdp-faq__inner {
+    padding: 3rem clamp(1.1rem, 3.8vw, 2.25rem) 4rem;
+  }
+
+  .tmrx-pdp-faq h2 {
+    max-width: none;
+    margin-bottom: 1.75rem;
+  }
+
+  .tmrx-pdp-faq__grid {
+    display: none;
+  }
+
+  .tmrx-pdp-faq__accordion {
+    display: grid;
+  }
+
+  .tmrx-pdp-faq__accordion details {
+    border-bottom: 1px solid #b9bbbd;
+  }
+
+  .tmrx-pdp-faq__accordion summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.45rem 0;
+    color: var(--tmrx-ink);
+    cursor: pointer;
+    font-size: clamp(1.25rem, 3vw, 1.65rem);
+    font-weight: 900;
+    line-height: 1.2;
+    list-style: none;
+  }
+
+  .tmrx-pdp-faq__accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .tmrx-pdp-faq__accordion summary::after {
+    content: "+";
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .tmrx-pdp-faq__accordion details[open] summary::after {
+    content: "-";
+  }
+
+  .tmrx-pdp-faq__accordion p {
+    max-width: 900px;
+    margin: -0.35rem 0 1.65rem;
+    color: #666b70;
+    font-size: clamp(1.08rem, 2.8vw, 1.35rem);
+    line-height: 1.45;
+  }
+
   .tmrx-collection-page__inner {
     padding: 1.85rem clamp(1rem, 3vw, 1.9rem) 3.25rem;
   }
@@ -3880,6 +3982,29 @@ button {
   .tmrx-pdp-stack-card__cta {
     min-height: 52px;
     margin: 1rem 1.15rem 1.15rem;
+  }
+
+  .tmrx-pdp-faq__inner {
+    padding: 2.75rem 1rem 4rem;
+  }
+
+  .tmrx-pdp-faq h2 {
+    margin-bottom: 1.45rem;
+    font-size: clamp(2.15rem, 9vw, 3rem);
+  }
+
+  .tmrx-pdp-faq__accordion summary {
+    padding: 1.35rem 0;
+    font-size: 1.2rem;
+  }
+
+  .tmrx-pdp-faq__accordion summary::after {
+    font-size: 1.8rem;
+  }
+
+  .tmrx-pdp-faq__accordion p {
+    margin-bottom: 1.45rem;
+    font-size: 1.05rem;
   }
 
   .tmrx-collection-page__inner {

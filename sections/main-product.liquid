@@ -32,6 +32,151 @@
   assign how_step_4_body = product.metafields.custom.pdp_how_step_4_body.value | default: section.settings.how_step_4_body | replace: '[product]', product.title
   assign product_lower = product.title | downcase
 
+  assign faq_1_question = 'Can I take [product] every day?' | replace: '[product]', product.title
+  assign faq_1_answer = 'Yes. Follow the serving directions on the product label and use consistently as part of your daily routine.'
+  assign faq_2_question = 'When should I take [product]?' | replace: '[product]', product.title
+  assign faq_2_answer = 'Use it at the time that best fits your routine. Many customers take it in the morning, around training, or as directed by their practitioner.'
+  assign faq_3_question = 'Can I combine [product] with other supplements?' | replace: '[product]', product.title
+  assign faq_3_answer = 'Most TRUE MATRx products are designed to fit into a broader wellness routine. Check labels for overlapping ingredients and ask your healthcare provider if you are unsure.'
+  assign faq_4_question = 'Is [product] doctor recommended?' | replace: '[product]', product.title
+  assign faq_4_answer = 'TRUE MATRx formulas are built around practitioner-grade standards, clean inputs, and purposeful daily support.'
+  assign faq_5_question = 'Does [product] contain artificial additives?' | replace: '[product]', product.title
+  assign faq_5_answer = 'Our formulas are designed without unnecessary fillers, artificial colors, or artificial additives.'
+  assign faq_6_question = 'How long until I notice results?'
+  assign faq_6_answer = 'Results vary by person, product, and routine. Consistent daily use, hydration, nutrition, and training habits all matter.'
+
+  if product_lower contains 'creatine'
+    assign faq_1_question = 'Should I cycle off creatine periodically?'
+    assign faq_1_answer = 'Cycling creatine is generally not necessary. Creatine works best when used consistently so muscle creatine stores stay supported.'
+    assign faq_2_question = 'Is creatine loading necessary?'
+    assign faq_2_answer = 'No loading phase is required. Daily use can help creatine stores build over time without needing a high-dose loading period.'
+    assign faq_3_question = 'Can I take creatine if I do not exercise?'
+    assign faq_3_answer = 'You can, but creatine is most useful when paired with regular movement, strength training, hydration, and a balanced diet.'
+    assign faq_4_question = 'Are there any side effects of creatine?'
+    assign faq_4_answer = 'Creatine is widely used, but some people may notice temporary digestive discomfort. Drink adequate fluids and follow the serving directions.'
+    assign faq_5_question = 'Can I take creatine every day?'
+    assign faq_5_answer = 'Yes. Daily use is the simplest way to keep creatine intake consistent, including on rest days.'
+    assign faq_6_question = 'Why pair creatine with recovery support?'
+    assign faq_6_answer = 'Creatine supports strength and power output, while recovery-focused habits help you stay consistent between sessions.'
+  elsif product.handle == 'bone-broth-protein'
+    assign faq_1_question = 'When should I use Bone Broth Protein?'
+    assign faq_1_answer = 'Use it when you want a convenient protein serving, such as in the morning, post-workout, or between meals.'
+    assign faq_2_question = 'Is this a dairy-free protein option?'
+    assign faq_2_answer = 'Bone broth protein is not whey or dairy protein. Always review the label for allergens and ingredient details.'
+    assign faq_3_question = 'Can I mix it into coffee or smoothies?'
+    assign faq_3_answer = 'Yes. It can be mixed into water, smoothies, or recipes. Hot liquids may require slower stirring for best texture.'
+    assign faq_4_question = 'How much protein does it provide?'
+    assign faq_4_answer = 'Check the Supplement Facts panel for the exact protein amount per serving for your flavor and size.'
+    assign faq_5_question = 'Can I use it daily?'
+    assign faq_5_answer = 'Yes. Use it as part of your daily protein intake, based on your nutrition goals.'
+    assign faq_6_question = 'Does it replace meals?'
+    assign faq_6_answer = 'It is best used as protein support, not as a full meal replacement unless paired with other foods.'
+  elsif product.handle == 'true-omega'
+    assign faq_1_question = 'When should I take True Omega?'
+    assign faq_1_answer = 'Take it with a meal that contains fat to support comfort and absorption.'
+    assign faq_2_question = 'Can I take omega-3s every day?'
+    assign faq_2_answer = 'Yes. Omega-3 support is typically used daily as part of a long-term wellness routine.'
+    assign faq_3_question = 'What does True Omega support?'
+    assign faq_3_answer = 'Omega-3 fatty acids are commonly used to support heart, brain, joint, and general wellness routines.'
+    assign faq_4_question = 'Will it taste fishy?'
+    assign faq_4_answer = 'Taking softgels with food and storing them as directed can help minimize aftertaste.'
+    assign faq_5_question = 'Can I combine it with other supplements?'
+    assign faq_5_answer = 'Usually, yes. If you use blood-thinning medication or have a medical condition, ask your healthcare provider first.'
+    assign faq_6_question = 'How do I know the serving size?'
+    assign faq_6_answer = 'Follow the serving directions printed on the product label.'
+  elsif product.handle == 'true-greens'
+    assign faq_1_question = 'When should I drink True Greens?'
+    assign faq_1_answer = 'Morning or midday works well for most routines. Use it at a time you can keep consistent.'
+    assign faq_2_question = 'Does True Greens replace vegetables?'
+    assign faq_2_answer = 'No. It is daily nutrition support and should complement a balanced diet rich in whole foods.'
+    assign faq_3_question = 'Can I mix it with smoothies?'
+    assign faq_3_answer = 'Yes. Mix with cold water, juice, or a smoothie until fully blended.'
+    assign faq_4_question = 'Can I take it every day?'
+    assign faq_4_answer = 'Yes. True Greens is designed for consistent daily use.'
+    assign faq_5_question = 'Is it good before workouts?'
+    assign faq_5_answer = 'It can fit before training, but it is not a stimulant pre-workout.'
+    assign faq_6_question = 'Who is it for?'
+    assign faq_6_answer = 'It is for customers who want simple greens support as part of a clean daily routine.'
+  elsif product.handle == 'calm'
+    assign faq_1_question = 'When should I take Calm?'
+    assign faq_1_answer = 'Evening is a common choice, but follow your product label or practitioner guidance.'
+    assign faq_2_question = 'Can I use Calm every day?'
+    assign faq_2_answer = 'Yes. Calm is designed for consistent support when used according to label directions.'
+    assign faq_3_question = 'Will Calm make me sleepy?'
+    assign faq_3_answer = 'It is intended to support relaxation, not to act like a sedative. Individual responses can vary.'
+    assign faq_4_question = 'Can I pair it with magnesium from other products?'
+    assign faq_4_answer = 'Check labels for overlapping magnesium and ask your healthcare provider if you are unsure about your total intake.'
+    assign faq_5_question = 'Is Calm only for nighttime?'
+    assign faq_5_answer = 'No. Some customers prefer daytime use for routine calm support.'
+    assign faq_6_question = 'Should I take it with food?'
+    assign faq_6_answer = 'Follow the label. Taking supplements with food can help comfort for some customers.'
+  elsif product.handle == 'vitamin-d-k2'
+    assign faq_1_question = 'When should I take Vitamin D + K2?'
+    assign faq_1_answer = 'Take it with a meal that contains fat to support absorption.'
+    assign faq_2_question = 'Can I take it daily?'
+    assign faq_2_answer = 'Follow the label and your practitioner guidance, especially if you already supplement with vitamin D.'
+    assign faq_3_question = 'Why pair vitamin D with K2?'
+    assign faq_3_answer = 'Vitamin K2 is commonly paired with vitamin D to support healthy calcium metabolism.'
+    assign faq_4_question = 'Should I check my vitamin D level?'
+    assign faq_4_answer = 'A lab test can help you and your healthcare provider decide what intake is appropriate.'
+    assign faq_5_question = 'Can I combine it with a multivitamin?'
+    assign faq_5_answer = 'Check labels for overlapping vitamin D and K amounts before combining.'
+    assign faq_6_question = 'Who should ask a doctor first?'
+    assign faq_6_answer = 'Customers who are pregnant, nursing, on medication, or managing a medical condition should ask their provider.'
+  elsif product.handle == 'essential-aminos'
+    assign faq_1_question = 'When should I take Essential Aminos?'
+    assign faq_1_answer = 'Use before, during, or after training, or between meals when you want amino acid support.'
+    assign faq_2_question = 'Can I take amino acids on rest days?'
+    assign faq_2_answer = 'Yes. Rest-day use can support consistency in your nutrition routine.'
+    assign faq_3_question = 'Do EAAs replace protein?'
+    assign faq_3_answer = 'No. EAAs support amino acid intake, but they do not replace complete daily protein needs.'
+    assign faq_4_question = 'Can I mix it with creatine?'
+    assign faq_4_answer = 'Yes. Many customers pair amino acids with creatine as part of a training routine.'
+    assign faq_5_question = 'Is it only for athletes?'
+    assign faq_5_answer = 'No. It can support active customers at many training levels.'
+    assign faq_6_question = 'How much water should I use?'
+    assign faq_6_answer = 'Start with the label recommendation and adjust water to taste.'
+  elsif product.handle == 'secretropin'
+    assign faq_1_question = 'How do I use Secretropin?'
+    assign faq_1_answer = 'Follow the label directions carefully. Secretropin is designed as a measured spray format for consistent daily use.'
+    assign faq_2_question = 'When should I take Secretropin?'
+    assign faq_2_answer = 'Use it at the time recommended on your label or by your practitioner, and keep the timing consistent.'
+    assign faq_3_question = 'Can I use Secretropin every day?'
+    assign faq_3_answer = 'Use according to the product directions. Ask your healthcare provider if you have questions about long-term use.'
+    assign faq_4_question = 'Can I combine it with other supplements?'
+    assign faq_4_answer = 'Check labels for overlapping ingredients and ask your practitioner if you are using medications or managing a medical condition.'
+    assign faq_5_question = 'Who is Secretropin for?'
+    assign faq_5_answer = 'It is for customers looking for targeted daily support in an easy spray format.'
+    assign faq_6_question = 'How should I store it?'
+    assign faq_6_answer = 'Store according to the product label and keep the cap secured between uses.'
+  elsif product.handle == 'n1o1-nitric-oxide-lozenges'
+    assign faq_1_question = 'How do I use N1O1 lozenges?'
+    assign faq_1_answer = 'Follow the label directions and allow the lozenge format to fit into your daily routine.'
+    assign faq_2_question = 'What does nitric oxide support?'
+    assign faq_2_answer = 'Nitric oxide support is commonly used for blood-flow, performance, and circulation-focused routines.'
+    assign faq_3_question = 'Can I take it before workouts?'
+    assign faq_3_answer = 'Many customers use nitric oxide support before training, but follow the label for timing and serving guidance.'
+    assign faq_4_question = 'Can I use it daily?'
+    assign faq_4_answer = 'Use according to the product directions. Consistency matters for any daily support routine.'
+    assign faq_5_question = 'Can I pair it with creatine?'
+    assign faq_5_answer = 'Yes. Nitric oxide and creatine can fit into the same performance routine when used as directed.'
+    assign faq_6_question = 'Who should ask a doctor first?'
+    assign faq_6_answer = 'Ask your healthcare provider first if you take medication, are pregnant or nursing, or have a medical condition.'
+  endif
+
+  assign faq_1_question = product.metafields.custom.pdp_faq_1_question.value | default: faq_1_question
+  assign faq_1_answer = product.metafields.custom.pdp_faq_1_answer.value | default: faq_1_answer
+  assign faq_2_question = product.metafields.custom.pdp_faq_2_question.value | default: faq_2_question
+  assign faq_2_answer = product.metafields.custom.pdp_faq_2_answer.value | default: faq_2_answer
+  assign faq_3_question = product.metafields.custom.pdp_faq_3_question.value | default: faq_3_question
+  assign faq_3_answer = product.metafields.custom.pdp_faq_3_answer.value | default: faq_3_answer
+  assign faq_4_question = product.metafields.custom.pdp_faq_4_question.value | default: faq_4_question
+  assign faq_4_answer = product.metafields.custom.pdp_faq_4_answer.value | default: faq_4_answer
+  assign faq_5_question = product.metafields.custom.pdp_faq_5_question.value | default: faq_5_question
+  assign faq_5_answer = product.metafields.custom.pdp_faq_5_answer.value | default: faq_5_answer
+  assign faq_6_question = product.metafields.custom.pdp_faq_6_question.value | default: faq_6_question
+  assign faq_6_answer = product.metafields.custom.pdp_faq_6_answer.value | default: faq_6_answer
+
   assign first_selling_plan = blank
   for selling_plan_group in product.selling_plan_groups
     for selling_plan in selling_plan_group.selling_plans
@@ -542,6 +687,66 @@
       {% if stack_wellness != blank and stack_wellness.handle != product.handle %}
         {% render 'tmrx-stack-card', product: stack_wellness, category: 'Health & Wellness' %}
       {% endif %}
+    </div>
+  </div>
+
+  <div class="tmrx-pdp-faq">
+    <div class="tmrx-pdp-faq__inner">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="tmrx-pdp-faq__grid" aria-label="Product FAQs">
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_1_question }}</h3>
+          <p>{{ faq_1_answer }}</p>
+        </article>
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_2_question }}</h3>
+          <p>{{ faq_2_answer }}</p>
+        </article>
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_3_question }}</h3>
+          <p>{{ faq_3_answer }}</p>
+        </article>
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_4_question }}</h3>
+          <p>{{ faq_4_answer }}</p>
+        </article>
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_5_question }}</h3>
+          <p>{{ faq_5_answer }}</p>
+        </article>
+        <article class="tmrx-pdp-faq__card">
+          <h3>{{ faq_6_question }}</h3>
+          <p>{{ faq_6_answer }}</p>
+        </article>
+      </div>
+
+      <div class="tmrx-pdp-faq__accordion" aria-label="Product FAQs">
+        <details open>
+          <summary>{{ faq_1_question }}</summary>
+          <p>{{ faq_1_answer }}</p>
+        </details>
+        <details>
+          <summary>{{ faq_2_question }}</summary>
+          <p>{{ faq_2_answer }}</p>
+        </details>
+        <details>
+          <summary>{{ faq_3_question }}</summary>
+          <p>{{ faq_3_answer }}</p>
+        </details>
+        <details>
+          <summary>{{ faq_4_question }}</summary>
+          <p>{{ faq_4_answer }}</p>
+        </details>
+        <details>
+          <summary>{{ faq_5_question }}</summary>
+          <p>{{ faq_5_answer }}</p>
+        </details>
+        <details>
+          <summary>{{ faq_6_question }}</summary>
+          <p>{{ faq_6_answer }}</p>
+        </details>
+      </div>
     </div>
   </div>
 </section>
