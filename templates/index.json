@@ -142,6 +142,15 @@
         "transparent_formulas",
         "practitioner_grade"
       ]
+    },
+    "tmrx_blog_preview": {
+      "type": "tmrx-blog-preview",
+      "settings": {
+        "blog": "news",
+        "heading": "Start Learning",
+        "link_label": "Read More",
+        "article_limit": 8
+      }
     }
   },
   "order": [
@@ -149,6 +158,7 @@
     "tmrx_featured_products",
     "tmrx_quiz_cta",
     "tmrx_shop_by_goal",
-    "tmrx_clean_standards"
+    "tmrx_clean_standards",
+    "tmrx_blog_preview"
   ]
 }

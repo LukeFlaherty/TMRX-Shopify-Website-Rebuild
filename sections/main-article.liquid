@@ -1,0 +1,155 @@
+{% liquid
+  assign article_tag = article.tags.first | default: blog.title
+  assign article_image_alt = article.title
+  if article.image.alt != blank
+    assign article_image_alt = article.image.alt
+  endif
+%}
+
+<article class="tmrx-article" itemscope itemtype="https://schema.org/Article">
+  <div class="tmrx-article__inner">
+    <nav class="tmrx-breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="{{ blog.url }}">{{ blog.title }}</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ article.title }}</span>
+    </nav>
+
+    <div class="tmrx-article__layout">
+      <main class="tmrx-article__main">
+        <header class="tmrx-article__header">
+          <p class="tmrx-article__tag">{{ article_tag }}</p>
+          <h1 itemprop="headline">{{ article.title }}</h1>
+          <div class="tmrx-article__meta">
+            {% if article.author != blank %}
+              <span>By {{ article.author }}</span>
+            {% endif %}
+            <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%B %d, %Y' }}</time>
+          </div>
+        </header>
+
+        <div class="tmrx-article__hero{% unless article.image %} tmrx-placeholder-media{% endunless %}">
+          {% if article.image %}
+            {{ article.image | image_url: width: 1500 | image_tag: loading: 'eager', fetchpriority: 'high', alt: article_image_alt }}
+          {% endif %}
+        </div>
+
+        {% if article.excerpt != blank %}
+          <p class="tmrx-article__dek">{{ article.excerpt | strip_html }}</p>
+        {% endif %}
+
+        <div class="tmrx-article__content" itemprop="articleBody">
+          {{ article.content }}
+        </div>
+
+        <nav class="tmrx-article__post-nav" aria-label="Article navigation">
+          {% if blog.previous_article %}
+            <a href="{{ blog.previous_article.url }}">&larr; Previous post</a>
+          {% endif %}
+          {% if blog.next_article %}
+            <a href="{{ blog.next_article.url }}">Next post &rarr;</a>
+          {% endif %}
+        </nav>
+      </main>
+
+      <aside class="tmrx-article__sidebar" aria-label="Article sidebar">
+        {% if blog.articles.size > 1 %}
+          <section class="tmrx-blog-trending tmrx-blog-trending--article" aria-labelledby="ArticleTrendingTitle">
+            <h2 id="ArticleTrendingTitle">What&rsquo;s Trending</h2>
+            <div class="tmrx-blog-trending__list">
+              {% for related_article in blog.articles limit: 3 %}
+                {% unless related_article.id == article.id %}
+                  {% liquid
+                    assign related_excerpt = related_article.excerpt_or_content | strip_html | truncate: 82
+                    assign related_alt = related_article.title
+                    if related_article.image.alt != blank
+                      assign related_alt = related_article.image.alt
+                    endif
+                  %}
+                  <a class="tmrx-blog-trending-item" href="{{ related_article.url }}" data-blog-article-link data-blog-article-title="{{ related_article.title | escape }}">
+                    <span class="tmrx-blog-trending-item__media{% unless related_article.image %} tmrx-placeholder-media{% endunless %}">
+                      {% if related_article.image %}
+                        {{ related_article.image | image_url: width: 220 | image_tag: loading: 'lazy', alt: related_alt }}
+                      {% endif %}
+                    </span>
+                    <span class="tmrx-blog-trending-item__copy">
+                      <strong>{{ related_article.title }}</strong>
+                      {% if related_excerpt != blank %}
+                        <span>{{ related_excerpt }}</span>
+                      {% endif %}
+                    </span>
+                  </a>
+                {% endunless %}
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% form 'customer', class: 'tmrx-blog-newsletter tmrx-blog-newsletter--sticky', data-blog-newsletter: '' %}
+          <input type="hidden" name="contact[tags]" value="newsletter,blog">
+          <input type="hidden" name="contact[accepts_marketing]" value="true">
+          <div>
+            <h3>{{ section.settings.newsletter_heading }}</h3>
+            <p>{{ section.settings.newsletter_text }}</p>
+          </div>
+          <div class="tmrx-blog-newsletter__field">
+            <label class="visually-hidden" for="ArticleNewsletterEmail-{{ section.id }}">Email Address</label>
+            <input id="ArticleNewsletterEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" placeholder="Email Address" required>
+            <button type="submit" aria-label="Sign up for blog email">
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+          {% if form.posted_successfully? %}
+            <p class="tmrx-blog-newsletter__message" role="status">Thanks for signing up.</p>
+          {% elsif form.errors %}
+            <div class="tmrx-blog-newsletter__message" role="alert">{{ form.errors | default_errors }}</div>
+          {% endif %}
+        {% endform %}
+      </aside>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ article.title | json }},
+      "description": {{ article.excerpt_or_content | strip_html | truncate: 160 | json }},
+      "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }},
+      "dateModified": {{ article.updated_at | date: '%Y-%m-%d' | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ article.author | default: shop.name | json }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
+        "url": {{ shop.url | json }}
+      }
+      {% if article.image %},
+        "image": [{{ article.image | image_url: width: 1500 | prepend: 'https:' | json }}]
+      {% endif %}
+    }
+  </script>
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Stay Informed"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Sign up for our weekly guide to better health."
+    }
+  ]
+}
+{% endschema %}

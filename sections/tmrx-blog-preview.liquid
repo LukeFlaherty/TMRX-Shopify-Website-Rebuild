@@ -1,0 +1,75 @@
+{% liquid
+  assign selected_blog = section.settings.blog
+%}
+
+{% if selected_blog != blank and selected_blog.articles_count > 0 %}
+  <section class="tmrx-home-blog">
+    <div class="tmrx-home-blog__inner">
+      <div class="tmrx-blog-section-heading">
+        <h2>{{ section.settings.heading }}</h2>
+        <a class="tmrx-text-link" href="{{ selected_blog.url }}">
+          {{ section.settings.link_label }}
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="tmrx-blog-carousel" data-product-carousel>
+        <div class="tmrx-blog-carousel__rail" data-product-rail>
+          {% for article in selected_blog.articles limit: section.settings.article_limit %}
+            {% render 'tmrx-blog-card', article: article, style: 'standard' %}
+          {% endfor %}
+        </div>
+
+        {% if selected_blog.articles_count > 1 %}
+          <div class="tmrx-blog-carousel__footer">
+            <div class="tmrx-carousel-progress" aria-hidden="true">
+              {% for article in selected_blog.articles limit: section.settings.article_limit %}
+                <span class="{% if forloop.first %}is-active{% endif %}"></span>
+              {% endfor %}
+            </div>
+            <p data-product-count>01/{{ selected_blog.articles.size | at_most: section.settings.article_limit | prepend: '0' | slice: -2, 2 }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Blog preview",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Start Learning"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Read More"
+    },
+    {
+      "type": "range",
+      "id": "article_limit",
+      "label": "Article limit",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog preview"
+    }
+  ]
+}
+{% endschema %}

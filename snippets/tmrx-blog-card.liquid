@@ -1,0 +1,52 @@
+{% liquid
+  assign card_article = article
+  assign card_style = style | default: 'standard'
+  assign card_tag = card_article.tags.first | default: 'All'
+  assign card_excerpt = card_article.excerpt_or_content | strip_html | truncate: 132
+  assign image_alt = card_article.title
+
+  if card_article.image.alt != blank
+    assign image_alt = card_article.image.alt
+  endif
+%}
+
+<article class="tmrx-blog-card tmrx-blog-card--{{ card_style }}">
+  <a
+    class="tmrx-blog-card__media{% unless card_article.image %} tmrx-placeholder-media{% endunless %}"
+    href="{{ card_article.url }}"
+    aria-label="{{ card_article.title | escape }}"
+    data-blog-article-link
+    data-blog-article-title="{{ card_article.title | escape }}"
+  >
+    {% if card_article.image %}
+      {{ card_article.image | image_url: width: 960 | image_tag: loading: 'lazy', alt: image_alt }}
+    {% endif %}
+  </a>
+
+  <div class="tmrx-blog-card__body">
+    <p class="tmrx-blog-card__tag">{{ card_tag }}</p>
+    <h2>
+      <a
+        href="{{ card_article.url }}"
+        data-blog-article-link
+        data-blog-article-title="{{ card_article.title | escape }}"
+      >
+        {{ card_article.title }}
+      </a>
+    </h2>
+
+    {% if card_style == 'feature' and card_excerpt != blank %}
+      <p class="tmrx-blog-card__excerpt">{{ card_excerpt }}</p>
+    {% endif %}
+
+    <a
+      class="tmrx-blog-card__arrow"
+      href="{{ card_article.url }}"
+      aria-label="Read {{ card_article.title | escape }}"
+      data-blog-article-link
+      data-blog-article-title="{{ card_article.title | escape }}"
+    >
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</article>

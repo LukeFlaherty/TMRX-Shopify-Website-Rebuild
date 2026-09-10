@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "creatine": {
+          "type": "topic",
+          "settings": {
+            "label": "Creatine"
+          }
+        },
+        "hydration": {
+          "type": "topic",
+          "settings": {
+            "label": "Hydration"
+          }
+        },
+        "muscle_gain": {
+          "type": "topic",
+          "settings": {
+            "label": "Muscle Gain"
+          }
+        },
+        "performance": {
+          "type": "topic",
+          "settings": {
+            "label": "Performance"
+          }
+        },
+        "pre_workout": {
+          "type": "topic",
+          "settings": {
+            "label": "Pre Workout"
+          }
+        },
+        "recovery": {
+          "type": "topic",
+          "settings": {
+            "label": "Recovery"
+          }
+        },
+        "training": {
+          "type": "topic",
+          "settings": {
+            "label": "Training"
+          }
+        },
+        "protein": {
+          "type": "topic",
+          "settings": {
+            "label": "Protein"
+          }
+        },
+        "weight_loss": {
+          "type": "topic",
+          "settings": {
+            "label": "Weight Loss"
+          }
+        },
+        "womens_health": {
+          "type": "topic",
+          "settings": {
+            "label": "Women's Health"
+          }
+        }
+      },
+      "block_order": [
+        "creatine",
+        "hydration",
+        "muscle_gain",
+        "performance",
+        "pre_workout",
+        "recovery",
+        "training",
+        "protein",
+        "weight_loss",
+        "womens_health"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,218 @@
+{% liquid
+  assign featured_article = blog.articles.first
+  assign active_tag = current_tags.first | default: 'All'
+%}
+
+<section class="tmrx-blog-hub">
+  <div class="tmrx-blog-hub__inner">
+    <nav class="tmrx-breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ blog.title | default: 'Journal' }}</span>
+    </nav>
+
+    <header class="tmrx-blog-hub__header">
+      <div>
+        <p class="tmrx-eyebrow">TRUE MATRx Journal</p>
+        <h1>{{ section.settings.heading | default: blog.title }}</h1>
+      </div>
+      <a class="tmrx-text-link" href="#latest-articles">
+        Latest Articles
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </header>
+
+    {% if blog.articles_count > 0 %}
+      <div class="tmrx-blog-feature-grid">
+        {% if featured_article %}
+          <div class="tmrx-blog-feature">
+            {% render 'tmrx-blog-card', article: featured_article, style: 'feature' %}
+          </div>
+        {% endif %}
+
+        <aside class="tmrx-blog-trending" aria-labelledby="BlogTrendingTitle">
+          <h2 id="BlogTrendingTitle">What&rsquo;s Trending</h2>
+          <div class="tmrx-blog-trending__list">
+            {% for article in blog.articles limit: 3 offset: 1 %}
+              {% liquid
+                assign trend_excerpt = article.excerpt_or_content | strip_html | truncate: 82
+                assign trend_alt = article.title
+                if article.image.alt != blank
+                  assign trend_alt = article.image.alt
+                endif
+              %}
+              <a class="tmrx-blog-trending-item" href="{{ article.url }}" data-blog-article-link data-blog-article-title="{{ article.title | escape }}">
+                <span class="tmrx-blog-trending-item__media{% unless article.image %} tmrx-placeholder-media{% endunless %}">
+                  {% if article.image %}
+                    {{ article.image | image_url: width: 220 | image_tag: loading: 'lazy', alt: trend_alt }}
+                  {% endif %}
+                </span>
+                <span class="tmrx-blog-trending-item__copy">
+                  <strong>{{ article.title }}</strong>
+                  {% if trend_excerpt != blank %}
+                    <span>{{ trend_excerpt }}</span>
+                  {% endif %}
+                  {% if article.author != blank %}
+                    <small>By {{ article.author }}</small>
+                  {% endif %}
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+
+          {% form 'customer', class: 'tmrx-blog-newsletter', data-blog-newsletter: '' %}
+            <input type="hidden" name="contact[tags]" value="newsletter,blog">
+            <input type="hidden" name="contact[accepts_marketing]" value="true">
+            <div>
+              <h3>{{ section.settings.newsletter_heading }}</h3>
+              <p>{{ section.settings.newsletter_text }}</p>
+            </div>
+            <div class="tmrx-blog-newsletter__field">
+              <label class="visually-hidden" for="BlogNewsletterEmail-{{ section.id }}">Email Address</label>
+              <input id="BlogNewsletterEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" placeholder="Email Address" required>
+              <button type="submit" aria-label="Sign up for blog email">
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+            {% if form.posted_successfully? %}
+              <p class="tmrx-blog-newsletter__message" role="status">Thanks for signing up.</p>
+            {% elsif form.errors %}
+              <div class="tmrx-blog-newsletter__message" role="alert">{{ form.errors | default_errors }}</div>
+            {% endif %}
+          {% endform %}
+        </aside>
+      </div>
+
+      <div class="tmrx-blog-latest" id="latest-articles">
+        <div class="tmrx-blog-section-heading">
+          <h2>Latest Articles</h2>
+          <a class="tmrx-text-link" href="{{ blog.url }}">
+            View All
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <nav class="tmrx-blog-topics" aria-label="Blog topics">
+          <a class="{% unless current_tags %}is-active{% endunless %}" href="{{ blog.url }}">All</a>
+          {% for block in section.blocks %}
+            {% if block.type == 'topic' and block.settings.label != blank %}
+              {% liquid
+                assign topic_label = block.settings.label
+                assign topic_handle = topic_label | handleize
+              %}
+              <a
+                class="{% if active_tag == topic_label %}is-active{% endif %}"
+                href="{{ blog.url }}/tagged/{{ topic_handle }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ topic_label }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </nav>
+
+        {% paginate blog.articles by section.settings.articles_per_page %}
+          <div class="tmrx-blog-carousel" data-product-carousel>
+            <div class="tmrx-blog-carousel__rail" data-product-rail>
+              {% for article in blog.articles %}
+                {% render 'tmrx-blog-card', article: article, style: 'standard' %}
+              {% endfor %}
+            </div>
+
+            {% if blog.articles.size > 1 %}
+              <div class="tmrx-blog-carousel__footer">
+                <div class="tmrx-carousel-progress" aria-hidden="true">
+                  {% for article in blog.articles %}
+                    <span class="{% if forloop.first %}is-active{% endif %}"></span>
+                  {% endfor %}
+                </div>
+                <p data-product-count>01/{{ blog.articles.size | prepend: '0' | slice: -2, 2 }}</p>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if paginate.pages > 1 %}
+            <nav class="tmrx-pagination" aria-label="Pagination">
+              {{ paginate | default_pagination }}
+            </nav>
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    {% else %}
+      <div class="tmrx-blog-empty">
+        <div class="tmrx-blog-empty__media tmrx-placeholder-media" aria-hidden="true"></div>
+        <div>
+          <h2>Articles coming soon</h2>
+          <p>Use this hub for clean supplement education, training support, ingredient explainers, and product-linked buying guides.</p>
+          <a class="tmrx-button tmrx-button--primary" href="{{ routes.all_products_collection_url }}">Shop Products</a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog hub",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Start Learning"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "Articles per page",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Stay Informed"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Sign up for our weekly guide to better health."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "topic",
+      "name": "Topic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Creatine"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog hub",
+      "blocks": [
+        { "type": "topic", "settings": { "label": "Creatine" } },
+        { "type": "topic", "settings": { "label": "Hydration" } },
+        { "type": "topic", "settings": { "label": "Muscle Gain" } },
+        { "type": "topic", "settings": { "label": "Performance" } },
+        { "type": "topic", "settings": { "label": "Pre Workout" } },
+        { "type": "topic", "settings": { "label": "Recovery" } },
+        { "type": "topic", "settings": { "label": "Training" } },
+        { "type": "topic", "settings": { "label": "Protein" } },
+        { "type": "topic", "settings": { "label": "Weight Loss" } },
+        { "type": "topic", "settings": { "label": "Women's Health" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

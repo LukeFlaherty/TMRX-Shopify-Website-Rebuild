@@ -178,6 +178,30 @@
     filterProducts();
   });
 
+  const trackEvent = (eventName, detail = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...detail });
+    document.dispatchEvent(new CustomEvent(eventName, { detail }));
+  };
+
+  document.querySelectorAll('[data-blog-article-link]').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackEvent('tmrx_blog_article_click', {
+        article_title: link.dataset.blogArticleTitle || link.textContent.trim(),
+        article_url: link.href,
+        page_path: window.location.pathname
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-blog-newsletter]').forEach((form) => {
+    form.addEventListener('submit', () => {
+      trackEvent('tmrx_blog_newsletter_submit', {
+        page_path: window.location.pathname
+      });
+    });
+  });
+
   document.querySelectorAll('[data-pdp-gallery]').forEach((gallery) => {
     const frames = gallery.querySelectorAll('[data-pdp-image]');
     const thumbs = gallery.querySelectorAll('[data-pdp-thumb]');
