@@ -1,5 +1,11 @@
 # Project Instructions
 
+## Email Marketing Memory
+
+- Before creating True Matrx email marketing graphics, read `docs/email-marketing/README.md` for saved user preferences and prior email references.
+- Use the archived emails as inspiration, not as layouts or copy to duplicate.
+- The user prefers a white background with subtle light-blue background decals; avoid boxes or rounded cards around individual product sections.
+
 ## Source of Truth
 
 - This GitHub repository is the source of truth for the Shopify rebuild theme.
