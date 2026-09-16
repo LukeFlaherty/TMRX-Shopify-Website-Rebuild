@@ -7,6 +7,7 @@ Saved September 16, 2026 from user-provided prior email screenshots.
 - Use prior emails as inspiration; do not copy them.
 - Simple email marketing images that clearly spotlight products.
 - White background with subtle light-blue background decals.
+- Prefer a skinnier, taller email with generous vertical whitespace between product spotlights (additional September 16 feedback).
 - No boxes or rounded rectangular cards surrounding the individual product sections. This was explicit feedback on the September 16 three-product graphic.
 
 ## Brand reference
