@@ -1,0 +1,9 @@
+Built-in image generation edit.
+
+Use case: precise-object-edit
+Asset type: narrow portrait email marketing graphic
+Input image: the supplied TRUE MATRX three-product email is the edit target.
+Primary request: Reduce the vertical whitespace between the three numbered product spotlight sections by approximately 50 percent. Bring section 02 upward toward section 01, and section 03 upward toward section 02. Also reduce the oversized empty area between the header/subhead and section 01 by about 35 percent. Keep comfortable, intentional breathing room—sections must remain clearly separate and must not overlap.
+Composition/framing: Preserve the same narrow email width and alternating product layout. Shorten the overall canvas height proportionally to about 800 × 1728 rather than leaving blank space. Keep the footer directly after section 03 with a comfortable margin.
+Constraints: Change only vertical spacing and canvas height. Preserve the exact TRUE MATRX logo, headline, subhead, all wording, numbering, typography, colors, authentic product photos and package labels, product scale, left/right placements, blue CTA, white background, and faint light-blue organic edge decals. Keep products undistorted and fully visible.
+Avoid: cards, boxes, panels, borders, new text, removed text, altered package labels, changed claims, overlapping content, excessive empty space.
