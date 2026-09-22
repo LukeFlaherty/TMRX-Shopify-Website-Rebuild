@@ -32,4 +32,4 @@ All 11 original screenshots are saved in `references/` next to this file:
 
 ## September 16 campaign
 
-The user requested an image highlighting three products. Selected products: Hormone Support, Essential Aminos, and Bone Broth Protein. Headline: “Find your daily essentials.” The first graphic's rounded blue product cards were rejected; use the white-background revision as the design direction. Outputs and generation prompts are in `output/email-marketing/2026-09-16/`.
+The user requested an image highlighting three products. Final selected products: Premium Omega, Essential Aminos, and Bone Broth Protein. Headline: “Find your daily essentials.” The first graphic's rounded blue product cards were rejected; use the white-background revision as the design direction. Use original product assets without stretching or changing their proportions. `true-matrx-three-products-v5.png` is the latest approved working direction. Outputs and generation prompts are in `output/email-marketing/2026-09-16/`.

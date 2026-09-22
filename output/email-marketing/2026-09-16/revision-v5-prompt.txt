@@ -1,0 +1,23 @@
+Built-in image generation edit.
+
+Use case: compositing
+Asset type: narrow portrait email marketing graphic
+Input images:
+1. The current TRUE MATRX three-product email is the edit target.
+2. The authentic front-facing TRUE MATRX Premium Omega bottle is a supporting replacement asset.
+3. The authentic front-facing TRUE MATRX Bone Broth Protein bottle is a supporting replacement asset.
+
+Primary request:
+Make exactly two product updates to Image 1.
+1. In numbered section 01, replace the Hormone Support bottle with the exact Premium Omega bottle from Image 2. Replace the section 01 text only:
+- heading: "Premium Omega"
+- detail: "180 softgels"
+- link: "Explore Premium Omega →"
+Keep section number 01 and its existing left-text/right-product arrangement.
+2. In numbered section 03, replace the currently stretched Bone Broth bottle with the exact original Bone Broth Protein bottle from Image 3. Preserve the original bottle's natural width-to-height ratio and silhouette. It must look tall and proportionally identical to Image 3, never horizontally widened or vertically compressed.
+
+Constraints:
+Preserve every other part of Image 1 unchanged: logo, THE DAILY EDIT, main headline, subhead, section 02 Essential Aminos, section 03 text, numbering, typography, colors, moderate spacing, narrow canvas, white background, faint light-blue edge decals, and blue SHOP TRUE MATRX footer. Preserve the authentic packaging labels from Images 2 and 3. Products must be complete, undistorted, sharp, and front-facing. Match their visual scale to the existing layout without changing their proportions. Use clean cutouts with subtle natural shadows.
+
+Avoid:
+No stretched or squashed packaging. No invented label text. No changes to Essential Aminos. No cards, boxes, panels, borders, new marketing claims, badges, statistics, people, or extra products. Do not change the canvas composition beyond what is necessary for these two replacements.
