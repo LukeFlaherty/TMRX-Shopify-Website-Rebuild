@@ -37,3 +37,5 @@ The user requested an image highlighting three products. Final selected products
 The approved v5 email was exported into five lightweight, separately linkable Klaviyo blocks at `output/email-marketing/2026-09-16/klaviyo-chunks/`. Use 700-pixel-wide progressive JPEGs and keep the combined payload near 128 KB when preparing similar campaigns.
 
 After the user found the 700-pixel exports blurry, a preferred high-quality set was added at `output/email-marketing/2026-09-16/klaviyo-chunks-hq/`. These preserve the original 966-pixel width, use JPEG quality 92 with full chroma detail, and total approximately 344 KB. Use the HQ set for final sends and display it at 700 pixels in Klaviyo.
+
+The first HQ cuts still exposed product drop shadows at some block boundaries. The corrected final set is `output/email-marketing/2026-09-16/klaviyo-chunks-hq-v2/`. It gives every product and its shadow a clean background buffer so the five blocks stack without visible crop lines. Prefer HQ v2 for future reuse.
