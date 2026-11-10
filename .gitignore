@@ -1,6 +1,8 @@
 tmrx-blank-rebuild-draft.zip
 .DS_Store
 node_modules/
+/design/*.zip
+/design/*.zip.sha256
 .env
 .env.*
 !.env.example

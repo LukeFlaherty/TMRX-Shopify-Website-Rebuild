@@ -1,0 +1,1207 @@
+{
+  "version": "3.0.0",
+  "observed_date": "2026-11-10",
+  "runtime_use": "Never use as a live price/inventory database.",
+  "products": [
+    {
+      "id": "PR01",
+      "handle": "bone-broth-protein",
+      "title": "BONE BROTH PROTEIN",
+      "observed_price_USD": 79.95,
+      "source_url": "https://truematrx.com/products/bone-broth-protein",
+      "local_media_range": [
+        8,
+        10
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/08-bone-broth-protein-60095949603125.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 721749,
+          "sha256": "9bd6bf07f6969d107b2aee670aabe0e8575c18a86f68a49e3260d6ec34c38044"
+        },
+        {
+          "file": "assets/products/09-bone-broth-protein-60095956353333.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 931660,
+          "sha256": "3b2e4cd5dc4ec0e8d460fa201622ceab32a39f02106cd2b4b4302d4a60ac2967"
+        },
+        {
+          "file": "assets/products/10-bone-broth-protein-60095964447029.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 924054,
+          "sha256": "bd349ffb0ab709c9704b7552ef1f5f1bfe053756206ccc5b8696d2514b36a2a4"
+        }
+      ],
+      "primary_candidate": "assets/products/08-bone-broth-protein-60095949603125.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/08-bone-broth-protein-60095949603125-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 15600,
+          "sha256": "30b7594fa2af0505f83f262e16768387281a4d40287dfad23b9ef6df59937d5f"
+        },
+        {
+          "file": "assets/products/08-bone-broth-protein-60095949603125-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 35886,
+          "sha256": "1458f01fdeac3d0613409855382d8ddc2a187b5083c71b6e753aeb2f6719d10a"
+        },
+        {
+          "file": "assets/products/08-bone-broth-protein-60095949603125-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 56224,
+          "sha256": "4e4b78d78ee3db3ff46326aaf15285635ee98a022f57514ce1b06ccd3bcd97e2"
+        }
+      ]
+    },
+    {
+      "id": "PR02",
+      "handle": "calm",
+      "title": "CALM",
+      "observed_price_USD": 68.75,
+      "source_url": "https://truematrx.com/products/calm",
+      "local_media_range": [
+        47,
+        51
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/47-calm-40565553430837.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 362366,
+          "sha256": "18b9a6ed0a7d9f738cd3df24433a654bd59c1a491f1714ecda2c3608788eb59e"
+        },
+        {
+          "file": "assets/products/48-calm-40061974348085.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 513954,
+          "sha256": "4e34006e703770cb5a7569fe4102d0211945354d8b5142698d396622164634ce"
+        },
+        {
+          "file": "assets/products/49-calm-40061974774069.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 529510,
+          "sha256": "894813743c89ec3b8d96274daff88c1fdff3034d677c039407fd7064f31bd120"
+        },
+        {
+          "file": "assets/products/50-calm-40061977526581.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1071703,
+          "sha256": "667ae3a03424044795fa344f9b5e70f404c4ac5799e29b4eb8425e18efdc1388"
+        },
+        {
+          "file": "assets/products/51-calm-40432636330293.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/47-calm-40565553430837.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/47-calm-40565553430837-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 10062,
+          "sha256": "1734e834742f3830edf499a5308654ef634f31b005005f949197ac33e44a03aa"
+        },
+        {
+          "file": "assets/products/47-calm-40565553430837-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 21858,
+          "sha256": "9a8f3ae694d61d3c521c35309bccc8efa14182a74a5cfb3bd8892da924cf8d2e"
+        },
+        {
+          "file": "assets/products/47-calm-40565553430837-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 33126,
+          "sha256": "8a461b50eacf1015267e980d83fc59987ca291c7aced38862e6db97d4a6a92b6"
+        }
+      ]
+    },
+    {
+      "id": "PR03",
+      "handle": "true-creatine",
+      "title": "CREATINE 400G (micronized)",
+      "observed_price_USD": 47.25,
+      "source_url": "https://truematrx.com/products/true-creatine",
+      "local_media_range": [
+        57,
+        61
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/57-true-creatine-39924672299317.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 425400,
+          "sha256": "a133302ca245577c37944b9af332bab946d355aec94441ac47867e57866e5f7c"
+        },
+        {
+          "file": "assets/products/58-true-creatine-40061984178485.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 680998,
+          "sha256": "2392e01e2c1c7e52a106cacb60e173ed52bd9529333055d14f8ebf40bc9906e6"
+        },
+        {
+          "file": "assets/products/59-true-creatine-40061985423669.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 705941,
+          "sha256": "adedd83fcd7866c8d68a9c95f9650097f5bc6b00927e7bdb41fc4f87d4b2c8e9"
+        },
+        {
+          "file": "assets/products/60-true-creatine-40061839016245.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 613330,
+          "sha256": "847a10d837c0797e07b4af9184623045625c2ebbbfe0f3f0ba0675e043ea01ee"
+        },
+        {
+          "file": "assets/products/61-true-creatine-40432645013813.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/57-true-creatine-39924672299317.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/57-true-creatine-39924672299317-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 11244,
+          "sha256": "5caf823134932f3e2abbc67c9abeb13f67111e3cd9acf9b15e5fad505f8d8999"
+        },
+        {
+          "file": "assets/products/57-true-creatine-39924672299317-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 23976,
+          "sha256": "f011eda3ab74a506630035a18a8de878930ca70161d2f1186724aa0bd034828a"
+        },
+        {
+          "file": "assets/products/57-true-creatine-39924672299317-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 35646,
+          "sha256": "5bc71df0ae8b58374d70bd36dc9efec0e705747f89f6634d269ff4968ed8d224"
+        }
+      ]
+    },
+    {
+      "id": "PR04",
+      "handle": "creatine-hcl",
+      "title": "Creatine HCL",
+      "observed_price_USD": 44.99,
+      "source_url": "https://truematrx.com/products/creatine-hcl",
+      "local_media_range": [
+        4,
+        6
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/04-creatine-hcl-62242702098741.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 540321,
+          "sha256": "65a4d9277c3e280daddad69a801a4e15a377257c2342d44adbbbaf82469f0362"
+        },
+        {
+          "file": "assets/products/05-creatine-hcl-62242697085237.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 728484,
+          "sha256": "37556ffc038349f9e229d570986e846906093d522a09baee7b082987630dd59e"
+        },
+        {
+          "file": "assets/products/06-creatine-hcl-62242700755253.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 775272,
+          "sha256": "74cd5044e8863d04d3d7454207cb63846d5b4fb80718900367461f656c8e4ddd"
+        }
+      ],
+      "primary_candidate": "assets/products/04-creatine-hcl-62242702098741.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/04-creatine-hcl-62242702098741-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12724,
+          "sha256": "35919f2ec5f9fefb288ef2ee9dcc009930a2cbba11f163c4c6dc234bc9191b28"
+        },
+        {
+          "file": "assets/products/04-creatine-hcl-62242702098741-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 27366,
+          "sha256": "a24aaa201090b81ac1c9becf61026980f8215a898ecc4a58a1d0c06b9670bc37"
+        },
+        {
+          "file": "assets/products/04-creatine-hcl-62242702098741-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 42282,
+          "sha256": "a13536615ef491452b3c88af6aab7ee4aeca79256654f5ca165e07f5006850a6"
+        }
+      ]
+    },
+    {
+      "id": "PR05",
+      "handle": "dna-support",
+      "title": "DNA SUPPORT",
+      "observed_price_USD": 104.99,
+      "source_url": "https://truematrx.com/products/dna-support",
+      "local_media_range": [
+        34,
+        36
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/34-dna-support-44141053935925.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 473827,
+          "sha256": "6199d08f41bb019ba024fc0878bde610f1c38c533dc86c5e3c2e8a17a7190978"
+        },
+        {
+          "file": "assets/products/35-dna-support-44141053903157.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 606395,
+          "sha256": "ff11ba0a816d7c9cfb967c8ba78e2b3ff7a512f2a28abc397cf7681b9f96ead1"
+        },
+        {
+          "file": "assets/products/36-dna-support-44141053739317.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 646658,
+          "sha256": "f0b134fd43fd9bedf3314274359976894f2914789c84a45ca00d64f2a39010b9"
+        }
+      ],
+      "primary_candidate": "assets/products/34-dna-support-44141053935925.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/34-dna-support-44141053935925-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 13306,
+          "sha256": "fb9e138c5e0c92a1f5598516c935ab4f062dbb11d8302924671a1d54ff06481c"
+        },
+        {
+          "file": "assets/products/34-dna-support-44141053935925-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 27570,
+          "sha256": "041ffc25d547c8549f1b2f68b95f9f0b3a78c55ba11f4a4edfa222e2b42e77b7"
+        },
+        {
+          "file": "assets/products/34-dna-support-44141053935925-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 41014,
+          "sha256": "5c0ee293001ac315316ecaf4d32871543c29e94addcde6bbb79d2b969320f66d"
+        }
+      ]
+    },
+    {
+      "id": "PR06",
+      "handle": "essential-aminos",
+      "title": "ESSENTIAL AMINOS",
+      "observed_price_USD": 89.24,
+      "source_url": "https://truematrx.com/products/essential-aminos",
+      "local_media_range": [
+        21,
+        25
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/21-essential-aminos-58348251808053.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 482912,
+          "sha256": "c2b1356b631fe79a84fa9b67fbbe165e745228577e73cc2a9db4edce91cf795d"
+        },
+        {
+          "file": "assets/products/22-essential-aminos-58348276252981.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1090945,
+          "sha256": "6a7f2e2bd26307fc0cf12a079d58c3a7e2c92b64a5bbe7093adbd5a748fff6fa"
+        },
+        {
+          "file": "assets/products/23-essential-aminos-58348276187445.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 600632,
+          "sha256": "60c233fb4b22a018cb9d1c2b82cff1cee7b9fa319e84fd4cee4c077e0ad9d963"
+        },
+        {
+          "file": "assets/products/24-essential-aminos-58348276220213.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 711791,
+          "sha256": "9ce73bf4a8f28bc3786da178577ca2edec8b2d45c04b6aaef1ff7d19c8fd6934"
+        },
+        {
+          "file": "assets/products/25-essential-aminos-40432646291765.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/21-essential-aminos-58348251808053.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/21-essential-aminos-58348251808053-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 13518,
+          "sha256": "32b85c6590385da049995f4a0f04b0223cb5f511ea133c665eb2317f32a3fdc9"
+        },
+        {
+          "file": "assets/products/21-essential-aminos-58348251808053-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 28998,
+          "sha256": "57ad044f2bc4b9bba66d7315c81efcf3748df2dc6183efe964ffefef87ab4069"
+        },
+        {
+          "file": "assets/products/21-essential-aminos-58348251808053-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 42942,
+          "sha256": "2f5c48d6e0abc7482b5beb12f467c1c9653179e8b31adbc614455869738a403d"
+        }
+      ]
+    },
+    {
+      "id": "PR07",
+      "handle": "hormone-support",
+      "title": "HORMONE SUPPORT",
+      "observed_price_USD": 83.99,
+      "source_url": "https://truematrx.com/products/hormone-support",
+      "local_media_range": [
+        42,
+        46
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/42-hormone-support-39976632844597.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 454269,
+          "sha256": "b49eafce5e38458d8a3071a056393d36895bf34bac9112a78081fd949b658667"
+        },
+        {
+          "file": "assets/products/43-hormone-support-40061981065525.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 633607,
+          "sha256": "8005f27b799f3b4d92669a931d6e47df56e517623c8d7c6800d46a976a5017ca"
+        },
+        {
+          "file": "assets/products/44-hormone-support-40061981655349.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 630365,
+          "sha256": "626b120f6bf39b60d67a78f9f391955fe02aefca3e908010cf90b695a77b0ebd"
+        },
+        {
+          "file": "assets/products/45-hormone-support-39997632217397.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1284020,
+          "sha256": "65154d3561baccd847a9baaa5dd11be671a1cd858c462bc73f56f0266b7cfed4"
+        },
+        {
+          "file": "assets/products/46-hormone-support-40432648454453.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/42-hormone-support-39976632844597.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/42-hormone-support-39976632844597-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12350,
+          "sha256": "281e03f9a8fd3e26c1d0ae5bb5fc9fd077b87891a12b5f8d31f4a2358cca2e35"
+        },
+        {
+          "file": "assets/products/42-hormone-support-39976632844597-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 26546,
+          "sha256": "fb7f9578c216294803166f0ab72d00f1978b9a4bdfa791e1048d2dc24096c1ba"
+        },
+        {
+          "file": "assets/products/42-hormone-support-39976632844597-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 39972,
+          "sha256": "282ab54ed700f7b92b2f7134669019d8ae7c04edbdf1e50bacbb7045ff42b7e7"
+        }
+      ]
+    },
+    {
+      "id": "PR08",
+      "handle": "liver-support",
+      "title": "LIVER SUPPORT",
+      "observed_price_USD": 52.49,
+      "source_url": "https://truematrx.com/products/liver-support",
+      "local_media_range": [
+        37,
+        41
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/37-liver-support-40565565161781.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 444985,
+          "sha256": "984ad447d83549ac272e300db011e65b86f9cfe63a4ef5ed8ce4fbc45bb2b8b9"
+        },
+        {
+          "file": "assets/products/38-liver-support-40398615937333.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 706596,
+          "sha256": "ea906a7d359250b92ecb6c4fd1af6b27677f8a52a4143942b83496f978e6b262"
+        },
+        {
+          "file": "assets/products/39-liver-support-40398618558773.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 644466,
+          "sha256": "b261fdbe51eb46911b85635ecc0ffb050d2d29844fae9db0b739aed926ab4c7a"
+        },
+        {
+          "file": "assets/products/40-liver-support-40398629339445.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1284392,
+          "sha256": "11f0068951ec6c4b3210f9cfd59e403e0ebe43ce9bc583b510661c478909afcb"
+        },
+        {
+          "file": "assets/products/41-liver-support-40432649863477.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/37-liver-support-40565565161781.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/37-liver-support-40565565161781-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12034,
+          "sha256": "c3033e6938b2c4bb24964ada6ff93a693c1a544a65fb6dc8c784f96e1385b2ae"
+        },
+        {
+          "file": "assets/products/37-liver-support-40565565161781-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 25554,
+          "sha256": "a508eedf2735b76f5ea8b66c21990f8e668439d5e46570a4540cf2e66ab294da"
+        },
+        {
+          "file": "assets/products/37-liver-support-40565565161781-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 38406,
+          "sha256": "65f0bfc4a15dbfa4a75f80cfd4f25b6c0edfdcf878ad87152e89574c8e19ec7a"
+        }
+      ]
+    },
+    {
+      "id": "PR09",
+      "handle": "methylation-support",
+      "title": "METHYLATION SUPPORT",
+      "observed_price_USD": 79.99,
+      "source_url": "https://truematrx.com/products/methylation-support",
+      "local_media_range": [
+        13,
+        17
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/13-methylation-support-59834122666293.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 453532,
+          "sha256": "00ad1c2589c2df9a9d910056bf0dd741fa81b13029fc5069d236c77e1f54fc25"
+        },
+        {
+          "file": "assets/products/14-methylation-support-59834406961461.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 683219,
+          "sha256": "97c03188cc838ccbe94728eabd8bd764b2d9741e7bc38f5be6a4870e4f42455e"
+        },
+        {
+          "file": "assets/products/15-methylation-support-59834406994229.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 561479,
+          "sha256": "080548541c137f47a08ef4b1e282dba2dce2673cc74acfed6e3762a70f55935c"
+        },
+        {
+          "file": "assets/products/16-methylation-support-40432656318773.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        },
+        {
+          "file": "assets/products/17-methylation-support-58836189577525.png",
+          "width": 2954,
+          "height": 682,
+          "mode": "RGBA",
+          "bytes": 657486,
+          "sha256": "bc96eab47d1f995a1d2e6143567c2841176dc025c078fbdc32a5c26cfa3df7bc"
+        }
+      ],
+      "primary_candidate": "assets/products/13-methylation-support-59834122666293.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/13-methylation-support-59834122666293-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12994,
+          "sha256": "17b9932d1d997363bb94f1b2fa8fac5922b6fe1d06bab32a13c58a7dc76b1fe6"
+        },
+        {
+          "file": "assets/products/13-methylation-support-59834122666293-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 27690,
+          "sha256": "d4f04b019a4e2f933b3e327592f11616da712cdd44b6174b3c761af183595ef4"
+        },
+        {
+          "file": "assets/products/13-methylation-support-59834122666293-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 42220,
+          "sha256": "fa1e51efb7db9c7540f44b22970e326829dc2eb2a2829c76e725c018d35f5b52"
+        }
+      ]
+    },
+    {
+      "id": "PR10",
+      "handle": "mito-revive",
+      "title": "MITO-REVIVE",
+      "observed_price_USD": 84.99,
+      "source_url": "https://truematrx.com/products/mito-revive",
+      "local_media_range": [
+        1,
+        3
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Visually observed on original source front; verify current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/01-mito-revive-63989518795061.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 888499,
+          "sha256": "82e60fcc5d6de4ec5921462e85cf1e9efce0b28e4e587761103dac544f838b61"
+        },
+        {
+          "file": "assets/products/02-mito-revive-63989518827829.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1016329,
+          "sha256": "1edc41bb6ee80ed08fdf964644abd02e1c1345d1a96cdedc69d8ad038e43a5eb"
+        },
+        {
+          "file": "assets/products/03-mito-revive-63989518860597.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1037624,
+          "sha256": "21b75bfe7659af0aac4d9936140509ba9a3c21a6c0913ee8e14bc734142c4d86"
+        }
+      ],
+      "primary_candidate": "assets/products/01-mito-revive-63989518795061.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/01-mito-revive-63989518795061-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12896,
+          "sha256": "9cd2f5654896c0b029211340b8788d862b3e7f094f3feff112efb10959173ccd"
+        },
+        {
+          "file": "assets/products/01-mito-revive-63989518795061-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 28172,
+          "sha256": "33d92a67d1f543e416c70d9f55833c29a2bf32c60e4075f546fbbaff5a00b4b3"
+        },
+        {
+          "file": "assets/products/01-mito-revive-63989518795061-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 43186,
+          "sha256": "6eba95cb4412ad3bac20c8c85b404914c29cc7cde3d2ad1250daa8f2da1b9d4f"
+        }
+      ]
+    },
+    {
+      "id": "PR11",
+      "handle": "myos-md-vanilla",
+      "title": "Myos MD Vanilla",
+      "observed_price_USD": 71.99,
+      "source_url": "https://truematrx.com/products/myos-md-vanilla",
+      "local_media_range": [
+        11,
+        12
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/11-myos-md-vanilla-59626407821621.png",
+          "width": 1800,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 314891,
+          "sha256": "3024a51cf4f79741fe2c072dcea31929ed4d73739132871500d3e142b7180f94"
+        },
+        {
+          "file": "assets/products/12-myos-md-vanilla-59626402185525.png",
+          "width": 3301,
+          "height": 2851,
+          "mode": "RGBA",
+          "bytes": 1242006,
+          "sha256": "b7ad1eed7d4aa5861935b43c139638f92acb4e5f9df566210f2e6045bba50f51"
+        }
+      ],
+      "primary_candidate": "assets/products/11-myos-md-vanilla-59626407821621.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/11-myos-md-vanilla-59626407821621-360.webp",
+          "width": 360,
+          "height": 320,
+          "mode": "RGBA",
+          "bytes": 7630,
+          "sha256": "ce44b545dd3cdd7e786aeeae901d4294521037d753ebce85222ed2deddee9962"
+        },
+        {
+          "file": "assets/products/11-myos-md-vanilla-59626407821621-720.webp",
+          "width": 720,
+          "height": 640,
+          "mode": "RGBA",
+          "bytes": 16544,
+          "sha256": "281358dac50fd7426395543f3a2a52fe059d7d085fc8e4b3b2d321391957b5a2"
+        },
+        {
+          "file": "assets/products/11-myos-md-vanilla-59626407821621-1080.webp",
+          "width": 1080,
+          "height": 960,
+          "mode": "RGBA",
+          "bytes": 26434,
+          "sha256": "5533b5feb616a6367539aa0c7f66b8adfd2bf7e34a4ae4dac4d6aaac6d1d0c0d"
+        }
+      ]
+    },
+    {
+      "id": "PR12",
+      "handle": "n1o1-nitric-oxide-lozenges",
+      "title": "N1O1 Nitric Oxide Lozenges",
+      "observed_price_USD": 59.99,
+      "source_url": "https://truematrx.com/products/n1o1-nitric-oxide-lozenges",
+      "local_media_range": [
+        18,
+        20
+      ],
+      "format_design_hint": "lozenge",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 506285,
+          "sha256": "c01617f84bcee7268cd9d2107bd8fb9f6918abaa2e31541450a4de238305df81"
+        },
+        {
+          "file": "assets/products/19-n1o1-nitric-oxide-lozenges-57776627679541.png",
+          "width": 100,
+          "height": 100,
+          "mode": "RGBA",
+          "bytes": 6481,
+          "sha256": "ba57d4959b9e85edd58f5155b0417db6e4b74f01cf6518daeac0a5b9f943ce79"
+        },
+        {
+          "file": "assets/products/20-n1o1-nitric-oxide-lozenges-57776627712309.png",
+          "width": 100,
+          "height": 100,
+          "mode": "RGBA",
+          "bytes": 6733,
+          "sha256": "bd14726c424f4dca6a2552f796f2535035f562311b1f38a0aa26e28fc765c2b0"
+        }
+      ],
+      "primary_candidate": "assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12316,
+          "sha256": "f7889808d1f090e7198f44c1e2b1c3bfe54326e41729e0b80f129e8eef1fbbe8"
+        },
+        {
+          "file": "assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 25994,
+          "sha256": "e84c4bf7560992bdf94351316efc80ae0e3e294ddda3f5d553e822eb4db46920"
+        },
+        {
+          "file": "assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 39864,
+          "sha256": "edad8b1a3e935709dffc90c4d207aa4b93df5ecca578cff150b5ed701da00157"
+        }
+      ]
+    },
+    {
+      "id": "PR13",
+      "handle": "true-omega",
+      "title": "PREMIUM OMEGA 180",
+      "observed_price_USD": 95.99,
+      "source_url": "https://truematrx.com/products/true-omega",
+      "local_media_range": [
+        52,
+        56
+      ],
+      "format_design_hint": "softgel",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/52-true-omega-40565451424053.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 372294,
+          "sha256": "89132a994c7b224756f2f21d254f33979ed45cb0965cd060b40a81840d429413"
+        },
+        {
+          "file": "assets/products/53-true-omega-40061991682357.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 483647,
+          "sha256": "6b47cdbf878c53119518d57bf8fb7fd9e7f2616c4ab03f16bf9a65818d3549af"
+        },
+        {
+          "file": "assets/products/54-true-omega-40061988405557.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 587865,
+          "sha256": "84fce4e6303bb91f269e4c6d726f8685059c8f3f9dc26a30fbdbb962143f0738"
+        },
+        {
+          "file": "assets/products/55-true-omega-40061989486901.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1313658,
+          "sha256": "5f3b9b8ea8b1bf64e00d4b654c7300393a741df4c76a312abc0a44d21d8cbe4d"
+        },
+        {
+          "file": "assets/products/56-true-omega-40432653566261.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/52-true-omega-40565451424053.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/52-true-omega-40565451424053-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 10526,
+          "sha256": "0a2129cfdabdbc7523efaf2e7810303e04497605f3d75bf706ca42e4be90137b"
+        },
+        {
+          "file": "assets/products/52-true-omega-40565451424053-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 21920,
+          "sha256": "2f4497a0905f1be3a305b07d94bbe85cf25726482aa49b249f03fdecf22bf230"
+        },
+        {
+          "file": "assets/products/52-true-omega-40565451424053-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 33576,
+          "sha256": "45f6c65ccf27a42e9579baabc7c60e3469aab364972b3253c34724789aa16e7e"
+        }
+      ]
+    },
+    {
+      "id": "PR14",
+      "handle": "secretropin",
+      "title": "SECRETROPIN",
+      "observed_price_USD": 140,
+      "source_url": "https://truematrx.com/products/secretropin",
+      "local_media_range": [
+        7,
+        7
+      ],
+      "format_design_hint": "spray",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/07-secretropin-63989622866229.png",
+          "width": 265,
+          "height": 503,
+          "mode": "RGBA",
+          "bytes": 70343,
+          "sha256": "c5758200022f109b5077bfcf7d0a3decf4ab8f88002293227247d1a0a9d54210"
+        }
+      ],
+      "primary_candidate": "assets/products/07-secretropin-63989622866229.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [],
+      "source_quality": "low-resolution-source-265x503; better authentic media required for large gallery"
+    },
+    {
+      "id": "PR15",
+      "handle": "true-greens",
+      "title": "SUPERGREENS",
+      "observed_price_USD": 75.59,
+      "source_url": "https://truematrx.com/products/true-greens",
+      "local_media_range": [
+        26,
+        30
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/26-true-greens-40565473378613.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 522746,
+          "sha256": "4f915ae6f02863d4ea3b7946f5629225a3b8a700bb1cd14d7a2ed1a8d171bb15"
+        },
+        {
+          "file": "assets/products/27-true-greens-40061995614517.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 655876,
+          "sha256": "067b80a23744d030702717e2ca3f5b080808ff102fb6cd65d9d1de7b2fbcb391"
+        },
+        {
+          "file": "assets/products/28-true-greens-40061998956853.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 715170,
+          "sha256": "80db2ff35ebe5336b10a99f858eb509d2fdaa2a8cd6684985f55eb3294559525"
+        },
+        {
+          "file": "assets/products/29-true-greens-39997676388661.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1161942,
+          "sha256": "497d4ec49712a8a8449cf494a058327a13a2c17fc709eab27cb51e7fbd02e202"
+        },
+        {
+          "file": "assets/products/30-true-greens-40432655466805.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 1503790,
+          "sha256": "650cfc2e45b8355eca11ce82307bef8b013c5b04eeacd89cb869801ed45eaa1e"
+        }
+      ],
+      "primary_candidate": "assets/products/26-true-greens-40565473378613.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/26-true-greens-40565473378613-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 13644,
+          "sha256": "e5c76fc63967577f28285527503b1c50931d33c9bd5176f61f0c66cd2bb9ef4f"
+        },
+        {
+          "file": "assets/products/26-true-greens-40565473378613-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 28770,
+          "sha256": "e4d6d80f43100ff1f2330ce60878b3003a32aea2abb1d6604ba289527b7ab6a2"
+        },
+        {
+          "file": "assets/products/26-true-greens-40565473378613-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 42798,
+          "sha256": "aa1707fb385a547c9065296a66f5ac4b3b726e32e73a7b8a1fcf4fd9a98e7f3e"
+        }
+      ]
+    },
+    {
+      "id": "PR16",
+      "handle": "vitamin-d-k2",
+      "title": "VITAMIN D+K2",
+      "observed_price_USD": 56.69,
+      "source_url": "https://truematrx.com/products/vitamin-d-k2",
+      "local_media_range": [
+        31,
+        33
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Visually observed on original source front; verify current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research",
+      "source_kind": "authentic-source-exception",
+      "media": [
+        {
+          "file": "assets/products/31-vitamin-d-k2-44141112557877.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 466774,
+          "sha256": "9bf70ba2f09f57b5b87f2ee93ae9fb6a4b01356ef599830e3479e4a7c37b064d"
+        },
+        {
+          "file": "assets/products/32-vitamin-d-k2-44141112525109.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 617648,
+          "sha256": "86be3e3bc8a1e9e8995dc8ef06d1dcb0935837e50b3b70c9e136346de476b271"
+        },
+        {
+          "file": "assets/products/33-vitamin-d-k2-44141112590645.png",
+          "width": 1600,
+          "height": 1600,
+          "mode": "RGBA",
+          "bytes": 637149,
+          "sha256": "dd7fd9ea0cec23798d7f418124d26473ce02e96e414ba7961e52288215d22c32"
+        }
+      ],
+      "primary_candidate": "assets/products/31-vitamin-d-k2-44141112557877.png",
+      "primary_status": "visual-candidate-verify-current-variant-and-label",
+      "primary_derivatives": [
+        {
+          "file": "assets/products/31-vitamin-d-k2-44141112557877-360.webp",
+          "width": 360,
+          "height": 360,
+          "mode": "RGBA",
+          "bytes": 12012,
+          "sha256": "a5411e0d87cd99e403ead2964941d72e743c05748bb341de4ba7be2d24a60fa3"
+        },
+        {
+          "file": "assets/products/31-vitamin-d-k2-44141112557877-720.webp",
+          "width": 720,
+          "height": 720,
+          "mode": "RGBA",
+          "bytes": 27116,
+          "sha256": "70818d5fb0fb79871b2d72cdd78db64ab1a0c080b5ac74ba308b89a750d31a9c"
+        },
+        {
+          "file": "assets/products/31-vitamin-d-k2-44141112557877-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "mode": "RGBA",
+          "bytes": 42828,
+          "sha256": "98df98b8e0d9b65776a27a2f726c6c3a70625ee31bb6950dcc35588e23af17e1"
+        }
+      ]
+    }
+  ]
+}

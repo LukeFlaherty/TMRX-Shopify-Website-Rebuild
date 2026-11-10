@@ -1,5 +1,9 @@
 # TMRX Blank Rebuild Draft
 
+## V3 redesign package
+
+The current redesign direction and builder handoff are in [design/v3/README.md](design/v3/README.md). Start there for V3 page specifications, fresh photography, desktop/mobile references, data contracts and route-to-asset lookup. Open [the local visual catalog](design/v3/index.html) to browse the package. This package does not deploy or replace the current theme.
+
 Blank Shopify Online Store 2.0 theme foundation for rebuilding the True Matrx website.
 
 This is intended to be uploaded or pushed as an unpublished/draft theme only. Do not publish it over the current live theme until the rebuild is complete and reviewed.

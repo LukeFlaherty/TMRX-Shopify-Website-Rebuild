@@ -1,5 +1,14 @@
 # Project Instructions
 
+## V3 Redesign Design Lookup
+
+- For V3 design/build requests, start with `design/v3/README.md` and `design/v3/BUILDER-HANDOFF.md`.
+- Look up the requested route in `design/v3/manifests/pages.json`, then read its individual page specification before implementation.
+- Written V3 specifications, tokens and current Shopify data override generated screenshot text. Resolve images through the asset/product manifests; do not invent prices, reviews, labels, claims or subscription offers.
+- Use new V3 creative and new V3 theme components. Only authentic logo/product source media are the documented identity exceptions; page-specific editorial photography must not be recycled as filler.
+- V3 spacing should be relaxed but compact, especially halfway down the page: follow the explicit responsive spacing tokens.
+- The V3 package is a design handoff, not a deployed theme. Documentation/asset-package changes alone do not require a Shopify push; real deployable theme changes follow the workflow below.
+
 ## Email Marketing Memory
 
 - Before creating True Matrx email marketing graphics, read `docs/email-marketing/README.md` for saved user preferences and prior email references.

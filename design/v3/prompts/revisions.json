@@ -1,0 +1,41 @@
+{
+  "reason": "Replace wrong mobile layout, invented products and generated facts panel; original attempted references excluded from deliverables.",
+  "jobs": [
+    {
+      "id": "M02",
+      "viewport": "mobile",
+      "page": "home",
+      "assetId": "A02",
+      "slug": "home-mobile",
+      "styleRef": "exec-ffc22dbd-29c6-4d30-bf21-901a39393f8c.png (earlier style reference, not a shipped creative asset)",
+      "prompt": "Use case ui-mockup. Create a NEW V3 narrow MOBILE phone webpage screenshot, complete page. Image1 is only a mobile structure/style reference; image2 authentic logo; image3 authentic Essential Aminos packaging; image4 brand-new stone backdrop. Actual phone layout, one390pxcontentcolumn, very tall portrait1:3or narrower. NO desktop navigation, no side-by-side desktop hero. White/paleblue, blackbold sans, bluebuttons, moderate comfortable spacing36\u201340pxbetweenmajorsections,16pxheadinggaps.\nHeader hamburger/logo/search/bag. Hero exact headline Hold your supplements to a higher standard., paragraph, fullwidthblue Shop supplements button, smaller Find my routine link, THEN NEW stone photograph and faithful three-productgroup below text. Categoryswapper Bestsellers/Protein/Recovery as horizontalrail. Onefeatured Essential Aminos product with a partialnextitem hint, OMIT ALL NUMERICAL PRICES in this visualreference; pricewillbeliveHTMLatbuild. Three goalphoto-linkrows with NEW scenery. Fullwidth stilllife image then stacked A higher standard. An everyday routine. and3iconrows. OnequizCTA, one typographicarticlepreview, stackednewsletter, footeraccordionrows. Allblocksremainmobile, no squeezeddesktopcolumns. Generate originalfullpage, do not simplyreturnreferenceimage. No fake reviews,medicalclaims,nutritiontable,productinventions,yearorcopyrightnumber. Productlabels consistentauthentic. NO repeated originalgoalportraits fromimage1."
+    },
+    {
+      "id": "M04",
+      "viewport": "mobile",
+      "page": "shop",
+      "assetId": "A08",
+      "slug": "shop-mobile",
+      "styleRef": "exec-0052ea8c-db91-4899-b1f0-5c82367acdc2.png (earlier style reference, not a shipped creative asset)",
+      "prompt": "Use case ui-mockup. NEW V3 mobile SHOP page, fullscroll narrowphone390pxwidth. Image1 only mobilestructurestyle, image2logo, image3real Essential Aminos pack, image4NEWstones. White/lightblue, strongblacksans, bluebuttons, comfortablemodestspacing, NO enclosingproductcards. Singlephonepage,noframe.\nHamburger/logo/search/bag header. Compact Find your daily essentials. title and shortpaleblue stonesbanner. Categories All supplements/Protein/Recovery scrollrail. Filter and Sort buttons. TWO-COLUMN grid with EXACTLY THESE FOUR PRODUCTS ONLY: row1 Essential Aminos and Bone Broth Protein; row2 Premium Omega and Micronized Creatine. Clear names and View options buttons. OMIT NUMERICAL PRICES entirely from this conceptimage; realpricesarepartofHTMLbuildspec. Do NOT invent collagen,magnesium,Calm variants or otherproducts. Preserve largefaithfulpackaging fromreferences.28pxrowgaps,12pxname/buttonspacing. ONE quizbanner belowgrid Find the right support for your routine. and Find my routine. Stackednewsletter and accordionfooter Shop/Learn/Support. No footerdate. No threecolumngrid,no desktopnav,nopermanentfiltersidebar. Lowerpage remainsphonewidth withcomfortable16pxbodytext. Originalfreshcompositionusingnewstonephoto, do notreturnoldimage."
+    },
+    {
+      "id": "M06",
+      "viewport": "mobile",
+      "page": "product",
+      "assetId": "A09",
+      "slug": "product-mobile",
+      "styleRef": "exec-92a535a5-db48-40d9-b780-1973bfd1f6e2.png (earlier style reference, not a shipped creative asset)",
+      "prompt": "Use case ui-mockup. NEW V3 fullscroll MOBILE Essential Aminos productpage. Image1 mobilestructureonly, image2authenticlogo, image3authenticproductpackaging,image4NEWstonegallerybackground. One390pxphonecolumn renderedhighresolutionverytall, edge-to-edge,noouterwhitemargins,noframe. White/paleblueblackboldsansbluebuttons. Relaxed modestspacing40pxbetweenmajorblocks,16pxheadinggaps,16pxbodytext.\nHeaderhamburger/logo/search/bag. NEWstonegalleryimagewithfaithfulpackshotabovebuybox,4thumbnails. Essential Aminos title, '$89.24', short A simple addition to your active routine. Flavor Tropical Fruit selector, Size504g selector, quantity, fullwidth Add to bag.3accordionrows Overview/Label/Shipping. Fullwidthheading Daily support. Made simple. and NEWneutralshakerglassphoto,3wellspacediconrows. Labelsectiononlytextheading Read the label. and BLUE TEXTLINK View product label. DO NOT DRAW ANY Supplement Facts table, nutrientnumber, dosage, labeldocument or fabricatedformula. Then3shortsteps Check the label/Mix as directed/Keep it consistent.3FAQclosedrows. TWOrelatedproducts ONLY Bone Broth Protein and Premium Omega withnamesandViewoptions, NO relatedprices. ONEquizCTA, stackednewsletter andfooteraccordions. No desktopcolumnsbelowfold, no crowding, no fake medicalclaims orreviews, no footerdate."
+    },
+    {
+      "id": "M05",
+      "viewport": "desktop",
+      "page": "product",
+      "assetId": "A09",
+      "slug": "product-desktop",
+      "styleRef": "exec-3c222c16-3dba-4020-be34-ee5475535407.png (earlier style reference, not a shipped creative asset)",
+      "prompt": "Use caseui-mockup. New fullpage DESKTOP V3 True Matrx Essential Aminos PDP, styleImage1white/lightblue/boldblacksans/blueCTA/naturalroughlimestone; logoImage2; realpackImage3; NEWlimestonegalleryImage4. Originaldesign.\nHeaderdesktopnav. GalleryleftwithactualpackonNEWstone,4thumbnails. Buyboxright Essential Aminos,$89.24,shortneutralcopy,FlavorTropicalFruit,Size504g,quantity,Add to bag,3accordionrows. Lowerpagereadable16\u201317pxbody,56pxsectionspacing,no giantemptybands: Daily support. Made simple. lifestylephotoandshortcopy;3openiconprinciples; TEXT-ONLY INFORMATION SECTION with headline Read the label. Know your routine. and link View product label. IMPORTANT ABSOLUTELY NO nutritionfacts panel/table/document,NOingredientamounts,NOdosages,NOservingscountoutsideoriginalpackaging. Do not fabricate Supplement Facts anywhere. Then3howtouse steps Check the label/Mix as directed/Keep it consistent;4closedFAQrows. RELATEDPRODUCTS ONLY Bone Broth Protein and Premium Omega, actualblack/creamandsilverpackaging,numericalrelatedpricesOMITTED,Viewoptionslinks. No selfrecommendation. OnequizCTA,newsletter,whitefooter,no footerdate. No reviews/stars/certbadges/unsupportedsubscriptiondiscount. Flatwebsitefullscreenshot,no device. Do not replicateimage1layout;thisisaproductdetailpage."
+    }
+  ]
+}

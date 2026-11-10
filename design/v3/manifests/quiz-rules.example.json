@@ -1,0 +1,36 @@
+{
+  "version": "3.0.0",
+  "enabled": false,
+  "review_status": "pending-merchant-review",
+  "purpose": "Schema example only. Not production recommendations.",
+  "steps": [
+    {
+      "id": "goal",
+      "options": [
+        "daily-nutrition",
+        "strength-recovery",
+        "foundational-wellness"
+      ]
+    },
+    {
+      "id": "format",
+      "options": [
+        "powder",
+        "capsule-softgel",
+        "no-preference"
+      ]
+    },
+    {
+      "id": "context",
+      "options": [
+        "morning",
+        "around-activity",
+        "flexible"
+      ]
+    }
+  ],
+  "rules": [],
+  "missing_rules_fallback": "browse-real-goal-collections",
+  "email_required": false,
+  "store_sensitive_answers": false
+}

@@ -1,0 +1,1146 @@
+{
+  "version": "3.0.0",
+  "path_base": "design/v3",
+  "assets": [
+    {
+      "id": "A01",
+      "file": "assets/generated/a01-home-hero-desktop.png",
+      "slug": "home-hero-desktop",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "bytes": 1913727,
+      "sha256": "b31e2e9e15b57b08a483450e5cd678a024ea6c8abf69bda6c6d1b6f8b9f3a652",
+      "owner_page": "P01",
+      "slot": "hero-desktop",
+      "focal_point": [
+        0.78,
+        0.68
+      ],
+      "suggested_alt": "",
+      "production_role": "decorative-compositing-plate",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a01-home-hero-desktop-480.webp",
+          "width": 480,
+          "height": 240,
+          "mode": "RGB",
+          "bytes": 9472,
+          "sha256": "eb3ba6080d92deae4b404af0ba5121b6a9492ffbd2329a3338ff330e90c63f91"
+        },
+        {
+          "file": "assets/generated/a01-home-hero-desktop-768.webp",
+          "width": 768,
+          "height": 384,
+          "mode": "RGB",
+          "bytes": 20642,
+          "sha256": "b652cf314c28cba5a4ab24805a88e65f0cb7011c23abd431c6a0288099d202fa"
+        },
+        {
+          "file": "assets/generated/a01-home-hero-desktop-1200.webp",
+          "width": 1200,
+          "height": 600,
+          "mode": "RGB",
+          "bytes": 44516,
+          "sha256": "44c5c7454d2eaa78f0a739df9d809ae4055c4868247436934ae7155d96b34a31"
+        },
+        {
+          "file": "assets/generated/a01-home-hero-desktop-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "mode": "RGB",
+          "bytes": 68662,
+          "sha256": "e901444490bb013d5b38bf1ebcce9d6617c1b0f2c1cf7e258fc21a1496884935"
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "file": "assets/generated/a02-home-hero-mobile.png",
+      "slug": "home-hero-mobile",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGB",
+      "bytes": 2089023,
+      "sha256": "036bf180eb0a25a3a0a0adabaaf6b2eefba9eebce359b83714951a127f048afa",
+      "owner_page": "P01",
+      "slot": "hero-mobile",
+      "focal_point": [
+        0.5,
+        0.7
+      ],
+      "suggested_alt": "",
+      "production_role": "decorative-compositing-plate",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a02-home-hero-mobile-480.webp",
+          "width": 480,
+          "height": 640,
+          "mode": "RGB",
+          "bytes": 28722,
+          "sha256": "8a3a6e5fd0c91add033e37b36f02b0382b3215b5888671bb08742ffef94b4be6"
+        },
+        {
+          "file": "assets/generated/a02-home-hero-mobile-768.webp",
+          "width": 768,
+          "height": 1024,
+          "mode": "RGB",
+          "bytes": 67376,
+          "sha256": "461a50f9c57aa7b3745daefac6fa48635430f664bb67b6a69f95727dd44141bf"
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "file": "assets/generated/a03-home-goal-daily-nutrition.png",
+      "slug": "home-goal-daily-nutrition",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 2165370,
+      "sha256": "91bc006fe5e686d3d01b91a123ea68aedacfe491449178b4ac053ebe2cab9d3c",
+      "owner_page": "P01",
+      "slot": "goal-daily-nutrition",
+      "focal_point": [
+        0.53,
+        0.5
+      ],
+      "suggested_alt": "Preparing a morning shake in a bright kitchen.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a03-home-goal-daily-nutrition-480.webp",
+          "width": 480,
+          "height": 360,
+          "mode": "RGB",
+          "bytes": 25642,
+          "sha256": "c49f3cf9cadaca9abd2152e4ed40307c29b689ebd5ac0f9020f44d4b2c8486dd"
+        },
+        {
+          "file": "assets/generated/a03-home-goal-daily-nutrition-768.webp",
+          "width": 768,
+          "height": 576,
+          "mode": "RGB",
+          "bytes": 51550,
+          "sha256": "82d02bc75ac7927aa39720ea41a925fb93b75f50edc0c78dcea634c17c35a848"
+        },
+        {
+          "file": "assets/generated/a03-home-goal-daily-nutrition-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 98998,
+          "sha256": "3ce94b4d8118d6a57e6fe5198b55ca19dc889f5259677e41adcfc306ebc719f8"
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "file": "assets/generated/a04-home-goal-strength.png",
+      "slug": "home-goal-strength",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 2132835,
+      "sha256": "5dc9211a7b5dac96fd6ef34716de08ac5079c1abe2d9893dedea5ecb5332ebbb",
+      "owner_page": "P01",
+      "slot": "goal-strength",
+      "focal_point": [
+        0.5,
+        0.45
+      ],
+      "suggested_alt": "Everyday strength training with dumbbells.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a04-home-goal-strength-480.webp",
+          "width": 480,
+          "height": 360,
+          "mode": "RGB",
+          "bytes": 20012,
+          "sha256": "039246e2c1342f88e6566118038eb73b8a724b308467a9a9dd1017357e39660c"
+        },
+        {
+          "file": "assets/generated/a04-home-goal-strength-768.webp",
+          "width": 768,
+          "height": 576,
+          "mode": "RGB",
+          "bytes": 40782,
+          "sha256": "e870c17b21ffb51a55f9b10bac5f2240a24d59bebadb3e7aecbed6fa345c92ce"
+        },
+        {
+          "file": "assets/generated/a04-home-goal-strength-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 83886,
+          "sha256": "885ef2b5bdd06e48f02a899f1fc714a6ff4c5df680e3297afc0fdbaaf675c704"
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "file": "assets/generated/a05-home-goal-recovery.png",
+      "slug": "home-goal-recovery",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 2548841,
+      "sha256": "f790661857e7f3bbb9fa701fe11299a72c319be6796b0b5c80ad2308f4214d89",
+      "owner_page": "P01",
+      "slot": "goal-recovery",
+      "focal_point": [
+        0.5,
+        0.5
+      ],
+      "suggested_alt": "A relaxed stretch beside a sunlit window.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a05-home-goal-recovery-480.webp",
+          "width": 480,
+          "height": 360,
+          "mode": "RGB",
+          "bytes": 36796,
+          "sha256": "6642b7d3885e554864913adc3745370cfce7382e1459ec0ae7560e35f77bc1e9"
+        },
+        {
+          "file": "assets/generated/a05-home-goal-recovery-768.webp",
+          "width": 768,
+          "height": 576,
+          "mode": "RGB",
+          "bytes": 79418,
+          "sha256": "b57e38a4b8cbe702aeda9fa77491ed0ebff6785cf722cf60d701fc96046b4bec"
+        },
+        {
+          "file": "assets/generated/a05-home-goal-recovery-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 161338,
+          "sha256": "278c3814f688e85a51952217f5d0029eab4305b3507c43501e0622c9885a6d04"
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "file": "assets/generated/a06-home-goal-foundational-wellness.png",
+      "slug": "home-goal-foundational-wellness",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 2177928,
+      "sha256": "5de8012fe360ad8ab8365051140d0c15070641700e782c707b9aca5a1909eb3b",
+      "owner_page": "P01",
+      "slot": "goal-wellness",
+      "focal_point": [
+        0.55,
+        0.45
+      ],
+      "suggested_alt": "A morning walk on a green trail.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a06-home-goal-foundational-wellness-480.webp",
+          "width": 480,
+          "height": 360,
+          "mode": "RGB",
+          "bytes": 29008,
+          "sha256": "c7c51e39e5859897bcc40e06699328c42904a81dc38fb30a5b1fb74b7c0ff85f"
+        },
+        {
+          "file": "assets/generated/a06-home-goal-foundational-wellness-768.webp",
+          "width": 768,
+          "height": 576,
+          "mode": "RGB",
+          "bytes": 55072,
+          "sha256": "0ddbecb90ddb32f1c6694ab518d30f24adc4b2971c8c2907a90848a875dfe252"
+        },
+        {
+          "file": "assets/generated/a06-home-goal-foundational-wellness-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 98150,
+          "sha256": "b940177fbf5d4b56bfde52483267c379475a6360848decdd22c39883024e8f8c"
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "file": "assets/generated/a07-home-standards-texture.png",
+      "slug": "home-standards-texture",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "bytes": 1997484,
+      "sha256": "5d6ea7f938899b0e92b6678ed679941fcca69847b3d991745f44000d6f703eae",
+      "owner_page": "P01",
+      "slot": "standards-editorial",
+      "focal_point": [
+        0.5,
+        0.55
+      ],
+      "suggested_alt": "Water, a measuring scoop and folded linen.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a07-home-standards-texture-480.webp",
+          "width": 480,
+          "height": 320,
+          "mode": "RGB",
+          "bytes": 17708,
+          "sha256": "fc9627f6b71f13cc1abfd2326e9960f3d55207dae8d9c0e7987119647287395a"
+        },
+        {
+          "file": "assets/generated/a07-home-standards-texture-768.webp",
+          "width": 768,
+          "height": 512,
+          "mode": "RGB",
+          "bytes": 35906,
+          "sha256": "5f827c52cd530e5eddf78d6260f311db3669f26e09991740d904c3a7df61a018"
+        },
+        {
+          "file": "assets/generated/a07-home-standards-texture-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "mode": "RGB",
+          "bytes": 70796,
+          "sha256": "a11553364e645f15323462af319bfcc91f0a7c71fec2c4eb67690d88728ebd2e"
+        }
+      ]
+    },
+    {
+      "id": "A08",
+      "file": "assets/generated/a08-collection-masthead.png",
+      "slug": "collection-masthead",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "bytes": 1901065,
+      "sha256": "86c763d67f8602202378873af75b361ed7d5671800e49056323522dd891e3a42",
+      "owner_page": "P02",
+      "slot": "collection-masthead",
+      "focal_point": [
+        0.78,
+        0.65
+      ],
+      "suggested_alt": "",
+      "production_role": "decorative-compositing-plate",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a08-collection-masthead-480.webp",
+          "width": 480,
+          "height": 160,
+          "mode": "RGB",
+          "bytes": 7684,
+          "sha256": "5f06c9c2daa442632c166377fb884dfde3778e06dd7fbe2446ab2ef5bb325fee"
+        },
+        {
+          "file": "assets/generated/a08-collection-masthead-768.webp",
+          "width": 768,
+          "height": 256,
+          "mode": "RGB",
+          "bytes": 16090,
+          "sha256": "6963fa3744146ee2c4c2b6d69710fd05b51a1af2fad094c5e58eb7b7fc513a32"
+        },
+        {
+          "file": "assets/generated/a08-collection-masthead-1200.webp",
+          "width": 1200,
+          "height": 400,
+          "mode": "RGB",
+          "bytes": 33876,
+          "sha256": "428a953d69720a6707d79cde8152452a7ee81afa1739adf6a72edf721cc371ae"
+        },
+        {
+          "file": "assets/generated/a08-collection-masthead-1600.webp",
+          "width": 1600,
+          "height": 533,
+          "mode": "RGB",
+          "bytes": 56596,
+          "sha256": "75adee53be723c6a342fadf4147a4d684298ae30331d4b9f0dcd58706cd859c6"
+        }
+      ]
+    },
+    {
+      "id": "A09",
+      "file": "assets/generated/a09-pdp-essential-gallery-set.png",
+      "slug": "pdp-essential-gallery-set",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "bytes": 1783710,
+      "sha256": "8870431da619c82fbc2283cfb9edb8e02b75465e123e69fe18b05fd40b7a3ff5",
+      "owner_page": "P04",
+      "slot": "essential-aminos-gallery",
+      "focal_point": [
+        0.5,
+        0.7
+      ],
+      "suggested_alt": "",
+      "production_role": "decorative-compositing-plate",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a09-pdp-essential-gallery-set-480.webp",
+          "width": 480,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 12282,
+          "sha256": "f905b9885b28d1e41db777a95671ae33aa38deafc60ec858c8e2f981d4ad3d51"
+        },
+        {
+          "file": "assets/generated/a09-pdp-essential-gallery-set-768.webp",
+          "width": 768,
+          "height": 768,
+          "mode": "RGB",
+          "bytes": 28560,
+          "sha256": "edbd0c481475a988c07dd2582f4fcdb23e558971e6d85bef223fcf9ad80d4f2f"
+        },
+        {
+          "file": "assets/generated/a09-pdp-essential-gallery-set-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "mode": "RGB",
+          "bytes": 59060,
+          "sha256": "e6173d8cae7ae26d6d1c84a02169368835d1e12ad8d87d5b89122bc99c626caa"
+        }
+      ]
+    },
+    {
+      "id": "A10",
+      "file": "assets/generated/a10-pdp-essential-routine.png",
+      "slug": "pdp-essential-routine",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "bytes": 2138334,
+      "sha256": "3aa1452a3843874015a6c54d90ce1e5964dd70cf02565a3705c41da0ef64aefb",
+      "owner_page": "P04",
+      "slot": "essential-aminos-routine",
+      "focal_point": [
+        0.53,
+        0.45
+      ],
+      "suggested_alt": "A shaker as part of a simple morning routine.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a10-pdp-essential-routine-480.webp",
+          "width": 480,
+          "height": 360,
+          "mode": "RGB",
+          "bytes": 25118,
+          "sha256": "cc6d5ca56f76af11e6c63345494489b25f242e1f66c91873f10f108308a156e6"
+        },
+        {
+          "file": "assets/generated/a10-pdp-essential-routine-768.webp",
+          "width": 768,
+          "height": 576,
+          "mode": "RGB",
+          "bytes": 48490,
+          "sha256": "46222f41fbef99c400dc6f0ad61fdffaf29aacb1e435d69215e63dc111773496"
+        },
+        {
+          "file": "assets/generated/a10-pdp-essential-routine-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 94232,
+          "sha256": "43ce335ba84e242ab33e848fd44d9f1b305b1f553b2b55d74e1ebd468ac4c922"
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "file": "assets/generated/a11-quiz-routine-still-life.png",
+      "slug": "quiz-routine-still-life",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "bytes": 2532300,
+      "sha256": "03683df507f2acc959040259765e8d374557233ca9bf9f0847d973df7488b321",
+      "owner_page": "P08",
+      "slot": "quiz-entry",
+      "focal_point": [
+        0.5,
+        0.5
+      ],
+      "suggested_alt": "",
+      "production_role": "decorative-editorial",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a11-quiz-routine-still-life-480.webp",
+          "width": 480,
+          "height": 320,
+          "mode": "RGB",
+          "bytes": 16390,
+          "sha256": "ed6452b35f5738852feba196918cdb090a12ca30f04d43dbc9b985629ea2ed3d"
+        },
+        {
+          "file": "assets/generated/a11-quiz-routine-still-life-768.webp",
+          "width": 768,
+          "height": 512,
+          "mode": "RGB",
+          "bytes": 37226,
+          "sha256": "f56e1744a30d41df1cc8e833a92891d806a8cc1037fbbc7f875a20c7d78c973b"
+        },
+        {
+          "file": "assets/generated/a11-quiz-routine-still-life-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "mode": "RGB",
+          "bytes": 86570,
+          "sha256": "1d479b857222af12c78f30d5c661e0ea1dbd72e8d9fffcdc9af426542302cbe1"
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "file": "assets/generated/a12-journal-feature-protein.png",
+      "slug": "journal-feature-protein",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "bytes": 2352335,
+      "sha256": "c64c42aae6a08572f70e142afbef1b4fa1e6c6d0af7863096fe023f8f20d1b34",
+      "owner_page": "P10",
+      "slot": "featured-story",
+      "focal_point": [
+        0.56,
+        0.5
+      ],
+      "suggested_alt": "A chocolate shake with a small bowl of powder.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a12-journal-feature-protein-480.webp",
+          "width": 480,
+          "height": 320,
+          "mode": "RGB",
+          "bytes": 25862,
+          "sha256": "d11fabbc97bf1b5c7378f22af5311db51ecb08ac784861ccaa1aa2387d034fc5"
+        },
+        {
+          "file": "assets/generated/a12-journal-feature-protein-768.webp",
+          "width": 768,
+          "height": 512,
+          "mode": "RGB",
+          "bytes": 56890,
+          "sha256": "2322729741afd4ae00916e1e4e8496838a605c43abdcff037bbcfea83cfa2e5c"
+        },
+        {
+          "file": "assets/generated/a12-journal-feature-protein-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "mode": "RGB",
+          "bytes": 112330,
+          "sha256": "246f528aa1130f19acbb12e0dedd29c526c0d026c73ad6c5f5b7510ea7298706"
+        }
+      ]
+    },
+    {
+      "id": "A13",
+      "file": "assets/generated/a13-article-hero-whole-foods.png",
+      "slug": "article-hero-whole-foods",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 2551665,
+      "sha256": "2dcc41b0aa8b5119ba0508ab9d02bad47e40864b5f8f9677c73f0c46fe2e1bc0",
+      "owner_page": "P11",
+      "slot": "example-article-hero",
+      "focal_point": [
+        0.5,
+        0.5
+      ],
+      "suggested_alt": "Everyday foods and a shake arranged on a table.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a13-article-hero-whole-foods-480.webp",
+          "width": 480,
+          "height": 270,
+          "mode": "RGB",
+          "bytes": 25128,
+          "sha256": "a65b45b3344140b55244d7ac56645a7bb9b2c6868b239d786b3b30f9e8d14d78"
+        },
+        {
+          "file": "assets/generated/a13-article-hero-whole-foods-768.webp",
+          "width": 768,
+          "height": 432,
+          "mode": "RGB",
+          "bytes": 54264,
+          "sha256": "411877788854b55cc0dc69e83eae2716573ee4bf3746cfae2f072844bc8698b2"
+        },
+        {
+          "file": "assets/generated/a13-article-hero-whole-foods-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "mode": "RGB",
+          "bytes": 121646,
+          "sha256": "a63f48ad218d0ebd722c17056d499a024c7e7fb800990853f670bc69653783e9"
+        },
+        {
+          "file": "assets/generated/a13-article-hero-whole-foods-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "mode": "RGB",
+          "bytes": 183748,
+          "sha256": "e5137bff8f6692f5a87249a110a6da836c21d075bb6e124771d2a7d578b4e4ac"
+        }
+      ]
+    },
+    {
+      "id": "A14",
+      "file": "assets/generated/a14-about-everyday-movement.png",
+      "slug": "about-everyday-movement",
+      "kind": "photography",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "design-ready",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "bytes": 2532718,
+      "sha256": "eb7baae0a3a4a1f4a2e8a1c800b73cfc3039c0b9b374ced07facab4b34f0f607",
+      "owner_page": "P12",
+      "slot": "about-hero",
+      "focal_point": [
+        0.55,
+        0.45
+      ],
+      "suggested_alt": "Two adults walking together beside the coast.",
+      "production_role": "editorial-photo",
+      "cross_page_reuse": false,
+      "prompt_ref": "prompts/photography.json",
+      "derivatives": [
+        {
+          "file": "assets/generated/a14-about-everyday-movement-480.webp",
+          "width": 480,
+          "height": 320,
+          "mode": "RGB",
+          "bytes": 35340,
+          "sha256": "d4ed82dfcdcf2503c950262f5db2df69b50b8ee0e5a7cc67269062e4c3ab627c"
+        },
+        {
+          "file": "assets/generated/a14-about-everyday-movement-768.webp",
+          "width": 768,
+          "height": 512,
+          "mode": "RGB",
+          "bytes": 73914,
+          "sha256": "26c26b8c28e8c701916d2f3aa5c0f698c5b206e030c21b2f505050b58ca92512"
+        },
+        {
+          "file": "assets/generated/a14-about-everyday-movement-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "mode": "RGB",
+          "bytes": 142158,
+          "sha256": "86df4e0618d1f4fbf51e699561093e26fbafe9519912478029fcf6cf6b46c158"
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "file": "mockups/desktop/m01-home.png",
+      "slug": "home-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 749,
+      "height": 2098,
+      "mode": "RGB",
+      "bytes": 1820135,
+      "sha256": "b5044aa0294a3182f33a42a4cc958ddffb6a7209d4f64b2393c792bfa352c22a",
+      "owner_pages": [
+        "P01"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m01-home-320.webp",
+          "width": 320,
+          "height": 896,
+          "mode": "RGB",
+          "bytes": 58442,
+          "sha256": "a44622b538622ba5bcf9b2136649ec4fa2238dcca9ab2708220e2f8ecd83b961"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "file": "mockups/mobile/m02-home.png",
+      "slug": "home-mobile",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 724,
+      "height": 2172,
+      "mode": "RGB",
+      "bytes": 1715269,
+      "sha256": "694ad0364599056b6d3c22153ecc6fd143e757805feb2dd3f584f1c7fd34a549",
+      "owner_pages": [
+        "P01"
+      ],
+      "viewport": "mobile",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/revisions.json",
+      "derivatives": [
+        {
+          "file": "mockups/mobile/m02-home-320.webp",
+          "width": 320,
+          "height": 960,
+          "mode": "RGB",
+          "bytes": 52854,
+          "sha256": "85c2f5c5c65332d1fed06977668f7cabac53be49583be3e761b391c2e19dcbbd"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "file": "mockups/desktop/m03-shop.png",
+      "slug": "shop-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1726522,
+      "sha256": "8573c397abd1e0389299713abd1df1cb4f5042a8ef5f4273e723d76a99e1001e",
+      "owner_pages": [
+        "P02"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m03-shop-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 31176,
+          "sha256": "e24240c9216983193d732f785ea81711c4828425ab1d12ad3d955f98936399e5"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "file": "mockups/mobile/m04-shop.png",
+      "slug": "shop-mobile",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 724,
+      "height": 2172,
+      "mode": "RGB",
+      "bytes": 1634222,
+      "sha256": "8bb09cc76107d6ff8233d2dcd59c554066f2ea27b7613d00e537f2da8f973a38",
+      "owner_pages": [
+        "P02"
+      ],
+      "viewport": "mobile",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/revisions.json",
+      "derivatives": [
+        {
+          "file": "mockups/mobile/m04-shop-320.webp",
+          "width": 320,
+          "height": 960,
+          "mode": "RGB",
+          "bytes": 52518,
+          "sha256": "f84f99e4ccde8c643e058be9764d03336fe889707bbbc0f6846e1f66284c4b7e"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "file": "mockups/desktop/m05-product.png",
+      "slug": "product-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1747467,
+      "sha256": "fbe532e5b3d7d814e75a7052028f109823237fae7f02380938b81853af64183d",
+      "owner_pages": [
+        "P04"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/revisions.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m05-product-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 30804,
+          "sha256": "08a7070423bb8856cc950cb347b43830f6a569fbacac4e8ca50903a196b9fd31"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "file": "mockups/mobile/m06-product.png",
+      "slug": "product-mobile",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 724,
+      "height": 2172,
+      "mode": "RGB",
+      "bytes": 1569525,
+      "sha256": "3bf351d7b6bcff8bee9d93fc0071012d30ba39039ca072dd87214b538596cae9",
+      "owner_pages": [
+        "P04"
+      ],
+      "viewport": "mobile",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/revisions.json",
+      "derivatives": [
+        {
+          "file": "mockups/mobile/m06-product-320.webp",
+          "width": 320,
+          "height": 960,
+          "mode": "RGB",
+          "bytes": 45278,
+          "sha256": "543917a09687ee2f6061701310067288bc16b9e4e337811a10dd3302c0c3772e"
+        }
+      ]
+    },
+    {
+      "id": "M07",
+      "file": "mockups/desktop/m07-quiz.png",
+      "slug": "quiz-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1806541,
+      "sha256": "67b085eebd7d842f076e3049c00ddbf54f0fcb2d9d4d0f48c8b1075f5c9ff3bf",
+      "owner_pages": [
+        "P08"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m07-quiz-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 31450,
+          "sha256": "3888d58dd289f137f554d87965492666370632c4313c1e06c1cbab8b339adc44"
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "file": "mockups/desktop/m08-journal.png",
+      "slug": "journal-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1776975,
+      "sha256": "bb44e879af10f0c4a51025c76036858e7261b4316db9eb754fd30761d9ce6595",
+      "owner_pages": [
+        "P10"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m08-journal-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 32186,
+          "sha256": "e4afd6ba2c4d5945f6f6e7df4317ca001599e4b5a0a210f467b464874294409b"
+        }
+      ]
+    },
+    {
+      "id": "M09",
+      "file": "mockups/desktop/m09-article.png",
+      "slug": "article-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1872085,
+      "sha256": "8424af96707a75a639d666a5872e2f028667408c2a929178af488a806c55890e",
+      "owner_pages": [
+        "P11"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m09-article-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 33216,
+          "sha256": "fc4112b37ce6b61125d2e36f51ce8b55e3f019a31e09d00d3ace95354a7a318a"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "file": "mockups/desktop/m10-cart.png",
+      "slug": "cart-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1487,
+      "height": 1058,
+      "mode": "RGB",
+      "bytes": 1766818,
+      "sha256": "1453631aeb87b61a1c950d3e69888c04d8dad412f8c6fcf68f561d4cbeb7f6a1",
+      "owner_pages": [
+        "P05"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m10-cart-320.webp",
+          "width": 320,
+          "height": 228,
+          "mode": "RGB",
+          "bytes": 14544,
+          "sha256": "1e154aaf6c0b433e777e1080dcabe5cc71e72b834a0a4796be0369326abf28a0"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "file": "mockups/desktop/m11-search.png",
+      "slug": "search-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1698414,
+      "sha256": "14f82692591ad5cb78e41a5ec66e67de80b0e774454abe34272dd1727740dc70",
+      "owner_pages": [
+        "P07"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m11-search-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 25896,
+          "sha256": "ee3f9c7513a34978def8b5d24eccb8de6803fbf7a3a9a20fb7e91db44d4971ae"
+        }
+      ]
+    },
+    {
+      "id": "M12",
+      "file": "mockups/desktop/m12-about.png",
+      "slug": "about-desktop",
+      "kind": "mockup",
+      "source_kind": "generated-new",
+      "created": "2026-11-10",
+      "generation_tool": "built-in image_gen",
+      "status": "visual-reference-only",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bytes": 1965868,
+      "sha256": "2409ce614dc45926b072ab674ff08ae0f9b138b4452f92d4544982f39cda42bb",
+      "owner_pages": [
+        "P12"
+      ],
+      "viewport": "desktop",
+      "production_role": "reference-only-not-a-runtime-asset",
+      "prompt_ref": "prompts/page-mockups.json",
+      "derivatives": [
+        {
+          "file": "mockups/desktop/m12-about-320.webp",
+          "width": 320,
+          "height": 480,
+          "mode": "RGB",
+          "bytes": 36732,
+          "sha256": "f22e7e1a803386b82cfe948fbf2db97a1fd8f55d79339208d0719672bcdf589f"
+        }
+      ]
+    },
+    {
+      "id": "B01",
+      "file": "assets/brand/true-matrx-logo-original.png",
+      "slug": "authentic-logo",
+      "kind": "brand",
+      "source_kind": "authentic-source-exception",
+      "original_repository_path": "assets/tmrx-logo.png",
+      "status": "original-brand-source",
+      "suggested_alt": "True Matrx",
+      "production_role": "brand-identity",
+      "width": 500,
+      "height": 115,
+      "mode": "RGB",
+      "bytes": 60246,
+      "sha256": "7f8a942f7ed0b0a83053490426650391cc97375da9422368110c568248d583c3"
+    },
+    {
+      "id": "V01",
+      "file": "assets/brand/v3-icons.svg",
+      "slug": "new-line-icons",
+      "kind": "vector",
+      "source_kind": "new-code-native-vector",
+      "status": "design-ready",
+      "bytes": 1085,
+      "sha256": "a47adf9500ef1f284f095b7fea43af91014880352d998d368ea22d8f2372ddab",
+      "production_role": "new-vector-component-resource"
+    },
+    {
+      "id": "V02",
+      "file": "assets/brand/v3-curve.svg",
+      "slug": "new-decorative-curve",
+      "kind": "vector",
+      "source_kind": "new-code-native-vector",
+      "status": "design-ready",
+      "bytes": 327,
+      "sha256": "a9f7310b780603d1e41974e9e002c6f40d40cfcfdf007ef2dc4728282b972d65",
+      "production_role": "new-vector-component-resource"
+    }
+  ]
+}

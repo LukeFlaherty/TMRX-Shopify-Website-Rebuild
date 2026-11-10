@@ -1,0 +1,572 @@
+{
+  "version": "3.0.0",
+  "route_matching": "Exact paths/states first; article before blog; generic family last. ui/platform/system records are surfaces, not literal public paths.",
+  "pages": [
+    {
+      "id": "P01",
+      "title": "Homepage",
+      "routes": [
+        "/"
+      ],
+      "template": "index.json",
+      "spec": "specs/pages/P01-home.md",
+      "mockup_ids": [
+        "M01",
+        "M02"
+      ],
+      "asset_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "required_states": [
+        "curated group loaded",
+        "switching/loading",
+        "empty group",
+        "group request failure",
+        "no published articles",
+        "newsletter success/error"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P02",
+      "title": "Shop all",
+      "routes": [
+        "/collections/all"
+      ],
+      "template": "collection.json",
+      "spec": "specs/pages/P02-shop.md",
+      "mockup_ids": [
+        "M03",
+        "M04"
+      ],
+      "asset_ids": [
+        "A08"
+      ],
+      "source_ids": [
+        "S02",
+        "S05",
+        "S07",
+        "S14"
+      ],
+      "required_states": [
+        "default",
+        "filtered",
+        "sorted",
+        "paginated",
+        "zero results",
+        "loading",
+        "failed refresh",
+        "sold-out item",
+        "missing product image"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P03",
+      "title": "Product categories and goals",
+      "routes": [
+        "/collections/:handle"
+      ],
+      "template": "collection.v3.json (proposed)",
+      "spec": "specs/pages/P03-category.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S02",
+        "S05",
+        "S07"
+      ],
+      "required_states": [
+        "protein category",
+        "strength/recovery category",
+        "wellness category",
+        "empty collection",
+        "unconfigured filter",
+        "zero matches"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P04",
+      "title": "Product detail and product-format variants",
+      "routes": [
+        "/products/:handle"
+      ],
+      "template": "product.json",
+      "spec": "specs/pages/P04-product.md",
+      "mockup_ids": [
+        "M05",
+        "M06"
+      ],
+      "asset_ids": [
+        "A09",
+        "A10"
+      ],
+      "source_ids": [
+        "S03",
+        "S06",
+        "S08",
+        "S10"
+      ],
+      "required_states": [
+        "available variant",
+        "alternate variant",
+        "invalid combination",
+        "sold out",
+        "quantity invalid",
+        "adding",
+        "add success",
+        "stock conflict",
+        "network failure",
+        "label missing",
+        "no reviews",
+        "no selling plans"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P05",
+      "title": "Cart drawer",
+      "routes": [
+        "ui:cart-drawer"
+      ],
+      "template": "new V3 global section",
+      "spec": "specs/pages/P05-cart-drawer.md",
+      "mockup_ids": [
+        "M10"
+      ],
+      "asset_ids": [],
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "required_states": [
+        "empty",
+        "populated",
+        "editing",
+        "removing",
+        "stock conflict",
+        "network failure",
+        "checkout pending"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P06",
+      "title": "Cart page fallback",
+      "routes": [
+        "/cart"
+      ],
+      "template": "cart.json (new)",
+      "spec": "specs/pages/P06-cart.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S04",
+        "S08"
+      ],
+      "required_states": [
+        "empty",
+        "one line",
+        "multiple lines",
+        "update failure",
+        "unavailable item",
+        "discounted cart"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P07",
+      "title": "Search and predictive suggestions",
+      "routes": [
+        "/search",
+        "ui:predictive-search"
+      ],
+      "template": "search.json",
+      "spec": "specs/pages/P07-search.md",
+      "mockup_ids": [
+        "M11"
+      ],
+      "asset_ids": [],
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "required_states": [
+        "empty query",
+        "typing",
+        "loading",
+        "suggestions",
+        "results",
+        "no results",
+        "request failure",
+        "stale request"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P08",
+      "title": "Routine quiz entry and questions",
+      "routes": [
+        "/pages/find-your-routine"
+      ],
+      "template": "page.v3-quiz.json (proposed)",
+      "spec": "specs/pages/P08-quiz.md",
+      "mockup_ids": [
+        "M07"
+      ],
+      "asset_ids": [
+        "A11"
+      ],
+      "source_ids": [
+        "S02",
+        "S12"
+      ],
+      "required_states": [
+        "entry",
+        "unselected",
+        "selected",
+        "validation",
+        "back",
+        "calculating",
+        "configuration missing"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P09",
+      "title": "Routine quiz results",
+      "routes": [
+        "/pages/find-your-routine?step=results"
+      ],
+      "template": "quiz state, not independent Shopify template",
+      "spec": "specs/pages/P09-quiz-results.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "required_states": [
+        "eligible results",
+        "only sold-out matches",
+        "no matches",
+        "rules missing",
+        "product fetch failure",
+        "reset"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P10",
+      "title": "Optimization Journal index",
+      "routes": [
+        "/blogs/news",
+        "/blogs/news/tagged/:tag"
+      ],
+      "template": "blog.json",
+      "spec": "specs/pages/P10-journal.md",
+      "mockup_ids": [
+        "M08"
+      ],
+      "asset_ids": [
+        "A12"
+      ],
+      "source_ids": [
+        "S04",
+        "S09"
+      ],
+      "required_states": [
+        "published articles",
+        "topic selected",
+        "search",
+        "empty blog",
+        "missing image",
+        "pagination"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P11",
+      "title": "Editorial article",
+      "routes": [
+        "/blogs/news/:article"
+      ],
+      "template": "article.json",
+      "spec": "specs/pages/P11-article.md",
+      "mockup_ids": [
+        "M09"
+      ],
+      "asset_ids": [
+        "A13"
+      ],
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "required_states": [
+        "long/short article",
+        "no image",
+        "no author",
+        "no related product",
+        "anchored section",
+        "unpublished/not found"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P12",
+      "title": "About True Matrx",
+      "routes": [
+        "/pages/about"
+      ],
+      "template": "page.v3-about.json (proposed)",
+      "spec": "specs/pages/P12-about.md",
+      "mockup_ids": [
+        "M12"
+      ],
+      "asset_ids": [
+        "A14"
+      ],
+      "source_ids": [
+        "S01"
+      ],
+      "required_states": [
+        "normal",
+        "no verified team content",
+        "optional approved profile future"
+      ],
+      "status": "written-spec-and-generated-reference"
+    },
+    {
+      "id": "P13",
+      "title": "Product information and standards",
+      "routes": [
+        "/pages/our-standards"
+      ],
+      "template": "page.v3-standards.json (proposed)",
+      "spec": "specs/pages/P13-standards.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "required_states": [
+        "documents available",
+        "document absent",
+        "external report link"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P14",
+      "title": "Contact and support",
+      "routes": [
+        "/pages/contact-us"
+      ],
+      "template": "page.contact-us.json",
+      "spec": "specs/pages/P14-contact.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "required_states": [
+        "blank",
+        "validation",
+        "submitting",
+        "success",
+        "server error"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P15",
+      "title": "Frequently asked questions",
+      "routes": [
+        "/pages/faq"
+      ],
+      "template": "page.v3-faq.json (proposed)",
+      "spec": "specs/pages/P15-faq.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "required_states": [
+        "all closed",
+        "one/multiple open",
+        "deep link to question",
+        "no approved answers"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P16",
+      "title": "Shipping and returns information",
+      "routes": [
+        "/pages/shipping-returns"
+      ],
+      "template": "page.v3-policy-guide.json (proposed)",
+      "spec": "specs/pages/P16-shipping-returns.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S01"
+      ],
+      "required_states": [
+        "approved policy present",
+        "policy not yet supplied",
+        "external canonical policy"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P17",
+      "title": "Practitioner and wholesale inquiry",
+      "routes": [
+        "/pages/wholesale"
+      ],
+      "template": "page.wholesale.json",
+      "spec": "specs/pages/P17-wholesale.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "required_states": [
+        "blank",
+        "validation",
+        "sending",
+        "sent",
+        "failed",
+        "existing partner link if real"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P18",
+      "title": "Subscription information, conditional",
+      "routes": [
+        "/pages/subscribe-and-save"
+      ],
+      "template": "page.subscribe-and-save.json",
+      "spec": "specs/pages/P18-subscriptions.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S10"
+      ],
+      "required_states": [
+        "disabled/no plans",
+        "plans configured",
+        "eligible product",
+        "ineligible variant"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P19",
+      "title": "Canonical policies and accessibility information",
+      "routes": [
+        "/policies/:handle",
+        "/pages/accessibility"
+      ],
+      "template": "platform policy surface / page.v3-document.json",
+      "spec": "specs/pages/P19-policies.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "required_states": [
+        "published policy",
+        "long document",
+        "missing/unpublished policy"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P20",
+      "title": "404 and missing content",
+      "routes": [
+        "system:404"
+      ],
+      "template": "404.json (new)",
+      "spec": "specs/pages/P20-not-found.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S04",
+        "S09"
+      ],
+      "required_states": [
+        "invalid route",
+        "removed product",
+        "unpublished article"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P21",
+      "title": "Customer account handoff",
+      "routes": [
+        "/account",
+        "/account/login"
+      ],
+      "template": "Shopify account surface, configuration-dependent",
+      "spec": "specs/pages/P21-accounts.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S04"
+      ],
+      "required_states": [
+        "signed out",
+        "signed in",
+        "login failure handled by platform",
+        "return to shop"
+      ],
+      "status": "written-specification"
+    },
+    {
+      "id": "P22",
+      "title": "Checkout and order confirmation handoff",
+      "routes": [
+        "platform:checkout",
+        "platform:order-confirmation"
+      ],
+      "template": "Shopify hosted surfaces; not a theme template",
+      "spec": "specs/pages/P22-checkout.md",
+      "mockup_ids": [],
+      "asset_ids": [],
+      "source_ids": [
+        "S08"
+      ],
+      "required_states": [
+        "cart handoff",
+        "shipping/payment validation",
+        "payment failure",
+        "confirmed order"
+      ],
+      "status": "written-specification"
+    }
+  ]
+}

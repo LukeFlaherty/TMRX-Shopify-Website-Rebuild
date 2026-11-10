@@ -1,0 +1,249 @@
+{
+  "observed_date": "2026-11-10",
+  "source": "https://truematrx.com/collections/all",
+  "observed_count": 16,
+  "currency": "USD",
+  "caveat": "Public browsing results may be cached; not a live commerce feed. No authenticated variant IDs, stock or selling-plan data were obtained. All runtime values must come from Shopify.",
+  "products": [
+    {
+      "id": "PR01",
+      "handle": "bone-broth-protein",
+      "title": "BONE BROTH PROTEIN",
+      "observed_price_USD": 79.95,
+      "source_url": "https://truematrx.com/products/bone-broth-protein",
+      "local_media_range": [
+        8,
+        10
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR02",
+      "handle": "calm",
+      "title": "CALM",
+      "observed_price_USD": 68.75,
+      "source_url": "https://truematrx.com/products/calm",
+      "local_media_range": [
+        47,
+        51
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR03",
+      "handle": "true-creatine",
+      "title": "CREATINE 400G (micronized)",
+      "observed_price_USD": 47.25,
+      "source_url": "https://truematrx.com/products/true-creatine",
+      "local_media_range": [
+        57,
+        61
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR04",
+      "handle": "creatine-hcl",
+      "title": "Creatine HCL",
+      "observed_price_USD": 44.99,
+      "source_url": "https://truematrx.com/products/creatine-hcl",
+      "local_media_range": [
+        4,
+        6
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR05",
+      "handle": "dna-support",
+      "title": "DNA SUPPORT",
+      "observed_price_USD": 104.99,
+      "source_url": "https://truematrx.com/products/dna-support",
+      "local_media_range": [
+        34,
+        36
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR06",
+      "handle": "essential-aminos",
+      "title": "ESSENTIAL AMINOS",
+      "observed_price_USD": 89.24,
+      "source_url": "https://truematrx.com/products/essential-aminos",
+      "local_media_range": [
+        21,
+        25
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR07",
+      "handle": "hormone-support",
+      "title": "HORMONE SUPPORT",
+      "observed_price_USD": 83.99,
+      "source_url": "https://truematrx.com/products/hormone-support",
+      "local_media_range": [
+        42,
+        46
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR08",
+      "handle": "liver-support",
+      "title": "LIVER SUPPORT",
+      "observed_price_USD": 52.49,
+      "source_url": "https://truematrx.com/products/liver-support",
+      "local_media_range": [
+        37,
+        41
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR09",
+      "handle": "methylation-support",
+      "title": "METHYLATION SUPPORT",
+      "observed_price_USD": 79.99,
+      "source_url": "https://truematrx.com/products/methylation-support",
+      "local_media_range": [
+        13,
+        17
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR10",
+      "handle": "mito-revive",
+      "title": "MITO-REVIVE",
+      "observed_price_USD": 84.99,
+      "source_url": "https://truematrx.com/products/mito-revive",
+      "local_media_range": [
+        1,
+        3
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Visually observed on original source front; verify current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR11",
+      "handle": "myos-md-vanilla",
+      "title": "Myos MD Vanilla",
+      "observed_price_USD": 71.99,
+      "source_url": "https://truematrx.com/products/myos-md-vanilla",
+      "local_media_range": [
+        11,
+        12
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR12",
+      "handle": "n1o1-nitric-oxide-lozenges",
+      "title": "N1O1 Nitric Oxide Lozenges",
+      "observed_price_USD": 59.99,
+      "source_url": "https://truematrx.com/products/n1o1-nitric-oxide-lozenges",
+      "local_media_range": [
+        18,
+        20
+      ],
+      "format_design_hint": "lozenge",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR13",
+      "handle": "true-omega",
+      "title": "PREMIUM OMEGA 180",
+      "observed_price_USD": 95.99,
+      "source_url": "https://truematrx.com/products/true-omega",
+      "local_media_range": [
+        52,
+        56
+      ],
+      "format_design_hint": "softgel",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR14",
+      "handle": "secretropin",
+      "title": "SECRETROPIN",
+      "observed_price_USD": 140,
+      "source_url": "https://truematrx.com/products/secretropin",
+      "local_media_range": [
+        7,
+        7
+      ],
+      "format_design_hint": "spray",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR15",
+      "handle": "true-greens",
+      "title": "SUPERGREENS",
+      "observed_price_USD": 75.59,
+      "source_url": "https://truematrx.com/products/true-greens",
+      "local_media_range": [
+        26,
+        30
+      ],
+      "format_design_hint": "powder",
+      "format_status": "Original-source format hint; recheck current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    },
+    {
+      "id": "PR16",
+      "handle": "vitamin-d-k2",
+      "title": "VITAMIN D+K2",
+      "observed_price_USD": 56.69,
+      "source_url": "https://truematrx.com/products/vitamin-d-k2",
+      "local_media_range": [
+        31,
+        33
+      ],
+      "format_design_hint": "capsule",
+      "format_status": "Visually observed on original source front; verify current variant/label",
+      "availability": "not-certified-use-Shopify-runtime",
+      "claims_status": "not-approved-by-this-research"
+    }
+  ]
+}

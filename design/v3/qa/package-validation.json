@@ -1,0 +1,28 @@
+{
+  "version": "3.0.0",
+  "scope": "Design package integrity only; no website functional tests.",
+  "passed": true,
+  "checks": [
+    "All JSON files parse",
+    "Route/spec/state/source/asset lookup is complete",
+    "Selected originals, derivatives, ownership and hashes verified",
+    "Product source groups and original-byte identity verified",
+    "Unreviewed quiz fixture cannot be mistaken for enabled rules",
+    "Markdown/HTML local links and SVG XML checked",
+    "Key token text/control contrast pairs measured"
+  ],
+  "errors": [],
+  "pages": 22,
+  "photos": 14,
+  "mockups": 12,
+  "products": 16,
+  "original_product_images": 61,
+  "contrast_ratios": {
+    "ink/canvas": 17.89,
+    "muted/canvas": 6.27,
+    "canvas/action": 5.78,
+    "action/canvas": 5.78,
+    "controlBorder/canvas": 3.88,
+    "focus/canvas": 10.72
+  }
+}

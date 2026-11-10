@@ -1,0 +1,63 @@
+{
+  "version": "3.0.0",
+  "status": "design-copy-pending-merchant-review",
+  "home": {
+    "eyebrow": "Practitioner-grade nutrition",
+    "headline": "Hold your supplements to a higher standard.",
+    "body": "Purpose-built support for your daily routine.",
+    "primary": "Shop supplements",
+    "secondary": "Find my routine",
+    "featured": "Your daily essentials",
+    "goals": "Shop by your goal",
+    "standards": "A higher standard. An everyday routine."
+  },
+  "shop": {
+    "headline": "Find your daily essentials.",
+    "categories": [
+      "All supplements",
+      "Protein",
+      "Recovery",
+      "Wellness"
+    ],
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear filters",
+    "empty": "No products match these filters."
+  },
+  "product": {
+    "example_title": "Essential Aminos",
+    "example_summary": "A simple addition to your active routine.",
+    "primary": "Add to bag",
+    "pending": "Adding…",
+    "unavailable": "Sold out",
+    "label": "View product label",
+    "related": "Explore more daily essentials"
+  },
+  "quiz": {
+    "headline": "A routine built around you.",
+    "question": "What is your main focus?",
+    "answers": [
+      "Daily nutrition",
+      "Strength & recovery",
+      "Foundational wellness"
+    ],
+    "next": "Continue",
+    "previous": "Back",
+    "fallback": "Explore products by your goal."
+  },
+  "journal": {
+    "headline": "The Optimization Journal",
+    "subhead": "Practical guidance for your daily routine.",
+    "article_example": "Protein and whole foods: finding your balance."
+  },
+  "forms": {
+    "newsletter": "Stay in the know.",
+    "email": "Email address",
+    "submit": "Sign up"
+  },
+  "errors": {
+    "update": "We couldn’t update that. Please try again.",
+    "option": "This option is currently unavailable.",
+    "not_found": "We couldn’t find that page."
+  }
+}
