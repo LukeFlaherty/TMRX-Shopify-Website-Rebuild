@@ -60,3 +60,20 @@ Selected product/collection/article references; current variant media/prices; go
 ## Implementation dependencies
 
 Use the new V3 components in [components and states](../components-and-states.md), [spacing and type](../design-system.md), and [responsive rules](../responsive.md). Resolve asset IDs through [the manifest](../../manifests/assets.json) and product media through [product sources](../../manifests/products.json). Written specifications and runtime Shopify data override generated image text. Merchant-dependent launch decisions are listed in [the readiness register](../../DECISIONS.md).
+
+## Preferred product-included photography — revision 3.1
+
+Use these finished product-filled variants by default. Original plates remain alternate source material. Products are already present: do not overlay a second packshot. Verify visible packaging against current authentic source media before launch.
+
+| Preferred asset | Original slot/source | Product identity |
+|---|---|---|
+| A15 | A01 | essential-aminos, bone-broth-protein, true-omega |
+| A16 | A02 | essential-aminos, bone-broth-protein, true-omega |
+| A17 | A07 | essential-aminos, true-omega |
+| A24 | A03 | bone-broth-protein |
+| A25 | A04 | true-creatine |
+| A26 | A05 | calm |
+
+## Development lookup
+
+Use the [development roadmap](../../DEVELOPMENT-ROADMAP.md) and filter [task records](../../manifests/development-roadmap.json) by `page_ids` containing `P01`. This brief specifies design; task status and implementation evidence live in the tracker.

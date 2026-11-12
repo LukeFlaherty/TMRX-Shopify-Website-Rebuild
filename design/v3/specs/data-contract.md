@@ -43,3 +43,7 @@ Shopify JSON templates and sections implement storefront pages. Customer account
 ## Existing-source audit observations
 
 `sections/main-product.liquid` currently seeds review count and average when review metafields are absent, and computes a subscription price from a fixed percentage. Do not copy these into V3. `docs/storefront-build-plan.md` is an older plan and included red placeholders; V3 supersedes that visual fallback. Existing medical language and profile documents are not automatically approved V3 content. This package does not mutate those files.
+
+## Cart and recommendation extension — 3.1
+
+The [cart contract](cart-experience.md) defines required current cart/variant data, image and price fields, eligibility, curated fallback and mutation ownership. Related/complementary recommendations are product-seeded, not a basket-wide personalization guarantee. Both surfaces use authentic variant media, real IDs and one authoritative cart state. No recommendation may use this package's dated price snapshot as runtime data. Ajax section failures and ambiguous writes need reconciliation rather than duplicate adds.

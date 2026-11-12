@@ -10,18 +10,31 @@ All text-free photography was generated with the built-in image_gen tool using t
 
 An original editorial image belongs to its listed page slot. Do not put the homepage goal photo on the quiz, journal and contact pages as filler. The same slot can use a responsive crop on desktop/mobile unless it has a separately authored mobile plate, such as A01/A02. Shared packshots, logo and new component primitives are the explicit exceptions. Utility pages intentionally use typography rather than recycled decorative photography.
 
-## Product staging recipes
+## Product-included variants — preferred in revision 3.1
 
-The plates are intentionally empty. Compose original product media as separate HTML image layers in a responsive media region, so labels remain faithful. Do not use AI-generated label text from a mockup. These are suggested initial placement bounds; refine the contact point visually with the real PNG transparency, preserve aspect ratio and do not stretch.
+Twelve finished variants A15–A26 now include products. Use them for most B-roll and staging slots rather than displaying empty pedestals. `preferred_asset_ids` on each page and `preferred_variant_id` on original assets provide the exact lookup. The 14 originals remain available as alternate source material; these additions do not erase provenance or change the approved theme.
 
-| Slot | Plate | Authentic layers | Position guidance in media region |
+| Finished variant | Original slot | Page | Product identity |
 |---|---|---|---|
-| Home desktop | A01 | Aminos front, Bone Broth front, Omega front | Products sit on right-hand platforms; approximate centers 63%, 81%, 91%; bottom contacts ~72%, 57%, 81% depending crop |
-| Home mobile | A02 | Same actual identities | Centered cluster; use back high stone for tall Bone Broth, low front stone for Aminos; crop plate before scaling product layers |
-| Collection masthead | A08 | Optional category-specific originals | Keep imagery low-profile, right half on desktop; hide grouping if small-screen title needs room |
-| Essential Aminos gallery | A09 | Aminos front only | Center product, base near top of slab; size around 55–65% media height; real label legible |
+| A15 / A16 | A01 / A02 desktop/phone hero | P01 | Essential Aminos, Bone Broth Protein, Premium Omega |
+| A17 | A07 standards still life | P01 | Essential Aminos, Premium Omega |
+| A18 | A08 collection masthead | P02 | Essential Aminos, Bone Broth Protein, Premium Omega |
+| A19 | A09 Aminos gallery staging | P04 | Essential Aminos |
+| A20 | A10 Aminos routine | P04 | Essential Aminos |
+| A21 | A11 quiz entry | P08 | Essential Aminos, Premium Omega |
+| A22 | A12 journal feature | P10 | Bone Broth Protein |
+| A23 | A13 article hero | P11 | Bone Broth Protein |
+| A24 | A03 nutrition goal | P01 | Bone Broth Protein |
+| A25 | A04 strength goal | P01 | Micronized Creatine |
+| A26 | A05 recovery goal | P01 | Calm |
 
-Layer coordinates are art-direction starting points, not pixel-perfect guarantees. The generated mockup may depict different stone geometry. The shipped plate plus original product PNGs are the source. A generic missing product photo gets a simple neutral missing-image treatment, never a red block or unrelated product image.
+Products are already present in these finished images: do not overlay a second packshot. Product handles are metadata in the asset manifest, not an eligibility, dosage or health claim. A06 wellness walk and A14 about remain intentionally people-led. Editorial photos remain owned by their page; the Aminos editorial must not become another SKU's product gallery.
+
+These variants were generated as edits using the authentic product files and original slot image as references. Packaging still requires comparison with the current approved source before launch. Never extract Supplement Facts, label text or claims from a generated photo. Grid images, cart photos and factual gallery/label views continue to use authentic current product media. If a generated label differs, use a verified retouch or a faithful original-media composition before launch.
+
+## Optional separate-layer composition
+
+If a product assortment or variant changes, the empty originals A01/A02/A08/A09 remain useful for composing current authentic product media. Use one approach per media region: a finished product-filled image OR an original empty plate with separate product layers. Keep native proportions, transparent edges and a natural contact shadow. On the desktop hero retain clear left-side space for copy; on phone keep the cluster centered and avoid cropping the packaging. A missing product photo receives a neutral missing-image treatment, never an unrelated product.
 
 ## Product source library
 

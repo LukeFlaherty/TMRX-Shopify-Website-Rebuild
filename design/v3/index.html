@@ -1,113 +1,321 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>True Matrx · V3 redesign package</title>
     <style>:root{font-family:system-ui,sans-serif;color:#101820;background:#fff}*{box-sizing:border-box}body{margin:0}header{background:#edf7fe;padding:40px max(24px,5vw)}h1{font-size:38px;line-height:1.1;margin:12px 0}h2{font-size:28px}p{line-height:1.5;max-width:85ch}a{color:#0067b8}a:focus-visible,input:focus-visible{outline:3px solid #003f73;outline-offset:3px}nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0}main{max-width:1450px;margin:auto;padding:24px}section{margin:36px 0 56px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}.asset{border-top:1px solid #c9e2f3;padding-top:16px}.asset img{width:100%;height:230px;object-fit:contain;background:#fafcfe}.mockups img{height:500px}.asset h3{font-size:17px;line-height:1.4}.asset p{font-size:14px;color:#536270}input{font:inherit;min-height:48px;padding:12px;width:min(100%,480px);border:1px solid #708494}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:14px 10px;border-bottom:1px solid #c9e2f3;vertical-align:top}.table-wrap{overflow:auto}footer{padding:24px;border-top:1px solid #c9e2f3}label{display:block;margin:8px 0}.logo{max-width:230px;height:auto}[hidden]{display:none!important}@media(max-width:600px){h1{font-size:30px}.grid{grid-template-columns:1fr}.mockups img{height:460px}}</style>
-    <header><img class="logo" src="assets/brand/true-matrx-logo-original.png" alt="True Matrx"><p>V3 REDESIGN · VERSION 3.0.0 · NOVEMBER 10, 2026</p><h1>A higher standard. A clear design handoff.</h1><p>Fresh creative, researched flows, page-by-page specifications and original brand/product sources. This is a local design catalog, not a functioning storefront or deployed Shopify theme.</p><nav><a href="README.md">Package guide</a><a href="BUILDER-HANDOFF.md">Builder start</a><a href="#pages">Page lookup</a><a href="#mockups">Page references</a><a href="#photos">Photography</a><a href="#products">Product sources</a><a href="qa/visual-review.md">Visual caveats</a></nav><label for="find">Filter assets by name or ID</label><input id="find" type="search" placeholder="Try A09, product, mobile…"></header><main>
-    <section id="pages"><h2>22 page briefs and surfaces</h2><p>Written specs and current Shopify data override generated screenshot text. Supporting pages have intentional written layouts. Fresh imagery has one page owner; authentic packshots/logo are the disclosed identity exceptions.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Brief</th><th>Route/surface</th><th>Reference</th></tr></thead><tbody><tr><td>P01</td><td><a href="specs/pages/P01-home.md">Homepage</a></td><td>/</td><td>M01, M02</td></tr><tr><td>P02</td><td><a href="specs/pages/P02-shop.md">Shop all</a></td><td>/collections/all</td><td>M03, M04</td></tr><tr><td>P03</td><td><a href="specs/pages/P03-category.md">Product categories and goals</a></td><td>/collections/:handle</td><td>Written specification</td></tr><tr><td>P04</td><td><a href="specs/pages/P04-product.md">Product detail and product-format variants</a></td><td>/products/:handle</td><td>M05, M06</td></tr><tr><td>P05</td><td><a href="specs/pages/P05-cart-drawer.md">Cart drawer</a></td><td>ui:cart-drawer</td><td>M10</td></tr><tr><td>P06</td><td><a href="specs/pages/P06-cart.md">Cart page fallback</a></td><td>/cart</td><td>Written specification</td></tr><tr><td>P07</td><td><a href="specs/pages/P07-search.md">Search and predictive suggestions</a></td><td>/search, ui:predictive-search</td><td>M11</td></tr><tr><td>P08</td><td><a href="specs/pages/P08-quiz.md">Routine quiz entry and questions</a></td><td>/pages/find-your-routine</td><td>M07</td></tr><tr><td>P09</td><td><a href="specs/pages/P09-quiz-results.md">Routine quiz results</a></td><td>/pages/find-your-routine?step=results</td><td>Written specification</td></tr><tr><td>P10</td><td><a href="specs/pages/P10-journal.md">Optimization Journal index</a></td><td>/blogs/news, /blogs/news/tagged/:tag</td><td>M08</td></tr><tr><td>P11</td><td><a href="specs/pages/P11-article.md">Editorial article</a></td><td>/blogs/news/:article</td><td>M09</td></tr><tr><td>P12</td><td><a href="specs/pages/P12-about.md">About True Matrx</a></td><td>/pages/about</td><td>M12</td></tr><tr><td>P13</td><td><a href="specs/pages/P13-standards.md">Product information and standards</a></td><td>/pages/our-standards</td><td>Written specification</td></tr><tr><td>P14</td><td><a href="specs/pages/P14-contact.md">Contact and support</a></td><td>/pages/contact-us</td><td>Written specification</td></tr><tr><td>P15</td><td><a href="specs/pages/P15-faq.md">Frequently asked questions</a></td><td>/pages/faq</td><td>Written specification</td></tr><tr><td>P16</td><td><a href="specs/pages/P16-shipping-returns.md">Shipping and returns information</a></td><td>/pages/shipping-returns</td><td>Written specification</td></tr><tr><td>P17</td><td><a href="specs/pages/P17-wholesale.md">Practitioner and wholesale inquiry</a></td><td>/pages/wholesale</td><td>Written specification</td></tr><tr><td>P18</td><td><a href="specs/pages/P18-subscriptions.md">Subscription information, conditional</a></td><td>/pages/subscribe-and-save</td><td>Written specification</td></tr><tr><td>P19</td><td><a href="specs/pages/P19-policies.md">Canonical policies and accessibility information</a></td><td>/policies/:handle, /pages/accessibility</td><td>Written specification</td></tr><tr><td>P20</td><td><a href="specs/pages/P20-not-found.md">404 and missing content</a></td><td>system:404</td><td>Written specification</td></tr><tr><td>P21</td><td><a href="specs/pages/P21-accounts.md">Customer account handoff</a></td><td>/account, /account/login</td><td>Written specification</td></tr><tr><td>P22</td><td><a href="specs/pages/P22-checkout.md">Checkout and order confirmation handoff</a></td><td>platform:checkout, platform:order-confirmation</td><td>Written specification</td></tr></tbody></table></div></section>
-    <section id="mockups"><h2>12 fresh page references</h2><p>Composition references only. No generated product labels, prices, medical prose or interface states are a runtime source. Open the full-resolution file to inspect.</p><div class="grid mockups"><article class="asset" data-search="M01 home desktop mockup">
+    <header><img class="logo" src="assets/brand/true-matrx-logo-original.png" alt="True Matrx"><p>V3 REDESIGN · VERSION 3.1.0 · NOVEMBER 12, 2026</p><h1>A higher standard. A clear design handoff.</h1><p>Fresh creative, researched flows, page-by-page specifications and original brand/product sources. This is a local design catalog, not a functioning storefront or deployed Shopify theme.</p><nav><a href="README.md">Package guide</a><a href="BUILDER-HANDOFF.md">Builder start</a><a href="DEVELOPMENT-ROADMAP.md">92-task roadmap</a><a href="#product-variants">Product-filled B-roll</a><a href="#cart">Cart designs</a><a href="#pages">Page lookup</a><a href="#mockups">Page references</a><a href="#photos">Photography</a><a href="#products">Product sources</a><a href="qa/visual-review.md">Visual caveats</a></nav><label for="find">Filter assets by name or ID</label><input id="find" type="search" placeholder="Try A09, product, mobile…"></header><main>
+    <section id="pages"><h2>22 page briefs and surfaces</h2><p>Written specs and current Shopify data override generated screenshot text. Supporting pages have intentional written layouts. Fresh imagery has one page owner; authentic packshots/logo are the disclosed identity exceptions.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Brief</th><th>Route/surface</th><th>Reference</th></tr></thead><tbody><tr><td>P01</td><td><a href="specs/pages/P01-home.md">Homepage</a></td><td>/</td><td>M01, M02</td></tr><tr><td>P02</td><td><a href="specs/pages/P02-shop.md">Shop all</a></td><td>/collections/all</td><td>M03, M04</td></tr><tr><td>P03</td><td><a href="specs/pages/P03-category.md">Product categories and goals</a></td><td>/collections/:handle</td><td>Written specification</td></tr><tr><td>P04</td><td><a href="specs/pages/P04-product.md">Product detail and product-format variants</a></td><td>/products/:handle</td><td>M05, M06</td></tr><tr><td>P05</td><td><a href="specs/pages/P05-cart-drawer.md">Cart drawer</a></td><td>ui:cart-drawer</td><td>M13, M14, M17, M18, M10</td></tr><tr><td>P06</td><td><a href="specs/pages/P06-cart.md">Full cart page</a></td><td>/cart</td><td>M15, M16, M17, M18</td></tr><tr><td>P07</td><td><a href="specs/pages/P07-search.md">Search and predictive suggestions</a></td><td>/search, ui:predictive-search</td><td>M11</td></tr><tr><td>P08</td><td><a href="specs/pages/P08-quiz.md">Routine quiz entry and questions</a></td><td>/pages/find-your-routine</td><td>M07</td></tr><tr><td>P09</td><td><a href="specs/pages/P09-quiz-results.md">Routine quiz results</a></td><td>/pages/find-your-routine?step=results</td><td>Written specification</td></tr><tr><td>P10</td><td><a href="specs/pages/P10-journal.md">Optimization Journal index</a></td><td>/blogs/news, /blogs/news/tagged/:tag</td><td>M08</td></tr><tr><td>P11</td><td><a href="specs/pages/P11-article.md">Editorial article</a></td><td>/blogs/news/:article</td><td>M09</td></tr><tr><td>P12</td><td><a href="specs/pages/P12-about.md">About True Matrx</a></td><td>/pages/about</td><td>M12</td></tr><tr><td>P13</td><td><a href="specs/pages/P13-standards.md">Product information and standards</a></td><td>/pages/our-standards</td><td>Written specification</td></tr><tr><td>P14</td><td><a href="specs/pages/P14-contact.md">Contact and support</a></td><td>/pages/contact-us</td><td>Written specification</td></tr><tr><td>P15</td><td><a href="specs/pages/P15-faq.md">Frequently asked questions</a></td><td>/pages/faq</td><td>Written specification</td></tr><tr><td>P16</td><td><a href="specs/pages/P16-shipping-returns.md">Shipping and returns information</a></td><td>/pages/shipping-returns</td><td>Written specification</td></tr><tr><td>P17</td><td><a href="specs/pages/P17-wholesale.md">Practitioner and wholesale inquiry</a></td><td>/pages/wholesale</td><td>Written specification</td></tr><tr><td>P18</td><td><a href="specs/pages/P18-subscriptions.md">Subscription information, conditional</a></td><td>/pages/subscribe-and-save</td><td>Written specification</td></tr><tr><td>P19</td><td><a href="specs/pages/P19-policies.md">Canonical policies and accessibility information</a></td><td>/policies/:handle, /pages/accessibility</td><td>Written specification</td></tr><tr><td>P20</td><td><a href="specs/pages/P20-not-found.md">404 and missing content</a></td><td>system:404</td><td>Written specification</td></tr><tr><td>P21</td><td><a href="specs/pages/P21-accounts.md">Customer account handoff</a></td><td>/account, /account/login</td><td>Written specification</td></tr><tr><td>P22</td><td><a href="specs/pages/P22-checkout.md">Checkout and order confirmation handoff</a></td><td>platform:checkout, platform:order-confirmation</td><td>Written specification</td></tr></tbody></table></div></section>
+    <section id="cart"><h2>Cart page, drawer and interaction states</h2><p>Visual recommendations with Add to bag controls. Read the <a href="specs/cart-experience.md">no-reload cart specification</a> and <a href="qa/cart-scenarios.md">functional acceptance matrix</a>. Images are concepts, not working cart code.</p><div class="grid mockups"><article class="asset" data-search="M13 cart drawer recommendations mockup ">
+        <a href="mockups/desktop/m13-cart-drawer-recommendations.png"><img loading="lazy" src="mockups/desktop/m13-cart-drawer-recommendations-320.webp" alt="cart drawer recommendations"></a>
+        <h3>M13 · cart drawer recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m13-cart-drawer-recommendations.png">Open original</a></article><article class="asset" data-search="M14 cart drawer recommendations mockup ">
+        <a href="mockups/mobile/m14-cart-drawer-recommendations.png"><img loading="lazy" src="mockups/mobile/m14-cart-drawer-recommendations-320.webp" alt="cart drawer recommendations"></a>
+        <h3>M14 · cart drawer recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>878 × 1791 · visual-reference-only</p>
+        <a href="mockups/mobile/m14-cart-drawer-recommendations.png">Open original</a></article><article class="asset" data-search="M15 cart page recommendations mockup ">
+        <a href="mockups/desktop/m15-cart-page-recommendations.png"><img loading="lazy" src="mockups/desktop/m15-cart-page-recommendations-320.webp" alt="cart page recommendations"></a>
+        <h3>M15 · cart page recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m15-cart-page-recommendations.png">Open original</a></article><article class="asset" data-search="M16 cart page recommendations mockup ">
+        <a href="mockups/mobile/m16-cart-page-recommendations.png"><img loading="lazy" src="mockups/mobile/m16-cart-page-recommendations-320.webp" alt="cart page recommendations"></a>
+        <h3>M16 · cart page recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1024 × 1536 · visual-reference-only</p>
+        <a href="mockups/mobile/m16-cart-page-recommendations.png">Open original</a></article><article class="asset" data-search="M17 cart recommendation states mockup ">
+        <a href="mockups/desktop/m17-cart-recommendation-states.png"><img loading="lazy" src="mockups/desktop/m17-cart-recommendation-states-320.webp" alt="cart recommendation states"></a>
+        <h3>M17 · cart recommendation states</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1774 × 887 · visual-reference-only</p>
+        <a href="mockups/desktop/m17-cart-recommendation-states.png">Open original</a></article><article class="asset" data-search="M18 cart empty states mockup ">
+        <a href="mockups/desktop/m18-cart-empty-states.png"><img loading="lazy" src="mockups/desktop/m18-cart-empty-states-320.webp" alt="cart empty states"></a>
+        <h3>M18 · cart empty states</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m18-cart-empty-states.png">Open original</a></article></div></section>
+    <section id="mockups"><h2>18 page and state references</h2><p>Composition references only. No generated product labels, prices, medical prose or interface states are a runtime source. Open the full-resolution file to inspect.</p><div class="grid mockups"><article class="asset" data-search="M01 home desktop mockup ">
         <a href="mockups/desktop/m01-home.png"><img loading="lazy" src="mockups/desktop/m01-home-320.webp" alt="home desktop"></a>
         <h3>M01 · home desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>749 × 2098 · visual-reference-only</p>
-        <a href="mockups/desktop/m01-home.png">Open original</a></article><article class="asset" data-search="M02 home mobile mockup">
+        <a href="mockups/desktop/m01-home.png">Open original</a></article><article class="asset" data-search="M02 home mobile mockup ">
         <a href="mockups/mobile/m02-home.png"><img loading="lazy" src="mockups/mobile/m02-home-320.webp" alt="home mobile"></a>
         <h3>M02 · home mobile</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>724 × 2172 · visual-reference-only</p>
-        <a href="mockups/mobile/m02-home.png">Open original</a></article><article class="asset" data-search="M03 shop desktop mockup">
+        <a href="mockups/mobile/m02-home.png">Open original</a></article><article class="asset" data-search="M03 shop desktop mockup ">
         <a href="mockups/desktop/m03-shop.png"><img loading="lazy" src="mockups/desktop/m03-shop-320.webp" alt="shop desktop"></a>
         <h3>M03 · shop desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m03-shop.png">Open original</a></article><article class="asset" data-search="M04 shop mobile mockup">
+        <a href="mockups/desktop/m03-shop.png">Open original</a></article><article class="asset" data-search="M04 shop mobile mockup ">
         <a href="mockups/mobile/m04-shop.png"><img loading="lazy" src="mockups/mobile/m04-shop-320.webp" alt="shop mobile"></a>
         <h3>M04 · shop mobile</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>724 × 2172 · visual-reference-only</p>
-        <a href="mockups/mobile/m04-shop.png">Open original</a></article><article class="asset" data-search="M05 product desktop mockup">
+        <a href="mockups/mobile/m04-shop.png">Open original</a></article><article class="asset" data-search="M05 product desktop mockup ">
         <a href="mockups/desktop/m05-product.png"><img loading="lazy" src="mockups/desktop/m05-product-320.webp" alt="product desktop"></a>
         <h3>M05 · product desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m05-product.png">Open original</a></article><article class="asset" data-search="M06 product mobile mockup">
+        <a href="mockups/desktop/m05-product.png">Open original</a></article><article class="asset" data-search="M06 product mobile mockup ">
         <a href="mockups/mobile/m06-product.png"><img loading="lazy" src="mockups/mobile/m06-product-320.webp" alt="product mobile"></a>
         <h3>M06 · product mobile</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>724 × 2172 · visual-reference-only</p>
-        <a href="mockups/mobile/m06-product.png">Open original</a></article><article class="asset" data-search="M07 quiz desktop mockup">
+        <a href="mockups/mobile/m06-product.png">Open original</a></article><article class="asset" data-search="M07 quiz desktop mockup ">
         <a href="mockups/desktop/m07-quiz.png"><img loading="lazy" src="mockups/desktop/m07-quiz-320.webp" alt="quiz desktop"></a>
         <h3>M07 · quiz desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m07-quiz.png">Open original</a></article><article class="asset" data-search="M08 journal desktop mockup">
+        <a href="mockups/desktop/m07-quiz.png">Open original</a></article><article class="asset" data-search="M08 journal desktop mockup ">
         <a href="mockups/desktop/m08-journal.png"><img loading="lazy" src="mockups/desktop/m08-journal-320.webp" alt="journal desktop"></a>
         <h3>M08 · journal desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m08-journal.png">Open original</a></article><article class="asset" data-search="M09 article desktop mockup">
+        <a href="mockups/desktop/m08-journal.png">Open original</a></article><article class="asset" data-search="M09 article desktop mockup ">
         <a href="mockups/desktop/m09-article.png"><img loading="lazy" src="mockups/desktop/m09-article-320.webp" alt="article desktop"></a>
         <h3>M09 · article desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m09-article.png">Open original</a></article><article class="asset" data-search="M10 cart desktop mockup">
+        <a href="mockups/desktop/m09-article.png">Open original</a></article><article class="asset" data-search="M10 cart desktop mockup ">
         <a href="mockups/desktop/m10-cart.png"><img loading="lazy" src="mockups/desktop/m10-cart-320.webp" alt="cart desktop"></a>
         <h3>M10 · cart desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1487 × 1058 · visual-reference-only</p>
-        <a href="mockups/desktop/m10-cart.png">Open original</a></article><article class="asset" data-search="M11 search desktop mockup">
+        <a href="mockups/desktop/m10-cart.png">Open original</a></article><article class="asset" data-search="M11 search desktop mockup ">
         <a href="mockups/desktop/m11-search.png"><img loading="lazy" src="mockups/desktop/m11-search-320.webp" alt="search desktop"></a>
         <h3>M11 · search desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m11-search.png">Open original</a></article><article class="asset" data-search="M12 about desktop mockup">
+        <a href="mockups/desktop/m11-search.png">Open original</a></article><article class="asset" data-search="M12 about desktop mockup ">
         <a href="mockups/desktop/m12-about.png"><img loading="lazy" src="mockups/desktop/m12-about-320.webp" alt="about desktop"></a>
         <h3>M12 · about desktop</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
         <p>1024 × 1536 · visual-reference-only</p>
-        <a href="mockups/desktop/m12-about.png">Open original</a></article></div></section>
-    <section id="photos"><h2>14 original photographic assets</h2><p>Text-free photography and separate empty product-staging plates. Plate assets require the authentic product layers described in the production guide.</p><div class="grid"><article class="asset" data-search="A01 home hero desktop photography">
+        <a href="mockups/desktop/m12-about.png">Open original</a></article><article class="asset" data-search="M13 cart drawer recommendations mockup ">
+        <a href="mockups/desktop/m13-cart-drawer-recommendations.png"><img loading="lazy" src="mockups/desktop/m13-cart-drawer-recommendations-320.webp" alt="cart drawer recommendations"></a>
+        <h3>M13 · cart drawer recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m13-cart-drawer-recommendations.png">Open original</a></article><article class="asset" data-search="M14 cart drawer recommendations mockup ">
+        <a href="mockups/mobile/m14-cart-drawer-recommendations.png"><img loading="lazy" src="mockups/mobile/m14-cart-drawer-recommendations-320.webp" alt="cart drawer recommendations"></a>
+        <h3>M14 · cart drawer recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>878 × 1791 · visual-reference-only</p>
+        <a href="mockups/mobile/m14-cart-drawer-recommendations.png">Open original</a></article><article class="asset" data-search="M15 cart page recommendations mockup ">
+        <a href="mockups/desktop/m15-cart-page-recommendations.png"><img loading="lazy" src="mockups/desktop/m15-cart-page-recommendations-320.webp" alt="cart page recommendations"></a>
+        <h3>M15 · cart page recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m15-cart-page-recommendations.png">Open original</a></article><article class="asset" data-search="M16 cart page recommendations mockup ">
+        <a href="mockups/mobile/m16-cart-page-recommendations.png"><img loading="lazy" src="mockups/mobile/m16-cart-page-recommendations-320.webp" alt="cart page recommendations"></a>
+        <h3>M16 · cart page recommendations</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1024 × 1536 · visual-reference-only</p>
+        <a href="mockups/mobile/m16-cart-page-recommendations.png">Open original</a></article><article class="asset" data-search="M17 cart recommendation states mockup ">
+        <a href="mockups/desktop/m17-cart-recommendation-states.png"><img loading="lazy" src="mockups/desktop/m17-cart-recommendation-states-320.webp" alt="cart recommendation states"></a>
+        <h3>M17 · cart recommendation states</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1774 × 887 · visual-reference-only</p>
+        <a href="mockups/desktop/m17-cart-recommendation-states.png">Open original</a></article><article class="asset" data-search="M18 cart empty states mockup ">
+        <a href="mockups/desktop/m18-cart-empty-states.png"><img loading="lazy" src="mockups/desktop/m18-cart-empty-states-320.webp" alt="cart empty states"></a>
+        <h3>M18 · cart empty states</h3><p>reference-only-not-a-runtime-asset</p>
+        <p></p>
+        <p>1487 × 1058 · visual-reference-only</p>
+        <a href="mockups/desktop/m18-cart-empty-states.png">Open original</a></article></div></section>
+    <section id="product-variants"><h2>Product-included B-roll variants</h2><p>Preferred variants for most product-staging and B-roll slots. Products are already in these images: do not overlay them a second time. Compare packaging with current original sources before launch.</p><div class="grid"><article class="asset" data-search="A15 home hero desktop products photography Product-filled variant of A01 · preferred for its slot">
+        <a href="assets/generated/a15-home-hero-desktop-products.png"><img loading="lazy" src="assets/generated/a15-home-hero-desktop-products-480.webp" alt="home hero desktop products"></a>
+        <h3>A15 · home hero desktop products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A01 · preferred for its slot</p>
+        <p>1774 × 887 · product-included-design-variant</p>
+        <a href="assets/generated/a15-home-hero-desktop-products.png">Open original</a></article><article class="asset" data-search="A16 home hero mobile products photography Product-filled variant of A02 · preferred for its slot">
+        <a href="assets/generated/a16-home-hero-mobile-products.png"><img loading="lazy" src="assets/generated/a16-home-hero-mobile-products-480.webp" alt="home hero mobile products"></a>
+        <h3>A16 · home hero mobile products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A02 · preferred for its slot</p>
+        <p>1086 × 1448 · product-included-design-variant</p>
+        <a href="assets/generated/a16-home-hero-mobile-products.png">Open original</a></article><article class="asset" data-search="A17 home standards products photography Product-filled variant of A07 · preferred for its slot">
+        <a href="assets/generated/a17-home-standards-products.png"><img loading="lazy" src="assets/generated/a17-home-standards-products-480.webp" alt="home standards products"></a>
+        <h3>A17 · home standards products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A07 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a17-home-standards-products.png">Open original</a></article><article class="asset" data-search="A18 collection masthead products photography Product-filled variant of A08 · preferred for its slot">
+        <a href="assets/generated/a18-collection-masthead-products.png"><img loading="lazy" src="assets/generated/a18-collection-masthead-products-480.webp" alt="collection masthead products"></a>
+        <h3>A18 · collection masthead products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A08 · preferred for its slot</p>
+        <p>2172 × 724 · product-included-design-variant</p>
+        <a href="assets/generated/a18-collection-masthead-products.png">Open original</a></article><article class="asset" data-search="A19 pdp essential gallery products photography Product-filled variant of A09 · preferred for its slot">
+        <a href="assets/generated/a19-pdp-essential-gallery-products.png"><img loading="lazy" src="assets/generated/a19-pdp-essential-gallery-products-480.webp" alt="pdp essential gallery products"></a>
+        <h3>A19 · pdp essential gallery products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A09 · preferred for its slot</p>
+        <p>1254 × 1254 · product-included-design-variant</p>
+        <a href="assets/generated/a19-pdp-essential-gallery-products.png">Open original</a></article><article class="asset" data-search="A20 pdp essential routine products photography Product-filled variant of A10 · preferred for its slot">
+        <a href="assets/generated/a20-pdp-essential-routine-products.png"><img loading="lazy" src="assets/generated/a20-pdp-essential-routine-products-480.webp" alt="pdp essential routine products"></a>
+        <h3>A20 · pdp essential routine products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A10 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a20-pdp-essential-routine-products.png">Open original</a></article><article class="asset" data-search="A21 quiz routine products photography Product-filled variant of A11 · preferred for its slot">
+        <a href="assets/generated/a21-quiz-routine-products.png"><img loading="lazy" src="assets/generated/a21-quiz-routine-products-480.webp" alt="quiz routine products"></a>
+        <h3>A21 · quiz routine products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A11 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a21-quiz-routine-products.png">Open original</a></article><article class="asset" data-search="A22 journal feature protein products photography Product-filled variant of A12 · preferred for its slot">
+        <a href="assets/generated/a22-journal-feature-protein-products.png"><img loading="lazy" src="assets/generated/a22-journal-feature-protein-products-480.webp" alt="journal feature protein products"></a>
+        <h3>A22 · journal feature protein products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A12 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a22-journal-feature-protein-products.png">Open original</a></article><article class="asset" data-search="A23 article whole foods products photography Product-filled variant of A13 · preferred for its slot">
+        <a href="assets/generated/a23-article-whole-foods-products.png"><img loading="lazy" src="assets/generated/a23-article-whole-foods-products-480.webp" alt="article whole foods products"></a>
+        <h3>A23 · article whole foods products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A13 · preferred for its slot</p>
+        <p>1672 × 941 · product-included-design-variant</p>
+        <a href="assets/generated/a23-article-whole-foods-products.png">Open original</a></article><article class="asset" data-search="A24 home goal nutrition products photography Product-filled variant of A03 · preferred for its slot">
+        <a href="assets/generated/a24-home-goal-nutrition-products.png"><img loading="lazy" src="assets/generated/a24-home-goal-nutrition-products-480.webp" alt="home goal nutrition products"></a>
+        <h3>A24 · home goal nutrition products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A03 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a24-home-goal-nutrition-products.png">Open original</a></article><article class="asset" data-search="A25 home goal strength products photography Product-filled variant of A04 · preferred for its slot">
+        <a href="assets/generated/a25-home-goal-strength-products.png"><img loading="lazy" src="assets/generated/a25-home-goal-strength-products-480.webp" alt="home goal strength products"></a>
+        <h3>A25 · home goal strength products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A04 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a25-home-goal-strength-products.png">Open original</a></article><article class="asset" data-search="A26 home goal recovery products photography Product-filled variant of A05 · preferred for its slot">
+        <a href="assets/generated/a26-home-goal-recovery-products.png"><img loading="lazy" src="assets/generated/a26-home-goal-recovery-products-480.webp" alt="home goal recovery products"></a>
+        <h3>A26 · home goal recovery products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A05 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a26-home-goal-recovery-products.png">Open original</a></article></div></section>
+    <section id="photos"><h2>26 photographic masters and variants</h2><p>Product-filled variants are preferred where mapped. Empty staging plates remain optional source material, not the default finished image.</p><div class="grid"><article class="asset" data-search="A01 home hero desktop photography Preferred variant: A15">
         <a href="assets/generated/a01-home-hero-desktop.png"><img loading="lazy" src="assets/generated/a01-home-hero-desktop-480.webp" alt="home hero desktop"></a>
         <h3>A01 · home hero desktop</h3><p>decorative-compositing-plate</p>
+        <p>Preferred variant: A15</p>
         <p>1774 × 887 · design-ready</p>
-        <a href="assets/generated/a01-home-hero-desktop.png">Open original</a></article><article class="asset" data-search="A02 home hero mobile photography">
+        <a href="assets/generated/a01-home-hero-desktop.png">Open original</a></article><article class="asset" data-search="A02 home hero mobile photography Preferred variant: A16">
         <a href="assets/generated/a02-home-hero-mobile.png"><img loading="lazy" src="assets/generated/a02-home-hero-mobile-480.webp" alt="home hero mobile"></a>
         <h3>A02 · home hero mobile</h3><p>decorative-compositing-plate</p>
+        <p>Preferred variant: A16</p>
         <p>1086 × 1448 · design-ready</p>
-        <a href="assets/generated/a02-home-hero-mobile.png">Open original</a></article><article class="asset" data-search="A03 home goal daily nutrition photography">
+        <a href="assets/generated/a02-home-hero-mobile.png">Open original</a></article><article class="asset" data-search="A03 home goal daily nutrition photography Preferred variant: A24">
         <a href="assets/generated/a03-home-goal-daily-nutrition.png"><img loading="lazy" src="assets/generated/a03-home-goal-daily-nutrition-480.webp" alt="home goal daily nutrition"></a>
         <h3>A03 · home goal daily nutrition</h3><p>editorial-photo</p>
+        <p>Preferred variant: A24</p>
         <p>1448 × 1086 · design-ready</p>
-        <a href="assets/generated/a03-home-goal-daily-nutrition.png">Open original</a></article><article class="asset" data-search="A04 home goal strength photography">
+        <a href="assets/generated/a03-home-goal-daily-nutrition.png">Open original</a></article><article class="asset" data-search="A04 home goal strength photography Preferred variant: A25">
         <a href="assets/generated/a04-home-goal-strength.png"><img loading="lazy" src="assets/generated/a04-home-goal-strength-480.webp" alt="home goal strength"></a>
         <h3>A04 · home goal strength</h3><p>editorial-photo</p>
+        <p>Preferred variant: A25</p>
         <p>1448 × 1086 · design-ready</p>
-        <a href="assets/generated/a04-home-goal-strength.png">Open original</a></article><article class="asset" data-search="A05 home goal recovery photography">
+        <a href="assets/generated/a04-home-goal-strength.png">Open original</a></article><article class="asset" data-search="A05 home goal recovery photography Preferred variant: A26">
         <a href="assets/generated/a05-home-goal-recovery.png"><img loading="lazy" src="assets/generated/a05-home-goal-recovery-480.webp" alt="home goal recovery"></a>
         <h3>A05 · home goal recovery</h3><p>editorial-photo</p>
+        <p>Preferred variant: A26</p>
         <p>1448 × 1086 · design-ready</p>
-        <a href="assets/generated/a05-home-goal-recovery.png">Open original</a></article><article class="asset" data-search="A06 home goal foundational wellness photography">
+        <a href="assets/generated/a05-home-goal-recovery.png">Open original</a></article><article class="asset" data-search="A06 home goal foundational wellness photography ">
         <a href="assets/generated/a06-home-goal-foundational-wellness.png"><img loading="lazy" src="assets/generated/a06-home-goal-foundational-wellness-480.webp" alt="home goal foundational wellness"></a>
         <h3>A06 · home goal foundational wellness</h3><p>editorial-photo</p>
+        <p></p>
         <p>1448 × 1086 · design-ready</p>
-        <a href="assets/generated/a06-home-goal-foundational-wellness.png">Open original</a></article><article class="asset" data-search="A07 home standards texture photography">
+        <a href="assets/generated/a06-home-goal-foundational-wellness.png">Open original</a></article><article class="asset" data-search="A07 home standards texture photography Preferred variant: A17">
         <a href="assets/generated/a07-home-standards-texture.png"><img loading="lazy" src="assets/generated/a07-home-standards-texture-480.webp" alt="home standards texture"></a>
         <h3>A07 · home standards texture</h3><p>editorial-photo</p>
+        <p>Preferred variant: A17</p>
         <p>1536 × 1024 · design-ready</p>
-        <a href="assets/generated/a07-home-standards-texture.png">Open original</a></article><article class="asset" data-search="A08 collection masthead photography">
+        <a href="assets/generated/a07-home-standards-texture.png">Open original</a></article><article class="asset" data-search="A08 collection masthead photography Preferred variant: A18">
         <a href="assets/generated/a08-collection-masthead.png"><img loading="lazy" src="assets/generated/a08-collection-masthead-480.webp" alt="collection masthead"></a>
         <h3>A08 · collection masthead</h3><p>decorative-compositing-plate</p>
+        <p>Preferred variant: A18</p>
         <p>2172 × 724 · design-ready</p>
-        <a href="assets/generated/a08-collection-masthead.png">Open original</a></article><article class="asset" data-search="A09 pdp essential gallery set photography">
+        <a href="assets/generated/a08-collection-masthead.png">Open original</a></article><article class="asset" data-search="A09 pdp essential gallery set photography Preferred variant: A19">
         <a href="assets/generated/a09-pdp-essential-gallery-set.png"><img loading="lazy" src="assets/generated/a09-pdp-essential-gallery-set-480.webp" alt="pdp essential gallery set"></a>
         <h3>A09 · pdp essential gallery set</h3><p>decorative-compositing-plate</p>
+        <p>Preferred variant: A19</p>
         <p>1254 × 1254 · design-ready</p>
-        <a href="assets/generated/a09-pdp-essential-gallery-set.png">Open original</a></article><article class="asset" data-search="A10 pdp essential routine photography">
+        <a href="assets/generated/a09-pdp-essential-gallery-set.png">Open original</a></article><article class="asset" data-search="A10 pdp essential routine photography Preferred variant: A20">
         <a href="assets/generated/a10-pdp-essential-routine.png"><img loading="lazy" src="assets/generated/a10-pdp-essential-routine-480.webp" alt="pdp essential routine"></a>
         <h3>A10 · pdp essential routine</h3><p>editorial-photo</p>
+        <p>Preferred variant: A20</p>
         <p>1448 × 1086 · design-ready</p>
-        <a href="assets/generated/a10-pdp-essential-routine.png">Open original</a></article><article class="asset" data-search="A11 quiz routine still life photography">
+        <a href="assets/generated/a10-pdp-essential-routine.png">Open original</a></article><article class="asset" data-search="A11 quiz routine still life photography Preferred variant: A21">
         <a href="assets/generated/a11-quiz-routine-still-life.png"><img loading="lazy" src="assets/generated/a11-quiz-routine-still-life-480.webp" alt="quiz routine still life"></a>
         <h3>A11 · quiz routine still life</h3><p>decorative-editorial</p>
+        <p>Preferred variant: A21</p>
         <p>1536 × 1024 · design-ready</p>
-        <a href="assets/generated/a11-quiz-routine-still-life.png">Open original</a></article><article class="asset" data-search="A12 journal feature protein photography">
+        <a href="assets/generated/a11-quiz-routine-still-life.png">Open original</a></article><article class="asset" data-search="A12 journal feature protein photography Preferred variant: A22">
         <a href="assets/generated/a12-journal-feature-protein.png"><img loading="lazy" src="assets/generated/a12-journal-feature-protein-480.webp" alt="journal feature protein"></a>
         <h3>A12 · journal feature protein</h3><p>editorial-photo</p>
+        <p>Preferred variant: A22</p>
         <p>1536 × 1024 · design-ready</p>
-        <a href="assets/generated/a12-journal-feature-protein.png">Open original</a></article><article class="asset" data-search="A13 article hero whole foods photography">
+        <a href="assets/generated/a12-journal-feature-protein.png">Open original</a></article><article class="asset" data-search="A13 article hero whole foods photography Preferred variant: A23">
         <a href="assets/generated/a13-article-hero-whole-foods.png"><img loading="lazy" src="assets/generated/a13-article-hero-whole-foods-480.webp" alt="article hero whole foods"></a>
         <h3>A13 · article hero whole foods</h3><p>editorial-photo</p>
+        <p>Preferred variant: A23</p>
         <p>1672 × 941 · design-ready</p>
-        <a href="assets/generated/a13-article-hero-whole-foods.png">Open original</a></article><article class="asset" data-search="A14 about everyday movement photography">
+        <a href="assets/generated/a13-article-hero-whole-foods.png">Open original</a></article><article class="asset" data-search="A14 about everyday movement photography ">
         <a href="assets/generated/a14-about-everyday-movement.png"><img loading="lazy" src="assets/generated/a14-about-everyday-movement-480.webp" alt="about everyday movement"></a>
         <h3>A14 · about everyday movement</h3><p>editorial-photo</p>
+        <p></p>
         <p>1536 × 1024 · design-ready</p>
-        <a href="assets/generated/a14-about-everyday-movement.png">Open original</a></article></div></section>
+        <a href="assets/generated/a14-about-everyday-movement.png">Open original</a></article><article class="asset" data-search="A15 home hero desktop products photography Product-filled variant of A01 · preferred for its slot">
+        <a href="assets/generated/a15-home-hero-desktop-products.png"><img loading="lazy" src="assets/generated/a15-home-hero-desktop-products-480.webp" alt="home hero desktop products"></a>
+        <h3>A15 · home hero desktop products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A01 · preferred for its slot</p>
+        <p>1774 × 887 · product-included-design-variant</p>
+        <a href="assets/generated/a15-home-hero-desktop-products.png">Open original</a></article><article class="asset" data-search="A16 home hero mobile products photography Product-filled variant of A02 · preferred for its slot">
+        <a href="assets/generated/a16-home-hero-mobile-products.png"><img loading="lazy" src="assets/generated/a16-home-hero-mobile-products-480.webp" alt="home hero mobile products"></a>
+        <h3>A16 · home hero mobile products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A02 · preferred for its slot</p>
+        <p>1086 × 1448 · product-included-design-variant</p>
+        <a href="assets/generated/a16-home-hero-mobile-products.png">Open original</a></article><article class="asset" data-search="A17 home standards products photography Product-filled variant of A07 · preferred for its slot">
+        <a href="assets/generated/a17-home-standards-products.png"><img loading="lazy" src="assets/generated/a17-home-standards-products-480.webp" alt="home standards products"></a>
+        <h3>A17 · home standards products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A07 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a17-home-standards-products.png">Open original</a></article><article class="asset" data-search="A18 collection masthead products photography Product-filled variant of A08 · preferred for its slot">
+        <a href="assets/generated/a18-collection-masthead-products.png"><img loading="lazy" src="assets/generated/a18-collection-masthead-products-480.webp" alt="collection masthead products"></a>
+        <h3>A18 · collection masthead products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A08 · preferred for its slot</p>
+        <p>2172 × 724 · product-included-design-variant</p>
+        <a href="assets/generated/a18-collection-masthead-products.png">Open original</a></article><article class="asset" data-search="A19 pdp essential gallery products photography Product-filled variant of A09 · preferred for its slot">
+        <a href="assets/generated/a19-pdp-essential-gallery-products.png"><img loading="lazy" src="assets/generated/a19-pdp-essential-gallery-products-480.webp" alt="pdp essential gallery products"></a>
+        <h3>A19 · pdp essential gallery products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A09 · preferred for its slot</p>
+        <p>1254 × 1254 · product-included-design-variant</p>
+        <a href="assets/generated/a19-pdp-essential-gallery-products.png">Open original</a></article><article class="asset" data-search="A20 pdp essential routine products photography Product-filled variant of A10 · preferred for its slot">
+        <a href="assets/generated/a20-pdp-essential-routine-products.png"><img loading="lazy" src="assets/generated/a20-pdp-essential-routine-products-480.webp" alt="pdp essential routine products"></a>
+        <h3>A20 · pdp essential routine products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A10 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a20-pdp-essential-routine-products.png">Open original</a></article><article class="asset" data-search="A21 quiz routine products photography Product-filled variant of A11 · preferred for its slot">
+        <a href="assets/generated/a21-quiz-routine-products.png"><img loading="lazy" src="assets/generated/a21-quiz-routine-products-480.webp" alt="quiz routine products"></a>
+        <h3>A21 · quiz routine products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A11 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a21-quiz-routine-products.png">Open original</a></article><article class="asset" data-search="A22 journal feature protein products photography Product-filled variant of A12 · preferred for its slot">
+        <a href="assets/generated/a22-journal-feature-protein-products.png"><img loading="lazy" src="assets/generated/a22-journal-feature-protein-products-480.webp" alt="journal feature protein products"></a>
+        <h3>A22 · journal feature protein products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A12 · preferred for its slot</p>
+        <p>1536 × 1024 · product-included-design-variant</p>
+        <a href="assets/generated/a22-journal-feature-protein-products.png">Open original</a></article><article class="asset" data-search="A23 article whole foods products photography Product-filled variant of A13 · preferred for its slot">
+        <a href="assets/generated/a23-article-whole-foods-products.png"><img loading="lazy" src="assets/generated/a23-article-whole-foods-products-480.webp" alt="article whole foods products"></a>
+        <h3>A23 · article whole foods products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A13 · preferred for its slot</p>
+        <p>1672 × 941 · product-included-design-variant</p>
+        <a href="assets/generated/a23-article-whole-foods-products.png">Open original</a></article><article class="asset" data-search="A24 home goal nutrition products photography Product-filled variant of A03 · preferred for its slot">
+        <a href="assets/generated/a24-home-goal-nutrition-products.png"><img loading="lazy" src="assets/generated/a24-home-goal-nutrition-products-480.webp" alt="home goal nutrition products"></a>
+        <h3>A24 · home goal nutrition products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A03 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a24-home-goal-nutrition-products.png">Open original</a></article><article class="asset" data-search="A25 home goal strength products photography Product-filled variant of A04 · preferred for its slot">
+        <a href="assets/generated/a25-home-goal-strength-products.png"><img loading="lazy" src="assets/generated/a25-home-goal-strength-products-480.webp" alt="home goal strength products"></a>
+        <h3>A25 · home goal strength products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A04 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a25-home-goal-strength-products.png">Open original</a></article><article class="asset" data-search="A26 home goal recovery products photography Product-filled variant of A05 · preferred for its slot">
+        <a href="assets/generated/a26-home-goal-recovery-products.png"><img loading="lazy" src="assets/generated/a26-home-goal-recovery-products-480.webp" alt="home goal recovery products"></a>
+        <h3>A26 · home goal recovery products</h3><p>product-included-broll</p>
+        <p>Product-filled variant of A05 · preferred for its slot</p>
+        <p>1448 × 1086 · product-included-design-variant</p>
+        <a href="assets/generated/a26-home-goal-recovery-products.png">Open original</a></article></div></section>
     <section id="products"><h2>16 authentic product source groups</h2><p>Unmodified original media, not newly generated products. Primary candidates below require current-variant and label verification. All original views/labels are indexed in the product manifest.</p><div class="grid"><article class="asset" data-search="BONE BROTH PROTEIN"><a href="assets/products/08-bone-broth-protein-60095949603125.png"><img loading="lazy" src="assets/products/08-bone-broth-protein-60095949603125-360.webp" alt="BONE BROTH PROTEIN"></a><h3>PR01 · BONE BROTH PROTEIN</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/bone-broth-protein">Public product source</a></article><article class="asset" data-search="CALM"><a href="assets/products/47-calm-40565553430837.png"><img loading="lazy" src="assets/products/47-calm-40565553430837-360.webp" alt="CALM"></a><h3>PR02 · CALM</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/calm">Public product source</a></article><article class="asset" data-search="CREATINE 400G (micronized)"><a href="assets/products/57-true-creatine-39924672299317.png"><img loading="lazy" src="assets/products/57-true-creatine-39924672299317-360.webp" alt="CREATINE 400G (micronized)"></a><h3>PR03 · CREATINE 400G (micronized)</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/true-creatine">Public product source</a></article><article class="asset" data-search="Creatine HCL"><a href="assets/products/04-creatine-hcl-62242702098741.png"><img loading="lazy" src="assets/products/04-creatine-hcl-62242702098741-360.webp" alt="Creatine HCL"></a><h3>PR04 · Creatine HCL</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/creatine-hcl">Public product source</a></article><article class="asset" data-search="DNA SUPPORT"><a href="assets/products/34-dna-support-44141053935925.png"><img loading="lazy" src="assets/products/34-dna-support-44141053935925-360.webp" alt="DNA SUPPORT"></a><h3>PR05 · DNA SUPPORT</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/dna-support">Public product source</a></article><article class="asset" data-search="ESSENTIAL AMINOS"><a href="assets/products/21-essential-aminos-58348251808053.png"><img loading="lazy" src="assets/products/21-essential-aminos-58348251808053-360.webp" alt="ESSENTIAL AMINOS"></a><h3>PR06 · ESSENTIAL AMINOS</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/essential-aminos">Public product source</a></article><article class="asset" data-search="HORMONE SUPPORT"><a href="assets/products/42-hormone-support-39976632844597.png"><img loading="lazy" src="assets/products/42-hormone-support-39976632844597-360.webp" alt="HORMONE SUPPORT"></a><h3>PR07 · HORMONE SUPPORT</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/hormone-support">Public product source</a></article><article class="asset" data-search="LIVER SUPPORT"><a href="assets/products/37-liver-support-40565565161781.png"><img loading="lazy" src="assets/products/37-liver-support-40565565161781-360.webp" alt="LIVER SUPPORT"></a><h3>PR08 · LIVER SUPPORT</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/liver-support">Public product source</a></article><article class="asset" data-search="METHYLATION SUPPORT"><a href="assets/products/13-methylation-support-59834122666293.png"><img loading="lazy" src="assets/products/13-methylation-support-59834122666293-360.webp" alt="METHYLATION SUPPORT"></a><h3>PR09 · METHYLATION SUPPORT</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/methylation-support">Public product source</a></article><article class="asset" data-search="MITO-REVIVE"><a href="assets/products/01-mito-revive-63989518795061.png"><img loading="lazy" src="assets/products/01-mito-revive-63989518795061-360.webp" alt="MITO-REVIVE"></a><h3>PR10 · MITO-REVIVE</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/mito-revive">Public product source</a></article><article class="asset" data-search="Myos MD Vanilla"><a href="assets/products/11-myos-md-vanilla-59626407821621.png"><img loading="lazy" src="assets/products/11-myos-md-vanilla-59626407821621-360.webp" alt="Myos MD Vanilla"></a><h3>PR11 · Myos MD Vanilla</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/myos-md-vanilla">Public product source</a></article><article class="asset" data-search="N1O1 Nitric Oxide Lozenges"><a href="assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541.png"><img loading="lazy" src="assets/products/18-n1o1-nitric-oxide-lozenges-57776795615541-360.webp" alt="N1O1 Nitric Oxide Lozenges"></a><h3>PR12 · N1O1 Nitric Oxide Lozenges</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/n1o1-nitric-oxide-lozenges">Public product source</a></article><article class="asset" data-search="PREMIUM OMEGA 180"><a href="assets/products/52-true-omega-40565451424053.png"><img loading="lazy" src="assets/products/52-true-omega-40565451424053-360.webp" alt="PREMIUM OMEGA 180"></a><h3>PR13 · PREMIUM OMEGA 180</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/true-omega">Public product source</a></article><article class="asset" data-search="SECRETROPIN"><a href="assets/products/07-secretropin-63989622866229.png"><img loading="lazy" src="assets/products/07-secretropin-63989622866229.png" alt="SECRETROPIN"></a><h3>PR14 · SECRETROPIN</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/secretropin">Public product source</a></article><article class="asset" data-search="SUPERGREENS"><a href="assets/products/26-true-greens-40565473378613.png"><img loading="lazy" src="assets/products/26-true-greens-40565473378613-360.webp" alt="SUPERGREENS"></a><h3>PR15 · SUPERGREENS</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/true-greens">Public product source</a></article><article class="asset" data-search="VITAMIN D+K2"><a href="assets/products/31-vitamin-d-k2-44141112557877.png"><img loading="lazy" src="assets/products/31-vitamin-d-k2-44141112557877-360.webp" alt="VITAMIN D+K2"></a><h3>PR16 · VITAMIN D+K2</h3><p>Authentic source exception; verify current variant/label.</p><a href="https://truematrx.com/products/vitamin-d-k2">Public product source</a></article></div></section>
     <section><h2>Supporting design resources</h2><p><a href="specs/tokens.json">Design tokens</a> · <a href="assets/brand/v3-icons-preview.svg">New icon preview</a> · <a href="assets/brand/v3-curve.svg">New background curve</a> · <a href="research/sources.md">Research sources</a> · <a href="DECISIONS.md">Open decisions</a> · <a href="qa/implementation-checklist.md">Build acceptance</a></p></section></main><footer>True Matrx V3 — design-ready package, pending merchant review and real implementation.</footer>
     <script>document.querySelector('#find').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('[data-search]').forEach(a=>a.hidden=!a.dataset.search.toLowerCase().includes(q));});</script></html>

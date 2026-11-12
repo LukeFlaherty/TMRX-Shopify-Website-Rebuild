@@ -32,3 +32,9 @@ Primary blue `#0067B8`; system sans baseline; 20px phone gutters; 36–40px phon
 | Image acceptance | New AI photography supplied and visually inspected | Design-ready; merchant reviews final imagery and crop before launch | Merchant/design |
 
 None of these unknowns justifies inventing content. Readiness: design package delivered; production integration and business content approval are separate work. Do not describe this as a fully validated storefront or a medical review.
+
+## Accepted revision 3.1 direction — November 12
+
+- Product-filled B-roll is preferred for most staging/editorial slots. Twelve variants are delivered; original plates remain optional sources. Current authentic packaging verification remains a launch task.
+- Development will follow the [92-task roadmap](DEVELOPMENT-ROADMAP.md). V1 is live, V2 is the partial existing draft, V3 is the redesign. This package does not start implementation.
+- Both the cart drawer and full cart page have visual recommendations with variant-aware Add to bag. Enhanced cart actions update in place without reloading. Product eligibility and actual available variants still require current Shopify/merchant data.

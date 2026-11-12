@@ -1,6 +1,8 @@
 # True Matrx — V3 redesign package
 
-Version **3.0.0**, prepared **November 10, 2026**. This is a design and research handoff, not a deployed theme. The accepted direction is homepage A: white, subtle ice blue, authentic True Matrx packaging, natural stone staging, clear blue actions, and a relaxed but efficient page rhythm.
+Version **3.1.0**, updated **November 12, 2026**. This is a design and research handoff, not a deployed theme. The accepted direction is homepage A: white, subtle ice blue, authentic True Matrx packaging, natural stone staging, clear blue actions, and a relaxed but efficient page rhythm.
+
+This revision adds **12 product-included photographic variants**, **six cart page/drawer/state references**, and a **92-task development roadmap across 13 phases**. V1 is the live store; V2 is the partial existing Shopify draft; V3 is this redesign. No store implementation starts as part of this package update.
 
 ## Start here
 
@@ -10,6 +12,9 @@ Version **3.0.0**, prepared **November 10, 2026**. This is a design and research
 4. Follow its individual page brief. Resolve image IDs in [the asset manifest](manifests/assets.json); resolve product media in [the product source manifest](manifests/products.json).
 5. Read the relevant interaction rules in [components and states](specs/components-and-states.md), then the [data contract](specs/data-contract.md).
 6. Use [the implementation acceptance checklist](qa/implementation-checklist.md). The package validator checks the handoff itself; it does not test a Shopify implementation.
+7. Select the next eligible tasks in [the development roadmap](DEVELOPMENT-ROADMAP.md). Update its tracker and iteration log as actual development is verified.
+
+For imagery, begin with [product-filled variants](index.html#product-variants) and the page's `preferred_asset_ids`. For cart work, begin with [the revised cart designs](index.html#cart), [interaction specification](specs/cart-experience.md) and [22 acceptance scenarios](qa/cart-scenarios.md). Both the full cart page and drawer require visual recommendations whose enhanced Add to bag action updates the cart without reloading.
 
 ## What is authoritative
 
@@ -42,5 +47,6 @@ The package includes researched product identity and a dated public price snapsh
 | `prompts/` | Exact image-generation prompts | Reproducibility and future targeted revisions |
 | `qa/` | Package validation, visual caveats, future build checks | Separate design readiness from launch readiness |
 | `tools/` | Package inventory, catalog and integrity tooling | Maintenance of this package only |
+| `development/` | Detailed task list and iteration evidence template | Build in small verified increments |
 
 Read [CHANGELOG](CHANGELOG.md) when continuing work. Validate with `python3 design/v3/tools/validate_package.py` from the repository root. For rebuilding previews/derivatives, use Python with Pillow as described in [the asset production guide](specs/asset-production.md). No API key is required to inspect this package.

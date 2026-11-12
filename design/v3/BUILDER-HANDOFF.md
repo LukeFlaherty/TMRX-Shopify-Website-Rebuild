@@ -4,7 +4,9 @@
 
 Read `manifests/pages.json`, match the incoming route against `routes`, open `spec`, and resolve `asset_ids` and `mockup_ids`. Exact special routes take precedence over generic `/pages/:handle`; article routes take precedence over blog routes. Collection families use one new V3 template with real collection content. A product template is a structural family, not permission to duplicate the Essential Aminos facts for all products.
 
-Example: `/products/essential-aminos` → P04 → `specs/pages/P04-product.md` → M05/M06 → A09/A10 and the `essential-aminos` product record. `/products/calm` also uses P04, but its original capsule media, variant data, directions and restrictions come from Calm, never from the Aminos example.
+Example: `/products/essential-aminos` → P04 → `specs/pages/P04-product.md` → M05/M06 → preferred A19/A20 (product-filled variants of A09/A10) and the `essential-aminos` product record. `/products/calm` also uses P04, but its original capsule media, variant data, directions and restrictions come from Calm, never from the Aminos example. Product-filled imagery already contains the packaging; do not add it again as an overlay.
+
+Revision 3.1 adds M13/M14 for the drawer, M15/M16 for the full cart page, and M17/M18 for recommendation/empty states. These supersede M10 for cart composition. Read `specs/cart-experience.md`; both surfaces need visual variant-aware recommendations and no-reload cart updates.
 
 ## Read before writing theme code
 
@@ -16,13 +18,17 @@ Example: `/products/essential-aminos` → P04 → `specs/pages/P04-product.md` �
 
 Use newly named V3 sections/snippets/CSS, for example `v3-header`, `v3-product`, `v3-product-item`, and a scoped token sheet. Do not clone the old layout and recolor it. Reuse Shopify platform data and endpoints, and share new components across V3 pages where appropriate. Complete core functionality before decorative refinements.
 
-## Implementation order
+## Development roadmap
+
+V1 is live, V2 is the partial existing draft, and V3 is the new redesign. Preserve a recoverable V2 baseline before implementing V3 in draft theme `189659021621`. The comprehensive plan is [DEVELOPMENT-ROADMAP.md](DEVELOPMENT-ROADMAP.md), with [92 task records](manifests/development-roadmap.json), [full task details](development/tasks.md) and [iteration evidence](development/iteration-log.md). Work in one to three related tasks, respect dependencies, and record real verification before marking tasks complete. All tasks are currently planned.
+
+The following table is an orientation only; the task registry governs sequencing and acceptance.
 
 | Stage | Deliverable | Exit condition |
 |---|---|---|
 | 1 | Token mapping, fresh shell, typography, buttons, accordion, focus styles | 320/390/768/1280/1440 widths; no horizontal page overflow |
 | 2 | Collection/product item, native filtering, search | Correct variant media, prices, availability and state restoration |
-| 3 | PDP, gallery, form, cart drawer and cart fallback | Real variant ID added; rejected stock requests handled; totals reconcile |
+| 3 | PDP, gallery, form, cart drawer, full cart page and visual recommendations | Real variant ID added without reload; rejected/uncertain requests reconcile; both cart surfaces agree |
 | 4 | Homepage using page-owned photography | Tabs work and degrade to links; moderate spacing holds below the fold |
 | 5 | Quiz and editorial templates | No email gate; eligibility reviewed; correct empty/error paths |
 | 6 | Brand/support forms and informational pages | Approved content and actual endpoints; no invented promises |

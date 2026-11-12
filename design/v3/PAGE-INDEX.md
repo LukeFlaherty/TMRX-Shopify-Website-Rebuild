@@ -8,8 +8,8 @@ Find a route here before building. Every row has a dedicated brief with desktop/
 | P02 | Shop all | /collections/all | [Open](specs/pages/P02-shop.md) | M03, M04 |
 | P03 | Product categories and goals | /collections/:handle | [Open](specs/pages/P03-category.md) | Written specification |
 | P04 | Product detail and product-format variants | /products/:handle | [Open](specs/pages/P04-product.md) | M05, M06 |
-| P05 | Cart drawer | ui:cart-drawer | [Open](specs/pages/P05-cart-drawer.md) | M10 |
-| P06 | Cart page fallback | /cart | [Open](specs/pages/P06-cart.md) | Written specification |
+| P05 | Cart drawer | ui:cart-drawer | [Open](specs/pages/P05-cart-drawer.md) | M13, M14, M17, M18 (M10 historical) |
+| P06 | Full cart page | /cart | [Open](specs/pages/P06-cart.md) | M15, M16, M17, M18 |
 | P07 | Search and predictive suggestions | /search<br>ui:predictive-search | [Open](specs/pages/P07-search.md) | M11 |
 | P08 | Routine quiz entry and questions | /pages/find-your-routine | [Open](specs/pages/P08-quiz.md) | M07 |
 | P09 | Routine quiz results | /pages/find-your-routine?step=results | [Open](specs/pages/P09-quiz-results.md) | Written specification |
@@ -26,3 +26,5 @@ Find a route here before building. Every row has a dedicated brief with desktop/
 | P20 | 404 and missing content | system:404 | [Open](specs/pages/P20-not-found.md) | Written specification |
 | P21 | Customer account handoff | /account<br>/account/login | [Open](specs/pages/P21-accounts.md) | Written specification |
 | P22 | Checkout and order confirmation handoff | platform:checkout<br>platform:order-confirmation | [Open](specs/pages/P22-checkout.md) | Written specification |
+
+Build incrementally with the [92-task development roadmap](DEVELOPMENT-ROADMAP.md). Product-filled preferred assets are recorded in `preferred_asset_ids` in the page registry and in each affected brief.

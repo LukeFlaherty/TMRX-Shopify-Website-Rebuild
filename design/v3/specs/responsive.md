@@ -34,3 +34,7 @@ Mobile menu and filter drawer occupy the screen width with a clear close control
 ## Loading and state restoration
 
 Reserve intrinsic image sizes to avoid layout jumps. Keep the user's applied filters, query, sort and pagination in URL-backed state where supported. Returning from a PDP restores browsing context. Loading does not replace the entire grid with a blank white page. A failed request leaves the old results visible, adds a clear retry message and preserves controls.
+
+## Cart recommendations — revision 3.1
+
+Read [P05](pages/P05-cart-drawer.md), [P06](pages/P06-cart.md) and the [cart contract](cart-experience.md). Both phone and desktop have visual recommendations, not text-only cross-sells. Prioritize readable images, current price, option choice and 44px controls. Use one column when controls make two columns cramped; keep recommendations inside the drawer's scrolling content and the full page's normal document flow. Preserve the relaxed compact rhythm through the middle and lower sections.

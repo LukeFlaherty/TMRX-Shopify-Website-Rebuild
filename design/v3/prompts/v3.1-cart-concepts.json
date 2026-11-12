@@ -1,0 +1,122 @@
+{
+  "version": "3.1.0",
+  "generation_tool": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "M13",
+      "viewport": "desktop",
+      "slug": "cart-drawer-recommendations",
+      "owner_pages": [
+        "P05"
+      ],
+      "kind": "mockup",
+      "target": "mockups/desktop/m13-cart-drawer-recommendations.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nLandscape1440x1200. White right-side cart drawer about500pxwide over softly dimmed freshly composed V3collection page. Drawer header Your bag,2items,close. Two actual product lineitems with thumbnails, variants,qtyminus/plus andRemove. Below a separate modest 'Complete your routine' section with TWO compact recommendationROWS, each80pxthumb,leftnameandprice,rightblueAddtobagbutton; Creatine has visible small selector 'Unflavored'. Footer anchored: Subtotal$169.19, Shipping and taxes calculated at checkout., largeblueCheckout, underlined View bag and Continue shopping. Enough room to see recommendations, no crowding. Drawerinteriorscrollandstablecheckoutimplied, no annotation necessary.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "M14",
+      "viewport": "mobile",
+      "slug": "cart-drawer-recommendations",
+      "owner_pages": [
+        "P05"
+      ],
+      "kind": "mockup",
+      "target": "mockups/mobile/m14-cart-drawer-recommendations.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nOne narrow390pxPHONE cartdrawer as fullheightsheet, portrait tall. No desktopnavigationorbackgroundmarketing. TopYourbag/2items/Close. Twofullwidthcartlineitems with thumbnail, actualtitle/variant/price andqtycontrols. Complete your routine then TWOwell-spaced recommendationrows with actualOmega/Creatinethumbnails, name,price,and blueAddtobagbuttonsbelowname. Thumb-friendlybuttons andsafearea. Subtotal$169.19, shortshippingnote andfullwidthCheckout pinnedasbottomarea; View bag link. Showallcartcontentclearly,comfortable16pxtext,no tinythreecolumns.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "M15",
+      "viewport": "desktop",
+      "slug": "cart-page-recommendations",
+      "owner_pages": [
+        "P06"
+      ],
+      "kind": "mockup",
+      "target": "mockups/desktop/m15-cart-page-recommendations.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nFull desktop CART PAGE screenshot1440wide, fullheader-tofooter, not drawer. Authenticlogo/navheader. BreadcrumbHome/Yourbag;titleYourbag(2). Mainleft8columns two productlines with originalimages/name/variant,unitprices,qty/remove,line totals. Right4colsummarywhitewithlightbluerules:Subtotal$169.19,shortshipping/taxesnote,largeCheckoutandContinueshopping. BELOWmaincartsection fullwidth 'Complete your routine' withTWOopenproductrecommendationcolumnsOmega andCreatine, largeaccuratepackshots,currentmockprices andAddtobagbuttons. ForCreatinesmallUnflavoredselector. Morepracticalshoppingdetailthanafallbackpage. Newsletterandwhitefooter. Keepclearhierarchyandcomfortablemiddle/lowergaps. Nohugepromotionalheroorfakebenefits.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "M16",
+      "viewport": "mobile",
+      "slug": "cart-page-recommendations",
+      "owner_pages": [
+        "P06"
+      ],
+      "kind": "mockup",
+      "target": "mockups/mobile/m16-cart-page-recommendations.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nOnefullscroll390pxmobileCARTPAGE, portraittall. Mobileheaderhamburger/logo/search/bagbadge2. Yourbag(2),two stacked productlineitems thumbnailsand readablevariant/price/quantity/remove. Then subtotal$169.19,shipping/taxesnoteandfullwidthCheckout andContinueshopping. BELOWcheckoutsummary: Complete your routine, TWOvisuallyrichverticalrecommendationrowsOmega/Creatinewithphotopackshot,name,$95.99/$47.25,smalloptionswhereapplicable,andfullwidthAddtobagbuttonforeach. Newsletterstacked,footeraccordionsShop/Learn/Support. Do notshrinkdesktoplayouttomobile. Contentscomfortableandcompact. No fakecapacitycounterorautodiscount.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "M17",
+      "viewport": "desktop",
+      "slug": "cart-recommendation-states",
+      "owner_pages": [
+        "P05",
+        "P06"
+      ],
+      "kind": "mockup",
+      "target": "mockups/desktop/m17-cart-recommendation-states.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nA DESIGN STATE BOARD, not a live page, landscape2:1 with five equal clearly separated panels showing the SAME single Micronized Creatine recommendationthumbnail/name/$47.25. Panel1 titledReady:Unflavoredselected,blueAddtobag. Panel2Chooseoptions:flavor/sizecontrolandChooseoptionsbutton. Panel3Adding:buttonAdding…withspinnerdisabled. Panel4Added:smallconfirmation 'Added to your bag',buttonAddedwithcheck. Panel5Error:normalproductpreserved,message 'Could not add. Try again.',buttonTryagain. Topboardheadline Cart recommendation states. Calmwhite/palebluepaletteconsistentwithV3. Acrossbottomsmallstripshowsbagcount2→3andsubtotalupdatesasinterfaceillustrationwithoutnumericaltotal. Avoidmedicalclaims ordesignerimplementationcode. Thisboardexistsforstatevisibility.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "M18",
+      "viewport": "desktop",
+      "slug": "cart-empty-states",
+      "owner_pages": [
+        "P05",
+        "P06"
+      ],
+      "kind": "mockup",
+      "target": "mockups/desktop/m18-cart-empty-states.png",
+      "prompt_ref": "prompts/v3.1-cart-concepts.json",
+      "prompt": "Use case: ui-mockup. Generate one new high-fidelity TRUE MATRX V3 cart design image. Reference1 shows established white/ice-blue/black-sans/blue-action theme and authentic logo. References2-5 are original Essential Aminos, Bone Broth Protein, Premium Omega and Micronized Creatine product photos: preserve their true container proportions, black lids, silver/cream labels and recognizable packaging. New spacious but compact layout, 16px-equivalent readable body, black bold headings, fine pale-blue separators, blue rectangular CTA with4px radius. Authentic packshot thumbnails as actual visual recommendations, NOT text-only links. No heavy enclosing cards around products. Show clear Add to bag buttons on recommendations and variant selector where specified. No fake review stars, medical claims, discounts, shipping meter or timers. No browser chrome, device frame or watermark.\nMock cart contains Essential Aminos (Tropical Fruit,504g) quantity1 at$89.24 and Bone Broth Protein quantity1 at$79.95, subtotal$169.19. Those are dated illustrative snapshot values. Recommendations are Premium Omega at$95.99 and Micronized Creatine at$47.25, each with photo, name and Add to bag action. No other products invented. Cart checkout remains visually primary. This is a visual concept of an in-place AJAX cart, not proof of functioning code.\n\nDESIGN STATE BOARD withtwo surfaces sidebyside, landscape. Leftlarger:desktopcartPAGEempty,titleYourbagisempty,Shopalllink,headingStartwithyouressentials,threeopenoriginalproductimagesEssentialAminos/PremiumOmega/MicronizedCreatinewithnamesandblueAddtobagbuttons. NoenabledCheckoutbuttonwhenempty. Rightsmaller:emptycartDRAWERwithYourbag/0items/close,Yourbagisempty,compactvisualrecommendationrowsOmegaandCreatinewithAddtobagbuttonsandShopalllink. Labelsabovepanels Empty cart page and Empty cart drawer areboardannotations. PreservefreshV3theme,comfortablecontrolspacing. Noirrelevant lifestylefillerorzerototalcheckout.",
+      "reference_files": [
+        "mockups/desktop/m10-cart.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "True Matrx V3 redesign package",
+  "version": "3.1.0",
+  "updated": "2026-11-12",
+  "v1": "live storefront",
+  "v2": "existing partial unpublished draft 189659021621",
+  "v3": "new redesign; package update only, no implementation started",
+  "expected": {
+    "pages": 22,
+    "photography": 26,
+    "mockups": 18,
+    "product_groups": 16,
+    "original_product_images": 61,
+    "roadmap_tasks": 92
+  }
+}

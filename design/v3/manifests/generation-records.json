@@ -294,5 +294,405 @@
     "status": "visual-reference-only",
     "origin": "generated-new-2026-11-10",
     "generation_run_file": "exec-4e9d1216-2cec-426d-8d19-0236420d6273.png"
+  },
+  {
+    "id": "A15",
+    "slug": "home-hero-desktop-products",
+    "kind": "photography",
+    "target": "assets/generated/a15-home-hero-desktop-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-6211fdde-248d-46de-9003-82ee16688f04.png",
+    "variant_of": "A01",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos",
+      "bone-broth-protein",
+      "true-omega"
+    ],
+    "owner_page": "P01",
+    "slot": "hero-desktop-products",
+    "focal_point": [
+      0.78,
+      0.68
+    ],
+    "suggested_alt": "True Matrx essential aminos, bone broth protein, true omega in hero desktop.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A16",
+    "slug": "home-hero-mobile-products",
+    "kind": "photography",
+    "target": "assets/generated/a16-home-hero-mobile-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-9c3fd557-b2df-4e05-8d9d-d79b70d95291.png",
+    "variant_of": "A02",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos",
+      "bone-broth-protein",
+      "true-omega"
+    ],
+    "owner_page": "P01",
+    "slot": "hero-mobile-products",
+    "focal_point": [
+      0.5,
+      0.7
+    ],
+    "suggested_alt": "True Matrx essential aminos, bone broth protein, true omega in hero mobile.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A17",
+    "slug": "home-standards-products",
+    "kind": "photography",
+    "target": "assets/generated/a17-home-standards-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-eea48b1a-53a6-4b1d-ab77-1df5278a3ad5.png",
+    "variant_of": "A07",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos",
+      "true-omega"
+    ],
+    "owner_page": "P01",
+    "slot": "standards-editorial-products",
+    "focal_point": [
+      0.5,
+      0.55
+    ],
+    "suggested_alt": "True Matrx essential aminos, true omega in standards editorial.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A18",
+    "slug": "collection-masthead-products",
+    "kind": "photography",
+    "target": "assets/generated/a18-collection-masthead-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-fe719545-b1a8-436f-82a4-aed241ac5b0d.png",
+    "variant_of": "A08",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos",
+      "bone-broth-protein",
+      "true-omega"
+    ],
+    "owner_page": "P02",
+    "slot": "collection-masthead-products",
+    "focal_point": [
+      0.78,
+      0.65
+    ],
+    "suggested_alt": "True Matrx essential aminos, bone broth protein, true omega in collection masthead.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A19",
+    "slug": "pdp-essential-gallery-products",
+    "kind": "photography",
+    "target": "assets/generated/a19-pdp-essential-gallery-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-ea060022-3940-438d-bc6a-b1eb9b136ec5.png",
+    "variant_of": "A09",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos"
+    ],
+    "owner_page": "P04",
+    "slot": "essential-aminos-gallery-products",
+    "focal_point": [
+      0.5,
+      0.7
+    ],
+    "suggested_alt": "True Matrx essential aminos in essential aminos gallery.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A20",
+    "slug": "pdp-essential-routine-products",
+    "kind": "photography",
+    "target": "assets/generated/a20-pdp-essential-routine-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-8a1830af-0ab4-4494-9dab-b3f10f350c97.png",
+    "variant_of": "A10",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos"
+    ],
+    "owner_page": "P04",
+    "slot": "essential-aminos-routine-products",
+    "focal_point": [
+      0.53,
+      0.45
+    ],
+    "suggested_alt": "True Matrx essential aminos in essential aminos routine.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A21",
+    "slug": "quiz-routine-products",
+    "kind": "photography",
+    "target": "assets/generated/a21-quiz-routine-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-acae0ce8-07b2-435d-a567-dc907c18d8c2.png",
+    "variant_of": "A11",
+    "contains_products": true,
+    "product_handles": [
+      "essential-aminos",
+      "true-omega"
+    ],
+    "owner_page": "P08",
+    "slot": "quiz-entry-products",
+    "focal_point": [
+      0.5,
+      0.5
+    ],
+    "suggested_alt": "True Matrx essential aminos, true omega in quiz entry.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A22",
+    "slug": "journal-feature-protein-products",
+    "kind": "photography",
+    "target": "assets/generated/a22-journal-feature-protein-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-56fe5f44-88be-4ff8-b235-ccd3ae70324b.png",
+    "variant_of": "A12",
+    "contains_products": true,
+    "product_handles": [
+      "bone-broth-protein"
+    ],
+    "owner_page": "P10",
+    "slot": "featured-story-products",
+    "focal_point": [
+      0.56,
+      0.5
+    ],
+    "suggested_alt": "True Matrx bone broth protein in featured story.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A23",
+    "slug": "article-whole-foods-products",
+    "kind": "photography",
+    "target": "assets/generated/a23-article-whole-foods-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-a6ace2a5-e5ea-4480-a99e-f210e5377dae.png",
+    "variant_of": "A13",
+    "contains_products": true,
+    "product_handles": [
+      "bone-broth-protein"
+    ],
+    "owner_page": "P11",
+    "slot": "example-article-hero-products",
+    "focal_point": [
+      0.5,
+      0.5
+    ],
+    "suggested_alt": "True Matrx bone broth protein in example article hero.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A24",
+    "slug": "home-goal-nutrition-products",
+    "kind": "photography",
+    "target": "assets/generated/a24-home-goal-nutrition-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-a1064e31-45ec-423a-8c13-1a370bb31151.png",
+    "variant_of": "A03",
+    "contains_products": true,
+    "product_handles": [
+      "bone-broth-protein"
+    ],
+    "owner_page": "P01",
+    "slot": "goal-daily-nutrition-products",
+    "focal_point": [
+      0.53,
+      0.5
+    ],
+    "suggested_alt": "True Matrx bone broth protein in goal daily nutrition.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A25",
+    "slug": "home-goal-strength-products",
+    "kind": "photography",
+    "target": "assets/generated/a25-home-goal-strength-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-4b96ff7a-584f-4aa5-8c91-ea3dfd1906b1.png",
+    "variant_of": "A04",
+    "contains_products": true,
+    "product_handles": [
+      "true-creatine"
+    ],
+    "owner_page": "P01",
+    "slot": "goal-strength-products",
+    "focal_point": [
+      0.5,
+      0.45
+    ],
+    "suggested_alt": "True Matrx true creatine in goal strength.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "A26",
+    "slug": "home-goal-recovery-products",
+    "kind": "photography",
+    "target": "assets/generated/a26-home-goal-recovery-products.png",
+    "created": "2026-11-12",
+    "status": "product-included-design-variant",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-product-variants.json",
+    "generation_run_file": "exec-994fb173-b738-43b1-870e-f84793a8583f.png",
+    "variant_of": "A05",
+    "contains_products": true,
+    "product_handles": [
+      "calm"
+    ],
+    "owner_page": "P01",
+    "slot": "goal-recovery-products",
+    "focal_point": [
+      0.5,
+      0.5
+    ],
+    "suggested_alt": "True Matrx calm in goal recovery.",
+    "production_role": "product-included-broll",
+    "preferred_for_slot": true
+  },
+  {
+    "id": "M13",
+    "slug": "cart-drawer-recommendations",
+    "kind": "mockup",
+    "target": "mockups/desktop/m13-cart-drawer-recommendations.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-0da86a4b-bf05-4331-8561-6049a6af44f8.png",
+    "viewport": "desktop",
+    "owner_pages": [
+      "P05"
+    ]
+  },
+  {
+    "id": "M14",
+    "slug": "cart-drawer-recommendations",
+    "kind": "mockup",
+    "target": "mockups/mobile/m14-cart-drawer-recommendations.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-2de0603e-7cdd-475f-b1d6-55d1cd02a71d.png",
+    "viewport": "mobile",
+    "owner_pages": [
+      "P05"
+    ]
+  },
+  {
+    "id": "M15",
+    "slug": "cart-page-recommendations",
+    "kind": "mockup",
+    "target": "mockups/desktop/m15-cart-page-recommendations.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-36c42977-6792-4451-88f5-a7e1240e640d.png",
+    "viewport": "desktop",
+    "owner_pages": [
+      "P06"
+    ]
+  },
+  {
+    "id": "M16",
+    "slug": "cart-page-recommendations",
+    "kind": "mockup",
+    "target": "mockups/mobile/m16-cart-page-recommendations.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-12fccfdb-8970-444a-8c36-97a66a8157d2.png",
+    "viewport": "mobile",
+    "owner_pages": [
+      "P06"
+    ]
+  },
+  {
+    "id": "M17",
+    "slug": "cart-recommendation-states",
+    "kind": "mockup",
+    "target": "mockups/desktop/m17-cart-recommendation-states.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-98810ccc-73f4-45ed-b56a-0d6cf98eb671.png",
+    "viewport": "desktop",
+    "owner_pages": [
+      "P05",
+      "P06"
+    ]
+  },
+  {
+    "id": "M18",
+    "slug": "cart-empty-states",
+    "kind": "mockup",
+    "target": "mockups/desktop/m18-cart-empty-states.png",
+    "created": "2026-11-12",
+    "status": "visual-reference-only",
+    "origin": "generated-new-2026-11-12",
+    "prompt_ref": "prompts/v3.1-cart-concepts.json",
+    "generation_run_file": "exec-370d798f-aea7-4199-ad83-6ee11ce18748.png",
+    "viewport": "desktop",
+    "owner_pages": [
+      "P05",
+      "P06"
+    ]
   }
 ]

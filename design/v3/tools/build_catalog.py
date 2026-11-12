@@ -44,6 +44,11 @@ def derivatives(path, widths):
                 continue
             height = round(source.height * width / source.width)
             output = path.with_name(f'{path.stem}-{width}.webp')
+            if output.exists() and output.stat().st_mtime >= path.stat().st_mtime:
+                current = info(output)
+                if (current['width'], current['height']) == (width, height):
+                    outputs.append({'file': output.relative_to(ROOT).as_posix(), **current})
+                    continue
             scaled = source.resize((width, height), Image.Resampling.LANCZOS)
             scaled.save(output, 'WEBP', quality=86, method=6)
             outputs.append({'file': output.relative_to(ROOT).as_posix(), **info(output)})
@@ -99,6 +104,8 @@ def sheet(rows, output, title, columns=4, image_height=220):
 
 
 def main():
+    metadata = read('package-metadata.json')
+    version = metadata['version']
     records = read('manifests/generation-records.json')
     pages = read('manifests/pages.json')['pages']
     assets = []
@@ -108,20 +115,34 @@ def main():
         owners = [p['id'] for p in pages if identity in p['mockup_ids']]
         row = {'id': identity, 'file': record['target'], 'slug': record['slug'],
                'kind': record['kind'], 'source_kind': 'generated-new',
-               'created': '2026-11-10', 'generation_tool': 'built-in image_gen',
+               'created': record.get('created', '2026-11-10'), 'generation_tool': 'built-in image_gen',
                'status': record['status'], **info(path)}
         if record['kind'] == 'photography':
-            owner, slot, focal, alt, role = OWNERS[identity]
+            if record.get('variant_of'):
+                owner, slot, focal, alt, role = (record['owner_page'], record['slot'],
+                    record['focal_point'], record['suggested_alt'], record['production_role'])
+            else:
+                owner, slot, focal, alt, role = OWNERS[identity]
             row.update(owner_page=owner, slot=slot, focal_point=focal, suggested_alt=alt,
                        production_role=role, cross_page_reuse=False,
-                       prompt_ref='prompts/photography.json',
+                       prompt_ref=record.get('prompt_ref', 'prompts/photography.json'),
                        derivatives=derivatives(path, [480, 768, 1200, 1600]))
+            if record.get('variant_of'):
+                row.update(variant_of=record['variant_of'], contains_products=True,
+                    product_handles=record['product_handles'], preferred_for_slot=True,
+                    label_status='Compare with current authentic source before launch; never a label-data source')
         else:
             row.update(owner_pages=owners, viewport=record['viewport'],
                        production_role='reference-only-not-a-runtime-asset',
                        prompt_ref=record['prompt_ref'],
                        derivatives=derivatives(path, [320]))
         assets.append(row)
+
+    by_id = {a['id']: a for a in assets}
+    for asset in assets:
+        if asset.get('variant_of'):
+            by_id[asset['variant_of']]['preferred_variant_id'] = asset['id']
+            by_id[asset['variant_of']]['preferred_for_slot'] = False
 
     logo = ROOT / 'assets/brand/true-matrx-logo-original.png'
     assets.append({'id': 'B01', 'file': logo.relative_to(ROOT).as_posix(),
@@ -139,7 +160,7 @@ def main():
                        'bytes': path.stat().st_size, 'sha256': sha(path),
                        'production_role': 'new-vector-component-resource'})
 
-    write('manifests/assets.json', {'version': '3.0.0', 'path_base': 'design/v3',
+    write('manifests/assets.json', {'version': version, 'path_base': 'design/v3',
                                   'assets': assets})
 
     product_rows = []
@@ -154,14 +175,20 @@ def main():
                              'primary_candidate': primary.relative_to(ROOT).as_posix(),
                              'primary_status': 'visual-candidate-verify-current-variant-and-label',
                              'primary_derivatives': derivatives(primary, [360, 720, 1080])})
-    write('manifests/products.json', {'version': '3.0.0', 'observed_date': '2026-11-10',
+        if media[0]['width'] < 720:
+            product_rows[-1]['source_quality'] = 'Low-resolution original; obtain better authentic media for a large gallery.'
+    write('manifests/products.json', {'version': version, 'observed_date': '2026-11-10',
                                     'runtime_use': 'Never use as a live price/inventory database.',
                                     'products': product_rows})
 
     photos = [a for a in assets if a['kind'] == 'photography']
     mockups = [a for a in assets if a['kind'] == 'mockup']
-    sheet(photos, 'qa/photography-contact-sheet.jpg', 'True Matrx V3 — 14 original photographic assets')
-    sheet(mockups, 'qa/page-contact-sheet.jpg', 'True Matrx V3 — 12 fresh page references', columns=4, image_height=360)
+    variants = [a for a in photos if a.get('contains_products')]
+    carts = [a for a in mockups if int(a['id'][1:]) >= 13]
+    sheet(photos, 'qa/photography-contact-sheet.jpg', f'True Matrx V3 — {len(photos)} photographic assets')
+    sheet(mockups, 'qa/page-contact-sheet.jpg', f'True Matrx V3 — {len(mockups)} page references', columns=4, image_height=360)
+    sheet(variants, 'qa/product-variant-contact-sheet.jpg', 'True Matrx V3 — product-included variants')
+    sheet(carts, 'qa/cart-contact-sheet.jpg', 'True Matrx V3 — drawer, page and recommendation states', columns=3, image_height=350)
     sheet([{'id': p['id'], 'file': p['primary_candidate'], 'title': p['title']} for p in product_rows],
           'qa/product-source-contact-sheet.jpg', 'True Matrx — original source candidates, verify before binding', columns=4)
 
@@ -171,9 +198,11 @@ def main():
     def card(a):
         preview = a.get('derivatives', [{}])[0].get('file', a['file'])
         title = a.get('slug', a['id']).replace('-', ' ')
-        return f'''<article class="asset" data-search="{esc(a['id']+' '+title+' '+a['kind'])}">
+        variant_note = ('Product-filled variant of '+a['variant_of']+' · preferred for its slot') if a.get('variant_of') else ('Preferred variant: '+a['preferred_variant_id']) if a.get('preferred_variant_id') else ''
+        return f'''<article class="asset" data-search="{esc(a['id']+' '+title+' '+a['kind']+' '+variant_note)}">
         <a href="{esc(a['file'])}"><img loading="lazy" src="{esc(preview)}" alt="{esc(title)}"></a>
         <h3>{esc(a['id'])} · {esc(title)}</h3><p>{esc(a['production_role'])}</p>
+        <p>{esc(variant_note)}</p>
         <p>{a['width']} × {a['height']} · {esc(a['status'])}</p>
         <a href="{esc(a['file'])}">Open original</a></article>'''
 
@@ -183,11 +212,15 @@ def main():
     <style>:root{font-family:system-ui,sans-serif;color:#101820;background:#fff}*{box-sizing:border-box}body{margin:0}header{background:#edf7fe;padding:40px max(24px,5vw)}h1{font-size:38px;line-height:1.1;margin:12px 0}h2{font-size:28px}p{line-height:1.5;max-width:85ch}a{color:#0067b8}a:focus-visible,input:focus-visible{outline:3px solid #003f73;outline-offset:3px}nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0}main{max-width:1450px;margin:auto;padding:24px}section{margin:36px 0 56px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}.asset{border-top:1px solid #c9e2f3;padding-top:16px}.asset img{width:100%;height:230px;object-fit:contain;background:#fafcfe}.mockups img{height:500px}.asset h3{font-size:17px;line-height:1.4}.asset p{font-size:14px;color:#536270}input{font:inherit;min-height:48px;padding:12px;width:min(100%,480px);border:1px solid #708494}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:14px 10px;border-bottom:1px solid #c9e2f3;vertical-align:top}.table-wrap{overflow:auto}footer{padding:24px;border-top:1px solid #c9e2f3}label{display:block;margin:8px 0}.logo{max-width:230px;height:auto}[hidden]{display:none!important}@media(max-width:600px){h1{font-size:30px}.grid{grid-template-columns:1fr}.mockups img{height:460px}}</style>
     <header><img class="logo" src="assets/brand/true-matrx-logo-original.png" alt="True Matrx"><p>V3 REDESIGN · VERSION 3.0.0 · NOVEMBER 10, 2026</p><h1>A higher standard. A clear design handoff.</h1><p>Fresh creative, researched flows, page-by-page specifications and original brand/product sources. This is a local design catalog, not a functioning storefront or deployed Shopify theme.</p><nav><a href="README.md">Package guide</a><a href="BUILDER-HANDOFF.md">Builder start</a><a href="#pages">Page lookup</a><a href="#mockups">Page references</a><a href="#photos">Photography</a><a href="#products">Product sources</a><a href="qa/visual-review.md">Visual caveats</a></nav><label for="find">Filter assets by name or ID</label><input id="find" type="search" placeholder="Try A09, product, mobile…"></header><main>
     <section id="pages"><h2>22 page briefs and surfaces</h2><p>Written specs and current Shopify data override generated screenshot text. Supporting pages have intentional written layouts. Fresh imagery has one page owner; authentic packshots/logo are the disclosed identity exceptions.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Brief</th><th>Route/surface</th><th>Reference</th></tr></thead><tbody>'''+page_links+'''</tbody></table></div></section>
-    <section id="mockups"><h2>12 fresh page references</h2><p>Composition references only. No generated product labels, prices, medical prose or interface states are a runtime source. Open the full-resolution file to inspect.</p><div class="grid mockups">'''+''.join(card(a) for a in mockups)+'''</div></section>
-    <section id="photos"><h2>14 original photographic assets</h2><p>Text-free photography and separate empty product-staging plates. Plate assets require the authentic product layers described in the production guide.</p><div class="grid">'''+''.join(card(a) for a in photos)+'''</div></section>
+    <section id="cart"><h2>Cart page, drawer and interaction states</h2><p>Visual recommendations with Add to bag controls. Read the <a href="specs/cart-experience.md">no-reload cart specification</a> and <a href="qa/cart-scenarios.md">functional acceptance matrix</a>. Images are concepts, not working cart code.</p><div class="grid mockups">'''+''.join(card(a) for a in carts)+'''</div></section>
+    <section id="mockups"><h2>'''+str(len(mockups))+''' page and state references</h2><p>Composition references only. No generated product labels, prices, medical prose or interface states are a runtime source. Open the full-resolution file to inspect.</p><div class="grid mockups">'''+''.join(card(a) for a in mockups)+'''</div></section>
+    <section id="product-variants"><h2>Product-included B-roll variants</h2><p>Preferred variants for most product-staging and B-roll slots. Products are already in these images: do not overlay them a second time. Compare packaging with current original sources before launch.</p><div class="grid">'''+''.join(card(a) for a in variants)+'''</div></section>
+    <section id="photos"><h2>'''+str(len(photos))+''' photographic masters and variants</h2><p>Product-filled variants are preferred where mapped. Empty staging plates remain optional source material, not the default finished image.</p><div class="grid">'''+''.join(card(a) for a in photos)+'''</div></section>
     <section id="products"><h2>16 authentic product source groups</h2><p>Unmodified original media, not newly generated products. Primary candidates below require current-variant and label verification. All original views/labels are indexed in the product manifest.</p><div class="grid">'''+product_cards+'''</div></section>
     <section><h2>Supporting design resources</h2><p><a href="specs/tokens.json">Design tokens</a> · <a href="assets/brand/v3-icons-preview.svg">New icon preview</a> · <a href="assets/brand/v3-curve.svg">New background curve</a> · <a href="research/sources.md">Research sources</a> · <a href="DECISIONS.md">Open decisions</a> · <a href="qa/implementation-checklist.md">Build acceptance</a></p></section></main><footer>True Matrx V3 — design-ready package, pending merchant review and real implementation.</footer>
     <script>document.querySelector('#find').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('[data-search]').forEach(a=>a.hidden=!a.dataset.search.toLowerCase().includes(q));});</script></html>'''
+    doc = doc.replace('VERSION 3.0.0 · NOVEMBER 10, 2026', 'VERSION '+version+' · NOVEMBER 12, 2026')
+    doc = doc.replace('<a href="#pages">Page lookup</a>', '<a href="DEVELOPMENT-ROADMAP.md">92-task roadmap</a><a href="#product-variants">Product-filled B-roll</a><a href="#cart">Cart designs</a><a href="#pages">Page lookup</a>')
     (ROOT/'index.html').write_text(doc)
     print(f'Built {len(photos)} photos, {len(mockups)} mockups, {len(product_rows)} product groups, catalog and contact sheets.')
 

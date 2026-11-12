@@ -4,6 +4,8 @@
 
 The current redesign direction and builder handoff are in [design/v3/README.md](design/v3/README.md). Start there for V3 page specifications, fresh photography, desktop/mobile references, data contracts and route-to-asset lookup. Open [the local visual catalog](design/v3/index.html) to browse the package. This package does not deploy or replace the current theme.
 
+Revision 3.1 adds product-filled B-roll, full cart page/drawer references and a [92-task development roadmap](design/v3/DEVELOPMENT-ROADMAP.md). V1 is the live store, V2 is the partial existing draft, and V3 is the new redesign.
+
 Blank Shopify Online Store 2.0 theme foundation for rebuilding the True Matrx website.
 
 This is intended to be uploaded or pushed as an unpublished/draft theme only. Do not publish it over the current live theme until the rebuild is complete and reviewed.
@@ -17,7 +19,7 @@ This is intended to be uploaded or pushed as an unpublished/draft theme only. Do
 
 ## Next Step
 
-Start design work in `sections/tmrx-blank-home.liquid` and `assets/tmrx-base.css`, then add templates/sections as the rebuild takes shape.
+When V3 implementation is requested, begin with roadmap D001–D004 to protect V1 and preserve the actual V2 draft. Build new V3 components from the page briefs and tokens, then progress through eligible task batches with recorded checks and source checkpoints.
 
 ## Versioned Draft Workflow
 

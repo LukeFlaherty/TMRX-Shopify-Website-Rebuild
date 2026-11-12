@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.1.0",
   "observed_date": "2026-11-10",
   "runtime_use": "Never use as a live price/inventory database.",
   "products": [
@@ -1045,7 +1045,7 @@
       "primary_candidate": "assets/products/07-secretropin-63989622866229.png",
       "primary_status": "visual-candidate-verify-current-variant-and-label",
       "primary_derivatives": [],
-      "source_quality": "low-resolution-source-265x503; better authentic media required for large gallery"
+      "source_quality": "Low-resolution original; obtain better authentic media for a large gallery."
     },
     {
       "id": "PR15",

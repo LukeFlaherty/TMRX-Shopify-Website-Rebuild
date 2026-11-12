@@ -40,7 +40,9 @@ States: valid default; valid alternate variant; nonexistent combination; sold ou
 
 ## C07 Cart drawer and cart page
 
-Right-side desktop panel 440–480px; phone full-width sheet. Header has count and close. Each line uses Shopify line key, exact variant/options, image, price, quantity and remove. Item count, line totals, discounts and subtotal reconcile with cart response. Checkout action stays reachable, with its footer outside the scrollable line list when space allows. Cart page is a complete fallback, not a dead link.
+Revision 3.1 primary references: M13/M14 drawer, M15/M16 full page, M17/M18 interaction/empty states. The detailed [cart contract](cart-experience.md) governs implementation. Both surfaces display visual recommendations with authentic photos, current prices, explicit variant selection and Add to bag. Enhanced adds, edits and removals update the existing cart without navigation or reload. Use a shared serialized mutation coordinator and reconcile uncertain writes before retrying. See [22 acceptance scenarios](../qa/cart-scenarios.md).
+
+Right-side desktop panel 440–480px; phone full-width sheet. Header has count and close. Each line uses Shopify line key, exact variant/options, image, price, quantity and remove. Item count, line totals, discounts and subtotal reconcile with cart response. Checkout action stays reachable, with its footer outside the scrollable line list when space allows. The full cart page is a primary designed destination and also supports the native no-JS form fallback.
 
 States: empty; one/multiple lines; editing quantity; removing; item became unavailable; quantity capped by stock; successful change; failed update; checkout pending. A stock rejection can still leave a changed server cart, so refresh/reconcile before showing totals. Preserve current items and show a retry for failure. Remove is an explicit action, not a tiny unlabelled icon. No auto-added recommendations. Free-shipping progress is hidden until the threshold and applicable market are verified; no fake countdown or subscription upgrade. [Shopify Cart API](https://shopify.dev/docs/api/ajax/reference/cart).
 

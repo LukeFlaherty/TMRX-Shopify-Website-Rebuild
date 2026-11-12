@@ -23,4 +23,19 @@ Reviewed during generation on November 10, 2026. These are generated designs, no
 
 Do not crop products or labels out of a generated mockup and use them as catalog assets. Do not OCR generated text into theme content. Original product media and page-owned photographic masters are supplied separately for precisely this reason. The small reference-image inaccuracies above do not authorize a builder to reproduce them; specifications, tokens, verified original media and Shopify data are authoritative.
 
-The 14 new photographic masters were inspected for subject, composition, palette, obvious anatomy issues and unintended text. They are design-ready AI imagery, not verified photographs of real customers, staff or clinicians. They must not be captioned as testimonials or identities. Final merchant review and actual crop QA remain part of implementation.
+The original 14 photographic masters were inspected for subject, composition, palette, obvious anatomy issues and unintended text. They are design-ready AI imagery, not verified photographs of real customers, staff or clinicians. They must not be captioned as testimonials or identities. Final merchant review and actual crop QA remain part of implementation.
+
+## Revision 3.1 — product variants and cart references
+
+Reviewed November 12, 2026. A15–A26 are product-included edits of mapped original slots using authentic product source files as references. Packaging identity/shape is suitable for design review; generated label typography is not approved factual media. Compare current labels before launch. Use these variants by default and do not composite the product twice. The new variant contact sheet groups all twelve for review.
+
+| Reference | Assessment | Written rule that wins |
+|---|---|---|
+| M13 desktop drawer | Visual recommendations and Add to bag controls are clear; dimmed background includes synthetic V3 collection copy | Drawer is the subject; never ship package/version labels as storefront marketing |
+| M14 phone drawer | Full-height composition and photo rows established; option text is illustrative | Real current options, inventory and prices; 44px controls and safe-area spacing |
+| M15 desktop cart page | Full independent page, summary and product recommendations established; footer year is synthetic | Current year and approved footer content; real cart values |
+| M16 phone cart page | Full page and visual recommendations established; generated close X near title is inappropriate for a normal page | Omit modal close X; keep site navigation and stack newsletter controls |
+| M17 recommendation states | Ready, choose-options, adding, added and error compositions | Bind actual variant names, announcements and server state; image does not implement behavior |
+| M18 empty page/drawer | Both empty surfaces have visual starter products and browse action | Actual current prices/eligible variants required; hide empty checkout and omit starters if none eligible |
+
+M10 is retained for provenance but superseded by M13–M18 for cart design. The example cart subtotal and recommendation prices are dated illustrative values, not a runtime source. See [cart requirements](../specs/cart-experience.md) and [functional scenarios](cart-scenarios.md). No Ajax behavior has been executed by generating these images.

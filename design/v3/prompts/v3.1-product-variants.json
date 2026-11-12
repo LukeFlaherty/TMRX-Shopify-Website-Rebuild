@@ -1,0 +1,214 @@
+{
+  "version": "3.1.0",
+  "generation_tool": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "A15",
+      "slug": "home-hero-desktop-products",
+      "parent_asset": "A01",
+      "product_handles": [
+        "essential-aminos",
+        "bone-broth-protein",
+        "true-omega"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a15-home-hero-desktop-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPlace Essential Aminos on low front platform, Bone Broth Protein on raised back platform, Premium Omega on other low platform at right. Use ONLY these three products, no duplicates. Keep LEFT40% quiet for real HTML headline. Wide landscape same as base. Products clearly visible and large in right half.",
+      "reference_files": [
+        "assets/generated/a01-home-hero-desktop.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png"
+      ]
+    },
+    {
+      "id": "A16",
+      "slug": "home-hero-mobile-products",
+      "parent_asset": "A02",
+      "product_handles": [
+        "essential-aminos",
+        "bone-broth-protein",
+        "true-omega"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a16-home-hero-mobile-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nDedicated portrait mobile composition. Three actual products together on the stone cluster, tall Bone Broth behind, Essential Aminos front left, Premium Omega right, fully inside frame. Products occupy central lower two-thirds, reduce excess empty wall if needed but retain portrait shape. Do not crop lids or bases.",
+      "reference_files": [
+        "assets/generated/a02-home-hero-mobile.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png"
+      ]
+    },
+    {
+      "id": "A17",
+      "slug": "home-standards-products",
+      "parent_asset": "A07",
+      "product_handles": [
+        "essential-aminos",
+        "true-omega"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a17-home-standards-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nSet authentic Essential Aminos tub and Premium Omega bottle on the white counter near glass/scoop/linen. Preserve still life but add products as clear foreground objects. No extra clinical props or testing claims. Landscape.",
+      "reference_files": [
+        "assets/generated/a07-home-standards-texture.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/52-true-omega-40565451424053.png"
+      ]
+    },
+    {
+      "id": "A18",
+      "slug": "collection-masthead-products",
+      "parent_asset": "A08",
+      "product_handles": [
+        "essential-aminos",
+        "bone-broth-protein",
+        "true-omega"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a18-collection-masthead-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nAdd the three faithful referenced products to low right-side stone terraces, modest height suited to a collection header, clearly recognizable. Keep left half clear. Wide low-profile landscape.",
+      "reference_files": [
+        "assets/generated/a08-collection-masthead.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png",
+        "assets/products/52-true-omega-40565451424053.png"
+      ]
+    },
+    {
+      "id": "A19",
+      "slug": "pdp-essential-gallery-products",
+      "parent_asset": "A09",
+      "product_handles": [
+        "essential-aminos"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a19-pdp-essential-gallery-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPlace ONE exact Essential Aminos tub upright centered on slab, base in contact with stone, large primary gallery shot, product fills about65%imageheight. Label and lid accurate, ample breathing room at edges. Square.",
+      "reference_files": [
+        "assets/generated/a09-pdp-essential-gallery-set.png",
+        "assets/products/21-essential-aminos-58348251808053.png"
+      ]
+    },
+    {
+      "id": "A20",
+      "slug": "pdp-essential-routine-products",
+      "parent_asset": "A10",
+      "product_handles": [
+        "essential-aminos"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a20-pdp-essential-routine-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPreserve the woman's face, hands, pale blue shirt and clear pink shaker unchanged. Add authentic Essential Aminos tub upright on the kitchen counter beside the towel, label facing viewer, realistic countertop scale. Visible supporting product, not oversized. Landscape.",
+      "reference_files": [
+        "assets/generated/a10-pdp-essential-routine.png",
+        "assets/products/21-essential-aminos-58348251808053.png"
+      ]
+    },
+    {
+      "id": "A21",
+      "slug": "quiz-routine-products",
+      "parent_asset": "A11",
+      "product_handles": [
+        "essential-aminos",
+        "true-omega"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a21-quiz-routine-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPreserve overhead notebook, pencil and glass flat lay. Add authentic Essential Aminos tub and Premium Omega bottle along one edge, lying naturally with front labels visible from overhead. Keep the notebook largely visible, moderate balanced negative space. Landscape.",
+      "reference_files": [
+        "assets/generated/a11-quiz-routine-still-life.png",
+        "assets/products/21-essential-aminos-58348251808053.png",
+        "assets/products/52-true-omega-40565451424053.png"
+      ]
+    },
+    {
+      "id": "A22",
+      "slug": "journal-feature-protein-products",
+      "parent_asset": "A12",
+      "product_handles": [
+        "bone-broth-protein"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a22-journal-feature-protein-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nAdd faithful Bone Broth Protein container upright beside the chocolate shake and bowl, label front visible, size realistic relative to drinking glass. Slightly reframe to fit full bottle and glass without crowding. Preserve soft daylight and restrained food scene. Landscape3:2.",
+      "reference_files": [
+        "assets/generated/a12-journal-feature-protein.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png"
+      ]
+    },
+    {
+      "id": "A23",
+      "slug": "article-whole-foods-products",
+      "parent_asset": "A13",
+      "product_handles": [
+        "bone-broth-protein"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a23-article-whole-foods-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nAdd the authentic Bone Broth Protein container to the overhead whole-foods composition as a clearly visible packaged product at one edge, label visible, lying or standing consistently with overhead camera. Preserve yogurt, eggs, oats, fruit and shake, reposition slightly to avoid clutter. Landscape16:9.",
+      "reference_files": [
+        "assets/generated/a13-article-hero-whole-foods.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png"
+      ]
+    },
+    {
+      "id": "A24",
+      "slug": "home-goal-nutrition-products",
+      "parent_asset": "A03",
+      "product_handles": [
+        "bone-broth-protein"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a24-home-goal-nutrition-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPreserve woman, hands and everyday kitchen routine. Add the authentic Bone Broth Protein container upright beside the glass being prepared, on counter in clear view, believable large bottle scale. Do not change face, pose or clothing. Landscape4:3.",
+      "reference_files": [
+        "assets/generated/a03-home-goal-daily-nutrition.png",
+        "assets/products/08-bone-broth-protein-60095949603125.png"
+      ]
+    },
+    {
+      "id": "A25",
+      "slug": "home-goal-strength-products",
+      "parent_asset": "A04",
+      "product_handles": [
+        "true-creatine"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a25-home-goal-strength-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPreserve man's exercise, anatomy, face, weights and room. Add a small light-colored bench/counter surface at lower edge and place authentic Micronized Creatine tub clearly in foreground on it; product is a supporting object at plausible scale, not being held while exercising. Landscape4:3.",
+      "reference_files": [
+        "assets/generated/a04-home-goal-strength.png",
+        "assets/products/57-true-creatine-39924672299317.png"
+      ]
+    },
+    {
+      "id": "A26",
+      "slug": "home-goal-recovery-products",
+      "parent_asset": "A05",
+      "product_handles": [
+        "calm"
+      ],
+      "kind": "photography",
+      "target": "assets/generated/a26-home-goal-recovery-products.png",
+      "prompt_ref": "prompts/v3.1-product-variants.json",
+      "prompt": "Use case: compositing. Create a PRODUCT-INCLUDED V3 True Matrx photographic variant. Image1 is the EDIT TARGET base scene. Images2 onward are AUTHENTIC PRODUCT INSERT references. Preserve Image1's photographic setting, light, palette, camera angle and people where present. Add the exact referenced physical containers to that scene naturally. Faithfully preserve container shape, lid, original silver/black or cream label, authentic TRUE MATRX blue capsule mark and product identity; do not redesign labels, invent products or add claims. Product front faces camera enough to recognize it, clean crisp edges, plausible physical scale, natural contact shadow consistent with original sunlight. No promotional text, overlay typography, badges, buttons or watermark. This must look like a finished image WITH products, not an empty staging plate. Keep existing scene uncluttered and relaxed. Do not generate website UI.\n\nPreserve stretching woman, anatomy, mat, window and room. Add authentic Calm bottle upright on clean mat edge or low side ledge in foreground with its front visible. The bottle is naturally present, no implied testimonial or medical outcome, no text overlay. Landscape4:3.",
+      "reference_files": [
+        "assets/generated/a05-home-goal-recovery.png",
+        "assets/products/47-calm-40565553430837.png"
+      ]
+    }
+  ]
+}

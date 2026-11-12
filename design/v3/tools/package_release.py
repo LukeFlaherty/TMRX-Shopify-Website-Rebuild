@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '3.0.0'
+VERSION = json.loads((ROOT/'package-metadata.json').read_text())['version']
 
 
 def digest(data):

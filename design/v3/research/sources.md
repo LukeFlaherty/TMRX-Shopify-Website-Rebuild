@@ -1,6 +1,6 @@
 # Source ledger
 
-Accessed November 10, 2026. Links are the evidence trail; summaries are brief and specific. Source IDs in page records connect requirements to evidence. All design sizes not stated by a source are explicitly V3 decisions.
+Original research accessed November 10, 2026; cart technical sources S08/S17/S18 reviewed November 12, 2026. Links are the evidence trail; summaries are brief and specific. Source IDs in page records connect requirements to evidence. All design sizes not stated by a source are explicitly V3 decisions.
 
 | ID | Primary source | Finding used |
 |---|---|---|
@@ -21,4 +21,11 @@ Accessed November 10, 2026. Links are the evidence trail; summaries are brief an
 | S15 | [Baymard mobile ecommerce research overview](https://baymard.com/research/mcommerce-usability) | Mobile filtering, product list information and gallery concerns |
 | S16 | [Transparent Labs](https://www.transparentlabs.com/) | Public category/goal and cart patterns; used only as research, not copied creative |
 
+| S17 | [Shopify Section Rendering API](https://shopify.dev/docs/api/ajax/section-rendering) | Targeted HTML updates without a document reload; limited requested section set |
+| S18 | [Shopify product recommendations API](https://shopify.dev/docs/api/ajax/reference/product-recommendations) | Product-seeded related/complementary data, availability-dependent results and curated fallback requirements |
+
 Original repo brand/product files are a separate user-owned source collection. Their byte-level provenance appears in the manifests. Earlier email references and prior concept screenshots were reviewed as history and are not shipped as new V3 creative.
+
+## Cart research application — November 12
+
+S08 supports locale-aware add/change/read operations and bundled section rendering. A mutation may succeed even if a section is null or section rendering fails; inspect/reconcile cart state before retrying an add. S17 supports replacing targeted cart regions while preserving the loaded document, with up to five requested sections. S18 is product-seeded recommendation data, not a general basket-personalization engine. V3 therefore specifies merchant-approved curation, eligibility filtering and a safe empty recommendation state. The proposed controls, spacing and mutation coordinator are V3 implementation decisions. No functional API integration was built or tested in this package revision.

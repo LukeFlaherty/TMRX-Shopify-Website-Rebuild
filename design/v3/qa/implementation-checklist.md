@@ -54,3 +54,11 @@ This checklist applies when a real V3 theme is built. It is not a claim that the
 - Commit and push source before updating existing Shopify draft `189659021621`.
 - Follow root AGENTS.md; never publish live or create another draft without instruction.
 - Report tested routes/states, missing inputs, current commit and draft preview after an actual release.
+
+## Cart expansion — 3.1
+
+- Execute [C01–C22](cart-scenarios.md) for both drawer and full page, at desktop and phone widths.
+- Verify visual recommendation photos, actual prices, eligibility, option choice and Add to bag.
+- Observe successful enhanced adds/edits/removal without a document reload or navigation.
+- Test duplicate clicks, overlapping mutations, stock conflicts, section-render failure and uncertain writes without duplicating products.
+- Record real implementation evidence in the [development tracker](../manifests/development-roadmap.json); generated states do not prove behavior.

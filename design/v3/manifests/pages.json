@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.1.0",
   "route_matching": "Exact paths/states first; article before blog; generic family last. ui/platform/system records are surfaces, not literal public paths.",
   "pages": [
     {
@@ -21,7 +21,13 @@
         "A04",
         "A05",
         "A06",
-        "A07"
+        "A07",
+        "A15",
+        "A16",
+        "A17",
+        "A24",
+        "A25",
+        "A26"
       ],
       "source_ids": [
         "S01",
@@ -37,7 +43,15 @@
         "no published articles",
         "newsletter success/error"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A15",
+        "A16",
+        "A17",
+        "A24",
+        "A25",
+        "A26"
+      ]
     },
     {
       "id": "P02",
@@ -52,7 +66,8 @@
         "M04"
       ],
       "asset_ids": [
-        "A08"
+        "A08",
+        "A18"
       ],
       "source_ids": [
         "S02",
@@ -71,7 +86,10 @@
         "sold-out item",
         "missing product image"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A18"
+      ]
     },
     {
       "id": "P03",
@@ -112,7 +130,9 @@
       ],
       "asset_ids": [
         "A09",
-        "A10"
+        "A10",
+        "A19",
+        "A20"
       ],
       "source_ids": [
         "S03",
@@ -134,7 +154,11 @@
         "no reviews",
         "no selling plans"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A19",
+        "A20"
+      ]
     },
     {
       "id": "P05",
@@ -145,12 +169,18 @@
       "template": "new V3 global section",
       "spec": "specs/pages/P05-cart-drawer.md",
       "mockup_ids": [
+        "M13",
+        "M14",
+        "M17",
+        "M18",
         "M10"
       ],
       "asset_ids": [],
       "source_ids": [
         "S08",
-        "S12"
+        "S12",
+        "S17",
+        "S18"
       ],
       "required_states": [
         "empty",
@@ -159,23 +189,44 @@
         "removing",
         "stock conflict",
         "network failure",
-        "checkout pending"
+        "checkout pending",
+        "recommendations loading",
+        "eligible recommendations",
+        "no eligible recommendations",
+        "choose variant",
+        "recommendation adding",
+        "recommendation added",
+        "recommendation stock conflict",
+        "recommendation uncertain response"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "primary_mockup_ids": [
+        "M13",
+        "M14",
+        "M17",
+        "M18"
+      ]
     },
     {
       "id": "P06",
-      "title": "Cart page fallback",
+      "title": "Full cart page",
       "routes": [
         "/cart"
       ],
       "template": "cart.json (new)",
       "spec": "specs/pages/P06-cart.md",
-      "mockup_ids": [],
+      "mockup_ids": [
+        "M15",
+        "M16",
+        "M17",
+        "M18"
+      ],
       "asset_ids": [],
       "source_ids": [
         "S04",
-        "S08"
+        "S08",
+        "S17",
+        "S18"
       ],
       "required_states": [
         "empty",
@@ -183,9 +234,23 @@
         "multiple lines",
         "update failure",
         "unavailable item",
-        "discounted cart"
+        "discounted cart",
+        "recommendations loading",
+        "eligible recommendations",
+        "no eligible recommendations",
+        "choose variant",
+        "recommendation adding",
+        "recommendation added",
+        "recommendation stock conflict",
+        "recommendation uncertain response"
       ],
-      "status": "written-specification"
+      "status": "written-spec-and-generated-reference",
+      "primary_mockup_ids": [
+        "M15",
+        "M16",
+        "M17",
+        "M18"
+      ]
     },
     {
       "id": "P07",
@@ -228,7 +293,8 @@
         "M07"
       ],
       "asset_ids": [
-        "A11"
+        "A11",
+        "A21"
       ],
       "source_ids": [
         "S02",
@@ -243,7 +309,10 @@
         "calculating",
         "configuration missing"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A21"
+      ]
     },
     {
       "id": "P09",
@@ -282,7 +351,8 @@
         "M08"
       ],
       "asset_ids": [
-        "A12"
+        "A12",
+        "A22"
       ],
       "source_ids": [
         "S04",
@@ -296,7 +366,10 @@
         "missing image",
         "pagination"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A22"
+      ]
     },
     {
       "id": "P11",
@@ -310,7 +383,8 @@
         "M09"
       ],
       "asset_ids": [
-        "A13"
+        "A13",
+        "A23"
       ],
       "source_ids": [
         "S04",
@@ -324,7 +398,10 @@
         "anchored section",
         "unpublished/not found"
       ],
-      "status": "written-spec-and-generated-reference"
+      "status": "written-spec-and-generated-reference",
+      "preferred_asset_ids": [
+        "A23"
+      ]
     },
     {
       "id": "P12",

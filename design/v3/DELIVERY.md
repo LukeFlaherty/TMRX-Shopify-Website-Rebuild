@@ -1,17 +1,19 @@
 # V3 delivery inventory
 
-Version 3.0.0, November 10, 2026.
+Version 3.1.0, November 12, 2026.
 
 - **22 dedicated page/surface briefs**, each with content order, phone/desktop layout, required data and state-specific acceptance criteria.
-- **12 fresh generated visual references**: desktop home, shop, product, quiz, journal, article, cart drawer, search and about, plus phone home, shop and product.
-- **14 new page-owned photographic masters**: desktop/phone home staging, four goal photos, standards still life, collection staging, PDP staging/routine, quiz still life, journal feature, article hero and about image.
+- **18 generated visual references**: the original 12 plus six new desktop/phone cart drawer, full cart page and recommendation/empty-state concepts.
+- **26 page-owned photographic masters and variants**: 14 originals plus 12 new product-included B-roll/staging variants, now preferred in mapped page slots. Empty originals remain alternate source material.
 - **16 product identity groups with 61 original source images**, preserving actual branding and labels as disclosed identity exceptions. One authentic logo source.
-- **101 WebP derivatives**, new line-icon sprite/preview and subtle background-curve SVG, plus page/photo/product contact sheets.
+- **145 WebP derivatives**, new line-icon sprite/preview and subtle background-curve SVG, plus page/photo/product, product-variant and cart contact sheets.
 - Machine-readable route, asset and product manifests; tokens and copy dictionary; exact image-generation prompts and correction log.
 - Research/source ledger, dated product observations, component and data contracts, responsive guidance, content direction, decisions and future implementation checks.
 - A local searchable HTML catalog, standard-library integrity validator and ZIP packaging tool.
+- **92 development tasks across 13 phases**, with dependencies, all 22 page/surface mappings, 16 individual product checks, acceptance conditions and an iteration evidence template.
+- Expanded cart interaction specification and **22 future functional scenarios** requiring visual recommendations, explicit variant choice and enhanced updates without page reload on both cart surfaces.
 
-All new raster creative was produced with the **built-in image_gen tool**. No generation CLI or API key was used. Earlier approved concepts were style references only; their original PNGs are not shipped as V3 deliverables. The actual company logo/product source photographs are the documented identity exceptions.
+All new raster creative, including the product-included variants and cart references, was produced with the **built-in image_gen tool**. No generation CLI or API key was used. Earlier approved concepts were style references only; their original PNGs are not shipped as V3 deliverables. The actual company logo/product source photographs are the documented identity exceptions.
 
 ## What is complete
 

@@ -3,10 +3,12 @@
 ## V3 Redesign Design Lookup
 
 - For V3 design/build requests, start with `design/v3/README.md` and `design/v3/BUILDER-HANDOFF.md`.
+- Use `design/v3/DEVELOPMENT-ROADMAP.md` and its task registry for iterative development; record actual acceptance evidence in `design/v3/development/iteration-log.md`. V1 is live, V2 is the existing partial draft, and V3 is the redesign. Preserve V2 before the first V3 theme update.
 - Look up the requested route in `design/v3/manifests/pages.json`, then read its individual page specification before implementation.
 - Written V3 specifications, tokens and current Shopify data override generated screenshot text. Resolve images through the asset/product manifests; do not invent prices, reviews, labels, claims or subscription offers.
 - Use new V3 creative and new V3 theme components. Only authentic logo/product source media are the documented identity exceptions; page-specific editorial photography must not be recycled as filler.
 - V3 spacing should be relaxed but compact, especially halfway down the page: follow the explicit responsive spacing tokens.
+- Prefer the product-filled assets in each page's `preferred_asset_ids`; do not overlay products again. For cart work read `design/v3/specs/cart-experience.md`: both drawer and full cart page need visual recommendations and variant-aware enhanced adds that update without reloading.
 - The V3 package is a design handoff, not a deployed theme. Documentation/asset-package changes alone do not require a Shopify push; real deployable theme changes follow the workflow below.
 
 ## Email Marketing Memory
